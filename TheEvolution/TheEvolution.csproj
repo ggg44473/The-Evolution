@@ -59,6 +59,7 @@
     <Compile Include="StageCell\Organella\Centromere.cs" />
     <Compile Include="StageCell\Organella\Chloroplast.cs" />
     <Compile Include="StageCell\CellFoods\Junk.cs" />
+    <Compile Include="StageCell\Organella\ER.cs" />
     <Compile Include="StageCell\Organella\Lysosome.cs" />
     <Compile Include="StageCell\Organella\Mitochondrion.cs" />
     <Compile Include="StageCell\Organelle.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,6 +104,98 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Food\Algae.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Blocker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Virus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\Player\P1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\Player\P2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\Player\P3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\Player\P4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\Player\P5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\Predator\Predator1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\Predator\Predator2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\ShockCell\ShockCell1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Cell\ShockCell\ShockCell2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Food\Charophyta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Food\Junk\JK1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Food\Junk\JK2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Food\Junk\JK3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Food\Junk\JK4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\Centromere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\Choroplast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\Mitochondria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\Lysosome\Lysosome1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\Lysosome\Lysosome2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\Lysosome\Lysosome3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\ER\ER1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\ER\ER2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StageCell\Organella\ER\ER3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
