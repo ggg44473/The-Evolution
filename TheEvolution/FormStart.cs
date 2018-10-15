@@ -9,9 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TheEvolution {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class FormStart : Form {
+        public FormStart() {
             InitializeComponent();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e) {
+            Application.Exit();
         }
     }
 }
