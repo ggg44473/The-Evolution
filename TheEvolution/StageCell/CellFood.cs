@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 using TheEvolution.Core;
 
 namespace TheEvolution.StageCell {
-    class Organelle : Food {
+    class CellFood : Food {
     }
 }

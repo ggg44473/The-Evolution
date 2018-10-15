@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheEvolution.StageCell.Organella {
-    class Junk : Organelle {
+namespace TheEvolution.StageCell.CellEquipments {
+    class CellPump : CellEquipment {
     }
 }

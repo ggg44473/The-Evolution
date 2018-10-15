@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheEvolution.Core {
-    abstract class Material {
+namespace TheEvolution.StageCell.CellEquipments {
+    class Flagellum : CellEquipment {
     }
 }

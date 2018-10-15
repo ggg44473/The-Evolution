@@ -13,5 +13,9 @@ namespace TheEvolution {
         public FormStart() {
             InitializeComponent();
         }
+
+        private void buttonExit_Click(object sender, EventArgs e) {
+            Application.Exit();
+        }
     }
 }

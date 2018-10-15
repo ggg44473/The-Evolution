@@ -46,15 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Material.cs" />
+    <Compile Include="Core\Food.cs" />
+    <Compile Include="Core\Equipment.cs" />
     <Compile Include="StageCell\Cell.cs" />
-    <Compile Include="StageCell\CellMaterial.cs" />
-    <Compile Include="StageCell\CellMaterials\CellPump.cs" />
-    <Compile Include="StageCell\CellMaterials\CellWall.cs" />
-    <Compile Include="StageCell\CellMaterials\Flagellum.cs" />
+    <Compile Include="StageCell\CellEquipment.cs" />
+    <Compile Include="StageCell\CellEquipments\CellPump.cs" />
+    <Compile Include="StageCell\CellEquipments\CellWall.cs" />
+    <Compile Include="StageCell\CellEquipments\Flagellum.cs" />
+    <Compile Include="StageCell\CellFood.cs" />
+    <Compile Include="StageCell\CellFoods\Algae.cs" />
+    <Compile Include="StageCell\CellFoods\Charophyta.cs" />
     <Compile Include="StageCell\Organella\Centromere.cs" />
     <Compile Include="StageCell\Organella\Chloroplast.cs" />
-    <Compile Include="StageCell\Organella\Junk.cs" />
+    <Compile Include="StageCell\CellFoods\Junk.cs" />
     <Compile Include="StageCell\Organella\Lysosome.cs" />
     <Compile Include="StageCell\Organella\Mitochondrion.cs" />
     <Compile Include="StageCell\Organelle.cs" />

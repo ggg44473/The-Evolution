@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheEvolution.StageCell.CellMaterials {
-    class CellWall : CellMaterial {
+namespace TheEvolution.Core {
+    abstract class Food {
     }
 }
