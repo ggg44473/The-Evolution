@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using TheEvolution.Core;
 
 namespace TheEvolution.StageCell {
-    class Cell : Creature {
+    abstract class Cell : Creature {
+        override public void Paint() { }
+        virtual public void Move() { }
+        virtual public void Animate() { }
     }
 }
