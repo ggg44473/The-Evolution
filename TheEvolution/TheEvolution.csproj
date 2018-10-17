@@ -48,6 +48,14 @@
   <ItemGroup>
     <Compile Include="Core\Food.cs" />
     <Compile Include="Core\Equipment.cs" />
+    <Compile Include="Core\GameSystem.cs" />
+    <Compile Include="Core\IPainting.cs" />
+    <Compile Include="FormCellStage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCellStage.Designer.cs">
+      <DependentUpon>FormCellStage.cs</DependentUpon>
+    </Compile>
     <Compile Include="StageCell\Cell.cs" />
     <Compile Include="StageCell\CellEquipment.cs" />
     <Compile Include="StageCell\CellEquipments\CellPump.cs" />
@@ -78,6 +86,9 @@
     <Compile Include="StageCell\Cells\ShockCell.cs" />
     <Compile Include="StageCell\Cells\TrapCell.cs" />
     <Compile Include="StageCell\Virus.cs" />
+    <EmbeddedResource Include="FormCellStage.resx">
+      <DependentUpon>FormCellStage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\StageCell\Organella\ER\ER3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\FormStart\bg_start.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
