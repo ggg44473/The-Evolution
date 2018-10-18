@@ -33,6 +33,7 @@
             this.labelExit.AutoSize = true;
             this.labelExit.BackColor = System.Drawing.Color.Transparent;
             this.labelExit.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExit.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelExit.Location = new System.Drawing.Point(12, 515);
             this.labelExit.Name = "labelExit";
             this.labelExit.Size = new System.Drawing.Size(123, 67);
@@ -44,6 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(1036, 591);
             this.Controls.Add(this.labelExit);
             this.DoubleBuffered = true;

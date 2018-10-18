@@ -8,15 +8,11 @@ using System.Drawing;
 
 namespace TheEvolution.Core {
     static class GameSystem {
-        public delegate void GameHandler();
-        public static event GameHandler RePaint;
         public static int gameTime;
+        public static Form currentForm;
 
         public static void Act(object sender, EventArgs e) {
             gameTime++;
-            if (RePaint != null) {
-                RePaint();
-            }
         }
 
         public static void setControlSize(Control control, Size ClientSize, double ratioL, double ratioT, double ratioW, double ratioH) {
