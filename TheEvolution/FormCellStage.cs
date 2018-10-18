@@ -16,7 +16,7 @@ namespace TheEvolution {
 
         public FormCellStage() {
             InitializeComponent();
-            GameSystem.RePaint += new GameSystem.GameHandler(Invalidate);
+            GameSystem.currentForm = this;
             GameEngine.Tick += GameSystem.Act;
             player = new PlayerCell();
             KeyDown += new KeyEventHandler(player.PlayerKeyDown);

@@ -60,7 +60,7 @@ namespace TheEvolution.StageCell.Cells {
         }
 
         public void PlayerMove() {
-            int speed = (int)(0.15 * (double)frame.Height);
+            int speed = (int)(0.1 * (double)frame.Height);
             int adapter = GameSystem.gameTime % speed;
             if (isUp) {
                 frame.Y -= speed - adapter;
@@ -74,6 +74,7 @@ namespace TheEvolution.StageCell.Cells {
             if (isRight) {
                 frame.X += speed - adapter;
             }
+            GameSystem.currentForm.Invalidate();
         }
 
         public override void Animate() {
@@ -87,7 +88,6 @@ namespace TheEvolution.StageCell.Cells {
         public void NextStep(object sender, EventArgs e) {
             PlayerMove();
             Animate();
-
         }
     }
 }
