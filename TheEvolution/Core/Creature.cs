@@ -5,28 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace TheEvolution.Core {
-    abstract class Creature {
-        private int top, left;
-        private Point[] frame;
-        private Point center;
-        private Region region;
-        private Matrix rotation;
-        private List<Image> imageList;
+    abstract class Creature : IPainting {
+        protected List<Bitmap> images;
+        protected Rectangle frame;
+        protected Matrix rotation;
+
+        public List<Bitmap> Images { get => images; set => images = value; }
+
+        public Rectangle Frame { get => frame; set => frame = value; }
 
         public Creature() {
-            GraphicsPath path = new GraphicsPath();
-            path.AddPolygon(frame);
-            region = new Region(path);
+            images = new List<Bitmap>();
+            frame = new Rectangle();
+            rotation = new Matrix();
         }
 
         virtual public Point getCenter() {
             return new Point(
-                (frame.Max(point => point.X) + frame.Min(point => point.X)) / 2,
-                (frame.Max(point => point.Y) + frame.Min(point => point.Y)) / 2);
+                x: Frame.Left + (Frame.Width / 2),
+                y: Frame.Top + (Frame.Height / 2));
         }
 
-        abstract public void Paint();
+        virtual public void Paint(object sender, PaintEventArgs e) {
+            e.Graphics.DrawImage(images[0], frame);
+        }
     }
 }
