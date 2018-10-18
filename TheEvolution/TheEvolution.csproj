@@ -56,6 +56,11 @@
     <Compile Include="FormCellStage.Designer.cs">
       <DependentUpon>FormCellStage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StageCell\Cell.cs" />
     <Compile Include="StageCell\CellEquipment.cs" />
     <Compile Include="StageCell\CellEquipments\CellPump.cs" />
@@ -94,14 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -210,6 +210,159 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\FormStart\bg_start.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\bg_start.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\bg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\bg2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\bg3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\bg4.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\bg5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\bg6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Blocker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Centromere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Choroplast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\e-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\e-36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\ER1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\ER2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\ER3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Junk1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Junk2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Junk3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Junk4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Lysosome1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Lysosome2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Lysosome3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Mitochondria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\P1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\P2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\P3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\P4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\P5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlantWallCell1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlantWallCell2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlantWallCell3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlantWallCell4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerCellEat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerCellEat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerCellEat3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerCellEat4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerCellEat5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Predator1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Predator2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StarCell1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\StarCell2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TeaceCell2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TraceCell1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TraceCell3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TraceCell4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Virus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OP1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OP2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OP3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OP4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OP5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
