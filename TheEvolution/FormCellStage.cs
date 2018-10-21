@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using TheEvolution.Core;
 using TheEvolution.StageCell.Cells;
@@ -13,25 +14,22 @@ using TheEvolution.StageCell.Cells;
 namespace TheEvolution {
     public partial class FormCellStage : Form {
         PlayerCell player;
+        Thread threadAct;
 
         public FormCellStage() {
             InitializeComponent();
             GameSystem.currentForm = this;
-            GameEngine.Tick += GameSystem.Act;
-            player = new PlayerCell();
-            KeyDown += new KeyEventHandler(player.PlayerKeyDown);
-            KeyUp += new KeyEventHandler(player.PlayerKeyUp);
-            Paint += new PaintEventHandler(player.Paint);
-            GameEngine.Tick += new EventHandler(player.NextStep);
+            player = new PlayerCell(this);
+            threadAct = new Thread(GameSystem.Act);
         }
 
         private void FormCellStage_Load(object sender, EventArgs e) {
             GameSystem.setControlSize(labelExit, ClientSize, 0.04, 0.95, 0.05, 0.05);
-            GameSystem.setFrame(player, ClientSize, 0.5, 0.5, 0.08, 0.15);
-            GameEngine.Start();
+            threadAct.Start();
         }
 
         private void labelExit_Click(object sender, EventArgs e) {
+            threadAct.Abort();
             Application.Exit();
         }
     }

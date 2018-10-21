@@ -10,15 +10,32 @@ using TheEvolution.Core;
 
 namespace TheEvolution.StageCell.Cells {
     class PlayerCell : Cell {
-        private bool isUp, isDown, isLeft, isRight;
-        private int currentImage;
 
-        public PlayerCell() {
+        private bool isUp, isDown, isLeft, isRight;
+        private int currentImgIndex;
+        private int speed, deceleration;
+
+        public PlayerCell(Form form) {
+            GameSystem.currentPlayer = this;
             Images.Add(new Bitmap(Resources.P1));
             Images.Add(new Bitmap(Resources.P2));
             Images.Add(new Bitmap(Resources.P3));
             Images.Add(new Bitmap(Resources.P4));
             Images.Add(new Bitmap(Resources.P5));
+            form.Load += new EventHandler(initialize);
+            form.Paint += new PaintEventHandler(Paint);
+            form.KeyDown += new KeyEventHandler(PlayerKeyDown);
+            form.KeyUp += new KeyEventHandler(PlayerKeyUp);
+        }
+
+        public void initialize(object sender, EventArgs e) {
+            GameSystem.setFrame(
+                this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.08, 0.15);
+            speed = (int)(0.1 * frame.Height);
+        }
+
+        public override void Paint(object sender, PaintEventArgs e) {
+            e.Graphics.DrawImage(images[currentImgIndex], frame);
         }
 
         public void PlayerKeyDown(object sender, KeyEventArgs e) {
@@ -41,6 +58,7 @@ namespace TheEvolution.StageCell.Cells {
         }
 
         public void PlayerKeyUp(object sender, KeyEventArgs e) {
+            deceleration = 0;
             switch (e.KeyCode) {
                 case Keys.Up:
                     isUp = false;
@@ -60,34 +78,35 @@ namespace TheEvolution.StageCell.Cells {
         }
 
         public void PlayerMove() {
-            int speed = (int)(0.1 * (double)frame.Height);
-            int adapter = GameSystem.gameTime % speed;
+            deceleration = deceleration <= speed ?
+                deceleration + 1 : 0;
             if (isUp) {
-                frame.Y -= speed - adapter;
+                frame.Y -= speed - deceleration;
             }
             if (isDown) {
-                frame.Y += speed - adapter;
+                frame.Y += speed - deceleration;
             }
             if (isLeft) {
-                frame.X -= speed - adapter;
+                frame.X -= speed - deceleration;
             }
             if (isRight) {
-                frame.X += speed - adapter;
+                frame.X += speed - deceleration;
             }
-            GameSystem.currentForm.Invalidate();
         }
 
         public override void Animate() {
-            currentImage = GameSystem.gameTime % images.Count;
+            //Make sure index won't be out of the range after plus.
+            if (currentImgIndex < images.Count - 1) {
+                currentImgIndex++;
+            } else {
+                currentImgIndex = 0;
+            }
         }
 
-        public override void Paint(object sender, PaintEventArgs e) {
-            e.Graphics.DrawImage(images[currentImage], frame);
-        }
-
-        public void NextStep(object sender, EventArgs e) {
+        public void NextStep() {
             PlayerMove();
             Animate();
+            GameSystem.currentForm.Invalidate();
         }
     }
 }
