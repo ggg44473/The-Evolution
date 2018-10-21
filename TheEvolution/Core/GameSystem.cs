@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.Drawing;
+using TheEvolution.StageCell.Cells;
 
 namespace TheEvolution.Core {
     static class GameSystem {
-        public static int gameTime;
         public static Form currentForm;
+        public static PlayerCell currentPlayer;
 
-        public static void Act(object sender, EventArgs e) {
-            gameTime++;
+        public static void Act() {
+            while (true) {
+                currentPlayer.NextStep();
+                Thread.Sleep(100);
+            }
         }
 
         public static void setControlSize(Control control, Size ClientSize, double ratioL, double ratioT, double ratioW, double ratioH) {
