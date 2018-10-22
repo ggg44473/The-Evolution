@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheEvolution.Core;
 
-namespace TheEvolution.StageCell.CellEquipments {
-    class Flagellum : CellEquipment {
+namespace TheEvolution.Stage.Foods {
+    class Junk : Food {
     }
 }

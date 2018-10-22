@@ -50,49 +50,47 @@
     <Compile Include="Core\Equipment.cs" />
     <Compile Include="Core\GameSystem.cs" />
     <Compile Include="Core\IPainting.cs" />
-    <Compile Include="FormCellStage.cs">
+    <Compile Include="FormStage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCellStage.Designer.cs">
-      <DependentUpon>FormCellStage.cs</DependentUpon>
+    <Compile Include="FormStage.Designer.cs">
+      <DependentUpon>FormStage.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="StageCell\Cell.cs" />
-    <Compile Include="StageCell\CellEquipment.cs" />
-    <Compile Include="StageCell\CellEquipments\CellPump.cs" />
-    <Compile Include="StageCell\CellEquipments\CellWall.cs" />
-    <Compile Include="StageCell\CellEquipments\Flagellum.cs" />
-    <Compile Include="StageCell\CellFood.cs" />
-    <Compile Include="StageCell\CellFoods\Algae.cs" />
-    <Compile Include="StageCell\CellFoods\Charophyta.cs" />
-    <Compile Include="StageCell\Organella\Centromere.cs" />
-    <Compile Include="StageCell\Organella\Chloroplast.cs" />
-    <Compile Include="StageCell\CellFoods\Junk.cs" />
-    <Compile Include="StageCell\Organella\ER.cs" />
-    <Compile Include="StageCell\Organella\Lysosome.cs" />
-    <Compile Include="StageCell\Organella\Mitochondrion.cs" />
-    <Compile Include="StageCell\Organelle.cs" />
-    <Compile Include="StageCell\Cells\CompetitorCell.cs" />
-    <Compile Include="Core\Creature.cs" />
+    <Compile Include="Stage\Background.cs" />
+    <Compile Include="Stage\Equipments\Pump.cs" />
+    <Compile Include="Stage\Equipments\CellWall.cs" />
+    <Compile Include="Stage\Equipments\Flagellum.cs" />
+    <Compile Include="Stage\Foods\Algae.cs" />
+    <Compile Include="Stage\Foods\Charophyta.cs" />
+    <Compile Include="Stage\Organella\Centromere.cs" />
+    <Compile Include="Stage\Organella\Chloroplast.cs" />
+    <Compile Include="Stage\Foods\Junk.cs" />
+    <Compile Include="Stage\Organella\ER.cs" />
+    <Compile Include="Stage\Organella\Lysosome.cs" />
+    <Compile Include="Stage\Organella\Mitochondrion.cs" />
+    <Compile Include="Core\Organelle.cs" />
+    <Compile Include="Stage\Cells\CompetitorCell.cs" />
+    <Compile Include="Core\Cell.cs" />
     <Compile Include="FormStart.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormStart.Designer.cs">
       <DependentUpon>FormStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="StageCell\Cells\PlayerCell.cs" />
-    <Compile Include="StageCell\Cells\PredatorCell.cs" />
+    <Compile Include="Stage\Cells\PlayerCell.cs" />
+    <Compile Include="Stage\Cells\PredatorCell.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StageCell\Cells\ShockCell.cs" />
-    <Compile Include="StageCell\Cells\TrapCell.cs" />
-    <Compile Include="StageCell\Virus.cs" />
-    <EmbeddedResource Include="FormCellStage.resx">
-      <DependentUpon>FormCellStage.cs</DependentUpon>
+    <Compile Include="Stage\Cells\ShockCell.cs" />
+    <Compile Include="Stage\Cells\TrapCell.cs" />
+    <Compile Include="Stage\Cells\Virus.cs" />
+    <EmbeddedResource Include="FormStage.resx">
+      <DependentUpon>FormStage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.cs</DependentUpon>
@@ -363,6 +361,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\OP5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\bg2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

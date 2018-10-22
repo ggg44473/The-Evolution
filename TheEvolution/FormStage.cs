@@ -9,17 +9,20 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using TheEvolution.Core;
-using TheEvolution.StageCell.Cells;
+using TheEvolution.Stage;
+using TheEvolution.Stage.Cells;
 
 namespace TheEvolution {
-    public partial class FormCellStage : Form {
+    public partial class FormStage : Form {
 
         PlayerCell player;
         Thread threadAct;
+        Background background;
 
-        public FormCellStage() {
+        public FormStage() {
             InitializeComponent();
             GameSystem.currentForm = this;
+            background = new Background(this);
             player = new PlayerCell(this);
             threadAct = new Thread(GameSystem.Act);
         }

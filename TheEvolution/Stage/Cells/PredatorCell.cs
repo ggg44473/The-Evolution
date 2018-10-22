@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheEvolution.Core;
 
-namespace TheEvolution.StageCell {
-    class CellEquipment : Equipment {
+namespace TheEvolution.Stage.Cells {
+    class PredatorCell : Cell {
     }
 }

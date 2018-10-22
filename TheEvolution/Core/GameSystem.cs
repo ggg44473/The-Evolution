@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.Drawing;
-using TheEvolution.StageCell.Cells;
+using TheEvolution.Stage.Cells;
 
 namespace TheEvolution.Core {
     static class GameSystem {

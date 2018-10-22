@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheEvolution.Core;
 
-namespace TheEvolution.StageCell {
-    class Organelle : Food {
+namespace TheEvolution.Stage.Organella {
+    class Centromere : Organelle {
     }
 }

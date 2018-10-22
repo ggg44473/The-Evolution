@@ -28,7 +28,7 @@ namespace TheEvolution {
 
         private void labelStart_Click(object sender, EventArgs e) {
             Hide();
-            FormCellStage formCellStage = new FormCellStage();
+            FormStage formCellStage = new FormStage();
             formCellStage.FormClosed += (s, args) => this.Close();
             formCellStage.Show();
         }

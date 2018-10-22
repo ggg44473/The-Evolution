@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheEvolution.Core;
 
-namespace TheEvolution.StageCell.Organella {
-    class Centromere : Organelle {
+namespace TheEvolution.Stage.Equipments {
+    class Flagellum : Equipment {
     }
 }
