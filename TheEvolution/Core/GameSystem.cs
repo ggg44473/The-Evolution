@@ -10,6 +10,7 @@ using TheEvolution.StageCell.Cells;
 
 namespace TheEvolution.Core {
     static class GameSystem {
+
         public static Form currentForm;
         public static PlayerCell currentPlayer;
 
@@ -20,14 +21,14 @@ namespace TheEvolution.Core {
             }
         }
 
-        public static void setControlSize(Control control, Size ClientSize, double ratioL, double ratioT, double ratioW, double ratioH) {
+        public static void SetControlSize(Control control, Size ClientSize, double ratioL, double ratioT, double ratioW, double ratioH) {
             control.Width = Convert.ToInt32(ClientSize.Width * ratioW);
             control.Height = Convert.ToInt32(ClientSize.Height * ratioH);
             control.Left = Convert.ToInt32(ClientSize.Width * ratioL) - (control.Width / 2);
             control.Top = Convert.ToInt32(ClientSize.Height * ratioT) - (control.Height / 2);
         }
 
-        public static void setFrame(IPainting painter, Size ClientSize, double ratioX, double ratioY, double ratioW, double ratioH) {
+        public static void SetFrame(IPainting painter, Size ClientSize, double ratioX, double ratioY, double ratioW, double ratioH) {
             int W = Convert.ToInt32(ClientSize.Width * ratioW);
             int H = Convert.ToInt32(ClientSize.Height * ratioH);
             int X = Convert.ToInt32(ClientSize.Width * ratioX) - (W / 2);

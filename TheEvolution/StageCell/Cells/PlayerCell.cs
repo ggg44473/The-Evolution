@@ -22,14 +22,14 @@ namespace TheEvolution.StageCell.Cells {
             Images.Add(new Bitmap(Resources.P3));
             Images.Add(new Bitmap(Resources.P4));
             Images.Add(new Bitmap(Resources.P5));
-            form.Load += new EventHandler(initialize);
+            form.Load += new EventHandler(Initialize);
             form.Paint += new PaintEventHandler(Paint);
             form.KeyDown += new KeyEventHandler(PlayerKeyDown);
             form.KeyUp += new KeyEventHandler(PlayerKeyUp);
         }
 
-        public void initialize(object sender, EventArgs e) {
-            GameSystem.setFrame(
+        public void Initialize(object sender, EventArgs e) {
+            GameSystem.SetFrame(
                 this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.08, 0.15);
             speed = (int)(0.1 * frame.Height);
         }

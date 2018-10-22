@@ -13,6 +13,7 @@ using TheEvolution.StageCell.Cells;
 
 namespace TheEvolution {
     public partial class FormCellStage : Form {
+
         PlayerCell player;
         Thread threadAct;
 
@@ -24,7 +25,7 @@ namespace TheEvolution {
         }
 
         private void FormCellStage_Load(object sender, EventArgs e) {
-            GameSystem.setControlSize(labelExit, ClientSize, 0.04, 0.95, 0.05, 0.05);
+            GameSystem.SetControlSize(labelExit, ClientSize, 0.04, 0.95, 0.05, 0.05);
             threadAct.Start();
         }
 
