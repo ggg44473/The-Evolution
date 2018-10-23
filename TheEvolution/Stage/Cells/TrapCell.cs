@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheEvolution.Core;
 
-namespace TheEvolution.StageCell.CellFoods {
-    class Algae : CellFood {
+namespace TheEvolution.Stage.Cells {
+    class TrapCell : Cell {
     }
 }

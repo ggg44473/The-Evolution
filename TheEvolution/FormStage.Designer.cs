@@ -1,5 +1,5 @@
 ﻿namespace TheEvolution {
-    partial class FormCellStage {
+    partial class FormStage {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,9 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             this.labelExit = new System.Windows.Forms.Label();
-            this.GameEngine = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // labelExit
@@ -62,6 +60,5 @@
         #endregion
 
         private System.Windows.Forms.Label labelExit;
-        private System.Windows.Forms.Timer GameEngine;
     }
 }

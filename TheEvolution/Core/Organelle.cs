@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheEvolution.StageCell.Cells {
-    class CompetitorCell : Cell {
+namespace TheEvolution.Core {
+    class Organelle : Food {
     }
 }

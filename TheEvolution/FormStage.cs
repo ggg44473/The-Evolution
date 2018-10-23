@@ -9,22 +9,26 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using TheEvolution.Core;
-using TheEvolution.StageCell.Cells;
+using TheEvolution.Stage;
+using TheEvolution.Stage.Cells;
 
 namespace TheEvolution {
-    public partial class FormCellStage : Form {
+    public partial class FormStage : Form {
+
         PlayerCell player;
         Thread threadAct;
+        Background background;
 
-        public FormCellStage() {
+        public FormStage() {
             InitializeComponent();
             GameSystem.currentForm = this;
+            background = new Background(this);
             player = new PlayerCell(this);
             threadAct = new Thread(GameSystem.Act);
         }
 
         private void FormCellStage_Load(object sender, EventArgs e) {
-            GameSystem.setControlSize(labelExit, ClientSize, 0.04, 0.95, 0.05, 0.05);
+            GameSystem.SetControlSize(labelExit, ClientSize, 0.04, 0.95, 0.05, 0.05);
             threadAct.Start();
         }
 
