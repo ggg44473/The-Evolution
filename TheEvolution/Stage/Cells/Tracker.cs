@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Cells {
-    class ShockCell : Cell {
+    class Tracker : Cell {
     }
 }

@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Cells {
-    class PredatorCell : Cell {
+    class Predator : Cell {
     }
 }

@@ -8,7 +8,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace TheEvolution.Core {
-    abstract class Cell : IPainting {
+    abstract class Cell : IPainting, ICollide {
 
         protected List<Bitmap> images;
         protected Rectangle frame;
@@ -25,10 +25,14 @@ namespace TheEvolution.Core {
             rotation = new Matrix();
         }
 
-        virtual public Point GetCenter() {
+        public Point GetCenter() {
             return new Point(
                 x: Frame.Left + (Frame.Width / 2),
                 y: Frame.Top + (Frame.Height / 2));
+        }
+
+        public Size GetSize() {
+            return new Size(frame.Width, frame.Height);
         }
 
         virtual public int GetAngle() { return angle; }
@@ -40,5 +44,7 @@ namespace TheEvolution.Core {
         virtual public void Move() { }
 
         virtual public void Animate() { }
+
+        virtual public void Collide() { }
     }
 }

@@ -25,6 +25,7 @@ namespace TheEvolution.Stage {
             images.Add(new Bitmap(Resources.bg2, imgSize));
             images.Add(new Bitmap(Resources.bg3, imgSize));
         }
+
         public void Paint(object sender, PaintEventArgs e) {
             e.Graphics.DrawImage(images[imgIndex], 0, 0, imgSize.Width, imgSize.Height);
         }

@@ -9,19 +9,18 @@ using TheEvolution.Properties;
 using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Cells {
-    class PlayerCell : Cell {
+    class Player : Cell {
 
         private bool isUp, isDown, isLeft, isRight;
         private int currentImgIndex;
         private int speed, deceleration;
+        private List<Bitmap> imgPlayer;
+        private List<Bitmap> imgEat;
+        private List<Bitmap> imgPlayer2;
+        //private List<Bitmap> imgEat2;
 
-        public PlayerCell(Form form) {
+        public Player(Form form) {
             GameSystem.currentPlayer = this;
-            Images.Add(new Bitmap(Resources.P1));
-            Images.Add(new Bitmap(Resources.P2));
-            Images.Add(new Bitmap(Resources.P3));
-            Images.Add(new Bitmap(Resources.P4));
-            Images.Add(new Bitmap(Resources.P5));
             form.Load += new EventHandler(Initialize);
             form.Paint += new PaintEventHandler(Paint);
             form.KeyDown += new KeyEventHandler(PlayerKeyDown);
@@ -29,16 +28,38 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void Initialize(object sender, EventArgs e) {
-            GameSystem.SetFrame(
-                this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.08, 0.15);
+            GameSystem.SetSquareFrame(
+                this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.06);
+
             speed = (int)(0.12 * frame.Height);
+
+            Size imgSize = frame.Size;
+            imgPlayer = new List<Bitmap>() {
+                new Bitmap(Resources.P1, imgSize), new Bitmap(Resources.P2,imgSize),
+                new Bitmap(Resources.P3, imgSize), new Bitmap(Resources.P4, imgSize),
+                new Bitmap(Resources.P5, imgSize)};
+            imgEat = new List<Bitmap>() {
+                new Bitmap(Resources.PlayerCellEat1, imgSize), new Bitmap(Resources.PlayerCellEat2,imgSize),
+                new Bitmap(Resources.PlayerCellEat3, imgSize), new Bitmap(Resources.PlayerCellEat4, imgSize),
+                new Bitmap(Resources.PlayerCellEat5, imgSize)};
+            imgPlayer2 = new List<Bitmap>() {
+                new Bitmap(Resources.OP1, imgSize), new Bitmap(Resources.OP2,imgSize),
+                new Bitmap(Resources.OP3, imgSize), new Bitmap(Resources.OP4, imgSize),
+                new Bitmap(Resources.OP5, imgSize)};
+            //imgEat2 = new List<Bitmap>() {
+            //    new Bitmap(Resources.OPlayerCellEat2, imgSize), new Bitmap(Resources.OPlayerCellEat2,imgSize),
+            //    new Bitmap(Resources.OPlayerCellEat3, imgSize), new Bitmap(Resources.OPlayerCellEat4, imgSize),
+            //    new Bitmap(Resources.OPlayerCellEat5, imgSize)};
+            images = imgPlayer;
         }
 
         public override void Paint(object sender, PaintEventArgs e) {
-            e.Graphics.Transform = rotation;
-            e.Graphics.DrawImage(images[currentImgIndex], frame);
-            rotation.Reset();
-            e.Graphics.Transform = rotation;
+            lock (rotation) {
+                e.Graphics.Transform = rotation;
+                e.Graphics.DrawImage(images[currentImgIndex], frame);
+                rotation.Reset();
+                e.Graphics.Transform = rotation;
+            }
         }
 
         public void PlayerKeyDown(object sender, KeyEventArgs e) {
@@ -111,7 +132,7 @@ namespace TheEvolution.Stage.Cells {
             angle = (angle + 360) % 360;
 
             if (isUp) {
-                if(90<= angle && angle <=270) {
+                if (90 <= angle && angle <= 270) {
                     angle += speed;
                 } else {
                     angle -= speed;
@@ -143,7 +164,9 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void Rotate() {
-            rotation.RotateAt(GetAngle(), GetCenter());
+            lock (rotation) {
+                rotation.RotateAt(GetAngle(), GetCenter());
+            }
         }
 
         public void NextStep() {

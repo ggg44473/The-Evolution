@@ -13,17 +13,17 @@ using TheEvolution.Stage;
 using TheEvolution.Stage.Cells;
 
 namespace TheEvolution {
-    public partial class FormStage : Form {
+    public partial class FormStage1 : Form {
 
-        PlayerCell player;
+        Player player;
         Thread threadAct;
         Background background;
 
-        public FormStage() {
+        public FormStage1() {
             InitializeComponent();
             GameSystem.currentForm = this;
             background = new Background(this);
-            player = new PlayerCell(this);
+            player = new Player(this);
             threadAct = new Thread(GameSystem.Act);
         }
 
