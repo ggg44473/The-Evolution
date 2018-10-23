@@ -1,5 +1,5 @@
 ﻿namespace TheEvolution {
-    partial class FormStage {
+    partial class FormStage1 {
         /// <summary>
         /// Required designer variable.
         /// </summary>

@@ -11,8 +11,12 @@ using TheEvolution.Core;
 
 namespace TheEvolution {
     public partial class FormStart : Form {
+
+        FormStage1 formStage1;
+
         public FormStart() {
             InitializeComponent();
+            formStage1 = new FormStage1();
         }
 
         private void FormStart_Load(object sender, EventArgs e) {
@@ -27,10 +31,9 @@ namespace TheEvolution {
         }
 
         private void labelStart_Click(object sender, EventArgs e) {
-            Hide();
-            FormStage formCellStage = new FormStage();
-            formCellStage.FormClosed += (s, args) => this.Close();
-            formCellStage.Show();
+            formStage1.Closed += (s, arg)=>this.Close();
+            this.Hide();
+            formStage1.Show();
         }
     }
 }
