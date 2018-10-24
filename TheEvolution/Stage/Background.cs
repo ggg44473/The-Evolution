@@ -6,10 +6,9 @@ using TheEvolution.Properties;
 using TheEvolution.Core;
 
 namespace TheEvolution.Stage {
-    class Background {
+    class Background : Painter {
 
         Size imgSize;
-        List<Bitmap> images;
         int imgIndex;
 
         public Background(Form form) {
@@ -26,7 +25,7 @@ namespace TheEvolution.Stage {
             images.Add(new Bitmap(Resources.bg3, imgSize));
         }
 
-        public void Paint(object sender, PaintEventArgs e) {
+        public override void Paint(object sender, PaintEventArgs e) {
             e.Graphics.DrawImage(images[imgIndex], 0, 0, imgSize.Width, imgSize.Height);
         }
     }

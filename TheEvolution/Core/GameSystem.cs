@@ -17,19 +17,21 @@ namespace TheEvolution.Core {
         public static Player currentPlayer;
         public static List<ICollide> allSquares;
         public static List<ICollide> allRectangles;
-        public static bool isCollided;
 
         public static void Act() {
             while (true) {
                 currentPlayer.NextStep();
-                Thread.Sleep(100);
+                currentForm.Invalidate();
+                Thread.Sleep(50);
             }
         }
 
         public static void CollisionDetect() {
-            SquareDetect();
-            RectangleDectect();
-            Thread.Sleep(100);
+            while (true) {
+                SquareDetect();
+                RectangleDectect();
+                Thread.Sleep(50);
+            }
         }
 
         public static void SquareDetect() {
@@ -40,7 +42,6 @@ namespace TheEvolution.Core {
                 distance = getDistance(currentPlayer.GetCenter(), square.GetCenter());
                 minDistance = (currentPlayer.GetSize().Width + square.GetSize().Width) / 2;
                 if (distance < minDistance) {
-                    isCollided = true;
                     OnSquareCollide(i);
                     return;
                 }
@@ -64,7 +65,6 @@ namespace TheEvolution.Core {
                 rectangleH = rectangle.GetSize().Height;
                 if (Math.Abs(rectangleX - playerX) <= (rectangleW + playerW) / 2.4) {
                     if (Math.Abs(rectangleY - playerY) <= (rectangleH + playerH) / 2.4) {
-                        isCollided = true;
                         OnRectangleCollide(i);
                         return;
                     }

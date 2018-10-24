@@ -51,6 +51,7 @@
     <Compile Include="Core\GameSystem.cs" />
     <Compile Include="Core\ICollide.cs" />
     <Compile Include="Core\IPainting.cs" />
+    <Compile Include="Core\Painter.cs" />
     <Compile Include="FormStage1.cs">
       <SubType>Form</SubType>
     </Compile>
