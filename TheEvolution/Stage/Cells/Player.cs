@@ -12,8 +12,7 @@ namespace TheEvolution.Stage.Cells {
     class Player : Cell {
 
         private bool isUp, isDown, isLeft, isRight;
-        private int currentImgIndex;
-        private int speed, deceleration;
+        private int moveSpeed, deceleration, moveInterval;
         private List<Bitmap> imgPlayer;
         private List<Bitmap> imgEat;
         private List<Bitmap> imgPlayer2;
@@ -31,7 +30,7 @@ namespace TheEvolution.Stage.Cells {
             GameSystem.SetSquareFrame(
                 this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.06);
 
-            speed = (int)(0.12 * frame.Height);
+            moveSpeed = (int)(0.1 * frame.Width);
 
             Size imgSize = frame.Size;
             imgPlayer = new List<Bitmap>() {
@@ -59,62 +58,6 @@ namespace TheEvolution.Stage.Cells {
                 e.Graphics.DrawImage(images[currentImgIndex], frame);
                 rotation.Reset();
                 e.Graphics.Transform = rotation;
-            }
-        }
-
-        public void PlayerKeyDown(object sender, KeyEventArgs e) {
-            switch (e.KeyCode) {
-                case Keys.Up:
-                    isUp = true;
-                    break;
-                case Keys.Down:
-                    isDown = true;
-                    break;
-                case Keys.Left:
-                    isLeft = true;
-                    break;
-                case Keys.Right:
-                    isRight = true;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        public void PlayerKeyUp(object sender, KeyEventArgs e) {
-            deceleration = 0;
-            switch (e.KeyCode) {
-                case Keys.Up:
-                    isUp = false;
-                    break;
-                case Keys.Down:
-                    isDown = false;
-                    break;
-                case Keys.Left:
-                    isLeft = false;
-                    break;
-                case Keys.Right:
-                    isRight = false;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        public void PlayerMove() {
-            deceleration = deceleration <= speed ?
-                deceleration + 1 : 0;
-            if (isUp) {
-                frame.Y -= speed - deceleration;
-            }
-            if (isDown) {
-                frame.Y += speed - deceleration;
-            }
-            if (isLeft) {
-                frame.X -= speed - deceleration;
-            }
-            if (isRight) {
-                frame.X += speed - deceleration;
             }
         }
 
@@ -163,17 +106,73 @@ namespace TheEvolution.Stage.Cells {
             return angle;
         }
 
-        public void Rotate() {
-            lock (rotation) {
-                rotation.RotateAt(GetAngle(), GetCenter());
+        public void PlayerKeyDown(object sender, KeyEventArgs e) {
+            switch (e.KeyCode) {
+                case Keys.Up:
+                    isUp = true;
+                    break;
+                case Keys.Down:
+                    isDown = true;
+                    break;
+                case Keys.Left:
+                    isLeft = true;
+                    break;
+                case Keys.Right:
+                    isRight = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void PlayerKeyUp(object sender, KeyEventArgs e) {
+            deceleration = 0;
+            switch (e.KeyCode) {
+                case Keys.Up:
+                    isUp = false;
+                    break;
+                case Keys.Down:
+                    isDown = false;
+                    break;
+                case Keys.Left:
+                    isLeft = false;
+                    break;
+                case Keys.Right:
+                    isRight = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void PlayerMove() {
+            deceleration = deceleration < moveSpeed ? deceleration + 1 : 0;
+            if (isUp) {
+                frame.Y -= moveSpeed - deceleration;
+            }
+            if (isDown) {
+                frame.Y += moveSpeed - deceleration;
+            }
+            if (isLeft) {
+                frame.X -= moveSpeed - deceleration;
+            }
+            if (isRight) {
+                frame.X += moveSpeed - deceleration;
             }
         }
 
         public void NextStep() {
-            Rotate();
-            PlayerMove();
-            Animate();
-            GameSystem.currentForm.Invalidate();
+            if (moveInterval == 0) {
+                moveInterval = 1;
+                Rotate();
+                PlayerMove();
+            }
+            moveInterval--;
+            if (aniInterval == 0) {
+                aniInterval = 2;
+                Animate();
+            }
+            aniInterval--;
         }
     }
 }

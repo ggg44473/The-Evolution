@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TheEvolution.Core {
-    abstract class Food {
+    abstract class Food : Painter {
     }
 }

@@ -5,19 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Windows.Forms;
 
 namespace TheEvolution.Core {
-    abstract class Cell : IPainting, ICollide {
+    abstract class Cell : Painter {
 
-        protected List<Bitmap> images;
-        protected Rectangle frame;
+        protected int currentImgIndex, aniInterval;
         protected int angle;
         protected Matrix rotation;
-
-        public List<Bitmap> Images { get => images; set => images = value; }
-
-        public Rectangle Frame { get => frame; set => frame = value; }
 
         public Cell() {
             images = new List<Bitmap>();
@@ -25,26 +19,16 @@ namespace TheEvolution.Core {
             rotation = new Matrix();
         }
 
-        public Point GetCenter() {
-            return new Point(
-                x: Frame.Left + (Frame.Width / 2),
-                y: Frame.Top + (Frame.Height / 2));
+        public virtual void Animate() { }
+
+        public virtual void Move() { }
+
+        public virtual int GetAngle() { return angle; }
+
+        public virtual void Rotate() {
+            lock (rotation) {
+                rotation.RotateAt(GetAngle(), GetCenter());
+            }
         }
-
-        public Size GetSize() {
-            return new Size(frame.Width, frame.Height);
-        }
-
-        virtual public int GetAngle() { return angle; }
-
-        virtual public void Paint(object sender, PaintEventArgs e) {
-            e.Graphics.DrawImage(images[0], frame);
-        }
-
-        virtual public void Move() { }
-
-        virtual public void Animate() { }
-
-        virtual public void Collide() { }
     }
 }
