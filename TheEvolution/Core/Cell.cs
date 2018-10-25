@@ -14,12 +14,8 @@ namespace TheEvolution.Core {
         protected Matrix rotation;
 
         public Cell() {
-            images = new List<Bitmap>();
-            frame = new Rectangle();
             rotation = new Matrix();
         }
-
-        public override void Collide() { }
 
         public virtual void Animate() { }
 

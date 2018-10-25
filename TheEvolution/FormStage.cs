@@ -15,6 +15,7 @@ using TheEvolution.Stage.Cells;
 namespace TheEvolution {
     public partial class FormStage : Form {
 
+        ImageContainer imgContainer;
         Background background;
         Player player;
         Thread threadAct;
@@ -22,14 +23,15 @@ namespace TheEvolution {
 
         public FormStage() {
             InitializeComponent();
-            GameSystem.currentForm = this;
+            imgContainer = new ImageContainer();
             background = new Background(this);
             player = new Player(this);
             threadAct = new Thread(GameSystem.Act);
             threadCollide = new Thread(GameSystem.CollisionDetect);
+            GameSystem.currentForm = this;
         }
 
-        private void FormCellStage_Load(object sender, EventArgs e) {
+        private void FormStage_Load(object sender, EventArgs e) {
             GameSystem.SetControlSize(labelExit, ClientSize, 0.04, 0.95, 0.05, 0.05);
             GameSystem.CheckPainterGenerated();
             if (GameSystem.isPainterGenerated) {
