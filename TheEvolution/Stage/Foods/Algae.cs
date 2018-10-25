@@ -7,5 +7,6 @@ using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Foods {
     class Algae : Food {
+
     }
 }

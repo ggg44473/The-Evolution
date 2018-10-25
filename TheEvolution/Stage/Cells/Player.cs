@@ -14,7 +14,7 @@ namespace TheEvolution.Stage.Cells {
         private bool isUp, isDown, isLeft, isRight;
         private int moveSpeed, deceleration, moveInterval;
         private List<Bitmap> imgPlayer;
-        private List<Bitmap> imgEat;
+        private List<Bitmap> imgPlayerEat;
         private List<Bitmap> imgPlayer2;
         //private List<Bitmap> imgEat2;
 
@@ -29,26 +29,7 @@ namespace TheEvolution.Stage.Cells {
         public override void Initialize(object sender, EventArgs e) {
             GameSystem.SetFrame(
                 this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.06, 0.1);
-
             moveSpeed = (int)(0.1 * frame.Width);
-
-            Size imgSize = frame.Size;
-            imgPlayer = new List<Bitmap>() {
-                new Bitmap(Resources.P1, imgSize), new Bitmap(Resources.P2,imgSize),
-                new Bitmap(Resources.P3, imgSize), new Bitmap(Resources.P4, imgSize),
-                new Bitmap(Resources.P5, imgSize)};
-            imgEat = new List<Bitmap>() {
-                new Bitmap(Resources.PlayerCellEat1, imgSize), new Bitmap(Resources.PlayerCellEat2,imgSize),
-                new Bitmap(Resources.PlayerCellEat3, imgSize), new Bitmap(Resources.PlayerCellEat4, imgSize),
-                new Bitmap(Resources.PlayerCellEat5, imgSize)};
-            imgPlayer2 = new List<Bitmap>() {
-                new Bitmap(Resources.OP1, imgSize), new Bitmap(Resources.OP2,imgSize),
-                new Bitmap(Resources.OP3, imgSize), new Bitmap(Resources.OP4, imgSize),
-                new Bitmap(Resources.OP5, imgSize)};
-            //imgEat2 = new List<Bitmap>() {
-            //    new Bitmap(Resources.OPlayerCellEat2, imgSize), new Bitmap(Resources.OPlayerCellEat2,imgSize),
-            //    new Bitmap(Resources.OPlayerCellEat3, imgSize), new Bitmap(Resources.OPlayerCellEat4, imgSize),
-            //    new Bitmap(Resources.OPlayerCellEat5, imgSize)};
             images = imgPlayer;
         }
 
