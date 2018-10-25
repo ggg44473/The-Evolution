@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace TheEvolution.Core {
     interface ICollide {
         Point GetCenter();
-        Size GetSize();
         void Collide();
     }
 }

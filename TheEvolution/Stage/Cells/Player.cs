@@ -14,29 +14,28 @@ namespace TheEvolution.Stage.Cells {
         private bool isUp, isDown, isLeft, isRight;
         private int moveSpeed, deceleration, moveInterval;
         private List<Bitmap> imgPlayer;
-        private List<Bitmap> imgPlayerEat;
         private List<Bitmap> imgPlayer2;
-        //private List<Bitmap> imgEat2;
+        private List<Bitmap> imgPlayerEat;
 
         public Player(Form form) {
             GameSystem.currentPlayer = this;
-            form.Load += new EventHandler(Initialize);
+            imgPlayer = ImageContainer.imgPlayer;
+            imgPlayer2 = ImageContainer.imgPlayer2;
+            imgPlayerEat = ImageContainer.imgPlayerEat;
+            images = imgPlayer;
+            size = imgPlayer[0].Size;
+            GameSystem.SetPainterPosition(this, 0.5, 0.5);
+            moveSpeed = (int)(0.1 * size.Width);
             form.Paint += new PaintEventHandler(Paint);
             form.KeyDown += new KeyEventHandler(PlayerKeyDown);
             form.KeyUp += new KeyEventHandler(PlayerKeyUp);
         }
 
-        public override void Initialize(object sender, EventArgs e) {
-            GameSystem.SetFrame(
-                this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.06, 0.1);
-            moveSpeed = (int)(0.1 * frame.Width);
-            images = imgPlayer;
-        }
-
         public override void Paint(object sender, PaintEventArgs e) {
             lock (rotation) {
                 e.Graphics.Transform = rotation;
-                e.Graphics.DrawImage(images[currentImgIndex], frame);
+                e.Graphics.DrawImage(images[currentImgIndex],
+                    position.X, position.Y, size.Width, size.Height);
                 rotation.Reset();
                 e.Graphics.Transform = rotation;
             }
@@ -129,16 +128,16 @@ namespace TheEvolution.Stage.Cells {
         public void PlayerMove() {
             deceleration = deceleration < moveSpeed ? deceleration + 1 : 0;
             if (isUp) {
-                frame.Y -= moveSpeed - deceleration;
+                position.Y -= moveSpeed - deceleration;
             }
             if (isDown) {
-                frame.Y += moveSpeed - deceleration;
+                position.Y += moveSpeed - deceleration;
             }
             if (isLeft) {
-                frame.X -= moveSpeed - deceleration;
+                position.X -= moveSpeed - deceleration;
             }
             if (isRight) {
-                frame.X += moveSpeed - deceleration;
+                position.X += moveSpeed - deceleration;
             }
         }
 

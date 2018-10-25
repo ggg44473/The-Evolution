@@ -39,7 +39,7 @@
             this.labelExit.Text = "Exit";
             this.labelExit.Click += new System.EventHandler(this.labelExit_Click);
             // 
-            // FormCellStage
+            // FormStage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -48,10 +48,10 @@
             this.Controls.Add(this.labelExit);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormCellStage";
+            this.Name = "FormStage";
             this.Text = "TheEvolution - Cell";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormCellStage_Load);
+            this.Load += new System.EventHandler(this.FormStage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

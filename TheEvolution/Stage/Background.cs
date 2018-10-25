@@ -8,25 +8,18 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage {
     class Background : Painter {
 
-        Size imgSize;
         int imgIndex;
 
         public Background(Form form) {
-            images = new List<Bitmap>();
-            imgIndex = 0;
-            form.Load += new EventHandler(Initialize);
+            images = ImageContainer.imgBackground;
+            size = images[0].Size;
+            position.X = 0;
+            position.Y = 0;
             form.Paint += new PaintEventHandler(Paint);
         }
 
-        public void Initialize(object sender, EventArgs e) {
-            imgSize = GameSystem.currentForm.ClientSize;
-            images.Add(new Bitmap(Resources.bg1, imgSize));
-            images.Add(new Bitmap(Resources.bg2, imgSize));
-            images.Add(new Bitmap(Resources.bg3, imgSize));
-        }
-
         public override void Paint(object sender, PaintEventArgs e) {
-            e.Graphics.DrawImage(images[imgIndex], 0, 0, imgSize.Width, imgSize.Height);
+            e.Graphics.DrawImage(images[imgIndex], position.X, position.Y, size.Width, size.Height);
         }
     }
 }

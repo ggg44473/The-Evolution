@@ -7,5 +7,6 @@ using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Organella {
     class Mitochondrion : Organelle {
+
     }
 }

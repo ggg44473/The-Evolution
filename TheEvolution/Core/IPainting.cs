@@ -10,7 +10,8 @@ namespace TheEvolution.Core {
     interface IPainting {
 
         List<Bitmap> Images { get; set; }
-        Rectangle Frame { get; set; }
+        Size Size { get; set; }
+        Point Position { get; set; }
         void Paint(object sender, PaintEventArgs e);
     }
 }
