@@ -9,7 +9,7 @@ using TheEvolution.Properties;
 using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Cells {
-    class Player : Cell {
+    partial class Player : Cell {
 
         private bool isUp, isDown, isLeft, isRight;
         private int moveSpeed, deceleration, moveInterval;
@@ -26,9 +26,9 @@ namespace TheEvolution.Stage.Cells {
             form.KeyUp += new KeyEventHandler(PlayerKeyUp);
         }
 
-        public void Initialize(object sender, EventArgs e) {
-            GameSystem.SetSquareFrame(
-                this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.06);
+        public override void Initialize(object sender, EventArgs e) {
+            GameSystem.SetFrame(
+                this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.06, 0.1);
 
             moveSpeed = (int)(0.1 * frame.Width);
 

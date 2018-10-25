@@ -13,27 +13,34 @@ using TheEvolution.Stage;
 using TheEvolution.Stage.Cells;
 
 namespace TheEvolution {
-    public partial class FormStage1 : Form {
+    public partial class FormStage : Form {
 
+        Background background;
         Player player;
         Thread threadAct;
-        Background background;
+        Thread threadCollide;
 
-        public FormStage1() {
+        public FormStage() {
             InitializeComponent();
             GameSystem.currentForm = this;
             background = new Background(this);
             player = new Player(this);
             threadAct = new Thread(GameSystem.Act);
+            threadCollide = new Thread(GameSystem.CollisionDetect);
         }
 
         private void FormCellStage_Load(object sender, EventArgs e) {
             GameSystem.SetControlSize(labelExit, ClientSize, 0.04, 0.95, 0.05, 0.05);
-            threadAct.Start();
+            GameSystem.CheckPainterGenerated();
+            if (GameSystem.isPainterGenerated) {
+                GameSystem.isStart = true;
+                threadAct.Start();
+                threadCollide.Start();
+            }
         }
 
         private void labelExit_Click(object sender, EventArgs e) {
-            threadAct.Abort();
+            GameSystem.isStart = false;
             Application.Exit();
         }
     }

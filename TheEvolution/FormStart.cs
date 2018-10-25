@@ -12,11 +12,11 @@ using TheEvolution.Core;
 namespace TheEvolution {
     public partial class FormStart : Form {
 
-        FormStage1 formStage1;
+        FormStage formStage1;
 
         public FormStart() {
             InitializeComponent();
-            formStage1 = new FormStage1();
+            formStage1 = new FormStage();
         }
 
         private void FormStart_Load(object sender, EventArgs e) {

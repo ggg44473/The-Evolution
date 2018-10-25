@@ -50,13 +50,14 @@
     <Compile Include="Core\Equipment.cs" />
     <Compile Include="Core\GameSystem.cs" />
     <Compile Include="Core\ICollide.cs" />
+    <Compile Include="Core\ICollideFood.cs" />
     <Compile Include="Core\IPainting.cs" />
     <Compile Include="Core\Painter.cs" />
-    <Compile Include="FormStage1.cs">
+    <Compile Include="FormStage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStage1.Designer.cs">
-      <DependentUpon>FormStage1.cs</DependentUpon>
+    <Compile Include="FormStage.Designer.cs">
+      <DependentUpon>FormStage.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -65,6 +66,7 @@
     </Compile>
     <Compile Include="Stage\Background.cs" />
     <Compile Include="Stage\Cells\PlantWall.cs" />
+    <Compile Include="Stage\Cells\Player.Collide.cs" />
     <Compile Include="Stage\Equipments\Pump.cs" />
     <Compile Include="Stage\Equipments\CellWall.cs" />
     <Compile Include="Stage\Equipments\Flagellum.cs" />
@@ -92,8 +94,8 @@
     <Compile Include="Stage\Cells\Shocker.cs" />
     <Compile Include="Stage\Cells\Tracker.cs" />
     <Compile Include="Stage\Cells\Virus.cs" />
-    <EmbeddedResource Include="FormStage1.resx">
-      <DependentUpon>FormStage1.cs</DependentUpon>
+    <EmbeddedResource Include="FormStage.resx">
+      <DependentUpon>FormStage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.cs</DependentUpon>
