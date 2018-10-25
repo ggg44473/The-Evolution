@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Cells {
-    class Competitor : Cell, ICollideFood {
+    partial class Player : ICollideFood {
 
         public void CollideFood() {
 

@@ -16,6 +16,11 @@ namespace TheEvolution.Core {
 
         public virtual Rectangle Frame { get => frame; set => frame = value; }
 
+        public virtual void Initialize(object sender, EventArgs e) {
+            GameSystem.SetFrame(
+                this, GameSystem.currentForm.ClientSize, 0.5, 0.5, 0.06, 0.1);
+        }
+
         public virtual void Paint(object sender, PaintEventArgs e) {
             e.Graphics.DrawImage(images[0], frame);
         }

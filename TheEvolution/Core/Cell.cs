@@ -19,6 +19,8 @@ namespace TheEvolution.Core {
             rotation = new Matrix();
         }
 
+        public override void Collide() { }
+
         public virtual void Animate() { }
 
         public virtual void Move() { }
