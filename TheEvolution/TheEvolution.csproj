@@ -72,6 +72,7 @@
     <Compile Include="Stage\Equipments\Flagellum.cs" />
     <Compile Include="Stage\Foods\Algae.cs" />
     <Compile Include="Stage\Foods\Charophyta.cs" />
+    <Compile Include="Stage\ImageContainer.cs" />
     <Compile Include="Stage\Organella\Centromere.cs" />
     <Compile Include="Stage\Organella\Chloroplast.cs" />
     <Compile Include="Stage\Foods\Junk.cs" />
