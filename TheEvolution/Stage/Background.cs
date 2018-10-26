@@ -12,6 +12,7 @@ namespace TheEvolution.Stage {
 
         public Background(Form form) {
             images = ImageContainer.imgBackground;
+            imgIndex = 2;
             size = images[0].Size;
             position.X = 0;
             position.Y = 0;

@@ -10,7 +10,6 @@ namespace TheEvolution.Stage.Cells {
     partial class Player : ICollideFood {
 
         public void CollideFood() {
-            MessageBox.Show("Player collided Food");
         }
     }
 }
