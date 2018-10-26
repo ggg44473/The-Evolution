@@ -63,6 +63,16 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Algae {
+            get {
+                object obj = ResourceManager.GetObject("Algae", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_start {
             get {
                 object obj = ResourceManager.GetObject("bg_start", resourceCulture);
@@ -123,6 +133,16 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Charophyta {
+            get {
+                object obj = ResourceManager.GetObject("Charophyta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Choroplast {
             get {
                 object obj = ResourceManager.GetObject("Choroplast", resourceCulture);
@@ -133,9 +153,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap e_35 {
+        internal static System.Drawing.Bitmap Competitor1 {
             get {
-                object obj = ResourceManager.GetObject("e_35", resourceCulture);
+                object obj = ResourceManager.GetObject("Competitor1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +163,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap e_36 {
+        internal static System.Drawing.Bitmap Competitor2 {
             get {
-                object obj = ResourceManager.GetObject("e_36", resourceCulture);
+                object obj = ResourceManager.GetObject("Competitor2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +383,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlantWallCell1 {
+        internal static System.Drawing.Bitmap PlantWall1 {
             get {
-                object obj = ResourceManager.GetObject("PlantWallCell1", resourceCulture);
+                object obj = ResourceManager.GetObject("PlantWall1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +393,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlantWallCell2 {
+        internal static System.Drawing.Bitmap PlantWall2 {
             get {
-                object obj = ResourceManager.GetObject("PlantWallCell2", resourceCulture);
+                object obj = ResourceManager.GetObject("PlantWall2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +403,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlantWallCell3 {
+        internal static System.Drawing.Bitmap PlantWall3 {
             get {
-                object obj = ResourceManager.GetObject("PlantWallCell3", resourceCulture);
+                object obj = ResourceManager.GetObject("PlantWall3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,9 +413,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlantWallCell4 {
+        internal static System.Drawing.Bitmap PlantWall4 {
             get {
-                object obj = ResourceManager.GetObject("PlantWallCell4", resourceCulture);
+                object obj = ResourceManager.GetObject("PlantWall4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -473,9 +493,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap StarCell1 {
+        internal static System.Drawing.Bitmap Tracker1 {
             get {
-                object obj = ResourceManager.GetObject("StarCell1", resourceCulture);
+                object obj = ResourceManager.GetObject("Tracker1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,9 +503,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap StarCell2 {
+        internal static System.Drawing.Bitmap Tracker2 {
             get {
-                object obj = ResourceManager.GetObject("StarCell2", resourceCulture);
+                object obj = ResourceManager.GetObject("Tracker2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,9 +513,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TeaceCell2 {
+        internal static System.Drawing.Bitmap Tracker3 {
             get {
-                object obj = ResourceManager.GetObject("TeaceCell2", resourceCulture);
+                object obj = ResourceManager.GetObject("Tracker3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,29 +523,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TraceCell1 {
+        internal static System.Drawing.Bitmap Tracker4 {
             get {
-                object obj = ResourceManager.GetObject("TraceCell1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TraceCell3 {
-            get {
-                object obj = ResourceManager.GetObject("TraceCell3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TraceCell4 {
-            get {
-                object obj = ResourceManager.GetObject("TraceCell4", resourceCulture);
+                object obj = ResourceManager.GetObject("Tracker4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

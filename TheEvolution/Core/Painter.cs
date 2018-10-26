@@ -13,8 +13,17 @@ namespace TheEvolution.Core {
         protected Size size;
         protected Point position;
 
+        // Delete it after completing all derived classes.
+        public Painter() { }
+
+        public Painter(Form form) {
+            form.Paint += Paint;
+        }
+
         public virtual List<Bitmap> Images { get => images; set => images = value; }
+
         public virtual Size Size { get => size; set =>size = value; }
+
         public virtual Point Position { get => position; set => position = value; }
 
         public virtual void Paint(object sender, PaintEventArgs e) {

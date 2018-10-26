@@ -20,11 +20,12 @@ namespace TheEvolution {
         }
 
         private void FormStart_Load(object sender, EventArgs e) {
-            formStage = new FormStage();
+            GameSystem.screen = ClientSize;
             GameSystem.SetControlSize(labelTitle, ClientSize, 0.5, 0.3, 0.7, 0.3);
             GameSystem.SetControlSize(labelStart, ClientSize, 0.5, 0.55, 0.15, 0.15);
             GameSystem.SetControlSize(labelContinue, ClientSize, 0.5, 0.65, 0.15, 0.15);
             GameSystem.SetControlSize(labelExit, ClientSize, 0.5, 0.75, 0.15, 0.15);
+            formStage = new FormStage();
         }
 
         private void labelExit_Click(object sender, EventArgs e) {

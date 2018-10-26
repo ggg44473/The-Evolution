@@ -34,12 +34,15 @@ namespace TheEvolution.Stage {
         public ImageContainer() {
             SetImgBackground();
             SetImgPlayer();
+            SetImgAlgae();
+            SetImgCharophyta();
         }
 
         public void SetImgBackground() {
-            size = GameSystem.currentForm.ClientSize;
+            size = GameSystem.screen;
             imgBackground = new List<Bitmap>() {
-                new Bitmap(Resources.bg1, size), new Bitmap(Resources.bg2, size),
+                new Bitmap(Resources.bg1, size),
+                new Bitmap(Resources.bg2, size),
                 new Bitmap(Resources.bg3, size)
             };
         }
@@ -47,17 +50,35 @@ namespace TheEvolution.Stage {
         public void SetImgPlayer() {
             size = GameSystem.SetSize(0.06, 0.1);
             imgPlayer = new List<Bitmap>() {
-                new Bitmap(Resources.P1, size), new Bitmap(Resources.P2, size),
-                new Bitmap(Resources.P3, size), new Bitmap(Resources.P4, size),
+                new Bitmap(Resources.P1, size),
+                new Bitmap(Resources.P2, size),
+                new Bitmap(Resources.P3, size),
+                new Bitmap(Resources.P4, size),
                 new Bitmap(Resources.P5, size)};
             imgPlayer2 = new List<Bitmap>() {
-                new Bitmap(Resources.OP1, size), new Bitmap(Resources.OP2, size),
-                new Bitmap(Resources.OP3, size), new Bitmap(Resources.OP4, size),
+                new Bitmap(Resources.OP1, size),
+                new Bitmap(Resources.OP2, size),
+                new Bitmap(Resources.OP3, size),
+                new Bitmap(Resources.OP4, size),
                 new Bitmap(Resources.OP5, size)};
             imgPlayerEat = new List<Bitmap>() {
-                new Bitmap(Resources.PlayerCellEat1, size), new Bitmap(Resources.PlayerCellEat2, size),
-                new Bitmap(Resources.PlayerCellEat3, size), new Bitmap(Resources.PlayerCellEat4, size),
+                new Bitmap(Resources.PlayerCellEat1, size),
+                new Bitmap(Resources.PlayerCellEat2, size),
+                new Bitmap(Resources.PlayerCellEat3, size),
+                new Bitmap(Resources.PlayerCellEat4, size),
                 new Bitmap(Resources.PlayerCellEat5, size)};
+        }
+
+        public void SetImgAlgae() {
+            size = GameSystem.SetSize(0.025, 0.045);
+            imgAlgae = new List<Bitmap>() {
+                new Bitmap(Resources.Algae, size)};
+        }
+
+        public void SetImgCharophyta() {
+            size = GameSystem.SetSize(0.035, 0.055);
+            imgCharophyta = new List<Bitmap>() {
+                new Bitmap(Resources.Charophyta, size) };
         }
     }
 }
