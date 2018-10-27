@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace TheEvolution.Core {
     abstract class Cell : Painter {
@@ -13,7 +14,10 @@ namespace TheEvolution.Core {
         protected int angle;
         protected Matrix rotation;
 
-        public Cell() {
+        // Delete it after completing all derived classes.
+        public Cell() { }
+
+        public Cell(Form form) : base(form) {
             rotation = new Matrix();
         }
 

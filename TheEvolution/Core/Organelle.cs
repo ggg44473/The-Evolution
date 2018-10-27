@@ -6,14 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 namespace TheEvolution.Core {
-    class Organelle : Food {
+    class Organelle : Painter {
 
-        public Organelle() : base() {
-
-        }
-
-        public Organelle(List<Bitmap> images) : base(images) {
-
-        }
     }
 }

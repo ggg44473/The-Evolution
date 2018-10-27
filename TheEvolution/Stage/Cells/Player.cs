@@ -17,7 +17,7 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPlayer2;
         private List<Bitmap> imgPlayerEat;
 
-        public Player(Form form) {
+        public Player(Form form) :base(form) {
             GameSystem.currentPlayer = this;
             imgPlayer = ImageContainer.imgPlayer;
             imgPlayer2 = ImageContainer.imgPlayer2;
@@ -26,7 +26,6 @@ namespace TheEvolution.Stage.Cells {
             size = imgPlayer[0].Size;
             GameSystem.SetPainterPosition(this, 0.5, 0.5);
             moveSpeed = (int)(0.1 * size.Width);
-            form.Paint += new PaintEventHandler(Paint);
             form.KeyDown += new KeyEventHandler(PlayerKeyDown);
             form.KeyUp += new KeyEventHandler(PlayerKeyUp);
         }

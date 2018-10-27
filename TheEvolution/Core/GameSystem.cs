@@ -13,6 +13,7 @@ using TheEvolution.Stage.Organella;
 namespace TheEvolution.Core {
     static class GameSystem {
 
+        public static Size screen;
         public static Form currentForm;
         public static Player currentPlayer;
         public static List<Competitor> competitors = new List<Competitor>();
@@ -53,8 +54,8 @@ namespace TheEvolution.Core {
                 FoodX = f.GetCenter().X; FoodY = f.GetCenter().Y;
                 FoodW = f.Size.Width; FoodH = f.Size.Height;
 
-                if (Math.Abs(FoodX - CellX) <= (FoodW + CellW) / 2.4) {
-                    if (Math.Abs(FoodY - CellY) <= (FoodH + CellH) / 2.4) {
+                if (Math.Abs(FoodX - CellX) <= (FoodW + CellW) / 4.5) {
+                    if (Math.Abs(FoodY - CellY) <= (FoodH + CellH) / 4.5) {
                         if (cell is ICollideFood) {
                             ICollideFood c = cell as ICollideFood;
                             c.CollideFood();
@@ -111,28 +112,28 @@ namespace TheEvolution.Core {
         }
 
         public static Size SetSize(double ratioW, double ratioH) {
-            int W = Convert.ToInt32(currentForm.ClientSize.Width * ratioW);
-            int H = Convert.ToInt32(currentForm.ClientSize.Height * ratioH);
+            int W = Convert.ToInt32(screen.Width * ratioW);
+            int H = Convert.ToInt32(screen.Height * ratioH);
             return new Size(W, H);
         }
 
         public static Point SetPosition(double ratioX, double ratioY) {
-            int X = Convert.ToInt32(currentForm.ClientSize.Width * ratioX);
-            int Y = Convert.ToInt32(currentForm.ClientSize.Height * ratioY);
+            int X = Convert.ToInt32(screen.Width * ratioX);
+            int Y = Convert.ToInt32(screen.Height * ratioY);
             return new Point(X, Y);
         }
 
         public static void SetPainterSize(IPainting painter, double ratioW, double ratioH) {
-            int W = Convert.ToInt32(currentForm.ClientSize.Width * ratioW);
-            int H = Convert.ToInt32(currentForm.ClientSize.Height * ratioH);
+            int W = Convert.ToInt32(screen.Width * ratioW);
+            int H = Convert.ToInt32(screen.Height * ratioH);
             painter.Size = new Size(W, H);
         }
 
         public static void SetPainterPosition(IPainting painter, double ratioX, double ratioY) {
             int W = painter.Size.Width;
             int H = painter.Size.Height;
-            int X = Convert.ToInt32(currentForm.ClientSize.Width * ratioX) - (W / 2);
-            int Y = Convert.ToInt32(currentForm.ClientSize.Height * ratioY) - (H / 2);
+            int X = Convert.ToInt32(screen.Width * ratioX) - (W / 2);
+            int Y = Convert.ToInt32(screen.Height * ratioY) - (H / 2);
             painter.Position = new Point(X, Y);
         }
     }

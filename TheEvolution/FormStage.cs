@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using TheEvolution.Core;
 using TheEvolution.Stage;
 using TheEvolution.Stage.Cells;
+using TheEvolution.Stage.Foods;
 
 namespace TheEvolution {
     public partial class FormStage : Form {
@@ -25,6 +26,10 @@ namespace TheEvolution {
             InitializeComponent();
             imgContainer = new ImageContainer();
             background = new Background(this);
+            for (int i = 0; i < 10; i++) {
+                Algae algae = new Algae(this);
+                Charophyta charophyta = new Charophyta(this);
+            }
             player = new Player(this);
             threadAct = new Thread(GameSystem.Act);
             threadCollide = new Thread(GameSystem.CollisionDetect);
