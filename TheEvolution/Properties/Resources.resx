@@ -208,20 +208,20 @@
   <data name="OP5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\OP5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OPlayerCellEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\OPlayerCellEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OPlayerEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\OPlayerEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OPlayerCellEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\OPlayerCellEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OPlayerEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\OPlayerEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OPlayerCellEat3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\OPlayerCellEat3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OPlayerEat3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\OPlayerEat3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OPlayerCellEat4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\OPlayerCellEat4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OPlayerEat4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\OPlayerEat4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OPlayerCellEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\OPlayerCellEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OPlayerEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\OPlayerEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="P1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\P1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,21 +250,6 @@
   <data name="PlantWall4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\PlantWall4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerCellEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerCellEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayerCellEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerCellEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayerCellEat3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerCellEat3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayerCellEat4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerCellEat4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayerCellEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerCellEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PlayerComplete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\PlayerComplete1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -280,50 +265,65 @@
   <data name="PlayerComplete5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\PlayerComplete5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMito1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMito1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMito2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMito2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMito3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMito3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerEat3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerEat3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMito4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMito4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerEat4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerEat4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMito5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMito5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLyso1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLyso1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMito1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMito1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLyso2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLyso2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMito2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMito2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLyso3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLyso3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMito3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMito3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLyso4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLyso4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMito4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMito4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLyso5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLyso5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMito5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMito5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLysoER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLysoER1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMitoLyso1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLyso1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLysoER2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLysoER2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMitoLyso2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLyso2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLysoER3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLysoER3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMitoLyso3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLyso3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLysoER4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLysoER4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMitoLyso4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLyso4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayerWMitoLysoER5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PlayerWMitoLysoER5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PlayerMitoLyso5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLyso5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerMitoLysoER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLysoER1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerMitoLysoER2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLysoER2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerMitoLysoER3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLysoER3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerMitoLysoER4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLysoER4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerMitoLysoER5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerMitoLysoER5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Predator1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Predator1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -343,8 +343,8 @@
   <data name="Title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TitleDeceration" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\TitleDeceration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TitleDecoration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\TitleDecoration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tracker1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Tracker1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
