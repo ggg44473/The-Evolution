@@ -23,86 +23,102 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.labelStart = new System.Windows.Forms.Label();
-            this.labelContinue = new System.Windows.Forms.Label();
-            this.labelExit = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.picTitle = new System.Windows.Forms.PictureBox();
+            this.picStart = new System.Windows.Forms.PictureBox();
+            this.picContinue = new System.Windows.Forms.PictureBox();
+            this.picExit = new System.Windows.Forms.PictureBox();
+            this.timerAnimation = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContinue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelTitle
+            // picTitle
             // 
-            this.labelTitle.Location = new System.Drawing.Point(351, 129);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(598, 71);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "標題";
+            this.picTitle.BackColor = System.Drawing.Color.Transparent;
+            this.picTitle.Image = global::TheEvolution.Properties.Resources.Title;
+            this.picTitle.Location = new System.Drawing.Point(38, 12);
+            this.picTitle.Name = "picTitle";
+            this.picTitle.Size = new System.Drawing.Size(1164, 282);
+            this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTitle.TabIndex = 4;
+            this.picTitle.TabStop = false;
             // 
-            // labelStart
+            // picStart
             // 
-            this.labelStart.AutoSize = true;
-            this.labelStart.BackColor = System.Drawing.Color.Transparent;
-            this.labelStart.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStart.ForeColor = System.Drawing.Color.Turquoise;
-            this.labelStart.Location = new System.Drawing.Point(522, 267);
-            this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(157, 70);
-            this.labelStart.TabIndex = 1;
-            this.labelStart.Text = "Start";
-            this.labelStart.Click += new System.EventHandler(this.labelStart_Click);
+            this.picStart.BackColor = System.Drawing.Color.Transparent;
+            this.picStart.Image = global::TheEvolution.Properties.Resources.BtnStart;
+            this.picStart.Location = new System.Drawing.Point(823, 325);
+            this.picStart.Name = "picStart";
+            this.picStart.Size = new System.Drawing.Size(236, 75);
+            this.picStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picStart.TabIndex = 5;
+            this.picStart.TabStop = false;
+            this.picStart.Click += new System.EventHandler(this.picStart_Click);
             // 
-            // labelContinue
+            // picContinue
             // 
-            this.labelContinue.AutoSize = true;
-            this.labelContinue.BackColor = System.Drawing.Color.Transparent;
-            this.labelContinue.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContinue.ForeColor = System.Drawing.Color.Turquoise;
-            this.labelContinue.Location = new System.Drawing.Point(472, 337);
-            this.labelContinue.Name = "labelContinue";
-            this.labelContinue.Size = new System.Drawing.Size(266, 70);
-            this.labelContinue.TabIndex = 2;
-            this.labelContinue.Text = "Continue";
+            this.picContinue.BackColor = System.Drawing.Color.Transparent;
+            this.picContinue.Image = global::TheEvolution.Properties.Resources.BtnContinue;
+            this.picContinue.Location = new System.Drawing.Point(823, 419);
+            this.picContinue.Name = "picContinue";
+            this.picContinue.Size = new System.Drawing.Size(367, 75);
+            this.picContinue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picContinue.TabIndex = 6;
+            this.picContinue.TabStop = false;
             // 
-            // labelExit
+            // picExit
             // 
-            this.labelExit.AutoSize = true;
-            this.labelExit.BackColor = System.Drawing.Color.Transparent;
-            this.labelExit.Font = new System.Drawing.Font("Trebuchet MS", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExit.ForeColor = System.Drawing.Color.Turquoise;
-            this.labelExit.Location = new System.Drawing.Point(522, 416);
-            this.labelExit.Name = "labelExit";
-            this.labelExit.Size = new System.Drawing.Size(132, 70);
-            this.labelExit.TabIndex = 3;
-            this.labelExit.Text = "Exit";
-            this.labelExit.Click += new System.EventHandler(this.labelExit_Click);
+            this.picExit.BackColor = System.Drawing.Color.Transparent;
+            this.picExit.Image = global::TheEvolution.Properties.Resources.BtnExit;
+            this.picExit.Location = new System.Drawing.Point(823, 510);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(236, 75);
+            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picExit.TabIndex = 7;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
+            // 
+            // timerAnimation
+            // 
+            this.timerAnimation.Interval = 250;
+            this.timerAnimation.Tick += new System.EventHandler(this.timerAnimation_Tick);
             // 
             // FormStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TheEvolution.Properties.Resources.bg_start;
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::TheEvolution.Properties.Resources.TitleDecoration;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1244, 636);
-            this.Controls.Add(this.labelExit);
-            this.Controls.Add(this.labelContinue);
-            this.Controls.Add(this.labelStart);
-            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.picExit);
+            this.Controls.Add(this.picContinue);
+            this.Controls.Add(this.picStart);
+            this.Controls.Add(this.picTitle);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormStart";
             this.Text = "The Evolution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormStart_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormStart_Paint);
+            ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picStart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContinue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Label labelStart;
-        private System.Windows.Forms.Label labelContinue;
-        private System.Windows.Forms.Label labelExit;
+        private System.Windows.Forms.PictureBox picTitle;
+        private System.Windows.Forms.PictureBox picStart;
+        private System.Windows.Forms.PictureBox picContinue;
+        private System.Windows.Forms.PictureBox picExit;
+        private System.Windows.Forms.Timer timerAnimation;
     }
 }
 

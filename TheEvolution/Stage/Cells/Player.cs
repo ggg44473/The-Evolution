@@ -14,13 +14,12 @@ namespace TheEvolution.Stage.Cells {
         private bool isUp, isDown, isLeft, isRight;
         private int moveSpeed, deceleration, moveInterval;
         private List<Bitmap> imgPlayer;
-        private List<Bitmap> imgPlayer2;
         private List<Bitmap> imgPlayerEat;
+        private int hp;
 
         public Player(Form form) :base(form) {
             GameSystem.currentPlayer = this;
             imgPlayer = ImageContainer.imgPlayer;
-            imgPlayer2 = ImageContainer.imgPlayer2;
             imgPlayerEat = ImageContainer.imgPlayerEat;
             images = imgPlayer;
             size = imgPlayer[0].Size;
@@ -28,6 +27,7 @@ namespace TheEvolution.Stage.Cells {
             moveSpeed = (int)(0.1 * size.Width);
             form.KeyDown += new KeyEventHandler(PlayerKeyDown);
             form.KeyUp += new KeyEventHandler(PlayerKeyUp);
+            hp = 5;
         }
 
         public override void Paint(object sender, PaintEventArgs e) {
@@ -46,6 +46,9 @@ namespace TheEvolution.Stage.Cells {
                 currentImgIndex++;
             } else {
                 currentImgIndex = 0;
+                if (images != imgPlayer) {
+                    images = imgPlayer;
+                }
             }
         }
 
@@ -137,6 +140,19 @@ namespace TheEvolution.Stage.Cells {
             }
             if (isRight) {
                 position.X += moveSpeed - deceleration;
+            }
+        }
+
+        public int Hp {
+            get { return hp; }
+            set {
+                if (value < 0) {
+                    hp = 0;
+                } else if (value > 10) {
+                    hp = 10;
+                } else {
+                    hp = value;
+                }
             }
         }
 

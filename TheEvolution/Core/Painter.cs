@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace TheEvolution.Core {
-    abstract class Painter : IPainting, ICollide {
+    abstract class Painter {
 
         protected List<Bitmap> images;
         protected Size size;
@@ -19,8 +19,6 @@ namespace TheEvolution.Core {
         public Painter(Form form) {
             form.Paint += Paint;
         }
-
-        public virtual List<Bitmap> Images { get => images; set => images = value; }
 
         public virtual Size Size { get => size; set =>size = value; }
 

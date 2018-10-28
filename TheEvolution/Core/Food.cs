@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using TheEvolution.Stage.Cells;
 
 namespace TheEvolution.Core {
     abstract class Food : Painter {
@@ -20,8 +21,8 @@ namespace TheEvolution.Core {
         }
 
         public override void Collide() {
-            position.X = random.Next(1, GameSystem.screen.Width-size.Width);
-            position.Y = random.Next(1, GameSystem.screen.Height-size.Height);
+            position.X = random.Next(1, GameSystem.screen.Width - size.Width);
+            position.Y = random.Next(1, GameSystem.screen.Height - size.Height);
         }
     }
 }

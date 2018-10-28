@@ -67,9 +67,7 @@
     <Compile Include="Core\Food.cs" />
     <Compile Include="Core\Equipment.cs" />
     <Compile Include="Core\GameSystem.cs" />
-    <Compile Include="Core\ICollide.cs" />
     <Compile Include="Core\ICollideFood.cs" />
-    <Compile Include="Core\IPainting.cs" />
     <Compile Include="Core\Painter.cs" />
     <Compile Include="FormStage.cs">
       <SubType>Form</SubType>
@@ -139,121 +137,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\StageCell\Food\Algae.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Blocker.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Virus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\Player\P1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\Player\P2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\Player\P3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\Player\P4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\Player\P5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\PlayerEat\PlayerEat5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\Predator\Predator1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\Predator\Predator2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\ShockCell\ShockCell1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Cell\ShockCell\ShockCell2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Food\Charophyta.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Food\Junk\JK1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Food\Junk\JK2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Food\Junk\JK3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Food\Junk\JK4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\Centromere.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\Choroplast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\Mitochondria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\Lysosome\Lysosome1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\Lysosome\Lysosome2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\Lysosome\Lysosome3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\ER\ER1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\ER\ER2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StageCell\Organella\ER\ER3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\FormStart\bg_start.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\bg_start.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\bg1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\bg2.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\bg3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\bg4.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\bg5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\bg6.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Blocker.png" />
@@ -263,12 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Choroplast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\e-35.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\e-36.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\ER1.png" />
@@ -319,55 +203,10 @@
     <None Include="Pictures\P5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlantWallCell1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\PlantWallCell2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\PlantWallCell3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\PlantWallCell4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\PlayerCellEat1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\PlayerCellEat2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\PlayerCellEat3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\PlayerCellEat4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\PlayerCellEat5.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\Predator1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Predator2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StarCell1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\StarCell2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\TeaceCell2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\TraceCell1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\TraceCell3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\TraceCell4.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Virus.png" />
@@ -427,21 +266,6 @@
     <None Include="Pictures\Tracker4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\OPlayerCellEat1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\OPlayerCellEat2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\OPlayerCellEat3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\OPlayerCellEat4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\OPlayerCellEat5.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\Shocker1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -463,9 +287,6 @@
     <None Include="Pictures\Title.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\TitleDeceration.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\PlayerComplete1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -481,49 +302,82 @@
     <None Include="Pictures\PlayerComplete5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMito1.png" />
+    <None Include="Pictures\OPlayerEat1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMito2.png" />
+    <None Include="Pictures\OPlayerEat2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMito3.png" />
+    <None Include="Pictures\OPlayerEat3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMito4.png" />
+    <None Include="Pictures\OPlayerEat4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMito5.png" />
+    <None Include="Pictures\OPlayerEat5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLyso1.png" />
+    <None Include="Pictures\PlayerEat1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLyso2.png" />
+    <None Include="Pictures\PlayerEat2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLyso3.png" />
+    <None Include="Pictures\PlayerEat3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLyso4.png" />
+    <None Include="Pictures\PlayerEat4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLyso5.png" />
+    <None Include="Pictures\PlayerEat5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLysoER1.png" />
+    <None Include="Pictures\PlayerMito1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLysoER2.png" />
+    <None Include="Pictures\PlayerMito2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLysoER3.png" />
+    <None Include="Pictures\PlayerMito3.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLysoER4.png" />
+    <None Include="Pictures\PlayerMito4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PlayerWMitoLysoER5.png" />
+    <None Include="Pictures\PlayerMito5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLyso1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLyso2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLyso3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLyso4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLyso5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLysoER1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLysoER2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLysoER3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLysoER4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerMitoLysoER5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TitleDecoration.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
