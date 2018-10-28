@@ -426,6 +426,105 @@
   <ItemGroup>
     <None Include="Pictures\Tracker4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OPlayerCellEat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OPlayerCellEat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OPlayerCellEat3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OPlayerCellEat4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\OPlayerCellEat5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Shocker1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Shocker2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PredatorEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\BtnContinue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\BtnExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\BtnStart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TitleDeceration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerComplete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerComplete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerComplete3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerComplete4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerComplete5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMito1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMito2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMito3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMito4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMito5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLyso1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLyso2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLyso3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLyso4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLyso5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLysoER1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLysoER2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLysoER3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLysoER4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerWMitoLysoER5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
