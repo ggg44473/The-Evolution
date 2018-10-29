@@ -33,7 +33,7 @@ namespace TheEvolution.Stage.Cells {
         public override void Paint(object sender, PaintEventArgs e) {
             lock (rotation) {
                 e.Graphics.Transform = rotation;
-                e.Graphics.DrawImage(images[currentImgIndex],
+                e.Graphics.DrawImage(images[imgIndex],
                     position.X, position.Y, size.Width, size.Height);
                 rotation.Reset();
                 e.Graphics.Transform = rotation;
@@ -42,10 +42,10 @@ namespace TheEvolution.Stage.Cells {
 
         public override void Animate() {
             //Make sure index won't be out of the range after plus.
-            if (currentImgIndex < images.Count - 1) {
-                currentImgIndex++;
+            if (imgIndex < images.Count - 1) {
+                imgIndex++;
             } else {
-                currentImgIndex = 0;
+                imgIndex = 0;
                 if (images != imgPlayer) {
                     images = imgPlayer;
                 }

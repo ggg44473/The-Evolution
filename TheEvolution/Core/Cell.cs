@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace TheEvolution.Core {
     abstract class Cell : Painter {
 
-        protected int currentImgIndex, aniInterval;
+        protected int imgIndex, aniInterval;
         protected int angle;
         protected Matrix rotation;
 
