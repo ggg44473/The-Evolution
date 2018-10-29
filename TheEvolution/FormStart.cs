@@ -14,20 +14,16 @@ namespace TheEvolution {
     public partial class FormStart : Form {
 
         FormStage formStage;
-        List<Bitmap> iconPlayer;
-        List<Bitmap> iconCompetitor;
+        List<Bitmap> iconPlayer, iconCompetitor;
         int indexPlayer, indexCompetitor;
-        Size playerSize;
-        Size competitorSize;
-        Point playerPosition;
-        Point competitorPosition;
-        private bool isUp, isDown, isEnter;
-        private bool isAct = false;
+        Size playerSize, competitorSize;
+        Point playerPosition, competitorPosition;
+        bool isUp, isDown, isEnter, isActed;
 
         public FormStart() {
             InitializeComponent();
             GameSystem.currentForm = this;
-            DoubleBuffered = true;
+            isActed = false;
         }
 
         private void FormStart_Load(object sender, EventArgs e) {
@@ -74,13 +70,13 @@ namespace TheEvolution {
             } else {
                 indexPlayer = 0;
             }
-            IconAnimate();
+            BtnAnimate();
             Invalidate();
         }
 
-        private void IconAnimate() {           
-            if (!isAct) {
-                isAct = true;
+        private void BtnAnimate() {           
+            if (!isActed) {
+                isActed = true;
                 if (playerPosition == GameSystem.SetPosition(0.56, 0.5)) {
                     picStart.Size = GameSystem.SetSize(0.24, 0.13);
                     picStart.Location = GameSystem.SetPosition(0.655, 0.49);
@@ -92,7 +88,7 @@ namespace TheEvolution {
                     picExit.Location = GameSystem.SetPosition(0.655, 0.76);
                 }
             } else {
-                isAct = false;
+                isActed = false;
                 GameSystem.SetControlSize(picStart, ClientSize, 0.75, 0.55, 0.19, 0.08);
                 GameSystem.SetControlSize(picContinue, ClientSize, 0.78, 0.68, 0.24, 0.08);
                 GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);
@@ -100,7 +96,7 @@ namespace TheEvolution {
             
         }
         
-        private void IconOperate() {
+        private void BtnOperate() {
             if (isDown) {
                 if (playerPosition == GameSystem.SetPosition(0.56, 0.5)) {
                     playerPosition = GameSystem.SetPosition(0.56, 0.63);
@@ -140,7 +136,7 @@ namespace TheEvolution {
                     isEnter = true;
                     break;
             }
-            IconOperate();
+            BtnOperate();
         }
 
         private void FormStart_KeyUp(object sender, KeyEventArgs e) {

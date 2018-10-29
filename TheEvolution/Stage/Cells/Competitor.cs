@@ -29,10 +29,10 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public override void Animate() {
-            if (currentImgIndex == 0) {
-                currentImgIndex = 1;
+            if (imgIndex == 0) {
+                imgIndex = 1;
             } else {
-                currentImgIndex = 0;
+                imgIndex = 0;
             }
         }
 
@@ -136,7 +136,7 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void CollideFood() {
-            currentImgIndex = 0;
+            imgIndex = 0;
             if (Hp < 10) {
                 if (foodCount < 4) {
                     foodCount++;

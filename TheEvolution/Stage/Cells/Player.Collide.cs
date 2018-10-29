@@ -13,7 +13,7 @@ namespace TheEvolution.Stage.Cells {
 
         public void CollideFood() {
             images = imgPlayerEat;
-            currentImgIndex = 0;
+            imgIndex = 0;
             if (Hp < 10) {
                 if (foodCount < 4) {
                     foodCount++;
