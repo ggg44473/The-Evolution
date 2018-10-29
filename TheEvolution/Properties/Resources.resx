@@ -154,12 +154,6 @@
   <data name="Choroplast" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Choroplast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Competitor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\Competitor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Competitor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\Competitor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\ER1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -360,5 +354,11 @@
   </data>
   <data name="Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Competitor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Competitor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Competitor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Competitor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
