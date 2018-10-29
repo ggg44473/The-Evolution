@@ -117,7 +117,7 @@ namespace TheEvolution.Stage {
         }
 
         public void SetImgCompetitor() {
-            size = GameSystem.SetSize(0.025, 0.045);
+            size = GameSystem.SetSize(0.06, 0.15);
             imgCompetitor = new List<Bitmap>() {
                 new Bitmap(Resources.Competitor1),
                 new Bitmap(Resources.Competitor2)};
