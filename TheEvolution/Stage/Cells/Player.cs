@@ -12,13 +12,13 @@ namespace TheEvolution.Stage.Cells {
     partial class Player : Cell {
 
         private bool isUp, isDown, isLeft, isRight;
-        private int moveSpeed, deceleration, moveInterval;
+        private int moveSpeed, deceleration;
         private List<Bitmap> imgPlayer;
         private List<Bitmap> imgPlayerEat;
         private int hp;
 
-        public Player(Form form) :base(form) {
-            GameSystem.currentPlayer = this;
+        public Player(Form form) : base(form) {
+            GameSystem.player = this;
             imgPlayer = ImageContainer.imgPlayer;
             imgPlayerEat = ImageContainer.imgPlayerEat;
             images = imgPlayer;
@@ -41,7 +41,6 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public override void Animate() {
-            //Make sure index won't be out of the range after plus.
             if (imgIndex < images.Count - 1) {
                 imgIndex++;
             } else {
@@ -156,13 +155,9 @@ namespace TheEvolution.Stage.Cells {
             }
         }
 
-        public void NextStep() {
-            if (moveInterval == 0) {
-                moveInterval = 1;
-                Rotate();
-                PlayerMove();
-            }
-            moveInterval--;
+        public override void NextStep() {
+            PlayerMove();
+            Rotate();
             if (aniInterval == 0) {
                 aniInterval = 2;
                 Animate();

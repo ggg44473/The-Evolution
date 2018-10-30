@@ -31,9 +31,12 @@ namespace TheEvolution {
                 Charophyta charophyta = new Charophyta(this);
             }
             player = new Player(this);
+            for (int i = 0; i < 2; i++) {
+                Competitor competitor = new Competitor(this);
+            }
             threadAct = new Thread(GameSystem.Act);
             threadCollide = new Thread(GameSystem.CollisionDetect);
-            GameSystem.currentForm = this;
+            GameSystem.form = this;
         }
 
         private void FormStage_Load(object sender, EventArgs e) {
