@@ -22,7 +22,7 @@ namespace TheEvolution {
 
         public FormStart() {
             InitializeComponent();
-            GameSystem.currentForm = this;
+            GameSystem.form = this;
             isActed = false;
         }
 

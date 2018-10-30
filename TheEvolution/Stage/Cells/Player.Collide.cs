@@ -14,16 +14,24 @@ namespace TheEvolution.Stage.Cells {
         public void CollideFood() {
             images = imgPlayerEat;
             imgIndex = 0;
-            if (Hp < 10) {
-                if (foodCount < 4) {
-                    foodCount++;
-                } else {
-                    size.Width += (int)(0.006 * GameSystem.screen.Width);
-                    size.Height += (int)(0.01 * GameSystem.screen.Height);
+            if (foodCount < 4) {
+                foodCount++;
+            } else {
+                foodCount = 0;
+                if (Hp < 10) {
+                    size.Width += (int)(0.012 * GameSystem.screen.Width);
+                    size.Height += (int)(0.02 * GameSystem.screen.Height);
                     Hp += 1;
-                    foodCount = 0;
                 }
             }
+        }
+
+        public void CollideCompetitor() {
+            if (Hp > 1) {
+                size.Width -= (int)(0.012 * GameSystem.screen.Width);
+                size.Height -= (int)(0.02 * GameSystem.screen.Height);
+            }
+            Hp -= 1;
         }
     }
 }

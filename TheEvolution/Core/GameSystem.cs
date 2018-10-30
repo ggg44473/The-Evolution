@@ -14,8 +14,8 @@ namespace TheEvolution.Core {
     static class GameSystem {
 
         public static Size screen;
-        public static Form currentForm;
-        public static Player currentPlayer;
+        public static Form form;
+        public static Player player;
         public static List<Competitor> competitors = new List<Competitor>();
         public static List<Cell> otherCells = new List<Cell>();
         public static List<Food> foods = new List<Food>();
@@ -24,21 +24,27 @@ namespace TheEvolution.Core {
 
         public static void Act() {
             while (isStart) {
-                currentPlayer.NextStep();
-                currentForm.Invalidate();
+                player.NextStep();
+                foreach (Competitor c in competitors) {
+                    c.NextStep();
+                }
+                FormStage formStage = form as FormStage;
+                formStage.Invoke((Action)delegate() { formStage.label1.Text = player.Hp.ToString(); });
+                form.Invalidate();
                 Thread.Sleep(50);
             }
         }
 
         public static void CollisionDetect() {
             while (isStart) {
-                GetFood(currentPlayer);
+                GetFood(player);
                 foreach (Competitor c in competitors) {
                     GetFood(c);
                 }
                 GetOrganelle();
-                CellCollide();
-                Thread.Sleep(50);
+                CompetitorCollide();
+                OtherCellCollide();
+                Thread.Sleep(100);
             }
         }
 
@@ -68,21 +74,40 @@ namespace TheEvolution.Core {
             }
         }
 
+        public static void CompetitorCollide() {
+            int i = 0;
+            int playerX = player.GetCenter().X;
+            int playerY = player.GetCenter().Y;
+            int playerW = player.Size.Width;
+            int playerH = player.Size.Height;
+            int competitorX, competitorY, competitorW, competitorH;
+
+            foreach (Competitor c in competitors) {
+                competitorX = c.GetCenter().X; competitorY = c.GetCenter().Y;
+                competitorW = c.Size.Width; competitorH = c.Size.Height;
+
+                if (Math.Abs(competitorX - playerX) <= (competitorW + playerW) / 4) {
+                    if (Math.Abs(competitorY - playerY) <= (competitorH + playerH) / 4) {
+                        player.CollideCompetitor();
+                        competitors[i].CollidePlayer();
+                        return;
+                    }
+                }
+                i++;
+            }
+        }
+
         public static void GetOrganelle() {
 
         }
 
-        public static void CellCollide() {
-
-        }
-
-        public static void CompetitorCollide() {
+        public static void OtherCellCollide() {
 
         }
 
         public static void CheckPainterGenerated() {
-            if (currentForm != null) {
-                if (currentPlayer != null) {
+            if (form != null) {
+                if (player != null) {
                     if (competitors != null) {
                         if (otherCells != null) {
                             if (organella != null) {
