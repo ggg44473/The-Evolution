@@ -17,6 +17,7 @@ namespace TheEvolution.Core {
         public static Form form;
         public static Player player;
         public static List<Competitor> competitors = new List<Competitor>();
+        public static List<Competitor> deadCompetitors = new List<Competitor>();
         public static List<Cell> otherCells = new List<Cell>();
         public static List<Food> foods = new List<Food>();
         public static List<Organelle> organella = new List<Organelle>();
@@ -88,8 +89,8 @@ namespace TheEvolution.Core {
 
                 if (Math.Abs(competitorX - playerX) <= (competitorW + playerW) / 4) {
                     if (Math.Abs(competitorY - playerY) <= (competitorH + playerH) / 4) {
-                        player.CollideCompetitor();
-                        competitors[i].CollidePlayer();
+                        player.CollideCompetitor(competitors[i]);
+                        competitors[i].CollidePlayer(i);
                         return;
                     }
                 }

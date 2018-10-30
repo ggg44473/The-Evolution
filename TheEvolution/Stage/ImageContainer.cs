@@ -63,7 +63,7 @@ namespace TheEvolution.Stage {
         }
 
         public void SetImgPlayer() {
-            size = GameSystem.SetSize(0.06, 0.1);
+            size = GameSystem.SetSize(0.072, 0.12);
             imgPlayer = new List<Bitmap>() {
                 new Bitmap(Resources.P1, size),
                 new Bitmap(Resources.P2, size),
@@ -118,7 +118,7 @@ namespace TheEvolution.Stage {
         }
 
         public void SetImgCompetitor() {
-            size = GameSystem.SetSize(0.1, 0.1);
+            size = GameSystem.SetSize(0.12, 0.12);
             imgCompetitor = new List<Bitmap>() {
                 new Bitmap(Resources.Competitor1, size),
                 new Bitmap(Resources.Competitor2, size)};

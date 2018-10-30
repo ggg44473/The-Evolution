@@ -31,6 +31,7 @@ namespace TheEvolution {
                 Charophyta charophyta = new Charophyta(this);
             }
             player = new Player(this);
+            player.GameOver += OnGameOver;
             for (int i = 0; i < 2; i++) {
                 Competitor competitor = new Competitor(this);
             }
@@ -52,6 +53,11 @@ namespace TheEvolution {
         private void labelExit_Click(object sender, EventArgs e) {
             GameSystem.isStart = false;
             Application.Exit();
+        }
+
+        private void OnGameOver(object sender, EventArgs e) {
+            GameSystem.isStart = false;
+            MessageBox.Show("Game Over!");
         }
     }
 }

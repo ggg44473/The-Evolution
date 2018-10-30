@@ -9,13 +9,16 @@ using TheEvolution.Properties;
 using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Cells {
-    partial class Player : Cell {
+    partial class Player : Cell, ICollideFood {
 
         private bool isUp, isDown, isLeft, isRight;
         private int moveSpeed, deceleration;
         private List<Bitmap> imgPlayer;
         private List<Bitmap> imgPlayerEat;
         private int hp;
+        private int foodCount;
+        private Point direction;
+        public event EventHandler GameOver;
 
         public Player(Form form) : base(form) {
             GameSystem.player = this;
@@ -163,6 +166,15 @@ namespace TheEvolution.Stage.Cells {
                 Animate();
             }
             aniInterval--;
+            if (Hp == 0) {
+                OnGameOver();
+            }
+        }
+
+        protected virtual void OnGameOver() {
+            if (GameOver != null) {
+                GameOver(this, EventArgs.Empty);
+            }
         }
     }
 }

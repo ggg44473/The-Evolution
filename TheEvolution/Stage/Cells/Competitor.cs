@@ -16,9 +16,13 @@ namespace TheEvolution.Stage.Cells {
         private double distanceToPlayer;
         private Point direction;
         private int foodCount;
+        private bool isCollided;
+        private int bumpInterval;
+        public event EventHandler Killed;
 
         public Competitor(Form form) : base(form) {
             GameSystem.competitors.Add(this);
+            Killed += GameSystem.player.KillCompetitor;
             images = ImageContainer.imgCompetitor;
             size = images[0].Size;
             random = new Random(Guid.NewGuid().GetHashCode());
@@ -27,16 +31,17 @@ namespace TheEvolution.Stage.Cells {
             direction = new Point();
             hp = 5;
         }
-
+        
         public void CompetitorMove() {
             deceleration = deceleration < moveSpeed ? deceleration + 1 : 0;
             GetDistanceToPlayer();
-            if (distanceToPlayer < 3 * size.Width) {
+            if (distanceToPlayer < 2.5 * size.Width) {
                 if (GetArea() > GameSystem.player.GetArea()) {
                     direction = GetDirectionToTarget(GameSystem.player);
                 } else {
                     direction = GetDirectionToTarget(GameSystem.player);
-                    direction = new Point(direction.X * (-1), direction.Y * (-1));
+                    direction.X -= 2 * direction.X;
+                    direction.Y -= 2 * direction.Y;
                 }
             } else {
                 direction = GetDirectionToTarget(GameSystem.foods[GetClosestFood()]);
@@ -81,6 +86,15 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public override void NextStep() {
+            if (isCollided) {
+                if (bumpInterval == 0 || bumpInterval == 3) {
+                    BumpMove();
+                } else if (bumpInterval == 4) {
+                    isCollided = false;
+                    bumpInterval = 0;
+                }
+                bumpInterval++;
+            }
             if (moveInterval == 0) {
                 moveInterval = 2;
                 CompetitorMove();
@@ -94,7 +108,6 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void CollideFood() {
-            imgIndex = 0;
             if (foodCount < 4) {
                 foodCount++;
             } else {
@@ -107,12 +120,34 @@ namespace TheEvolution.Stage.Cells {
             }
         }
 
-        public void CollidePlayer() {
+        public void CollidePlayer(int myId) {
+            isCollided = true;
             if (Hp > 1) {
                 size.Width -= (int)(0.02 * GameSystem.screen.Width);
                 size.Height -= (int)(0.02 * GameSystem.screen.Height);
             }
             Hp -= 1;
+            if (Hp == 0) {
+                OnKilled();
+                GameSystem.deadCompetitors.Add(this);
+                GameSystem.competitors.RemoveAt(myId);
+                GameSystem.form.Paint -= Paint;
+            }
+        }
+
+        public void BumpMove() {
+            direction = GetDirectionToTarget(GameSystem.player);
+            direction.X -= 2 * direction.X;
+            direction.Y -= 2 * direction.Y;
+
+            position.X += direction.X * size.Width/2;
+            position.Y += direction.Y * size.Height/2;
+        }
+
+        protected virtual void OnKilled() {
+            if (Killed != null) {
+                Killed(this, EventArgs.Empty);
+            }
         }
     }
 }
