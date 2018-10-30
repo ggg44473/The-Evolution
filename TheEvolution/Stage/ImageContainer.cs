@@ -109,7 +109,7 @@ namespace TheEvolution.Stage {
         }
 
         public void SetImgPredator() {
-            size = GameSystem.SetSize(0.025, 0.045);
+            size = GameSystem.SetSize(0.09, 0.13);
             imgPredator = new List<Bitmap>() {
                 new Bitmap(Resources.Predator1, size),
                 new Bitmap(Resources.Predator2, size)};
@@ -125,14 +125,14 @@ namespace TheEvolution.Stage {
         }
 
         public void SetImgShocker() {
-            size = GameSystem.SetSize(0.025, 0.045);
+            size = GameSystem.SetSize(0.07, 0.12);
             imgShocker = new List<Bitmap>() {
                 new Bitmap(Resources.Shocker1, size),
                 new Bitmap(Resources.Shocker2, size)};
         }
 
         public void SetImgTracker() {
-            size = GameSystem.SetSize(0.025, 0.045);
+            size = GameSystem.SetSize(0.05, 0.09);
             imgTracker = new List<Bitmap>() {
                 new Bitmap(Resources.Tracker1, size),
                 new Bitmap(Resources.Tracker2, size),
@@ -141,7 +141,7 @@ namespace TheEvolution.Stage {
         }
 
         public void SetImgPlantWall() {
-            size = GameSystem.SetSize(0.025, 0.045);
+            size = GameSystem.SetSize(0.05, 0.05);
             imgPlantWall = new List<Bitmap>() {
                 new Bitmap(Resources.PlantWall1, size),
                 new Bitmap(Resources.PlantWall2, size),
@@ -150,7 +150,7 @@ namespace TheEvolution.Stage {
         }
 
         public void SetImgVirus() {
-            size = GameSystem.SetSize(0.025, 0.045);
+            size = GameSystem.SetSize(0.03, 0.025);
             imgVirus = new List<Bitmap>() { new Bitmap(Resources.Virus, size) };
         }
 

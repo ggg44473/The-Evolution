@@ -12,7 +12,7 @@ namespace TheEvolution.Stage.Cells {
     partial class Player : Cell, ICollideFood {
 
         private bool isUp, isDown, isLeft, isRight;
-        private int moveSpeed, deceleration;
+        private int deceleration;
         private List<Bitmap> imgPlayer;
         private List<Bitmap> imgPlayerEat;
         private int hp;

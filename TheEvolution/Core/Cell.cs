@@ -13,12 +13,15 @@ namespace TheEvolution.Core {
         protected int imgIndex, aniInterval;
         protected int angle;
         protected Matrix rotation;
+        protected Random random;
+        protected int moveSpeed;
 
         // Delete it after completing all derived classes.
         public Cell() { }
 
         public Cell(Form form) : base(form) {
             rotation = new Matrix();
+            random = new Random(Guid.NewGuid().GetHashCode());
         }
 
         public override void Paint(object sender, PaintEventArgs e) {

@@ -10,9 +10,8 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class Competitor : Cell, ICollideFood {
 
-        private int moveSpeed, deceleration, moveInterval;
+        private int deceleration, moveInterval;
         private int hp;
-        private Random random;
         private double distanceToPlayer;
         private Point direction;
         private int foodCount;
@@ -25,7 +24,6 @@ namespace TheEvolution.Stage.Cells {
             Killed += GameSystem.player.KillCompetitor;
             images = ImageContainer.imgCompetitor;
             size = images[0].Size;
-            random = new Random(Guid.NewGuid().GetHashCode());
             position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
             moveSpeed = (int)(0.05 * size.Width);
             direction = new Point();
