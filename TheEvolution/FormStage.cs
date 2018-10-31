@@ -33,17 +33,16 @@ namespace TheEvolution {
             }
 
             player = new Player(this);
-            player.GameOver += OnGameOver;
 
             for (int i = 0; i < 2; i++) {
                 Competitor competitor = new Competitor(this);
+                Predator predator = new Predator(this);
             }
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 3; i++) {
                 Virus virus = new Virus(this);
                 Tracker tracker = new Tracker(this);
                 Shocker shocker = new Shocker(this);
-                Predator predator = new Predator(this);
                 PlantWall plantWall = new PlantWall(this);
             }
 
@@ -68,7 +67,7 @@ namespace TheEvolution {
             Application.Exit();
         }
 
-        private void OnGameOver(object sender, EventArgs e) {
+        public void GameOver() {
             GameSystem.isStart = false;
             MessageBox.Show("Game Over!");
             Application.Exit();

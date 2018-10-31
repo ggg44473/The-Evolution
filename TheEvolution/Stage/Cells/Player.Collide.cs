@@ -47,5 +47,9 @@ namespace TheEvolution.Stage.Cells {
                 CollideFood();
             }
         }
+
+        public virtual void CollideVirus() {
+            Hp -= 1;
+        }
     }
 }

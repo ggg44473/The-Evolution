@@ -10,16 +10,12 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class Virus : Cell {
 
-        private Point direction;
-        private double distanceToPlayer;
-
         public Virus(Form form) : base(form) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgVirus;
             size = images[0].Size;
             position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
             moveSpeed = (int)(0.1 * size.Width);
-            direction = new Point();
         }
 
         public override void Paint(object sender, PaintEventArgs e) {
@@ -34,8 +30,8 @@ namespace TheEvolution.Stage.Cells {
 
         public void VirusMove() {
             direction = GetDirectionToTarget(GameSystem.player);
-            GetDistanceToPlayer();
-            if (distanceToPlayer <= 4 * size.Width) {
+            
+            if (DistanceToPlayer <= 4 * size.Width) {
                 position.X += direction.X * moveSpeed;
                 position.Y += direction.Y * moveSpeed;              
             } else {
@@ -44,15 +40,9 @@ namespace TheEvolution.Stage.Cells {
             }
         }
 
-        public void GetDistanceToPlayer() {
-            distanceToPlayer = GameSystem.getDistance(
-                GameSystem.player.GetCenter(), GetCenter());
-        }
-
         public override int GetAngle() {
-            int playerX = GameSystem.player.GetCenter().X;
-            int playerY = GameSystem.player.GetCenter().Y;
-            if (playerY >= GetCenter().Y) {
+            direction = GetDirectionToTarget(GameSystem.player);
+            if (direction.Y >= GetCenter().Y) {
                 return AngleToPlayer();
             } else {
                 return AngleToPlayer() * (-1) ;
@@ -67,12 +57,14 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public override void NextStep() {
+            VirusMove();
             Rotate();
-            VirusMove();          
         }
 
-        public void CollidePlayer() {
-
+        public override void Collide(int myId) {;
+            GameSystem.deadOtherCells.Add(this);
+            GameSystem.otherCells.RemoveAt(myId);
+            GameSystem.form.Paint -= Paint;
         }
     }
 }

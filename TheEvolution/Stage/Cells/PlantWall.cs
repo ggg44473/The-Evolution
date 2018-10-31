@@ -10,15 +10,12 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class PlantWall : Cell {
 
-        private Point direction;
-
         public PlantWall(Form form) : base(form) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgPlantWall;
             size = images[0].Size;
             position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
             moveSpeed = (int)(0.05 * size.Width);
-            direction = new Point();
         }
     }
 }

@@ -25,7 +25,14 @@ namespace TheEvolution.Core {
         public static bool isStart, isPainterGenerated;
 
         public static void Act() {
+            FormStage formStage = form as FormStage;
             while (isStart) {
+                formStage.Invoke((Action)delegate () {
+                    formStage.label1.Text = player.Hp.ToString();
+                    if (player.Hp == 0) {
+                        formStage.GameOver();
+                    }
+                });
                 player.NextStep();
                 foreach (Competitor c in competitors) {
                     c.NextStep();
@@ -33,8 +40,6 @@ namespace TheEvolution.Core {
                 foreach (Cell c in otherCells) {
                     c.NextStep();
                 }
-                FormStage formStage = form as FormStage;
-                formStage.Invoke((Action)delegate() { formStage.label1.Text = player.Hp.ToString(); });
                 form.Invalidate();
                 Thread.Sleep(50);
             }
@@ -79,6 +84,10 @@ namespace TheEvolution.Core {
             }
         }
 
+        public static void GetOrganelle() {
+
+        }
+
         public static void CompetitorCollide() {
             int i = 0;
             int playerX = player.GetCenter().X;
@@ -102,12 +111,29 @@ namespace TheEvolution.Core {
             }
         }
 
-        public static void GetOrganelle() {
-
-        }
-
         public static void OtherCellCollide() {
+            int i = 0;
+            int playerX = player.GetCenter().X;
+            int playerY = player.GetCenter().Y;
+            int playerW = player.Size.Width;
+            int playerH = player.Size.Height;
+            int cellX, cellY, cellW, cellH;
 
+            foreach (Cell c in otherCells) {
+                cellX = c.GetCenter().X; cellY = c.GetCenter().Y;
+                cellW = c.Size.Width; cellH = c.Size.Height;
+
+                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 4) {
+                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 4) {
+                        if (c is Virus) {
+                            player.CollideVirus();
+                        }
+                        c.Collide(i);
+                        return;
+                    }
+                }
+                i++;
+            }
         }
 
         public static void CheckPainterGenerated() {

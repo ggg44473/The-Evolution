@@ -17,8 +17,6 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPlayerEat;
         private int hp;
         private int foodCount;
-        private Point direction;
-        public event EventHandler GameOver;
 
         public Player(Form form) : base(form) {
             GameSystem.player = this;
@@ -27,7 +25,7 @@ namespace TheEvolution.Stage.Cells {
             images = imgPlayer;
             size = imgPlayer[0].Size;
             GameSystem.SetPainterPosition(this, 0.5, 0.5);
-            moveSpeed = (int)(0.1 * size.Width);
+            moveSpeed = (int)(0.15 * size.Width);
             form.KeyDown += new KeyEventHandler(PlayerKeyDown);
             form.KeyUp += new KeyEventHandler(PlayerKeyUp);
             hp = 5;
@@ -48,7 +46,7 @@ namespace TheEvolution.Stage.Cells {
                 imgIndex++;
             } else {
                 imgIndex = 0;
-                if (images != imgPlayer) {
+                if (images == imgPlayerEat) {
                     images = imgPlayer;
                 }
             }
@@ -166,15 +164,6 @@ namespace TheEvolution.Stage.Cells {
                 Animate();
             }
             aniInterval--;
-            if (Hp == 0) {
-                OnGameOver();
-            }
-        }
-
-        protected virtual void OnGameOver() {
-            if (GameOver != null) {
-                GameOver(this, EventArgs.Empty);
-            }
         }
     }
 }
