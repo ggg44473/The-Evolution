@@ -19,6 +19,7 @@ namespace TheEvolution.Core {
         public static List<Competitor> competitors = new List<Competitor>();
         public static List<Competitor> deadCompetitors = new List<Competitor>();
         public static List<Cell> otherCells = new List<Cell>();
+        public static List<Cell> deadOtherCells = new List<Cell>();
         public static List<Food> foods = new List<Food>();
         public static List<Organelle> organella = new List<Organelle>();
         public static bool isStart, isPainterGenerated;
@@ -27,6 +28,9 @@ namespace TheEvolution.Core {
             while (isStart) {
                 player.NextStep();
                 foreach (Competitor c in competitors) {
+                    c.NextStep();
+                }
+                foreach (Cell c in otherCells) {
                     c.NextStep();
                 }
                 FormStage formStage = form as FormStage;
