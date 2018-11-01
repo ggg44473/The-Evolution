@@ -29,7 +29,7 @@ namespace TheEvolution.Stage.Cells {
             PredatorX = position.X;
             PredatorY = position.Y;
         }
-        //same as virus
+        
         public override void Paint(object sender, PaintEventArgs e) {
             lock (rotation) {
                 e.Graphics.Transform = rotation;
@@ -39,7 +39,7 @@ namespace TheEvolution.Stage.Cells {
                 e.Graphics.Transform = rotation;
             }
         }
-        //same as virus
+        
         public override int GetAngle() {
             if (GameSystem.player.Position.Y >= GetCenter().Y) {
                 return AngleToPlayer() ;            
@@ -47,7 +47,7 @@ namespace TheEvolution.Stage.Cells {
                 return AngleToPlayer() * (-1) ;
             }
         }
-        //same as virus
+        
         public int AngleToPlayer() {
             int dirX = GameSystem.player.GetCenter().X - GetCenter().X;
             int dirY = GameSystem.player.GetCenter().Y - GetCenter().Y;
@@ -113,7 +113,6 @@ namespace TheEvolution.Stage.Cells {
             images = imgPredatorEat;
             imgIndex = 0;
         }
-
 
         public override void NextStep() {            
             if (MoveInterval == 0) {

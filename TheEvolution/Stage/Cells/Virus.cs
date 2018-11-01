@@ -15,7 +15,7 @@ namespace TheEvolution.Stage.Cells {
             images = ImageContainer.imgVirus;
             size = images[0].Size;
             position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
-            moveSpeed = (int)(0.1 * size.Width);
+            moveSpeed = (int)(0.17 * size.Width);
         }
 
         public override void Paint(object sender, PaintEventArgs e) {
