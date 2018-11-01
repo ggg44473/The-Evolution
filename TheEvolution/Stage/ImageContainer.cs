@@ -141,7 +141,7 @@ namespace TheEvolution.Stage {
         }
 
         public void SetImgPlantWall() {
-            size = GameSystem.SetSize(0.05, 0.05);
+            size = GameSystem.SetSize(0.05, 0.05); 
             imgPlantWall = new List<Bitmap>() {
                 new Bitmap(Resources.PlantWall1, size),
                 new Bitmap(Resources.PlantWall2, size),

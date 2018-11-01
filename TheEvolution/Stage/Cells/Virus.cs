@@ -41,8 +41,7 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public override int GetAngle() {
-            direction = GetDirectionToTarget(GameSystem.player);
-            if (direction.Y >= GetCenter().Y) {
+            if (GameSystem.player.Position.Y >= GetCenter().Y) {
                 return AngleToPlayer();
             } else {
                 return AngleToPlayer() * (-1) ;

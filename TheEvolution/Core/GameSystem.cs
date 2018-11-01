@@ -110,7 +110,7 @@ namespace TheEvolution.Core {
                 i++;
             }
         }
-
+        
         public static void OtherCellCollide() {
             int i = 0;
             int playerX = player.GetCenter().X;
@@ -129,6 +129,13 @@ namespace TheEvolution.Core {
                             player.CollideVirus();
                         }
                         c.Collide(i);
+                        if (c is Predator) {
+                            player.CollidePredator();
+                        }
+                        c.Collide();
+                        if (c is Shocker) {
+                            player.CollideShocker(c);
+                        }
                         return;
                     }
                 }

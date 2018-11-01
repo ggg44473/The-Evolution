@@ -37,12 +37,12 @@ namespace TheEvolution {
             for (int i = 0; i < 2; i++) {
                 Competitor competitor = new Competitor(this);
                 Predator predator = new Predator(this);
+                Shocker shocker = new Shocker(this);
             }
 
             for (int i = 0; i < 3; i++) {
                 Virus virus = new Virus(this);
-                Tracker tracker = new Tracker(this);
-                Shocker shocker = new Shocker(this);
+                Tracker tracker = new Tracker(this);               
                 PlantWall plantWall = new PlantWall(this);
             }
 
