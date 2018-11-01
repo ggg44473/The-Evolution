@@ -33,7 +33,7 @@ namespace TheEvolution.Stage.Cells {
             Hp -= 1;
         }
 
-        public void BumpMove(Competitor c) {
+        public void BumpMove(Cell c) {
             direction = GetDirectionToTarget(c);
             direction.X -= 2 * direction.X;
             direction.Y -= 2 * direction.Y;
@@ -46,6 +46,18 @@ namespace TheEvolution.Stage.Cells {
             for (int i = 0; i < 25; i++) {
                 CollideFood();
             }
+        }
+
+        public void CollideVirus() {
+            Hp -= 1;
+        }
+
+        public void CollidePredator() {
+            //Hp -= 1;
+        }
+
+        public void CollideShocker(Cell shocker) {
+            BumpMove(shocker);
         }
     }
 }

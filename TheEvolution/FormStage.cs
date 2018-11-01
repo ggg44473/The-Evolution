@@ -26,17 +26,29 @@ namespace TheEvolution {
             InitializeComponent();
             imgContainer = new ImageContainer();
             background = new Background(this);
+
             for (int i = 0; i < 10; i++) {
                 Algae algae = new Algae(this);
                 Charophyta charophyta = new Charophyta(this);
             }
+
             player = new Player(this);
-            player.GameOver += OnGameOver;
+
             for (int i = 0; i < 2; i++) {
                 Competitor competitor = new Competitor(this);
+                Predator predator = new Predator(this);
+                Shocker shocker = new Shocker(this);
             }
+
+            for (int i = 0; i < 3; i++) {
+                Virus virus = new Virus(this);
+                Tracker tracker = new Tracker(this);               
+                PlantWall plantWall = new PlantWall(this);
+            }
+
             threadAct = new Thread(GameSystem.Act);
             threadCollide = new Thread(GameSystem.CollisionDetect);
+
             GameSystem.form = this;
         }
 
@@ -55,9 +67,10 @@ namespace TheEvolution {
             Application.Exit();
         }
 
-        private void OnGameOver(object sender, EventArgs e) {
+        public void GameOver() {
             GameSystem.isStart = false;
             MessageBox.Show("Game Over!");
+            Application.Exit();
         }
     }
 }
