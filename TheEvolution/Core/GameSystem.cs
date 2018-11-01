@@ -22,6 +22,7 @@ namespace TheEvolution.Core {
         public static List<Cell> deadOtherCells = new List<Cell>();
         public static List<Food> foods = new List<Food>();
         public static List<Organelle> organella = new List<Organelle>();
+        public static List<Organelle> DisposedOrganella = new List<Organelle>();
         public static bool isStart, isPainterGenerated;
 
         public static void Act() {
