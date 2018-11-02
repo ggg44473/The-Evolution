@@ -17,6 +17,8 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPlayerEat;
         private int hp;
         private int foodCount;
+        private bool isHidden;
+        private int hiddenInterval;
 
         public Player(Form form) : base(form) {
             GameSystem.player = this;
@@ -34,8 +36,15 @@ namespace TheEvolution.Stage.Cells {
         public override void Paint(object sender, PaintEventArgs e) {
             lock (rotation) {
                 e.Graphics.Transform = rotation;
-                e.Graphics.DrawImage(images[imgIndex],
-                    position.X, position.Y, size.Width, size.Height);
+                if (!isHidden) {
+                    e.Graphics.DrawImage(images[imgIndex],
+                        position.X, position.Y, size.Width, size.Height);
+                } else {
+                    if (hiddenInterval == 0) {
+                        e.Graphics.DrawImage(images[imgIndex],
+                            position.X, position.Y, size.Width, size.Height);
+                    }
+                }
                 rotation.Reset();
                 e.Graphics.Transform = rotation;
             }
@@ -164,6 +173,12 @@ namespace TheEvolution.Stage.Cells {
                 Animate();
             }
             aniInterval--;
+            if (isHidden) {
+                if (hiddenInterval == 0) {
+                    hiddenInterval = 15;
+                }
+                hiddenInterval--;
+            }
         }
     }
 }

@@ -10,13 +10,9 @@ using System.Drawing.Drawing2D;
 namespace TheEvolution.Core {
 
     class Organelle : Painter {
-        protected Random random;
-        protected int imgIndex;
-        protected int moveSpeed;
 
         public Organelle(Form form) : base(form) {
             GameSystem.organella.Add(this);
-            random = new Random(Guid.NewGuid().GetHashCode());
         }
 
         public override void Paint(object sender, PaintEventArgs e) {
@@ -25,9 +21,8 @@ namespace TheEvolution.Core {
         }
 
         public virtual void Collide(int myId) {
-            GameSystem.DisposedOrganella.Add(this);
-            GameSystem.organella.RemoveAt(myId);
             GameSystem.form.Paint -= Paint;
+            GameSystem.organella.RemoveAt(myId);
         }
     }
 }

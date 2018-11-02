@@ -283,9 +283,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Choroplast {
+        internal static System.Drawing.Bitmap Chloroplast {
             get {
-                object obj = ResourceManager.GetObject("Choroplast", resourceCulture);
+                object obj = ResourceManager.GetObject("Chloroplast", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

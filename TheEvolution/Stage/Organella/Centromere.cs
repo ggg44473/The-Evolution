@@ -10,7 +10,7 @@ namespace TheEvolution.Stage.Organella {
     class Centromere : Organelle {
 
         public Centromere(Form form) : base(form) {
-            images = ImageContainer.imgER;
+            images = ImageContainer.imgCentromere;
             size = images[0].Size;
         }
     }

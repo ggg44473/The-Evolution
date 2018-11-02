@@ -24,8 +24,8 @@ namespace TheEvolution.Stage.Cells {
             }
         }
 
-        public void CollideCompetitor(Competitor c) {
-            BumpMove(c);
+        public void CollideCompetitor(Competitor competitor) {
+            BumpMove(competitor);
             if (Hp > 1) {
                 size.Width -= (int)(0.012 * GameSystem.screen.Width);
                 size.Height -= (int)(0.02 * GameSystem.screen.Height);
@@ -52,12 +52,24 @@ namespace TheEvolution.Stage.Cells {
             Hp -= 1;
         }
 
-        public void CollidePredator() {
-            //Hp -= 1;
+        public void CollidePredator(Cell Predator) {
+            BumpMove(Predator);
         }
 
         public void CollideShocker(Cell shocker) {
             BumpMove(shocker);
+        }
+
+        public void CollideTracker(Cell tracker) {
+            if (!isHidden) {
+                isHidden = true;
+            } else {
+                isHidden = false;
+            }
+        }
+
+        public void CollidePlantWall(Cell plantWall) {
+            BumpMove(plantWall);
         }
     }
 }

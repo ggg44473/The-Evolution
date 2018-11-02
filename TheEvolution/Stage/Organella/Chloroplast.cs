@@ -10,7 +10,7 @@ namespace TheEvolution.Stage.Organella {
     class Chloroplast : Organelle {
 
         public Chloroplast(Form form) : base(form) {
-            images = ImageContainer.imgER;
+            images = ImageContainer.imgChloroplast;
             size = images[0].Size;
         }
     }

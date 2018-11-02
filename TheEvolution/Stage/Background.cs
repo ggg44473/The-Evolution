@@ -8,11 +8,9 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage {
     class Background : Painter {
 
-        int imgIndex;
-
         public Background(Form form) {
             images = ImageContainer.imgBackground;
-            imgIndex = 2;
+            imgIndex = 0;
             size = images[0].Size;
             position.X = 0;
             position.Y = 0;
@@ -20,7 +18,8 @@ namespace TheEvolution.Stage {
         }
 
         public override void Paint(object sender, PaintEventArgs e) {
-            e.Graphics.DrawImage(images[imgIndex], position.X, position.Y, size.Width, size.Height);
+            e.Graphics.DrawImage(images[imgIndex],
+                position.X, position.Y, size.Width, size.Height);
         }
     }
 }

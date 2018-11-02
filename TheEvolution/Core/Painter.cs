@@ -10,6 +10,7 @@ namespace TheEvolution.Core {
     abstract class Painter {
 
         protected List<Bitmap> images;
+        protected int imgIndex;
         protected Size size;
         protected Point position;
 
@@ -25,7 +26,7 @@ namespace TheEvolution.Core {
         public virtual Point Position { get => position; set => position = value; }
 
         public virtual void Paint(object sender, PaintEventArgs e) {
-            e.Graphics.DrawImage(images[0], position.X, position.Y, size.Width, size.Height);
+            e.Graphics.DrawImage(images[imgIndex], position.X, position.Y, size.Width, size.Height);
         }
 
         public virtual Point GetCenter() {

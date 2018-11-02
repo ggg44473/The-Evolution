@@ -22,7 +22,6 @@ namespace TheEvolution.Core {
         public static List<Cell> deadOtherCells = new List<Cell>();
         public static List<Food> foods = new List<Food>();
         public static List<Organelle> organella = new List<Organelle>();
-        public static List<Organelle> DisposedOrganella = new List<Organelle>();
         public static bool isStart, isPainterGenerated;
 
         public static void Act() {
@@ -103,8 +102,8 @@ namespace TheEvolution.Core {
 
                 if (Math.Abs(competitorX - playerX) <= (competitorW + playerW) / 4) {
                     if (Math.Abs(competitorY - playerY) <= (competitorH + playerH) / 4) {
-                        player.CollideCompetitor(competitors[i]);
-                        competitors[i].CollidePlayer(i);
+                        player.CollideCompetitor(c);
+                        c.CollidePlayer(i);
                         return;
                     }
                 }
@@ -128,14 +127,16 @@ namespace TheEvolution.Core {
                     if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 4) {
                         if (c is Virus) {
                             player.CollideVirus();
-                        }
-                        c.Collide(i);
-                        if (c is Predator) {
-                            player.CollidePredator();
-                        }
-                        c.Collide();
-                        if (c is Shocker) {
+                            c.Collide(i);
+                        } else if (c is Predator) {
+                            player.CollidePredator(c);
+                        } else if (c is Shocker) {
                             player.CollideShocker(c);
+                        } else if (c is Tracker) {
+                            player.CollideTracker(c);
+                            c.Collide(i);
+                        } else if (c is PlantWall) {
+                            player.CollidePlantWall(c);
                         }
                         return;
                     }

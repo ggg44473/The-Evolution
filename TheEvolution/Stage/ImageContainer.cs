@@ -27,14 +27,11 @@ namespace TheEvolution.Stage {
         static public List<Bitmap> imgVirus;
         static public List<Bitmap> imgAlgae;
         static public List<Bitmap> imgCharophyta;
-        static public List<Bitmap> imgJunk;
         static public List<Bitmap> imgCentromere;
         static public List<Bitmap> imgER;
         static public List<Bitmap> imgLysosome;
         static public List<Bitmap> imgMitochondria;
-        static public List<Bitmap> imgChoroplast;
-        static public List<Bitmap> imgFlagellum;
-        static public List<Bitmap> imgPump;
+        static public List<Bitmap> imgChloroplast;
 
         public ImageContainer() {
             SetImgBackground();
@@ -191,6 +188,13 @@ namespace TheEvolution.Stage {
             size = GameSystem.SetSize(0.025, 0.045);
             imgMitochondria = new List<Bitmap>() {
                 new Bitmap(Resources.Mitochondria, size)};
+        }
+
+        public void SetImgChloroplast() {
+            size = GameSystem.SetSize(0.025, 0.045);
+            imgChloroplast = new List<Bitmap>() {
+                new Bitmap(Resources.Chloroplast)
+            };
         }
     }
 }

@@ -15,7 +15,6 @@ namespace TheEvolution.Stage.Cells {
             images = ImageContainer.imgPlantWall;
             size = images[0].Size;
             position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
-            moveSpeed = (int)(0.05 * size.Width);
         }
     }
 }

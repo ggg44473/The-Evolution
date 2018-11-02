@@ -10,15 +10,12 @@ using System.Windows.Forms;
 namespace TheEvolution.Core {
     abstract class Cell : Painter {
 
-        protected int imgIndex, aniInterval;
+        protected int aniInterval;
         protected int angle;
         protected Matrix rotation;
         protected Random random;
         protected int moveSpeed;
         protected Point direction;
-
-        // Delete it after completing all derived classes.
-        public Cell() { }
 
         public Cell(Form form) : base(form) {
             rotation = new Matrix();

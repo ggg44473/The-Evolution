@@ -7,12 +7,11 @@ using System.Windows.Forms;
 using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Organella {
-    class Mitochondrion : Organelle {
+    class Mitochondria : Organelle {
 
-        public Mitochondrion(Form form) : base(form) {
-            images = ImageContainer.imgER;
+        public Mitochondria(Form form) : base(form) {
+            images = ImageContainer.imgMitochondria;
             size = images[0].Size;
         }
-
     }
 }

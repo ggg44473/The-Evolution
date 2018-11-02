@@ -10,7 +10,7 @@ namespace TheEvolution.Stage.Organella {
     class Lysosome : Organelle {
 
         public Lysosome(Form form) : base(form) {
-            images = ImageContainer.imgER;
+            images = ImageContainer.imgLysosome;
             size = images[0].Size;
         }
     }

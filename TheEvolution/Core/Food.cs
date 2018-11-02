@@ -11,8 +11,6 @@ namespace TheEvolution.Core {
     abstract class Food : Painter {
 
         Random random;
-        // Delete it after completing all derived classes.
-        public Food() { }
 
         public Food(Form form) : base(form) {
             random = new Random(Guid.NewGuid().GetHashCode());

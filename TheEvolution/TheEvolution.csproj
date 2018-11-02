@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Food.cs" />
-    <Compile Include="Core\Equipment.cs" />
     <Compile Include="Core\GameSystem.cs" />
     <Compile Include="Core\ICollideFood.cs" />
     <Compile Include="Core\Painter.cs" />
@@ -83,18 +82,14 @@
     <Compile Include="Stage\Background.cs" />
     <Compile Include="Stage\Cells\PlantWall.cs" />
     <Compile Include="Stage\Cells\Player.Collide.cs" />
-    <Compile Include="Stage\Equipments\Pump.cs" />
-    <Compile Include="Stage\Equipments\CellWall.cs" />
-    <Compile Include="Stage\Equipments\Flagellum.cs" />
     <Compile Include="Stage\Foods\Algae.cs" />
     <Compile Include="Stage\Foods\Charophyta.cs" />
     <Compile Include="Stage\ImageContainer.cs" />
     <Compile Include="Stage\Organella\Centromere.cs" />
     <Compile Include="Stage\Organella\Chloroplast.cs" />
-    <Compile Include="Stage\Foods\Junk.cs" />
     <Compile Include="Stage\Organella\ER.cs" />
     <Compile Include="Stage\Organella\Lysosome.cs" />
-    <Compile Include="Stage\Organella\Mitochondrion.cs" />
+    <Compile Include="Stage\Organella\Mitochondria.cs" />
     <Compile Include="Core\Organelle.cs" />
     <Compile Include="Stage\Cells\Competitor.cs" />
     <Compile Include="Core\Cell.cs" />
@@ -455,6 +450,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\PoisonedPlayerEat5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chloroplast.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
