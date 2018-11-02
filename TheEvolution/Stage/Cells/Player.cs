@@ -40,7 +40,7 @@ namespace TheEvolution.Stage.Cells {
                     e.Graphics.DrawImage(images[imgIndex],
                         position.X, position.Y, size.Width, size.Height);
                 } else {
-                    if (hiddenInterval == 0) {
+                    if (hiddenInterval < 3) {
                         e.Graphics.DrawImage(images[imgIndex],
                             position.X, position.Y, size.Width, size.Height);
                     }
@@ -175,7 +175,7 @@ namespace TheEvolution.Stage.Cells {
             aniInterval--;
             if (isHidden) {
                 if (hiddenInterval == 0) {
-                    hiddenInterval = 15;
+                    hiddenInterval = 17;
                 }
                 hiddenInterval--;
             }

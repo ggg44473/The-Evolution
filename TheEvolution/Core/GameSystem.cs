@@ -134,7 +134,7 @@ namespace TheEvolution.Core {
                             player.CollideShocker(c);
                         } else if (c is Tracker) {
                             player.CollideTracker(c);
-                            c.Collide(i);
+                            c.Collide();
                         } else if (c is PlantWall) {
                             player.CollidePlantWall(c);
                         }

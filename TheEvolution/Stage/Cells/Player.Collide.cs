@@ -33,15 +33,6 @@ namespace TheEvolution.Stage.Cells {
             Hp -= 1;
         }
 
-        public void BumpMove(Cell c) {
-            direction = GetDirectionToTarget(c);
-            direction.X -= 2 * direction.X;
-            direction.Y -= 2 * direction.Y;
-
-            position.X += (int)(direction.X * size.Width / 1.8);
-            position.Y += (int)(direction.Y * size.Height / 1.8);
-        }
-
         public virtual void KillCompetitor(object sender, EventArgs e) {
             for (int i = 0; i < 25; i++) {
                 CollideFood();
@@ -53,14 +44,17 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void CollidePredator(Cell Predator) {
+            Hp -= 1;
             BumpMove(Predator);
         }
 
         public void CollideShocker(Cell shocker) {
             BumpMove(shocker);
+            //TODO make player frozen.
         }
 
         public void CollideTracker(Cell tracker) {
+            //BumpMove(tracker);
             if (!isHidden) {
                 isHidden = true;
             } else {
@@ -70,6 +64,15 @@ namespace TheEvolution.Stage.Cells {
 
         public void CollidePlantWall(Cell plantWall) {
             BumpMove(plantWall);
+        }
+
+        public void BumpMove(Cell c) {
+            direction = GetDirectionToTarget(c);
+            direction.X -= 2 * direction.X;
+            direction.Y -= 2 * direction.Y;
+
+            position.X += (int)(direction.X * 1.6);
+            position.Y += (int)(direction.Y * 1.6);
         }
     }
 }

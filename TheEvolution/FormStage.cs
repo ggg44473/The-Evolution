@@ -27,16 +27,16 @@ namespace TheEvolution {
             imgContainer = new ImageContainer();
             background = new Background(this);
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 8; i++) {
                 Algae algae = new Algae(this);
                 Charophyta charophyta = new Charophyta(this);
             }
 
             player = new Player(this);
+            Predator predator = new Predator(this);
+            Competitor competitor = new Competitor(this);
 
             for (int i = 0; i < 2; i++) {
-                Competitor competitor = new Competitor(this);
-                Predator predator = new Predator(this);
                 Shocker shocker = new Shocker(this);
             }
 

@@ -58,12 +58,18 @@ namespace TheEvolution.Core {
             }
         }
 
-        public Point GetDirectionToTarget(Painter target) {
+        public Point GetUnitDirectionToTarget(Painter target) {
             int vectorX = target.GetCenter().X - GetCenter().X;
             int vectorY = target.GetCenter().Y - GetCenter().Y;
             int unitX = vectorX > 0 ? 1 : vectorX < 0 ? -1 : 0;
             int unitY = vectorY > 0 ? 1 : vectorY < 0 ? -1 : 0;
             return new Point(unitX, unitY);
+        }
+
+        public Point GetDirectionToTarget(Painter target) {
+            int vectorX = target.GetCenter().X - GetCenter().X;
+            int vectorY = target.GetCenter().Y - GetCenter().Y;
+            return new Point(vectorX, vectorY);
         }
 
         public virtual void NextStep() { }

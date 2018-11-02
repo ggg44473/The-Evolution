@@ -29,7 +29,7 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void VirusMove() {
-            direction = GetDirectionToTarget(GameSystem.player);
+            direction = GetUnitDirectionToTarget(GameSystem.player);
             
             if (DistanceToPlayer <= 4 * size.Width) {
                 position.X += direction.X * moveSpeed;

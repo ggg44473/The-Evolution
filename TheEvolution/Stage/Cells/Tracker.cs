@@ -51,5 +51,10 @@ namespace TheEvolution.Stage.Cells {
             }
             aniInterval--;
         }
+
+        public override void Collide() {
+            position.X = random.Next(1, GameSystem.screen.Width - size.Width);
+            position.Y = random.Next(1, GameSystem.screen.Height - size.Height);
+        }
     }
 }
