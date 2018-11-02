@@ -153,13 +153,14 @@ namespace TheEvolution.Stage {
 
         public void SetImgAlgae() {
             size = GameSystem.SetSize(0.025, 0.045);
-            imgAlgae = new List<Bitmap>() { new Bitmap(Resources.Algae, size) };
+            imgAlgae = new List<Bitmap>() {
+                new Bitmap(Resources.Algae1, size), new Bitmap(Resources.Algae2, size) };
         }
 
         public void SetImgCharophyta() {
             size = GameSystem.SetSize(0.035, 0.055);
             imgCharophyta = new List<Bitmap>() {
-                new Bitmap(Resources.Charophyta, size)};
+                new Bitmap(Resources.Charophyta1, size), new Bitmap(Resources.Charophyta2, size)};
         }
 
         public void SetImgCentromere() {
