@@ -9,8 +9,6 @@ using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Cells {
     class Shocker : Cell {
-        private int Angle;
-        private int ShockerInterval;
 
         public Shocker(Form form) : base(form) {
             GameSystem.otherCells.Add(this);
@@ -30,23 +28,14 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public override int GetAngle() {
-            Angle += 10;
-            return Angle;
-        }
-
-        public override void Animate() {
-            if (imgIndex < images.Count - 1) {
-                imgIndex++;
-            } else {
-                imgIndex = 0;
-            }
+            angle += 5;
+            return angle;
         }
 
         public override void NextStep() {
             Rotate();
-            ShockerInterval--;
             if (aniInterval == 0) {
-                aniInterval = 4;
+                aniInterval = 15;
                 Animate();
             }
             aniInterval--;

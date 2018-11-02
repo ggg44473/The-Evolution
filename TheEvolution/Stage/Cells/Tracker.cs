@@ -9,7 +9,6 @@ using TheEvolution.Core;
 
 namespace TheEvolution.Stage.Cells {
     class Tracker : Cell {
-        private int moveInterval;
 
         public Tracker(Form form) : base(form) {
             GameSystem.otherCells.Add(this);
@@ -43,18 +42,19 @@ namespace TheEvolution.Stage.Cells {
             double R = Math.Sqrt((dirX * dirX) + (dirY * dirY));
             return (int)(Math.Acos(dirX / R) / Math.PI * 180);
         }
-        
+
         public override void NextStep() {
-            if (moveInterval == 0) {
-                moveInterval = 1;
-                Rotate();
-            }
-            moveInterval--;
+            Rotate();
             if (aniInterval == 0) {
                 aniInterval = 2;
                 Animate();
             }
             aniInterval--;
+        }
+
+        public override void Collide() {
+            position.X = random.Next(1, GameSystem.screen.Width - size.Width);
+            position.Y = random.Next(1, GameSystem.screen.Height - size.Height);
         }
     }
 }

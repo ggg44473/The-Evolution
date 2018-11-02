@@ -10,36 +10,23 @@ namespace TheEvolution.Stage.Cells {
     partial class Player {
 
         public void CollideFood() {
-            images = imgPlayerEat;
+            if (!isSick) {
+                images = imgPlayerEat;
+            } else {
+                images = imgPlayerSickEat;
+            }
             imgIndex = 0;
-            if (foodCount < 4) {
+            if (foodCount < 2) {
                 foodCount++;
             } else {
                 foodCount = 0;
-                if (Hp < 10) {
-                    size.Width += (int)(0.012 * GameSystem.screen.Width);
-                    size.Height += (int)(0.02 * GameSystem.screen.Height);
-                    Hp += 1;
-                }
+                Hp += 1;
             }
         }
 
-        public void CollideCompetitor(Competitor c) {
-            BumpMove(c);
-            if (Hp > 1) {
-                size.Width -= (int)(0.012 * GameSystem.screen.Width);
-                size.Height -= (int)(0.02 * GameSystem.screen.Height);
-            }
+        public void CollideCompetitor(Competitor competitor) {
+            BumpMove(competitor);
             Hp -= 1;
-        }
-
-        public void BumpMove(Cell c) {
-            direction = GetDirectionToTarget(c);
-            direction.X -= 2 * direction.X;
-            direction.Y -= 2 * direction.Y;
-
-            position.X += (int)(direction.X * size.Width / 1.8);
-            position.Y += (int)(direction.Y * size.Height / 1.8);
         }
 
         public virtual void KillCompetitor(object sender, EventArgs e) {
@@ -49,15 +36,42 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void CollideVirus() {
-            Hp -= 1;
+            sickInterval = 150;
+            isSick = true;
+            images = imgPlayerSick;
         }
 
-        public void CollidePredator() {
-            //Hp -= 1;
+        public void CollidePredator(Cell Predator) {
+            Hp -= 1;
+            BumpMove(Predator);
         }
 
         public void CollideShocker(Cell shocker) {
             BumpMove(shocker);
+            shockInterval = 60;
+            isShocked = true;
+            moveSpeed = 0;
+        }
+
+        public void CollideTracker(Cell tracker) {
+            if (!isHidden) {
+                isHidden = true;
+            } else {
+                isHidden = false;
+            }
+        }
+
+        public void CollidePlantWall(Cell plantWall) {
+            BumpMove(plantWall);
+        }
+
+        public void BumpMove(Cell c) {
+            direction = GetDirectionToTarget(c);
+            direction.X -= 2 * direction.X;
+            direction.Y -= 2 * direction.Y;
+
+            position.X += (int)(direction.X * 1.6);
+            position.Y += (int)(direction.Y * 1.6);
         }
     }
 }

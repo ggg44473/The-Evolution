@@ -12,6 +12,7 @@ using TheEvolution.Core;
 using TheEvolution.Stage;
 using TheEvolution.Stage.Cells;
 using TheEvolution.Stage.Foods;
+using TheEvolution.Stage.Organella;
 
 namespace TheEvolution {
     public partial class FormStage : Form {
@@ -27,16 +28,22 @@ namespace TheEvolution {
             imgContainer = new ImageContainer();
             background = new Background(this);
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 8; i++) {
                 Algae algae = new Algae(this);
                 Charophyta charophyta = new Charophyta(this);
             }
 
             player = new Player(this);
+            Predator predator = new Predator(this);
+            Competitor competitor = new Competitor(this);
+
+            Centromere centromere = new Centromere(this);
+            Chloroplast chloroplast = new Chloroplast(this);
+            ER eR = new ER(this);
+            Lysosome lysosome = new Lysosome(this);
+            Mitochondria mitochondria = new Mitochondria(this);
 
             for (int i = 0; i < 2; i++) {
-                Competitor competitor = new Competitor(this);
-                Predator predator = new Predator(this);
                 Shocker shocker = new Shocker(this);
             }
 

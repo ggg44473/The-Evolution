@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Food.cs" />
-    <Compile Include="Core\Equipment.cs" />
     <Compile Include="Core\GameSystem.cs" />
     <Compile Include="Core\ICollideFood.cs" />
     <Compile Include="Core\Painter.cs" />
@@ -83,18 +82,14 @@
     <Compile Include="Stage\Background.cs" />
     <Compile Include="Stage\Cells\PlantWall.cs" />
     <Compile Include="Stage\Cells\Player.Collide.cs" />
-    <Compile Include="Stage\Equipments\Pump.cs" />
-    <Compile Include="Stage\Equipments\CellWall.cs" />
-    <Compile Include="Stage\Equipments\Flagellum.cs" />
     <Compile Include="Stage\Foods\Algae.cs" />
     <Compile Include="Stage\Foods\Charophyta.cs" />
     <Compile Include="Stage\ImageContainer.cs" />
     <Compile Include="Stage\Organella\Centromere.cs" />
     <Compile Include="Stage\Organella\Chloroplast.cs" />
-    <Compile Include="Stage\Foods\Junk.cs" />
     <Compile Include="Stage\Organella\ER.cs" />
     <Compile Include="Stage\Organella\Lysosome.cs" />
-    <Compile Include="Stage\Organella\Mitochondrion.cs" />
+    <Compile Include="Stage\Organella\Mitochondria.cs" />
     <Compile Include="Core\Organelle.cs" />
     <Compile Include="Stage\Cells\Competitor.cs" />
     <Compile Include="Core\Cell.cs" />
@@ -137,22 +132,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\bg_start.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\bg1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\bg3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\Blocker.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\Centromere.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\Choroplast.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\ER1.png" />
@@ -162,18 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\ER3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\Junk1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\Junk2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\Junk3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\Junk4.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Lysosome1.png" />
@@ -228,12 +196,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\bg2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\Algae.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\Charophyta.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Competitor1.png" />
@@ -380,9 +342,6 @@
     <None Include="Pictures\TitleDecoration.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\BloodBar0.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\BloodBar1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -390,30 +349,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\BloodBar3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BloodBar4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BloodBar5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BloodBar6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BloodBar7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BloodBar8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BloodBar9.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BloodBar10.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\EatProgressBar.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="WMPLib">
@@ -427,34 +362,70 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayer1.png" />
+    <None Include="Pictures\Chloroplast.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayer2.png" />
+    <None Include="Pictures\Algae1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayer3.png" />
+    <None Include="Pictures\Algae2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayer4.png" />
+    <None Include="Pictures\bg1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayer5.png" />
+    <None Include="Pictures\Charophyta1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayerEat1.png" />
+    <None Include="Pictures\Charophyta2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayerEat2.png" />
+    <None Include="Pictures\eatprogress1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayerEat3.png" />
+    <None Include="Pictures\eatprogress2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayerEat4.png" />
+    <None Include="Pictures\exitbotton1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\PoisonedPlayerEat5.png" />
+    <None Include="Pictures\exitbotton2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\exitbotton3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\GamePanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayer2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayer3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayer4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayer5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayerEat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayerEat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayerEat3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayerEat4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SickPlayerEat5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />

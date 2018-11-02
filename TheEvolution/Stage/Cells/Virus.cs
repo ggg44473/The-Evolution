@@ -15,7 +15,7 @@ namespace TheEvolution.Stage.Cells {
             images = ImageContainer.imgVirus;
             size = images[0].Size;
             position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
-            moveSpeed = (int)(0.17 * size.Width);
+            moveSpeed = (int)(0.15 * size.Width);
         }
 
         public override void Paint(object sender, PaintEventArgs e) {
@@ -29,7 +29,7 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void VirusMove() {
-            direction = GetDirectionToTarget(GameSystem.player);
+            direction = GetUnitDirectionToTarget(GameSystem.player);
             
             if (DistanceToPlayer <= 4 * size.Width) {
                 position.X += direction.X * moveSpeed;
