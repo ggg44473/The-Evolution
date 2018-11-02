@@ -55,7 +55,6 @@ namespace TheEvolution.Stage {
             imgBackground = new List<Bitmap>() {
                 new Bitmap(Resources.bg1, size),
                 new Bitmap(Resources.bg2, size),
-                new Bitmap(Resources.bg3, size)
             };
         }
 
