@@ -12,22 +12,29 @@ namespace TheEvolution.Stage.Cells {
     partial class Player : Cell, ICollideFood {
 
         private bool isUp, isDown, isLeft, isRight;
-        private int deceleration;
+        private int originalSpeed, deceleration;
         private List<Bitmap> imgPlayer;
         private List<Bitmap> imgPlayerEat;
+        private List<Bitmap> imgPlayerSick;
+        private List<Bitmap> imgPlayerSickEat;
         private int hp;
         private int foodCount;
         private bool isHidden;
         private int hiddenInterval;
+        private bool isSick, isShocked;
+        private int sickInterval, shockInterval;
 
         public Player(Form form) : base(form) {
             GameSystem.player = this;
             imgPlayer = ImageContainer.imgPlayer;
             imgPlayerEat = ImageContainer.imgPlayerEat;
+            imgPlayerSick = ImageContainer.imgPlayerSick;
+            imgPlayerSickEat = ImageContainer.imgPlayerSickEat;
             images = imgPlayer;
             size = imgPlayer[0].Size;
             GameSystem.SetPainterPosition(this, 0.5, 0.5);
             moveSpeed = (int)(0.15 * size.Width);
+            originalSpeed = moveSpeed;
             form.KeyDown += new KeyEventHandler(PlayerKeyDown);
             form.KeyUp += new KeyEventHandler(PlayerKeyUp);
             hp = 5;
@@ -55,8 +62,14 @@ namespace TheEvolution.Stage.Cells {
                 imgIndex++;
             } else {
                 imgIndex = 0;
-                if (images == imgPlayerEat) {
-                    images = imgPlayer;
+                if (!isSick) {
+                    if (images == imgPlayerEat) {
+                        images = imgPlayer;
+                    }
+                } else {
+                    if (images == imgPlayerSickEat) {
+                        images = imgPlayerSick;
+                    }
                 }
             }
         }
@@ -160,6 +173,13 @@ namespace TheEvolution.Stage.Cells {
                 } else if (value > 10) {
                     hp = 10;
                 } else {
+                    if (value > hp) {
+                        size.Width += (int)(0.012 * GameSystem.screen.Width);
+                        size.Height += (int)(0.02 * GameSystem.screen.Height);
+                    } else {
+                        size.Width -= (int)(0.012 * GameSystem.screen.Width);
+                        size.Height -= (int)(0.02 * GameSystem.screen.Height);
+                    }
                     hp = value;
                 }
             }
@@ -178,6 +198,20 @@ namespace TheEvolution.Stage.Cells {
                     hiddenInterval = 17;
                 }
                 hiddenInterval--;
+            }
+            if (isSick) {
+                sickInterval--;
+                if (sickInterval == 0) {
+                    Hp -= 1;
+                    images = imgPlayer;
+                    isSick = false;
+                }
+            }
+            if (isShocked) {
+                shockInterval--;
+                if (shockInterval == 0) {
+                    moveSpeed = originalSpeed;
+                }
             }
         }
     }

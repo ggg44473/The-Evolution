@@ -10,26 +10,22 @@ namespace TheEvolution.Stage.Cells {
     partial class Player {
 
         public void CollideFood() {
-            images = imgPlayerEat;
+            if (!isSick) {
+                images = imgPlayerEat;
+            } else {
+                images = imgPlayerSickEat;
+            }
             imgIndex = 0;
-            if (foodCount < 4) {
+            if (foodCount < 2) {
                 foodCount++;
             } else {
                 foodCount = 0;
-                if (Hp < 10) {
-                    size.Width += (int)(0.012 * GameSystem.screen.Width);
-                    size.Height += (int)(0.02 * GameSystem.screen.Height);
-                    Hp += 1;
-                }
+                Hp += 1;
             }
         }
 
         public void CollideCompetitor(Competitor competitor) {
             BumpMove(competitor);
-            if (Hp > 1) {
-                size.Width -= (int)(0.012 * GameSystem.screen.Width);
-                size.Height -= (int)(0.02 * GameSystem.screen.Height);
-            }
             Hp -= 1;
         }
 
@@ -40,7 +36,9 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void CollideVirus() {
-            Hp -= 1;
+            sickInterval = 150;
+            isSick = true;
+            images = imgPlayerSick;
         }
 
         public void CollidePredator(Cell Predator) {
@@ -50,11 +48,12 @@ namespace TheEvolution.Stage.Cells {
 
         public void CollideShocker(Cell shocker) {
             BumpMove(shocker);
-            //TODO make player frozen.
+            shockInterval = 60;
+            isShocked = true;
+            moveSpeed = 0;
         }
 
         public void CollideTracker(Cell tracker) {
-            //BumpMove(tracker);
             if (!isHidden) {
                 isHidden = true;
             } else {

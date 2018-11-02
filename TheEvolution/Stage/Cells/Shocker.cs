@@ -28,22 +28,14 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public override int GetAngle() {
-            angle += 10;
+            angle += 5;
             return angle;
-        }
-
-        public override void Animate() {
-            if (imgIndex < images.Count - 1) {
-                imgIndex++;
-            } else {
-                imgIndex = 0;
-            }
         }
 
         public override void NextStep() {
             Rotate();
             if (aniInterval == 0) {
-                aniInterval = 4;
+                aniInterval = 15;
                 Animate();
             }
             aniInterval--;

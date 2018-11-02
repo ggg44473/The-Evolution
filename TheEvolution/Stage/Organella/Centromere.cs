@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheEvolution.Core;
+using System.Drawing;
 
 namespace TheEvolution.Stage.Organella {
     class Centromere : Organelle {
@@ -12,6 +13,7 @@ namespace TheEvolution.Stage.Organella {
         public Centromere(Form form) : base(form) {
             images = ImageContainer.imgCentromere;
             size = images[0].Size;
+            position = new Point(20, 20);
         }
     }
 }

@@ -337,36 +337,6 @@
   <data name="PlayerMitoLysoER5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\PlayerMitoLysoER5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PoisonedPlayer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayer3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayer3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayer4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayer4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayer5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayer5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayerEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayerEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayerEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayerEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayerEat3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayerEat3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayerEat4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayerEat4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PoisonedPlayerEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\PoisonedPlayerEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Predator1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Predator1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -402,5 +372,35 @@
   </data>
   <data name="Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayer1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayer2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayer2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayer3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayer3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayer4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayer4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayer5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayer5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayerEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayerEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayerEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayerEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayerEat3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayerEat3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayerEat4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayerEat4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SickPlayerEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\SickPlayerEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

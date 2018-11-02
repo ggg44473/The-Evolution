@@ -13,8 +13,6 @@ namespace TheEvolution.Stage.Cells {
         private int deceleration, moveInterval;
         private int hp;
         private int foodCount;
-        private bool isCollided;
-        private int bumpInterval;
         public event EventHandler Killed;
 
         public Competitor(Form form) : base(form) {
@@ -101,7 +99,6 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void CollidePlayer(int myId) {
-            isCollided = true;
             if (Hp > 1) {
                 size.Width -= (int)(0.02 * GameSystem.screen.Width);
                 size.Height -= (int)(0.02 * GameSystem.screen.Height);
