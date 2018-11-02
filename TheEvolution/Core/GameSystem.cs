@@ -40,6 +40,9 @@ namespace TheEvolution.Core {
                 foreach (Cell c in otherCells) {
                     c.NextStep();
                 }
+                foreach (Food f in foods) {
+                    f.NextStep();
+                }
                 form.Invalidate();
                 Thread.Sleep(50);
             }
