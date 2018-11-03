@@ -17,12 +17,11 @@ namespace TheEvolution.Core {
         public static Form form;
         public static Player player;
         public static List<Competitor> competitors = new List<Competitor>();
-        public static List<Competitor> deadCompetitors = new List<Competitor>();
         public static List<Cell> otherCells = new List<Cell>();
-        public static List<Cell> deadOtherCells = new List<Cell>();
         public static List<Food> foods = new List<Food>();
         public static List<Organelle> organella = new List<Organelle>();
-        public static bool isStart, isPainterGenerated;
+        public static List<Painter> painters = new List<Painter>();
+        public static bool isStart;
 
         public static void Act() {
             FormStage formStage = form as FormStage;
@@ -88,7 +87,25 @@ namespace TheEvolution.Core {
         }
 
         public static void GetOrganelle() {
+            int i = 0;
+            int playerX = player.GetCenter().X;
+            int playerY = player.GetCenter().Y;
+            int playerW = player.Size.Width;
+            int playerH = player.Size.Height;
+            int organelleX, organelleY, organelleW, organelleH;
 
+            foreach (Organelle o in organella) {
+                organelleX = o.GetCenter().X; organelleY = o.GetCenter().Y;
+                organelleW = o.Size.Width; organelleH = o.Size.Height;
+
+                if (Math.Abs(organelleX - playerX) <= (organelleW + playerW) / 4) {
+                    if (Math.Abs(organelleY - playerY) <= (organelleH + playerH) / 4) {
+                        player.CollideOrganelle(o);
+                        return;
+                    }
+                }
+                i++;
+            }
         }
 
         public static void CompetitorCollide() {
@@ -113,7 +130,7 @@ namespace TheEvolution.Core {
                 i++;
             }
         }
-        
+
         public static void OtherCellCollide() {
             int i = 0;
             int playerX = player.GetCenter().X;
@@ -126,8 +143,8 @@ namespace TheEvolution.Core {
                 cellX = c.GetCenter().X; cellY = c.GetCenter().Y;
                 cellW = c.Size.Width; cellH = c.Size.Height;
 
-                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 4) {
-                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 4) {
+                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 3) {
+                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 3) {
                         if (c is Virus) {
                             player.CollideVirus();
                             c.Collide(i);
@@ -146,25 +163,6 @@ namespace TheEvolution.Core {
                 }
                 i++;
             }
-        }
-
-        public static void CheckPainterGenerated() {
-            if (form != null) {
-                if (player != null) {
-                    if (competitors != null) {
-                        if (otherCells != null) {
-                            if (organella != null) {
-                                if (foods != null) {
-                                    isPainterGenerated = true;
-                                    return;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            isPainterGenerated = false;
-            return;
         }
 
         public static double getDistance(Point p1, Point p2) {

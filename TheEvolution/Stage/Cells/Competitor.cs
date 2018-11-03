@@ -15,7 +15,7 @@ namespace TheEvolution.Stage.Cells {
         private int foodCount;
         public event EventHandler Killed;
 
-        public Competitor(Form form) : base(form) {
+        public Competitor(Form form, Point point) : base(form, point) {
             GameSystem.competitors.Add(this);
             Killed += GameSystem.player.KillCompetitor;
             images = ImageContainer.imgCompetitor;
@@ -106,9 +106,8 @@ namespace TheEvolution.Stage.Cells {
             Hp -= 1;
             if (Hp == 0) {
                 OnKilled();
-                GameSystem.deadCompetitors.Add(this);
                 GameSystem.competitors.RemoveAt(myId);
-                GameSystem.form.Paint -= Paint;
+                Dispose();
             }
             BumpMove();
         }

@@ -25,7 +25,7 @@ namespace TheEvolution.Stage.Cells {
         private bool isSick, isShocked;
         private int sickInterval, shockInterval;
 
-        public Player(Form form) : base(form) {
+        public Player(Form form, Point point) : base(form, point) {
             GameSystem.player = this;
             imgPlayer = ImageContainer.imgPlayer;
             imgPlayerEat = ImageContainer.imgPlayerEat;
@@ -34,12 +34,18 @@ namespace TheEvolution.Stage.Cells {
             imgPlayerShocked = ImageContainer.imgPlayerShocked;
             images = imgPlayer;
             size = imgPlayer[0].Size;
-            GameSystem.SetPainterPosition(this, 0.5, 0.5);
             moveSpeed = (int)(0.15 * size.Width);
             originalSpeed = moveSpeed;
-            form.KeyDown += new KeyEventHandler(PlayerKeyDown);
-            form.KeyUp += new KeyEventHandler(PlayerKeyUp);
+            form.KeyDown += PlayerKeyDown;
+            form.KeyUp += PlayerKeyUp;
             hp = 5;
+        }
+
+        public override void Dispose() {
+            GameSystem.form.Paint -= Paint;
+            GameSystem.form.KeyDown -= PlayerKeyDown;
+            GameSystem.form.KeyUp -= PlayerKeyUp;
+            GameSystem.player = null;
         }
 
         public override void Paint(object sender, PaintEventArgs e) {

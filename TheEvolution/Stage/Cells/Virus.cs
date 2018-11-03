@@ -10,11 +10,10 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class Virus : Cell {
 
-        public Virus(Form form) : base(form) {
+        public Virus(Form form, Point point) : base(form, point) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgVirus;
             size = images[0].Size;
-            position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
             moveSpeed = (int)(0.15 * size.Width);
         }
 
@@ -61,9 +60,8 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public override void Collide(int myId) {;
-            GameSystem.deadOtherCells.Add(this);
             GameSystem.otherCells.RemoveAt(myId);
-            GameSystem.form.Paint -= Paint;
+            Dispose();
         }
     }
 }

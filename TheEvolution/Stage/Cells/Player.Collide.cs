@@ -70,9 +70,19 @@ namespace TheEvolution.Stage.Cells {
             direction = GetDirectionToTarget(c);
             direction.X -= 2 * direction.X;
             direction.Y -= 2 * direction.Y;
+            int tempX, tempY;
+            tempX = position.X + (int)(direction.X * 1.2);
+            tempY = position.Y + (int)(direction.Y * 1.2);
+            if (tempX > 0 || tempX < GameSystem.screen.Width) {
+                position.X = tempX;
+            }
+            if (tempY > 0 || tempY < GameSystem.screen.Height) {
+                position.Y = tempY;
+            }
+        }
 
-            position.X += (int)(direction.X * 1.6);
-            position.Y += (int)(direction.Y * 1.6);
+        public void CollideOrganelle(Organelle o) {
+            MessageBox.Show("Test");
         }
     }
 }

@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Chapter.cs" />
     <Compile Include="Core\Food.cs" />
     <Compile Include="Core\GameSystem.cs" />
     <Compile Include="Core\ICollideFood.cs" />
@@ -82,9 +83,13 @@
     <Compile Include="Stage\Background.cs" />
     <Compile Include="Stage\Cells\PlantWall.cs" />
     <Compile Include="Stage\Cells\Player.Collide.cs" />
+    <Compile Include="Stage\Chapters\Chapter4.cs" />
+    <Compile Include="Stage\Chapters\Chapter3.cs" />
+    <Compile Include="Stage\Chapters\Chapter2.cs" />
+    <Compile Include="Stage\Chapters\Chapter1.cs" />
     <Compile Include="Stage\Foods\Algae.cs" />
     <Compile Include="Stage\Foods\Charophyta.cs" />
-    <Compile Include="Stage\ImageContainer.cs" />
+    <Compile Include="Core\ImageContainer.cs" />
     <Compile Include="Stage\Organella\Centromere.cs" />
     <Compile Include="Stage\Organella\Chloroplast.cs" />
     <Compile Include="Stage\Organella\ER.cs" />

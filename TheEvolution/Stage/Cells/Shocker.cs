@@ -10,11 +10,10 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class Shocker : Cell {
 
-        public Shocker(Form form) : base(form) {
+        public Shocker(Form form, Point point) : base(form, point) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgShocker;
             size = images[0].Size;
-            position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
         }
 
         public override void Paint(object sender, PaintEventArgs e) {

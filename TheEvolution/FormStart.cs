@@ -30,7 +30,7 @@ namespace TheEvolution {
             GameSystem.screen = ClientSize;
             GameSystem.SetControlSize(picTitle, ClientSize, 0.5, 0.24, 0.95, 0.35);
             GameSystem.SetControlSize(picStart, ClientSize, 0.75, 0.55, 0.19, 0.08);
-            GameSystem.SetControlSize(picContinue, ClientSize, 0.78, 0.68, 0.24, 0.08);
+            GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.68, 0.24, 0.08);
             GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);            
             playerSize = GameSystem.SetSize(0.41, 0.4);  //playerSize = GameSystem.SetSize(0.07, 0.1);
             competitorSize = GameSystem.SetSize(0.09, 0.1);  //competitorSize = GameSystem.SetSize(0.41, 0.4);
@@ -47,11 +47,18 @@ namespace TheEvolution {
                 new Bitmap(Resources.Competitor2, competitorSize)};
             timerAnimation.Start();
             formStage = new FormStage();
+            formStage.Closed += (s, arg) => Close();
         }
 
         private void picStart_Click(object sender, EventArgs e) {
-            formStage.Closed += (s, arg) => this.Close();
-            this.Hide();
+            Hide();
+            FormStage.chapter = 1;
+            formStage.Show();
+        }
+
+        private void picSurvive_Click(object sender, EventArgs e) {
+            Hide();
+            FormStage.chapter = 4;
             formStage.Show();
         }
 
@@ -81,8 +88,8 @@ namespace TheEvolution {
                     picStart.Size = GameSystem.SetSize(0.24, 0.13);
                     picStart.Location = GameSystem.SetPosition(0.655, 0.49);
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
-                    picContinue.Size = GameSystem.SetSize(0.29, 0.13);
-                    picContinue.Location = GameSystem.SetPosition(0.655, 0.62);
+                    picSurvive.Size = GameSystem.SetSize(0.29, 0.13);
+                    picSurvive.Location = GameSystem.SetPosition(0.655, 0.62);
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.77)) {
                     picExit.Size = GameSystem.SetSize(0.20, 0.12);
                     picExit.Location = GameSystem.SetPosition(0.655, 0.76);
@@ -90,7 +97,7 @@ namespace TheEvolution {
             } else {
                 isActed = false;
                 GameSystem.SetControlSize(picStart, ClientSize, 0.75, 0.55, 0.19, 0.08);
-                GameSystem.SetControlSize(picContinue, ClientSize, 0.78, 0.68, 0.24, 0.08);
+                GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.68, 0.24, 0.08);
                 GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);
             }          
         }
@@ -112,11 +119,13 @@ namespace TheEvolution {
             }
             if (isEnter) {
                 if (competitorPosition == GameSystem.SetPosition(0.55, 0.5)) {
-                    formStage.Closed += (s, arg) => this.Close();
-                    this.Hide();
+                    Hide();
+                    FormStage.chapter = 1;
                     formStage.Show();
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
-
+                    Hide();
+                    FormStage.chapter = 4;
+                    formStage.Show();
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.77)) {
                     Application.Exit();
                 }

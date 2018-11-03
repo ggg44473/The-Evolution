@@ -17,10 +17,11 @@ namespace TheEvolution.Core {
         protected int moveSpeed;
         protected Point direction;
 
-        public Cell(Form form) : base(form) {
+        public Cell(Form form, Point point) : base(form) {
             rotation = new Matrix();
             random = new Random(Guid.NewGuid().GetHashCode());
             direction = new Point();
+            position = point;
         }
 
         public override void Paint(object sender, PaintEventArgs e) {

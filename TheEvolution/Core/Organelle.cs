@@ -11,8 +11,9 @@ namespace TheEvolution.Core {
 
     class Organelle : Painter {
 
-        public Organelle(Form form) : base(form) {
+        public Organelle(Form form, Point point) : base(form) {
             GameSystem.organella.Add(this);
+            position = point;
         }
 
         public override void Paint(object sender, PaintEventArgs e) {

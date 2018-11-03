@@ -10,10 +10,9 @@ using System.Drawing;
 namespace TheEvolution.Stage.Organella {
     class ER : Organelle {
 
-        public ER(Form form) : base(form){
+        public ER(Form form, Point point) : base(form, point){
             images = ImageContainer.imgER;
             size = images[0].Size;
-            position = new Point(150, 150);
         }
     }
 }

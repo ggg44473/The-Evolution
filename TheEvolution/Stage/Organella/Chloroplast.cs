@@ -10,10 +10,9 @@ using System.Drawing;
 namespace TheEvolution.Stage.Organella {
     class Chloroplast : Organelle {
 
-        public Chloroplast(Form form) : base(form) {
+        public Chloroplast(Form form, Point point) : base(form, point) {
             images = ImageContainer.imgChloroplast;
             size = images[0].Size;
-            position = new Point(100, 100);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace TheEvolution.Stage {
             size = images[0].Size;
             position.X = 0;
             position.Y = 0;
-            form.Paint += new PaintEventHandler(Paint);
+            form.Paint += Paint;
         }
 
         public override void Paint(object sender, PaintEventArgs e) {
