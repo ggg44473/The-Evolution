@@ -31,17 +31,17 @@ namespace TheEvolution {
             GameSystem.SetControlSize(picTitle, ClientSize, 0.5, 0.24, 0.95, 0.35);
             GameSystem.SetControlSize(picStart, ClientSize, 0.75, 0.55, 0.19, 0.08);
             GameSystem.SetControlSize(picContinue, ClientSize, 0.78, 0.68, 0.24, 0.08);
-            GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);
-            playerSize = GameSystem.SetSize(0.07, 0.1);
-            competitorSize = GameSystem.SetSize(0.41, 0.4);
-            playerPosition = GameSystem.SetPosition(0.56, 0.5);     
-            competitorPosition = GameSystem.SetPosition(0.05, 0.5);
+            GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);            
+            playerSize = GameSystem.SetSize(0.41, 0.4);  //playerSize = GameSystem.SetSize(0.07, 0.1);
+            competitorSize = GameSystem.SetSize(0.09, 0.1);  //competitorSize = GameSystem.SetSize(0.41, 0.4);
+            playerPosition = GameSystem.SetPosition(0.05, 0.5);  //playerPosition = GameSystem.SetPosition(0.56, 0.5);
+            competitorPosition = GameSystem.SetPosition(0.55, 0.5);  //competitorPosition = GameSystem.SetPosition(0.05, 0.5);
             iconPlayer = new List<Bitmap>() {
-                new Bitmap(Resources.P1, playerSize),
-                new Bitmap(Resources.P2, playerSize),
-                new Bitmap(Resources.P3, playerSize),
-                new Bitmap(Resources.P4, playerSize),
-                new Bitmap(Resources.P5, playerSize)};
+                new Bitmap(Resources.PlayerComplete1, playerSize),
+                new Bitmap(Resources.PlayerComplete2, playerSize),
+                new Bitmap(Resources.PlayerComplete3, playerSize),
+                new Bitmap(Resources.PlayerComplete4, playerSize),
+                new Bitmap(Resources.PlayerComplete5, playerSize)};
             iconCompetitor = new List<Bitmap>() {
                 new Bitmap(Resources.Competitor1, competitorSize),
                 new Bitmap(Resources.Competitor2, competitorSize)};
@@ -77,13 +77,13 @@ namespace TheEvolution {
         private void BtnAnimate() {           
             if (!isActed) {
                 isActed = true;
-                if (playerPosition == GameSystem.SetPosition(0.56, 0.5)) {
+                if (competitorPosition == GameSystem.SetPosition(0.55, 0.5)) {
                     picStart.Size = GameSystem.SetSize(0.24, 0.13);
                     picStart.Location = GameSystem.SetPosition(0.655, 0.49);
-                } else if (playerPosition == GameSystem.SetPosition(0.56, 0.63)) {
+                } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
                     picContinue.Size = GameSystem.SetSize(0.29, 0.13);
                     picContinue.Location = GameSystem.SetPosition(0.655, 0.62);
-                } else if (playerPosition == GameSystem.SetPosition(0.56, 0.77)) {
+                } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.77)) {
                     picExit.Size = GameSystem.SetSize(0.20, 0.12);
                     picExit.Location = GameSystem.SetPosition(0.655, 0.76);
                 }
@@ -92,33 +92,32 @@ namespace TheEvolution {
                 GameSystem.SetControlSize(picStart, ClientSize, 0.75, 0.55, 0.19, 0.08);
                 GameSystem.SetControlSize(picContinue, ClientSize, 0.78, 0.68, 0.24, 0.08);
                 GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);
-            }
-            
+            }          
         }
         
         private void BtnOperate() {
             if (isDown) {
-                if (playerPosition == GameSystem.SetPosition(0.56, 0.5)) {
-                    playerPosition = GameSystem.SetPosition(0.56, 0.63);
-                } else if (playerPosition == GameSystem.SetPosition(0.56, 0.63)) {
-                    playerPosition = GameSystem.SetPosition(0.56, 0.77);
+                if (competitorPosition == GameSystem.SetPosition(0.55, 0.5)) {
+                    competitorPosition = GameSystem.SetPosition(0.55, 0.63);
+                } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
+                    competitorPosition = GameSystem.SetPosition(0.55, 0.77);
                 }                
             }
             if (isUp) {
-                if (playerPosition == GameSystem.SetPosition(0.56, 0.77)) {
-                    playerPosition = GameSystem.SetPosition(0.56, 0.63);
-                } else if (playerPosition == GameSystem.SetPosition(0.56, 0.63)) {
-                    playerPosition = GameSystem.SetPosition(0.56, 0.5);
+                if (competitorPosition == GameSystem.SetPosition(0.55, 0.77)) {
+                    competitorPosition = GameSystem.SetPosition(0.55, 0.63);
+                } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
+                    competitorPosition = GameSystem.SetPosition(0.55, 0.5);
                 }
             }
             if (isEnter) {
-                if (playerPosition == GameSystem.SetPosition(0.56, 0.5)) {
+                if (competitorPosition == GameSystem.SetPosition(0.55, 0.5)) {
                     formStage.Closed += (s, arg) => this.Close();
                     this.Hide();
                     formStage.Show();
-                } else if (playerPosition == GameSystem.SetPosition(0.56, 0.63)) {
+                } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
 
-                } else if (playerPosition == GameSystem.SetPosition(0.56, 0.77)) {
+                } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.77)) {
                     Application.Exit();
                 }
             }

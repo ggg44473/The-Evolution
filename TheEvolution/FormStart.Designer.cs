@@ -40,7 +40,7 @@
             this.picTitle.BackColor = System.Drawing.Color.Transparent;
             this.picTitle.Image = global::TheEvolution.Properties.Resources.Title;
             this.picTitle.Location = new System.Drawing.Point(25, 8);
-            this.picTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picTitle.Margin = new System.Windows.Forms.Padding(2);
             this.picTitle.Name = "picTitle";
             this.picTitle.Size = new System.Drawing.Size(776, 188);
             this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -52,7 +52,7 @@
             this.picStart.BackColor = System.Drawing.Color.Transparent;
             this.picStart.Image = global::TheEvolution.Properties.Resources.BtnStart;
             this.picStart.Location = new System.Drawing.Point(549, 217);
-            this.picStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picStart.Margin = new System.Windows.Forms.Padding(2);
             this.picStart.Name = "picStart";
             this.picStart.Size = new System.Drawing.Size(157, 50);
             this.picStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -65,7 +65,7 @@
             this.picContinue.BackColor = System.Drawing.Color.Transparent;
             this.picContinue.Image = global::TheEvolution.Properties.Resources.BtnContinue;
             this.picContinue.Location = new System.Drawing.Point(549, 279);
-            this.picContinue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picContinue.Margin = new System.Windows.Forms.Padding(2);
             this.picContinue.Name = "picContinue";
             this.picContinue.Size = new System.Drawing.Size(245, 50);
             this.picContinue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,7 +77,7 @@
             this.picExit.BackColor = System.Drawing.Color.Transparent;
             this.picExit.Image = global::TheEvolution.Properties.Resources.BtnExit;
             this.picExit.Location = new System.Drawing.Point(549, 340);
-            this.picExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picExit.Margin = new System.Windows.Forms.Padding(2);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(157, 50);
             this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -87,7 +87,7 @@
             // 
             // timerAnimation
             // 
-            this.timerAnimation.Interval = 250;
+            this.timerAnimation.Interval = 180;
             this.timerAnimation.Tick += new System.EventHandler(this.timerAnimation_Tick);
             // 
             // FormStart
@@ -104,7 +104,7 @@
             this.Controls.Add(this.picTitle);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormStart";
             this.Text = "The Evolution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
