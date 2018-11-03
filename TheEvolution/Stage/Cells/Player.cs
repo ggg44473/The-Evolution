@@ -212,6 +212,12 @@ namespace TheEvolution.Stage.Cells {
             if (isShocked) {
                 shockInterval--;
                 if (shockInterval == 0) {
+                    if (!isSick) {
+                        images = imgPlayer;
+                    } else {
+                        images = imgPlayerSick;
+                    }
+                    isShocked = false;
                     moveSpeed = originalSpeed;
                 }
             }
