@@ -50,6 +50,7 @@ namespace TheEvolution.Stage.Cells {
             BumpMove(shocker);
             shockInterval = 60;
             isShocked = true;
+            images = imgPlayerShocked;
             moveSpeed = 0;
         }
 

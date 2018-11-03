@@ -17,6 +17,7 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPlayerEat;
         private List<Bitmap> imgPlayerSick;
         private List<Bitmap> imgPlayerSickEat;
+        private List<Bitmap> imgPlayerShocked;
         private int hp;
         private int foodCount;
         private bool isHidden;
@@ -30,6 +31,7 @@ namespace TheEvolution.Stage.Cells {
             imgPlayerEat = ImageContainer.imgPlayerEat;
             imgPlayerSick = ImageContainer.imgPlayerSick;
             imgPlayerSickEat = ImageContainer.imgPlayerSickEat;
+            imgPlayerShocked = ImageContainer.imgPlayerShocked;
             images = imgPlayer;
             size = imgPlayer[0].Size;
             GameSystem.SetPainterPosition(this, 0.5, 0.5);

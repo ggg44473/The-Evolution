@@ -20,6 +20,7 @@ namespace TheEvolution.Stage {
         static public List<Bitmap> imgPlayerComplete;
         static public List<Bitmap> imgPlayerSick;
         static public List<Bitmap> imgPlayerSickEat;
+        static public List<Bitmap> imgPlayerShocked;
         static public List<Bitmap> imgPredator;
         static public List<Bitmap> imgPredatorEat;
         static public List<Bitmap> imgCompetitor;
@@ -117,6 +118,12 @@ namespace TheEvolution.Stage {
                 new Bitmap(Resources.SickPlayerEat3, size),
                 new Bitmap(Resources.SickPlayerEat4, size),
                 new Bitmap(Resources.SickPlayerEat5, size)};
+            imgPlayerShocked = new List<Bitmap>() {
+                new Bitmap(Resources.ShokedState1, size),
+                new Bitmap(Resources.ShokedState2, size),
+                new Bitmap(Resources.ShokedState3, size),
+                new Bitmap(Resources.ShokedState4, size),
+                new Bitmap(Resources.ShokedState5, size)};        
         }
 
         public void SetImgPredator() {

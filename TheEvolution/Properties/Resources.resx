@@ -403,4 +403,19 @@
   <data name="SickPlayerEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\SickPlayerEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ShokedState1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ShokedState1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShokedState2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ShokedState2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShokedState3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ShokedState3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShokedState4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ShokedState4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShokedState5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ShokedState5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
