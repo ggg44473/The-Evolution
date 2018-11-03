@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using TheEvolution.Properties;
-using TheEvolution.Core;
 
-namespace TheEvolution.Stage {
-    class ImageContainer {
-        private Size size;
+namespace TheEvolution.Core {
+    static class ImageContainer {
+
+        static private Size size;
         static public List<Bitmap> imgBackground;
         static public List<Bitmap> imgPlayer;
         static public List<Bitmap> imgPlayer2;
@@ -20,6 +20,7 @@ namespace TheEvolution.Stage {
         static public List<Bitmap> imgPlayerComplete;
         static public List<Bitmap> imgPlayerSick;
         static public List<Bitmap> imgPlayerSickEat;
+        static public List<Bitmap> imgPlayerShocked;
         static public List<Bitmap> imgPredator;
         static public List<Bitmap> imgPredatorEat;
         static public List<Bitmap> imgCompetitor;
@@ -35,7 +36,7 @@ namespace TheEvolution.Stage {
         static public List<Bitmap> imgMitochondria;
         static public List<Bitmap> imgChloroplast;
 
-        public ImageContainer() {
+        static public void PrepareImage() {
             SetImgBackground();
             SetImgPlayer();
             SetImgPredator();
@@ -53,7 +54,7 @@ namespace TheEvolution.Stage {
             SetImgChloroplast();
         }
 
-        public void SetImgBackground() {
+        static public void SetImgBackground() {
             size = GameSystem.screen;
             imgBackground = new List<Bitmap>() {
                 new Bitmap(Resources.bg1, size),
@@ -61,7 +62,7 @@ namespace TheEvolution.Stage {
             };
         }
 
-        public void SetImgPlayer() {
+        static public void SetImgPlayer() {
             size = GameSystem.SetSize(0.072, 0.12);
             imgPlayer = new List<Bitmap>() {
                 new Bitmap(Resources.P1, size),
@@ -117,9 +118,15 @@ namespace TheEvolution.Stage {
                 new Bitmap(Resources.SickPlayerEat3, size),
                 new Bitmap(Resources.SickPlayerEat4, size),
                 new Bitmap(Resources.SickPlayerEat5, size)};
+            imgPlayerShocked = new List<Bitmap>() {
+                new Bitmap(Resources.ShokedState1, size),
+                new Bitmap(Resources.ShokedState2, size),
+                new Bitmap(Resources.ShokedState3, size),
+                new Bitmap(Resources.ShokedState4, size),
+                new Bitmap(Resources.ShokedState5, size)};        
         }
 
-        public void SetImgPredator() {
+        static public void SetImgPredator() {
             size = GameSystem.SetSize(0.09, 0.13);
             imgPredator = new List<Bitmap>() {
                 new Bitmap(Resources.Predator1, size),
@@ -128,21 +135,21 @@ namespace TheEvolution.Stage {
                 new Bitmap(Resources.PredatorEat, size)};
         }
 
-        public void SetImgCompetitor() {
+        static public void SetImgCompetitor() {
             size = GameSystem.SetSize(0.12, 0.12);
             imgCompetitor = new List<Bitmap>() {
                 new Bitmap(Resources.Competitor1, size),
                 new Bitmap(Resources.Competitor2, size)};
         }
 
-        public void SetImgShocker() {
+        static public void SetImgShocker() {
             size = GameSystem.SetSize(0.07, 0.12);
             imgShocker = new List<Bitmap>() {
                 new Bitmap(Resources.Shocker1, size),
                 new Bitmap(Resources.Shocker2, size)};
         }
 
-        public void SetImgTracker() {
+        static public void SetImgTracker() {
             size = GameSystem.SetSize(0.05, 0.09);
             imgTracker = new List<Bitmap>() {
                 new Bitmap(Resources.Tracker1, size),
@@ -151,8 +158,8 @@ namespace TheEvolution.Stage {
                 new Bitmap(Resources.Tracker4, size)};
         }
 
-        public void SetImgPlantWall() {
-            size = GameSystem.SetSize(0.1, 0.14); 
+        static public void SetImgPlantWall() {
+            size = GameSystem.SetSize(0.05, 0.1); 
             imgPlantWall = new List<Bitmap>() {
                 new Bitmap(Resources.PlantWall1, size),
                 new Bitmap(Resources.PlantWall2, size),
@@ -160,32 +167,32 @@ namespace TheEvolution.Stage {
                 new Bitmap(Resources.PlantWall4, size)};
         }
 
-        public void SetImgVirus() {
+        static public void SetImgVirus() {
             size = GameSystem.SetSize(0.035, 0.025);
             imgVirus = new List<Bitmap>() { new Bitmap(Resources.Virus, size) };
         }
 
-        public void SetImgAlgae() {
+        static public void SetImgAlgae() {
             size = GameSystem.SetSize(0.025, 0.045);
             imgAlgae = new List<Bitmap>() {
                 new Bitmap(Resources.Algae1, size),
                 new Bitmap(Resources.Algae2, size) };
         }
 
-        public void SetImgCharophyta() {
+        static public void SetImgCharophyta() {
             size = GameSystem.SetSize(0.035, 0.055);
             imgCharophyta = new List<Bitmap>() {
                 new Bitmap(Resources.Charophyta1, size),
                 new Bitmap(Resources.Charophyta2, size)};
         }
 
-        public void SetImgCentromere() {
+        static public void SetImgCentromere() {
             size = GameSystem.SetSize(0.026, 0.047);
             imgCentromere = new List<Bitmap>() {
                 new Bitmap(Resources.Centromere, size)};
         }
 
-        public void SetImgER() {
+        static public void SetImgER() {
             size = GameSystem.SetSize(0.04, 0.06);
             imgER = new List<Bitmap>() {
                 new Bitmap(Resources.ER1, size),
@@ -193,7 +200,7 @@ namespace TheEvolution.Stage {
                 new Bitmap(Resources.ER3, size)};
         }
 
-        public void SetImgLysosome() {
+        static public void SetImgLysosome() {
             size = GameSystem.SetSize(0.035, 0.06);
             imgLysosome = new List<Bitmap>() {
                 new Bitmap(Resources.Lysosome1, size),
@@ -201,13 +208,13 @@ namespace TheEvolution.Stage {
                 new Bitmap(Resources.Lysosome3, size)};
         }
 
-        public void SetImgMitochondria() {
+        static public void SetImgMitochondria() {
             size = GameSystem.SetSize(0.025, 0.065);
             imgMitochondria = new List<Bitmap>() {
                 new Bitmap(Resources.Mitochondria, size)};
         }
 
-        public void SetImgChloroplast() {
+        static public void SetImgChloroplast() {
             size = GameSystem.SetSize(0.045, 0.065);
             imgChloroplast = new List<Bitmap>() {
                 new Bitmap(Resources.Chloroplast, size)

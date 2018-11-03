@@ -10,10 +10,9 @@ using System.Drawing;
 namespace TheEvolution.Stage.Organella {
     class Lysosome : Organelle {
 
-        public Lysosome(Form form) : base(form) {
+        public Lysosome(Form form, Point point) : base(form, point) {
             images = ImageContainer.imgLysosome;
             size = images[0].Size;
-            position = new Point(300, 300);
         }
     }
 }

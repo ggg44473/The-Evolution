@@ -12,11 +12,10 @@ namespace TheEvolution.Stage.Cells {
             
         private int aniInterval;
 
-        public PlantWall(Form form) : base(form) {
+        public PlantWall(Form form, Point point) : base(form, point) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgPlantWall;
             size = images[0].Size;
-            position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
         }
 
         public override void NextStep() {

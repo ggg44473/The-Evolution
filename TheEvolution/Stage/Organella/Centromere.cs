@@ -10,10 +10,9 @@ using System.Drawing;
 namespace TheEvolution.Stage.Organella {
     class Centromere : Organelle {
 
-        public Centromere(Form form) : base(form) {
+        public Centromere(Form form, Point point) : base(form, point) {
             images = ImageContainer.imgCentromere;
             size = images[0].Size;
-            position = new Point(20, 20);
         }
     }
 }

@@ -10,10 +10,9 @@ using System.Drawing;
 namespace TheEvolution.Stage.Organella {
     class Mitochondria : Organelle {
 
-        public Mitochondria(Form form) : base(form) {
+        public Mitochondria(Form form, Point point) : base(form, point) {
             images = ImageContainer.imgMitochondria;
             size = images[0].Size;
-            position = new Point(60, 60);
         }
     }
 }

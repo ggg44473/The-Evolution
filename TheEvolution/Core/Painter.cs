@@ -14,11 +14,15 @@ namespace TheEvolution.Core {
         protected Size size;
         protected Point position;
 
-        // Delete it after completing all derived classes.
-        public Painter() { }
+        public Painter() {}
 
         public Painter(Form form) {
             form.Paint += Paint;
+            GameSystem.painters.Add(this);
+        }
+
+        public virtual void Dispose() {
+            GameSystem.form.Paint -= Paint;
         }
 
         public virtual Size Size { get => size; set =>size = value; }

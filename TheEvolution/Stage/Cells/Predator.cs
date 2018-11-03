@@ -17,13 +17,12 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPredator;
         private List<Bitmap> imgPredatorEat;
 
-        public Predator(Form form) : base(form) {
+        public Predator(Form form, Point point) : base(form, point) {
             GameSystem.otherCells.Add(this);
             imgPredator = ImageContainer.imgPredator;
             imgPredatorEat = ImageContainer.imgPredatorEat;
             images = ImageContainer.imgPredator;
             size = images[0].Size;
-            position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
             originalPosition = position;
         }
 

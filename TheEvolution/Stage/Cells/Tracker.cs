@@ -10,11 +10,10 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class Tracker : Cell {
 
-        public Tracker(Form form) : base(form) {
+        public Tracker(Form form, Point point) : base(form, point) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgTracker;
             size = images[0].Size;
-            position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
             moveSpeed = (int)(0.12 * size.Width);
         }
 
