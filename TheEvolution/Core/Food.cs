@@ -13,15 +13,15 @@ namespace TheEvolution.Core {
         Random random;
         int aniInterval;
 
-        public Food(Form form) : base(form) {
+        public Food(PictureBox picBoxBg) : base(picBoxBg) {
             random = new Random(Guid.NewGuid().GetHashCode());
-            position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
+            position = GameSystem.SetPosition(random.Next(3) + random.NextDouble(), random.Next(3) + random.NextDouble());
             GameSystem.foods.Add(this);
         }
 
         public override void Collide() {
-            position.X = random.Next(1, GameSystem.screen.Width - size.Width);
-            position.Y = random.Next(1, GameSystem.screen.Height - size.Height);
+            position.X = random.Next(-GameSystem.screen.Width,  2 * GameSystem.screen.Width - size.Width);
+            position.Y = random.Next(-GameSystem.screen.Height, 2 * GameSystem.screen.Height - size.Height);
         }
 
         public virtual void Animate() {

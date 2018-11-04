@@ -14,7 +14,9 @@ namespace TheEvolution.Core {
     static class GameSystem {
 
         public static Size screen;
-        public static Form form;
+        public static FormStart formStart;
+        public static FormStage formStage;
+        public static PictureBox picBoxStage;
         public static Player player;
         public static List<Competitor> competitors = new List<Competitor>();
         public static List<Cell> otherCells = new List<Cell>();
@@ -24,7 +26,6 @@ namespace TheEvolution.Core {
         public static bool isStart;
 
         public static void Act() {
-            FormStage formStage = form as FormStage;
             while (isStart) {
                 formStage.Invoke((Action)delegate () {
                     formStage.label1.Text = player.Hp.ToString();
@@ -42,7 +43,8 @@ namespace TheEvolution.Core {
                 foreach (Food f in foods) {
                     f.NextStep();
                 }
-                form.Invalidate();
+                picBoxStage.Invoke((Action)delegate(){ picBoxStage.Invalidate(); });
+                formStage.Invalidate();
                 Thread.Sleep(50);
             }
         }
@@ -50,12 +52,14 @@ namespace TheEvolution.Core {
         public static void CollisionDetect() {
             while (isStart) {
                 GetFood(player);
-                foreach (Competitor c in competitors) {
+                foreach (Competitor c in competitors.ToArray()) {
                     GetFood(c);
                 }
-                GetOrganelle();
                 CompetitorCollide();
                 OtherCellCollide();
+                if (FormStage.chapter == EChapter.Tutorial) {
+                    GetOrganelle();
+                }
                 Thread.Sleep(100);
             }
         }
@@ -94,13 +98,13 @@ namespace TheEvolution.Core {
             int playerH = player.Size.Height;
             int organelleX, organelleY, organelleW, organelleH;
 
-            foreach (Organelle o in organella) {
+            foreach (Organelle o in organella.ToArray()) {
                 organelleX = o.GetCenter().X; organelleY = o.GetCenter().Y;
                 organelleW = o.Size.Width; organelleH = o.Size.Height;
 
                 if (Math.Abs(organelleX - playerX) <= (organelleW + playerW) / 4) {
                     if (Math.Abs(organelleY - playerY) <= (organelleH + playerH) / 4) {
-                        player.CollideOrganelle(o);
+                        o.Collide();
                         return;
                     }
                 }
@@ -116,7 +120,7 @@ namespace TheEvolution.Core {
             int playerH = player.Size.Height;
             int competitorX, competitorY, competitorW, competitorH;
 
-            foreach (Competitor c in competitors) {
+            foreach (Competitor c in competitors.ToArray()) {
                 competitorX = c.GetCenter().X; competitorY = c.GetCenter().Y;
                 competitorW = c.Size.Width; competitorH = c.Size.Height;
 
@@ -139,7 +143,7 @@ namespace TheEvolution.Core {
             int playerH = player.Size.Height;
             int cellX, cellY, cellW, cellH;
 
-            foreach (Cell c in otherCells) {
+            foreach (Cell c in otherCells.ToArray()) {
                 cellX = c.GetCenter().X; cellY = c.GetCenter().Y;
                 cellW = c.Size.Width; cellH = c.Size.Height;
 

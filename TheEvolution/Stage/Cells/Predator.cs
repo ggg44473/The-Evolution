@@ -17,7 +17,7 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPredator;
         private List<Bitmap> imgPredatorEat;
 
-        public Predator(Form form, Point point) : base(form, point) {
+        public Predator(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.otherCells.Add(this);
             imgPredator = ImageContainer.imgPredator;
             imgPredatorEat = ImageContainer.imgPredatorEat;

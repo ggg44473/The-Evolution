@@ -55,7 +55,7 @@ namespace TheEvolution.Core {
         }
 
         static public void SetImgBackground() {
-            size = GameSystem.screen;
+            size = new Size(3 * GameSystem.screen.Width, 3 * GameSystem.screen.Height);
             imgBackground = new List<Bitmap>() {
                 new Bitmap(Resources.bg1, size),
                 new Bitmap(Resources.bg2, size),
@@ -123,7 +123,7 @@ namespace TheEvolution.Core {
                 new Bitmap(Resources.ShokedState2, size),
                 new Bitmap(Resources.ShokedState3, size),
                 new Bitmap(Resources.ShokedState4, size),
-                new Bitmap(Resources.ShokedState5, size)};        
+                new Bitmap(Resources.ShokedState5, size)};
         }
 
         static public void SetImgPredator() {
@@ -159,7 +159,7 @@ namespace TheEvolution.Core {
         }
 
         static public void SetImgPlantWall() {
-            size = GameSystem.SetSize(0.05, 0.1); 
+            size = GameSystem.SetSize(0.2, 0.25);
             imgPlantWall = new List<Bitmap>() {
                 new Bitmap(Resources.PlantWall1, size),
                 new Bitmap(Resources.PlantWall2, size),

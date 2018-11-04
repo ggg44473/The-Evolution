@@ -17,7 +17,7 @@ namespace TheEvolution.Core {
         protected int moveSpeed;
         protected Point direction;
 
-        public Cell(Form form, Point point) : base(form) {
+        public Cell(PictureBox picBoxBg, Point point) : base(picBoxBg) {
             rotation = new Matrix();
             random = new Random(Guid.NewGuid().GetHashCode());
             direction = new Point();

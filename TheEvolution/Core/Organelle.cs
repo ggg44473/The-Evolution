@@ -11,18 +11,13 @@ namespace TheEvolution.Core {
 
     class Organelle : Painter {
 
-        public Organelle(Form form, Point point) : base(form) {
+        public Organelle(PictureBox picBoxBg, Point point) : base(picBoxBg) {
             GameSystem.organella.Add(this);
             position = point;
         }
 
-        public override void Paint(object sender, PaintEventArgs e) {
-            e.Graphics.DrawImage(images[imgIndex],
-                position.X, position.Y, size.Width, size.Height);
-        }
-
         public virtual void Collide(int myId) {
-            GameSystem.form.Paint -= Paint;
+            Dispose();
             GameSystem.organella.RemoveAt(myId);
         }
     }

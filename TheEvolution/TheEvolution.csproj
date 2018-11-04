@@ -83,10 +83,8 @@
     <Compile Include="Stage\Background.cs" />
     <Compile Include="Stage\Cells\PlantWall.cs" />
     <Compile Include="Stage\Cells\Player.Collide.cs" />
-    <Compile Include="Stage\Chapters\Chapter4.cs" />
-    <Compile Include="Stage\Chapters\Chapter3.cs" />
-    <Compile Include="Stage\Chapters\Chapter2.cs" />
-    <Compile Include="Stage\Chapters\Chapter1.cs" />
+    <Compile Include="Stage\Chapters\ChapterSurvival.cs" />
+    <Compile Include="Stage\Chapters\ChapterTutorial.cs" />
     <Compile Include="Stage\Foods\Algae.cs" />
     <Compile Include="Stage\Foods\Charophyta.cs" />
     <Compile Include="Core\ImageContainer.cs" />

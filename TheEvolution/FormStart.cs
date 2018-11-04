@@ -13,7 +13,6 @@ using TheEvolution.Properties;
 namespace TheEvolution {
     public partial class FormStart : Form {
 
-        FormStage formStage;
         List<Bitmap> iconPlayer, iconCompetitor;
         int indexPlayer, indexCompetitor;
         Size playerSize, competitorSize;
@@ -22,7 +21,7 @@ namespace TheEvolution {
 
         public FormStart() {
             InitializeComponent();
-            GameSystem.form = this;
+            GameSystem.formStart = this;
             isActed = false;
         }
 
@@ -32,10 +31,10 @@ namespace TheEvolution {
             GameSystem.SetControlSize(picStart, ClientSize, 0.75, 0.55, 0.19, 0.08);
             GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.68, 0.24, 0.08);
             GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);            
-            playerSize = GameSystem.SetSize(0.41, 0.4);  //playerSize = GameSystem.SetSize(0.07, 0.1);
-            competitorSize = GameSystem.SetSize(0.09, 0.1);  //competitorSize = GameSystem.SetSize(0.41, 0.4);
-            playerPosition = GameSystem.SetPosition(0.05, 0.5);  //playerPosition = GameSystem.SetPosition(0.56, 0.5);
-            competitorPosition = GameSystem.SetPosition(0.55, 0.5);  //competitorPosition = GameSystem.SetPosition(0.05, 0.5);
+            playerSize = GameSystem.SetSize(0.41, 0.4);
+            competitorSize = GameSystem.SetSize(0.09, 0.1);
+            playerPosition = GameSystem.SetPosition(0.05, 0.5);
+            competitorPosition = GameSystem.SetPosition(0.55, 0.5);
             iconPlayer = new List<Bitmap>() {
                 new Bitmap(Resources.PlayerComplete1, playerSize),
                 new Bitmap(Resources.PlayerComplete2, playerSize),
@@ -46,20 +45,20 @@ namespace TheEvolution {
                 new Bitmap(Resources.Competitor1, competitorSize),
                 new Bitmap(Resources.Competitor2, competitorSize)};
             timerAnimation.Start();
-            formStage = new FormStage();
-            formStage.Closed += (s, arg) => Close();
+            GameSystem.formStage = new FormStage();
+            GameSystem.formStage.Closed += (s, arg) => Close();
         }
 
         private void picStart_Click(object sender, EventArgs e) {
             Hide();
-            FormStage.chapter = 1;
-            formStage.Show();
+            FormStage.chapter = EChapter.Tutorial;
+            GameSystem.formStage.Show();
         }
 
         private void picSurvive_Click(object sender, EventArgs e) {
             Hide();
-            FormStage.chapter = 4;
-            formStage.Show();
+            FormStage.chapter = EChapter.Survival;
+            GameSystem.formStage.Show();
         }
 
         private void picExit_Click(object sender, EventArgs e) {
@@ -120,12 +119,12 @@ namespace TheEvolution {
             if (isEnter) {
                 if (competitorPosition == GameSystem.SetPosition(0.55, 0.5)) {
                     Hide();
-                    FormStage.chapter = 1;
-                    formStage.Show();
+                    FormStage.chapter = EChapter.Tutorial;
+                    GameSystem.formStage.Show();
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
                     Hide();
-                    FormStage.chapter = 4;
-                    formStage.Show();
+                    FormStage.chapter = EChapter.Survival;
+                    GameSystem.formStage.Show();
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.77)) {
                     Application.Exit();
                 }

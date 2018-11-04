@@ -10,9 +10,14 @@ using System.Drawing;
 namespace TheEvolution.Stage.Organella {
     class ER : Organelle {
 
-        public ER(Form form, Point point) : base(form, point){
+        public ER(PictureBox picBoxBg, Point point) : base(picBoxBg, point){
             images = ImageContainer.imgER;
             size = images[0].Size;
+        }
+
+        public override void Collide() {
+            base.Collide();
+            MessageBox.Show("Get ER");
         }
     }
 }

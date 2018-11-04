@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             this.labelExit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.picBoxStage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxStage)).BeginInit();
             this.SuspendLayout();
             // 
             // labelExit
@@ -51,6 +53,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
+            // picBoxStage
+            // 
+            this.picBoxStage.Location = new System.Drawing.Point(0, 0);
+            this.picBoxStage.Name = "picBoxStage";
+            this.picBoxStage.Size = new System.Drawing.Size(440, 278);
+            this.picBoxStage.TabIndex = 2;
+            this.picBoxStage.TabStop = false;
+            // 
             // FormStage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -59,12 +69,14 @@
             this.ClientSize = new System.Drawing.Size(1036, 591);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelExit);
+            this.Controls.Add(this.picBoxStage);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormStage";
             this.Text = "TheEvolution - Cell";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormStage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxStage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.Label labelExit;
         public System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.PictureBox picBoxStage;
     }
 }

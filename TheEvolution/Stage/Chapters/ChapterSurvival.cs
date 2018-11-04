@@ -3,45 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 using System.Drawing;
 using TheEvolution.Core;
+using TheEvolution.Stage.Cells;
 using TheEvolution.Stage.Organella;
 using TheEvolution.Stage.Foods;
-using TheEvolution.Stage.Cells;
+using System.Windows.Forms;
 
 namespace TheEvolution.Stage.Chapters {
-    class Chapter1 : Chapter {
+    class ChapterSurvival : Chapter {
 
         List<Point> pPlantWall;
         List<Point> pTracker;
         List<Point> pShocker;
+        List<Point> pPredator;
+        List<Point> pVirus;
         List<Food> food = new List<Food>();
         List<Cell> otherCells = new List<Cell>();
-        Mitochondria mitochondria;
+        Lysosome lysosome;
 
-        public Chapter1(FormStage form, Background bg) : base(form, bg) {
+        public ChapterSurvival(PictureBox picBoxBg) : base(picBoxBg) {
             GetReady();
-            for (int i = 0; i < 3; i++) {
-                food.Add(new Algae(form));
-                food.Add(new Charophyta(form));
+            for (int i = 0; i < 8; i++) {
+                food.Add(new Algae(picBoxBg));
+                food.Add(new Charophyta(picBoxBg));
             }
-            for (int i = 0; i < pPlantWall.Count; i++) {
-                otherCells.Add(new PlantWall(form, pPlantWall[i]));
+            for (int i = 0; i < 2; i++) {
+                otherCells.Add(new PlantWall(picBoxBg, pPlantWall[i]));
+                otherCells.Add(new Tracker(picBoxBg, pTracker[i]));
+                otherCells.Add(new Shocker(picBoxBg, pShocker[i]));
+                otherCells.Add(new Predator(picBoxBg, pPredator[i]));
+                otherCells.Add(new Virus(picBoxBg, pVirus[i]));
             }
-            for (int i = 0; i < pTracker.Count; i++) {
-                otherCells.Add(new Tracker(form, pTracker[i]));
-            }
-            for (int i = 0; i < pShocker.Count; i++) {
-                otherCells.Add(new Shocker(form, pShocker[i]));
-            }
-            mitochondria = new Mitochondria(form, GameSystem.SetPosition(0.785, 0.80));
+            lysosome = new Lysosome(picBoxBg, GameSystem.SetPosition(0.95, 0.95));
         }
 
         protected override void GetReady() {
             pPlantWall = new List<Point>();
-            SetWallPosition();
-            Chapter1Area();
+            SetBorderPosition();
+            SetPlantWallPosition();
             pTracker = new List<Point> {
                 GameSystem.SetPosition(0.125, 0.62),
                 GameSystem.SetPosition(0.5, 0.3)};
@@ -53,22 +53,7 @@ namespace TheEvolution.Stage.Chapters {
                 GameSystem.SetPosition(0.825, 0.24)};
         }
 
-        protected void SetWallPosition() { 
-            for (double x = -0.025; x < 21; x+=0.05) {
-                pPlantWall.Add(GameSystem.SetPosition(x, -0.05));
-            }
-            for (double x = -0.025; x < 21; x += 0.05) {
-                pPlantWall.Add(GameSystem.SetPosition(x, 0.95));
-            }
-            for (double y = -0.05; y < 11; y += 0.1) {
-                pPlantWall.Add(GameSystem.SetPosition(-0.025, y));
-            }
-            for (double y = -0.05; y < 11; y += 0.1) {
-                pPlantWall.Add(GameSystem.SetPosition(0.975, y));
-            }
-        }
-
-        private void Chapter1Area() {
+        private void SetPlantWallPosition() {
             pPlantWall.Add(GameSystem.SetPosition(0.125, 0.05));
             pPlantWall.Add(GameSystem.SetPosition(0.125, 0.15));
             pPlantWall.Add(GameSystem.SetPosition(0.125, 0.25));

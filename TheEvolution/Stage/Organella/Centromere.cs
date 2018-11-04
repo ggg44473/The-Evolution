@@ -10,9 +10,14 @@ using System.Drawing;
 namespace TheEvolution.Stage.Organella {
     class Centromere : Organelle {
 
-        public Centromere(Form form, Point point) : base(form, point) {
+        public Centromere(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             images = ImageContainer.imgCentromere;
             size = images[0].Size;
+        }
+
+        public override void Collide() {
+            base.Collide();
+            MessageBox.Show("Get Centromere");
         }
     }
 }

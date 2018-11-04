@@ -10,9 +10,7 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class PlantWall : Cell {
             
-        private int aniInterval;
-
-        public PlantWall(Form form, Point point) : base(form, point) {
+        public PlantWall(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgPlantWall;
             size = images[0].Size;
@@ -20,8 +18,8 @@ namespace TheEvolution.Stage.Cells {
 
         public override void NextStep() {
             if (aniInterval == 0) {
-                aniInterval = 5;
-                //Animate();
+                aniInterval = 4;
+                Animate();
             }
             aniInterval--;
         }

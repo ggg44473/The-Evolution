@@ -10,7 +10,7 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class Shocker : Cell {
 
-        public Shocker(Form form, Point point) : base(form, point) {
+        public Shocker(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgShocker;
             size = images[0].Size;
