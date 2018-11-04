@@ -16,7 +16,7 @@ namespace TheEvolution.Stage.Cells {
                 images = imgPlayerSickEat;
             }
             imgIndex = 0;
-            if (foodCount < 2) {
+            if (foodCount < 3) {
                 foodCount++;
             } else {
                 foodCount = 0;

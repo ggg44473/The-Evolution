@@ -21,7 +21,7 @@ namespace TheEvolution.Stage.Cells {
         public override void NextStep() {
             if (aniInterval == 0) {
                 aniInterval = 5;
-                Animate();
+                //Animate();
             }
             aniInterval--;
         }

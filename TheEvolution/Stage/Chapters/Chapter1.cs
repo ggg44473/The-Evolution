@@ -22,7 +22,7 @@ namespace TheEvolution.Stage.Chapters {
 
         public Chapter1(FormStage form, Background bg) : base(form, bg) {
             GetReady();
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 3; i++) {
                 food.Add(new Algae(form));
                 food.Add(new Charophyta(form));
             }
@@ -35,22 +35,25 @@ namespace TheEvolution.Stage.Chapters {
             for (int i = 0; i < pShocker.Count; i++) {
                 otherCells.Add(new Shocker(form, pShocker[i]));
             }
-            mitochondria = new Mitochondria(form, GameSystem.SetPosition(0.95, 0.95));
+            mitochondria = new Mitochondria(form, GameSystem.SetPosition(0.785, 0.80));
         }
 
         protected override void GetReady() {
             pPlantWall = new List<Point>();
             SetWallPosition();
+            Chapter1Area();
             pTracker = new List<Point> {
-                GameSystem.SetPosition(0.25, 0.3),
-                GameSystem.SetPosition(0.5, 0.3),
-                GameSystem.SetPosition(0.75, 0.3)};
+                GameSystem.SetPosition(0.125, 0.62),
+                GameSystem.SetPosition(0.5, 0.3)};
             pShocker = new List<Point> {
-                GameSystem.SetPosition(0.33, 0.7),
-                GameSystem.SetPosition(0.66, 0.7)};
+                GameSystem.SetPosition(0.265, 0.25),
+                GameSystem.SetPosition(0.265, 0.65),
+                GameSystem.SetPosition(0.415, 0.65),
+                GameSystem.SetPosition(0.568, 0.24),
+                GameSystem.SetPosition(0.825, 0.24)};
         }
 
-        protected void SetWallPosition() {
+        protected void SetWallPosition() { 
             for (double x = -0.025; x < 21; x+=0.05) {
                 pPlantWall.Add(GameSystem.SetPosition(x, -0.05));
             }
@@ -63,6 +66,51 @@ namespace TheEvolution.Stage.Chapters {
             for (double y = -0.05; y < 11; y += 0.1) {
                 pPlantWall.Add(GameSystem.SetPosition(0.975, y));
             }
+        }
+
+        private void Chapter1Area() {
+            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.05));
+            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.15));
+            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.45));
+            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.75));
+            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.85));
+            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.45));
+            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.55));
+            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.75));
+            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.85));
+            pPlantWall.Add(GameSystem.SetPosition(0.325, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.325, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.375, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.375, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.425, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.425, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.475, 0.65));
+            pPlantWall.Add(GameSystem.SetPosition(0.525, 0.65));
+            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.05));
+            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.15));
+            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.45));
+            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.55));
+            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.65));
+            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.45));
+            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.55));
+            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.65));
+            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.75));
+            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.85));
+            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.45));
+            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.55));
+            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.65));
+            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.35));
+            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.45));
+            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.55));
+            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.65));
         }
     }
 }
