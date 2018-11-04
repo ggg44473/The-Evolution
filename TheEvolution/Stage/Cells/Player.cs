@@ -183,13 +183,13 @@ namespace TheEvolution.Stage.Cells {
             int height = GameSystem.screen.Height;
             if (position.Y < height - size.Height && GameSystem.picBoxStage.Top < 0) {
                 GameSystem.formStage.Invoke((Action)delegate () {
-                    GameSystem.picBoxStage.Top += 6 * moveSpeed;
+                    GameSystem.picBoxStage.Top = 0;
                 });
             }
             if (position.Y > 2 * height) {
                 if (position.Y < 2 * height + size.Height) {
                     GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Top += 6 * moveSpeed;
+                        GameSystem.picBoxStage.Top = -height;
                     });
                 }
             }
@@ -200,13 +200,13 @@ namespace TheEvolution.Stage.Cells {
             int height = GameSystem.screen.Height;
             if (position.Y > 2 * height - size.Height && GameSystem.picBoxStage.Top > -2 * height) {
                 GameSystem.formStage.Invoke((Action)delegate () {
-                    GameSystem.picBoxStage.Top -= 6 * moveSpeed;
+                    GameSystem.picBoxStage.Top = -2 * height;
                 });
             }
             if (position.Y < height) {
                 if (position.Y > height - size.Height) {
                     GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Top -= 6 * moveSpeed;
+                        GameSystem.picBoxStage.Top = -height;
                     });
                 }
             }
@@ -217,13 +217,13 @@ namespace TheEvolution.Stage.Cells {
             int height = GameSystem.screen.Height;
             if (position.X < width - size.Width && GameSystem.picBoxStage.Left < 0) {
                 GameSystem.formStage.Invoke((Action)delegate () {
-                    GameSystem.picBoxStage.Left += 6 * moveSpeed;
+                    GameSystem.picBoxStage.Left = 0;
                 });
             }
             if (position.X > 2 * width) {
                 if (position.X < 2 * width + size.Width) {
                     GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Left += 6 * moveSpeed;
+                        GameSystem.picBoxStage.Left = -width;
                     });
                 }
             }
@@ -234,13 +234,13 @@ namespace TheEvolution.Stage.Cells {
             int height = GameSystem.screen.Height;
             if (position.X > 2 * width - size.Width && GameSystem.picBoxStage.Left > -2 * width) {
                 GameSystem.formStage.Invoke((Action)delegate () {
-                    GameSystem.picBoxStage.Left -= width;
+                    GameSystem.picBoxStage.Left = -2 * width;
                 });
             }
             if (position.X < width) {
                 if (position.X > width - size.Width) {
                     GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Left -= width;
+                        GameSystem.picBoxStage.Left = -width;
                     });
                 }
             }
