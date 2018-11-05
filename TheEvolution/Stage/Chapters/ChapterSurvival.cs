@@ -13,7 +13,6 @@ using System.Windows.Forms;
 namespace TheEvolution.Stage.Chapters {
     class ChapterSurvival : Chapter {
 
-        List<Point> pPlantWall;
         List<Point> pTracker;
         List<Point> pShocker;
         List<Point> pPredator;
