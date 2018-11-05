@@ -11,22 +11,23 @@ using System.Windows.Forms;
 using TheEvolution.Core;
 using TheEvolution.Stage;
 using TheEvolution.Stage.Chapters;
+using System.Reflection;
 
 namespace TheEvolution {
     public partial class FormStage : Form {
 
-        public static int chapter;
-        Background bg;
-        Chapter1 chapter1;
-        Chapter2 chapter2;
-        Chapter3 chapter3;
-        Chapter4 chapter4;
+        public static EChapter chapter;
+        ChapterTutorial chapterTutorial;
+        ChapterSurvival chapterSurvival;
 
         public FormStage() {
             InitializeComponent();
             ImageContainer.PrepareImage();
-            bg = new Background(this);
-            GameSystem.form = this;
+            GameSystem.formStage = this;
+            GameSystem.picBoxStage = picBoxStage;
+            picBoxStage.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(picBoxStage, true, null);
+            picBoxStage.Size = new Size(3 * GameSystem.screen.Width, 3 * GameSystem.screen.Height);
+            picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
         }
 
         private void FormStage_Load(object sender, EventArgs e) {
@@ -35,40 +36,48 @@ namespace TheEvolution {
         }
 
         private void labelExit_Click(object sender, EventArgs e) {
+            if (chapterTutorial != null) {
+                chapterTutorial.End();
+            }
+            if (chapterSurvival != null) {
+                chapterSurvival.End();
+            }
             GameSystem.isStart = false;
             Application.Exit();
         }
 
         public void GameOver() {
+            if (chapterTutorial != null) {
+                chapterTutorial.End();
+            }
+            if (chapterSurvival != null) {
+                chapterSurvival.End();
+            }
             GameSystem.isStart = false;
             MessageBox.Show("Game Over!");
             Application.Exit();
         }
 
-        public void NextChapter(int chapter) {
+        public void NextChapter(EChapter chapter) {
             ClearChapter();
             switch (chapter) {
-                case 1:
-                    chapter1 = new Chapter1(this, bg);
-                    chapter1.Start();
+                case EChapter.Tutorial:
+                    chapterTutorial = new ChapterTutorial(picBoxStage);
+                    chapterTutorial.Start();
                     break;
-                case 2:
-                    chapter2 = new Chapter2(this, bg);
-                    chapter2.Start();
-                    break;
-                case 3:
-                    chapter3 = new Chapter3(this, bg);
-                    chapter3.Start();
-                    break;
-                case 4:
-                    chapter4 = new Chapter4(this, bg);
-                    chapter4.Start();
+                case EChapter.Survival:
+                    chapterSurvival = new ChapterSurvival(picBoxStage);
+                    chapterSurvival.Start();
                     break;
             }
         }
 
         public void ClearChapter() {
-            chapter1 = null; chapter2 = null; chapter3 = null; chapter4 = null;
+            chapterTutorial = null; chapterSurvival = null;
         }
+    }
+
+    public enum EChapter {
+        Tutorial, Survival
     }
 }

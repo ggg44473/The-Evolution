@@ -10,7 +10,7 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class Virus : Cell {
 
-        public Virus(Form form, Point point) : base(form, point) {
+        public Virus(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgVirus;
             size = images[0].Size;

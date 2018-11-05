@@ -15,7 +15,7 @@ namespace TheEvolution.Stage.Cells {
         private int foodCount;
         public event EventHandler Killed;
 
-        public Competitor(Form form, Point point) : base(form, point) {
+        public Competitor(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.competitors.Add(this);
             Killed += GameSystem.player.KillCompetitor;
             images = ImageContainer.imgCompetitor;

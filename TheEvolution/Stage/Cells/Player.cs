@@ -12,7 +12,7 @@ namespace TheEvolution.Stage.Cells {
     partial class Player : Cell, ICollideFood {
 
         private bool isUp, isDown, isLeft, isRight;
-        private int originalSpeed, deceleration;
+        private int originalSpeed, deceleration, moveAmount;
         private List<Bitmap> imgPlayer;
         private List<Bitmap> imgPlayerEat;
         private List<Bitmap> imgPlayerSick;
@@ -25,7 +25,7 @@ namespace TheEvolution.Stage.Cells {
         private bool isSick, isShocked;
         private int sickInterval, shockInterval;
 
-        public Player(Form form, Point point) : base(form, point) {
+        public Player(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.player = this;
             imgPlayer = ImageContainer.imgPlayer;
             imgPlayerEat = ImageContainer.imgPlayerEat;
@@ -34,17 +34,17 @@ namespace TheEvolution.Stage.Cells {
             imgPlayerShocked = ImageContainer.imgPlayerShocked;
             images = imgPlayer;
             size = imgPlayer[0].Size;
-            moveSpeed = (int)(0.15 * size.Width);
+            moveSpeed = (int)(0.18 * size.Width);
             originalSpeed = moveSpeed;
-            form.KeyDown += PlayerKeyDown;
-            form.KeyUp += PlayerKeyUp;
+            GameSystem.formStage.KeyDown += PlayerKeyDown;
+            GameSystem.formStage.KeyUp += PlayerKeyUp;
             hp = 5;
         }
 
         public override void Dispose() {
-            GameSystem.form.Paint -= Paint;
-            GameSystem.form.KeyDown -= PlayerKeyDown;
-            GameSystem.form.KeyUp -= PlayerKeyUp;
+            GameSystem.formStage.picBoxStage.Paint -= Paint;
+            GameSystem.formStage.KeyDown -= PlayerKeyDown;
+            GameSystem.formStage.KeyUp -= PlayerKeyUp;
             GameSystem.player = null;
         }
 
@@ -159,17 +159,90 @@ namespace TheEvolution.Stage.Cells {
 
         public void PlayerMove() {
             deceleration = deceleration < moveSpeed ? deceleration + 1 : 0;
+            moveAmount = moveSpeed - deceleration;
             if (isUp) {
-                position.Y -= moveSpeed - deceleration;
+                position.Y -= moveAmount;
+                CheckTopBorderTouched();
             }
             if (isDown) {
-                position.Y += moveSpeed - deceleration;
+                position.Y += moveAmount;
+                CheckBottomBorderTouched();
             }
             if (isLeft) {
-                position.X -= moveSpeed - deceleration;
+                position.X -= moveAmount;
+                CheckLeftBorderTouched();
             }
             if (isRight) {
-                position.X += moveSpeed - deceleration;
+                position.X += moveAmount;
+                CheckRightBorderTouched();
+            }
+        }
+
+        public void CheckTopBorderTouched() {
+            int width = GameSystem.screen.Width;
+            int height = GameSystem.screen.Height;
+            if (position.Y < height - size.Height && GameSystem.picBoxStage.Top < 0) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Top = 0;
+                });
+            }
+            if (position.Y > 2 * height) {
+                if (position.Y < 2 * height + size.Height) {
+                    GameSystem.formStage.Invoke((Action)delegate () {
+                        GameSystem.picBoxStage.Top = -height;
+                    });
+                }
+            }
+        }
+
+        public void CheckBottomBorderTouched() {
+            int width = GameSystem.screen.Width;
+            int height = GameSystem.screen.Height;
+            if (position.Y > 2 * height - size.Height && GameSystem.picBoxStage.Top > -2 * height) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Top = -2 * height;
+                });
+            }
+            if (position.Y < height) {
+                if (position.Y > height - size.Height) {
+                    GameSystem.formStage.Invoke((Action)delegate () {
+                        GameSystem.picBoxStage.Top = -height;
+                    });
+                }
+            }
+        }
+
+        public void CheckLeftBorderTouched() {
+            int width = GameSystem.screen.Width;
+            int height = GameSystem.screen.Height;
+            if (position.X < width - size.Width && GameSystem.picBoxStage.Left < 0) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Left = 0;
+                });
+            }
+            if (position.X > 2 * width) {
+                if (position.X < 2 * width + size.Width) {
+                    GameSystem.formStage.Invoke((Action)delegate () {
+                        GameSystem.picBoxStage.Left = -width;
+                    });
+                }
+            }
+        }
+
+        public void CheckRightBorderTouched() {
+            int width = GameSystem.screen.Width;
+            int height = GameSystem.screen.Height;
+            if (position.X > 2 * width - size.Width && GameSystem.picBoxStage.Left > -2 * width) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Left = -2 * width;
+                });
+            }
+            if (position.X < width) {
+                if (position.X > width - size.Width) {
+                    GameSystem.formStage.Invoke((Action)delegate () {
+                        GameSystem.picBoxStage.Left = -width;
+                    });
+                }
             }
         }
 

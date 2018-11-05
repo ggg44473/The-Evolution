@@ -16,7 +16,7 @@ namespace TheEvolution.Stage.Cells {
                 images = imgPlayerSickEat;
             }
             imgIndex = 0;
-            if (foodCount < 2) {
+            if (foodCount < 3) {
                 foodCount++;
             } else {
                 foodCount = 0;
@@ -73,16 +73,12 @@ namespace TheEvolution.Stage.Cells {
             int tempX, tempY;
             tempX = position.X + (int)(direction.X * 1.2);
             tempY = position.Y + (int)(direction.Y * 1.2);
-            if (tempX > 0 || tempX < GameSystem.screen.Width) {
+            if (tempX > -GameSystem.screen.Width || tempX < 2 * GameSystem.screen.Width) {
                 position.X = tempX;
             }
-            if (tempY > 0 || tempY < GameSystem.screen.Height) {
+            if (tempY > -GameSystem.screen.Height || tempY < 2 * GameSystem.screen.Height) {
                 position.Y = tempY;
             }
-        }
-
-        public void CollideOrganelle(Organelle o) {
-            MessageBox.Show("Test");
         }
     }
 }

@@ -10,7 +10,7 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Foods {
     class Algae : Food {
 
-        public Algae(Form form) : base(form) {
+        public Algae(PictureBox picBoxBg) : base(picBoxBg) {
             images = ImageContainer.imgAlgae;
             size = images[0].Size;
         }

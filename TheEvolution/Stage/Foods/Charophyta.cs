@@ -10,7 +10,7 @@ using System.Drawing;
 namespace TheEvolution.Stage.Foods {
     class Charophyta : Food {
 
-        public Charophyta(Form form) : base(form) {
+        public Charophyta(PictureBox picBoxBg) : base(picBoxBg) {
             images = ImageContainer.imgCharophyta;
             size = images[0].Size;
         }

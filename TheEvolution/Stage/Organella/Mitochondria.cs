@@ -10,9 +10,14 @@ using System.Drawing;
 namespace TheEvolution.Stage.Organella {
     class Mitochondria : Organelle {
 
-        public Mitochondria(Form form, Point point) : base(form, point) {
+        public Mitochondria(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             images = ImageContainer.imgMitochondria;
             size = images[0].Size;
+        }
+
+        public override void Collide() {
+            base.Collide();
+            MessageBox.Show("Get Mito");
         }
     }
 }

@@ -9,22 +9,24 @@ using TheEvolution.Stage;
 using TheEvolution.Stage.Cells;
 using TheEvolution.Stage.Foods;
 using TheEvolution.Stage.Organella;
+using System.Windows.Forms;
 
 namespace TheEvolution.Core {
     abstract class Chapter {
 
-        FormStage form;
-        Background background;
-        Thread threadAct;
-        Thread threadCollide;
-        Player player;
+        protected Thread threadAct;
+        protected Thread threadCollide;
+        protected Player player;
+        protected Background background;
+        protected List<Point> pPlantWall;
 
-        public Chapter(FormStage form, Background bg) {
-            this.form = form;
-            background = bg;
+        public Chapter(PictureBox picBoxBg) {
             threadAct = new Thread(GameSystem.Act);
             threadCollide = new Thread(GameSystem.CollisionDetect);
-            player = new Player(form, GameSystem.SetPosition(0.1, 0.1));
+            background = new Background(picBoxBg);
+            player = new Player(picBoxBg, GameSystem.SetPosition(1.5, 1.5));
+            pPlantWall = new List<Point>();
+            GetReady();
         }
 
         protected abstract void GetReady();
@@ -36,15 +38,32 @@ namespace TheEvolution.Core {
         }
 
         public virtual void End() {
-            foreach (Painter p in GameSystem.painters) {
-                p.Dispose();
-            }
+            GameSystem.isStart = false;
+            threadAct.Abort();
+            threadCollide.Abort();
+            //This takes too much time.
+            //foreach (Painter p in GameSystem.painters) {
+            //    p.Dispose();
+            //}
             GameSystem.player = null;
             GameSystem.competitors.Clear();
             GameSystem.otherCells.Clear();
             GameSystem.foods.Clear();
             GameSystem.organella.Clear();
             GameSystem.painters.Clear();
+        }
+
+        protected void SetBorderPosition() {
+            int width = GameSystem.screen.Width;
+            int height = GameSystem.screen.Height;
+            for (double x = 0; x < 15; x += 0.2) {
+                pPlantWall.Add(GameSystem.SetPosition(x, 0));
+                pPlantWall.Add(GameSystem.SetPosition(x, 2.75));
+            }
+            for (double y = 0; y < 10; y += 0.25) {
+                pPlantWall.Add(GameSystem.SetPosition(0, y));
+                pPlantWall.Add(GameSystem.SetPosition(2.8, y));
+            }
         }
     }
 }

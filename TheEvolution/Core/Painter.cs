@@ -16,13 +16,13 @@ namespace TheEvolution.Core {
 
         public Painter() {}
 
-        public Painter(Form form) {
-            form.Paint += Paint;
+        public Painter(PictureBox picBoxBg) {
+            picBoxBg.Paint += Paint;
             GameSystem.painters.Add(this);
         }
 
         public virtual void Dispose() {
-            GameSystem.form.Paint -= Paint;
+            GameSystem.formStage.picBoxStage.Paint -= Paint;
         }
 
         public virtual Size Size { get => size; set =>size = value; }

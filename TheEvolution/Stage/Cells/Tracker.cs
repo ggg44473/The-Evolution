@@ -10,7 +10,7 @@ using TheEvolution.Core;
 namespace TheEvolution.Stage.Cells {
     class Tracker : Cell {
 
-        public Tracker(Form form, Point point) : base(form, point) {
+        public Tracker(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.otherCells.Add(this);
             images = ImageContainer.imgTracker;
             size = images[0].Size;
