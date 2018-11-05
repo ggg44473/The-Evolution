@@ -88,11 +88,11 @@ namespace TheEvolution {
         }
 
         private void picBoxExit_MouseHover(object sender, EventArgs e) {
-            picBoxExit.Image = Resources.IconExit2;
+            picBoxExit.Image = Resources.IconExit;
         }
 
         private void picBoxExit_MouseLeave(object sender, EventArgs e) {
-            picBoxExit.Image = Resources.IconExit1;
+            picBoxExit.Image = Resources.IconExit;
         }
 
         private void picBoxPause_Click(object sender, EventArgs e) {

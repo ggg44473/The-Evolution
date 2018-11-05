@@ -273,9 +273,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CentIntro {
+        internal static System.Drawing.Bitmap CentroIntro {
             get {
-                object obj = ResourceManager.GetObject("CentIntro", resourceCulture);
+                object obj = ResourceManager.GetObject("CentroIntro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +343,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DtingScreen {
+        internal static System.Drawing.Bitmap DyingScreen {
             get {
-                object obj = ResourceManager.GetObject("DtingScreen", resourceCulture);
+                object obj = ResourceManager.GetObject("DyingScreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,29 +353,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ER1 {
+        internal static System.Drawing.Bitmap ER {
             get {
-                object obj = ResourceManager.GetObject("ER1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ER2 {
-            get {
-                object obj = ResourceManager.GetObject("ER2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ER3 {
-            get {
-                object obj = ResourceManager.GetObject("ER3", resourceCulture);
+                object obj = ResourceManager.GetObject("ER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,9 +373,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IconControl1 {
+        internal static System.Drawing.Bitmap IconEat {
             get {
-                object obj = ResourceManager.GetObject("IconControl1", resourceCulture);
+                object obj = ResourceManager.GetObject("IconEat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +383,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IconControl2 {
+        internal static System.Drawing.Bitmap IconExit {
             get {
-                object obj = ResourceManager.GetObject("IconControl2", resourceCulture);
+                object obj = ResourceManager.GetObject("IconExit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +393,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IconEat1 {
+        internal static System.Drawing.Bitmap IconHP {
             get {
-                object obj = ResourceManager.GetObject("IconEat1", resourceCulture);
+                object obj = ResourceManager.GetObject("IconHP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +403,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IconEat2 {
+        internal static System.Drawing.Bitmap IconPause {
             get {
-                object obj = ResourceManager.GetObject("IconEat2", resourceCulture);
+                object obj = ResourceManager.GetObject("IconPause", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,89 +413,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IconExit1 {
+        internal static System.Drawing.Bitmap LysoIntro {
             get {
-                object obj = ResourceManager.GetObject("IconExit1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IconExit2 {
-            get {
-                object obj = ResourceManager.GetObject("IconExit2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IconHP1 {
-            get {
-                object obj = ResourceManager.GetObject("IconHP1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IconHP2 {
-            get {
-                object obj = ResourceManager.GetObject("IconHP2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IconRank1 {
-            get {
-                object obj = ResourceManager.GetObject("IconRank1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IconRank2 {
-            get {
-                object obj = ResourceManager.GetObject("IconRank2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IconStop1 {
-            get {
-                object obj = ResourceManager.GetObject("IconStop1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IconStop2 {
-            get {
-                object obj = ResourceManager.GetObject("IconStop2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LysoInstro {
-            get {
-                object obj = ResourceManager.GetObject("LysoInstro", resourceCulture);
+                object obj = ResourceManager.GetObject("LysoIntro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1276,6 +1176,16 @@ namespace TheEvolution.Properties {
         internal static System.Drawing.Bitmap SickPlayerEat5 {
             get {
                 object obj = ResourceManager.GetObject("SickPlayerEat5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tips {
+            get {
+                object obj = ResourceManager.GetObject("Tips", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

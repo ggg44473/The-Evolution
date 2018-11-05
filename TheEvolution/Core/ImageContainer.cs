@@ -195,9 +195,7 @@ namespace TheEvolution.Core {
         static public void SetImgER() {
             size = GameSystem.SetSize(0.04, 0.06);
             imgER = new List<Bitmap>() {
-                new Bitmap(Resources.ER1, size),
-                new Bitmap(Resources.ER2, size),
-                new Bitmap(Resources.ER3, size)};
+                new Bitmap(Resources.ER, size)};
         }
 
         static public void SetImgLysosome() {

@@ -181,8 +181,8 @@
   <data name="BtnStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\BtnStart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CentIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\CentIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CentroIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\CentroIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Centromere" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Centromere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,59 +202,29 @@
   <data name="Competitor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Competitor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DtingScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\DtingScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DyingScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\DyingScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\ER1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ER2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\ER2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ER3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\ER3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ERIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\ERIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconControl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconControl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconControl2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconControl2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconExit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconExit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconHP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconHP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconPause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconPause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconExit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconExit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconExit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconExit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconHP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconHP1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconHP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconHP2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconRank1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconRank1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconRank2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconRank2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconStop1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconStop1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconStop2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\IconStop2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LysoInstro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\LysoInstro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LysoIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\LysoIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lysosome1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Lysosome1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -483,6 +453,9 @@
   </data>
   <data name="SickPlayerEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\SickPlayerEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tips" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Tips.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
