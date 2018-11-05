@@ -133,17 +133,17 @@
   <data name="Bloodbar0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Bloodbar0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bloodbar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\Bloodbar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BloodBar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\BloodBar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bloodbar10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Bloodbar10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bloodbar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\Bloodbar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BloodBar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\BloodBar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bloodbar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\Bloodbar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BloodBar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\BloodBar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bloodbar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Bloodbar4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +169,20 @@
   <data name="BtnExit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\BtnExit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BtnNextChapter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\BtnNextChapter1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnNextChapter2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\BtnNextChapter2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnNextChapter3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\BtnNextChapter3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BtnStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\BtnStart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CentIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\CentIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Centromere" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Centromere.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +202,9 @@
   <data name="Competitor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Competitor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DtingScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\DtingScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\ER1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,41 +214,47 @@
   <data name="ER3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\ER3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_44" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-44.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ERIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ERIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_45" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-45.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconControl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconControl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconControl2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconControl2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_47" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_49" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-49.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconExit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconExit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconExit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconExit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_51" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconHP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconHP1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_52" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconHP2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconHP2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_53" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-53.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconRank1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconRank1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_54" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-54.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconRank2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconRank2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="I_55" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\I-55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconStop1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconStop1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconStop2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconStop2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LysoInstro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\LysoInstro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lysosome1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Lysosome1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -246,6 +267,9 @@
   </data>
   <data name="Mitochondria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Mitochondria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MitoIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\MitoIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OP1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\OP1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -291,6 +315,12 @@
   </data>
   <data name="P5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\P5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picSurvive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\picSurvive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picTutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\picTutorial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlantWall1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\PlantWall1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
