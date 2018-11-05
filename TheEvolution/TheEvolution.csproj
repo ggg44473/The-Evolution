@@ -452,42 +452,6 @@
     <None Include="Pictures\Bloodbar10.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\I-44.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-45.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-46.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-47.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-49.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-51.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-52.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-53.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-54.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-55.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\Progressbar0.png" />
   </ItemGroup>
   <ItemGroup>
