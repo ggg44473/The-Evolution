@@ -27,12 +27,12 @@ namespace TheEvolution.Core {
 
         public static void Act() {
             while (isStart) {
-                formStage.Invoke((Action)delegate () {
-                    //formStage.label1.Text = player.Hp.ToString();
-                    if (player.Hp == 0) {
+                if (player.Hp == 0) {
+                    formStage.Invoke((Action)delegate () {
                         formStage.GameOver();
-                    }
-                });
+                    });
+                    Thread.Yield();
+                }
                 player.NextStep();
                 foreach (Competitor c in competitors) {
                     c.NextStep();
@@ -43,7 +43,14 @@ namespace TheEvolution.Core {
                 foreach (Food f in foods) {
                     f.NextStep();
                 }
-                picBoxStage.Invoke((Action)delegate(){ picBoxStage.Invalidate(); });
+                picBoxStage.Invoke((Action)delegate () { picBoxStage.Invalidate(); });
+                if (formStage.hpBeatInterval == 0) {
+                    formStage.Invoke((Action)delegate () {
+                        GameSystem.SetSquareControlSize(formStage.picBoxHp, formStage.panelStatus.Size, 0.06, 0.5, 0.08);
+                    });
+                } else {
+                    formStage.hpBeatInterval--;
+                }
                 formStage.Invalidate();
                 Thread.Sleep(50);
             }
@@ -174,11 +181,18 @@ namespace TheEvolution.Core {
                 Math.Pow((p1.X - p2.X), 2) + Math.Pow((p1.Y - p2.Y), 2));
         }
 
-        public static void SetControlSize(Control control, Size ClientSize, double ratioL, double ratioT, double ratioW, double ratioH) {
+        public static void SetControlSize(Control control, Size ClientSize, double ratioX, double ratioY, double ratioW, double ratioH) {
             control.Width = Convert.ToInt32(ClientSize.Width * ratioW);
             control.Height = Convert.ToInt32(ClientSize.Height * ratioH);
-            control.Left = Convert.ToInt32(ClientSize.Width * ratioL) - (control.Width / 2);
-            control.Top = Convert.ToInt32(ClientSize.Height * ratioT) - (control.Height / 2);
+            control.Left = Convert.ToInt32(ClientSize.Width * ratioX) - (control.Width / 2);
+            control.Top = Convert.ToInt32(ClientSize.Height * ratioY) - (control.Height / 2);
+        }
+
+        public static void SetSquareControlSize(Control control, Size ClientSize, double ratioX, double ratioY, double ratioW) {
+            control.Width = Convert.ToInt32(ClientSize.Width * ratioW);
+            control.Height = control.Width;
+            control.Left = Convert.ToInt32(ClientSize.Width * ratioX) - (control.Width / 2);
+            control.Top = Convert.ToInt32(ClientSize.Height * ratioY) - (control.Height / 2);
         }
 
         public static Size SetSize(double ratioW, double ratioH) {

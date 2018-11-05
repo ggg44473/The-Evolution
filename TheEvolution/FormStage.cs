@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
+using System.Reflection;
 using TheEvolution.Core;
 using TheEvolution.Stage;
 using TheEvolution.Stage.Chapters;
-using System.Reflection;
 using TheEvolution.Properties;
-using System.Drawing.Drawing2D;
+using TheEvolution.Stage.Cells;
 
 namespace TheEvolution {
     public partial class FormStage : Form {
@@ -22,6 +22,7 @@ namespace TheEvolution {
         public static bool isPause;
         ChapterTutorial chapterTutorial;
         ChapterSurvival chapterSurvival;
+        public int hpBeatInterval;
 
         public FormStage() {
             InitializeComponent();
@@ -35,12 +36,17 @@ namespace TheEvolution {
 
         private void FormStage_Load(object sender, EventArgs e) {
             GameSystem.SetControlSize(panelTip, ClientSize, 0.5, 0.5, 0.6, 0.6);
-            GameSystem.SetControlSize(picBoxExit, ClientSize, 0.04, 0.93, 0.05, 0.1);
-            GameSystem.SetControlSize(picBoxPause, ClientSize, 0.11, 0.93, 0.05, 0.1);
-            GraphicsPath path = new GraphicsPath();
-            path.AddEllipse(0, 0, picBoxExit.Width, picBoxExit.Width);
-            picBoxExit.Region = new Region(path);
-            picBoxPause.Region = picBoxExit.Region;
+
+            GameSystem.SetControlSize(panelStatus, ClientSize, 0.15, 0.025, 0.3, 0.05);
+            GameSystem.SetSquareControlSize(picBoxHp, panelStatus.Size, 0.06, 0.5, 0.08);
+            GameSystem.SetControlSize(picBoxHpBar, panelStatus.Size, 0.38, 0.5, 0.5, 0.95);
+            GameSystem.SetSquareControlSize(picBoxEat, panelStatus.Size, 0.7, 0.5, 0.1);
+            GameSystem.SetControlSize(picBoxEatBar, panelStatus.Size, 0.88, 0.5, 0.2, 0.95);
+
+            GameSystem.SetControlSize(panelSetting, ClientSize, 0.96, 0.025, 0.08, 0.05);
+            GameSystem.SetSquareControlSize(picBoxPause, panelSetting.Size, 0.255, 0.5, 0.45);
+            GameSystem.SetSquareControlSize(picBoxExit, panelSetting.Size, 0.745, 0.5, 0.45);
+
             NextChapter(chapter);
         }
 
@@ -61,6 +67,8 @@ namespace TheEvolution {
             switch (chapter) {
                 case EChapter.Tutorial:
                     chapterTutorial = new ChapterTutorial(picBoxStage);
+                    GameSystem.player.HpChanged += OnPlayerHpChanged;
+                    GameSystem.player.Eat += OnPlayerEat;
                     chapterTutorial.Start();
                     break;
                 case EChapter.Survival:
@@ -72,6 +80,69 @@ namespace TheEvolution {
 
         public void ClearChapter() {
             chapterTutorial = null; chapterSurvival = null;
+        }
+
+        public void OnPlayerHpChanged(object sender, PlayerEventArgs args) {
+            hpBeatInterval = 4;
+            if (InvokeRequired) {
+                Invoke((Action)delegate() {
+                    GameSystem.SetSquareControlSize(picBoxHp, panelStatus.Size, 0.06, 0.5, 0.15);
+                });
+            } else {
+                GameSystem.SetSquareControlSize(picBoxHp, panelStatus.Size, 0.06, 0.5, 0.15);
+            }
+            switch (args.playerHp) {
+                case 0:
+                    picBoxHpBar.Image = Resources.Bloodbar0;
+                    break;
+                case 1:
+                    picBoxHpBar.Image = Resources.Bloodbar1;
+                    break;
+                case 2:
+                    picBoxHpBar.Image = Resources.Bloodbar2;
+                    break;
+                case 3:
+                    picBoxHpBar.Image = Resources.Bloodbar3;
+                    break;
+                case 4:
+                    picBoxHpBar.Image = Resources.Bloodbar4;
+                    break;
+                case 5:
+                    picBoxHpBar.Image = Resources.Bloodbar5;
+                    break;
+                case 6:
+                    picBoxHpBar.Image = Resources.Bloodbar6;
+                    break;
+                case 7:
+                    picBoxHpBar.Image = Resources.Bloodbar7;
+                    break;
+                case 8:
+                    picBoxHpBar.Image = Resources.Bloodbar8;
+                    break;
+                case 9:
+                    picBoxHpBar.Image = Resources.Bloodbar9;
+                    break;
+                case 10:
+                    picBoxHpBar.Image = Resources.Bloodbar10;
+                    break;
+            }
+        }
+
+        public void OnPlayerEat(object sender, PlayerEventArgs args) {
+            switch (args.foodCount) {
+                case 0:
+                    picBoxEatBar.Image = Resources.Progressbar0;
+                    break;
+                case 1:
+                    picBoxEatBar.Image = Resources.Progressbar1;
+                    break;
+                case 2:
+                    picBoxEatBar.Image = Resources.Progressbar2;
+                    break;
+                case 3:
+                    picBoxEatBar.Image = Resources.Progressbar3;
+                    break;
+            }
         }
 
         private void picBoxExit_Click(object sender, EventArgs e) {
@@ -87,15 +158,8 @@ namespace TheEvolution {
             }
         }
 
-        private void picBoxExit_MouseHover(object sender, EventArgs e) {
-            picBoxExit.Image = Resources.IconExit;
-        }
-
-        private void picBoxExit_MouseLeave(object sender, EventArgs e) {
-            picBoxExit.Image = Resources.IconExit;
-        }
-
         private void picBoxPause_Click(object sender, EventArgs e) {
+            panelTip.Visible = true;
             if (chapterTutorial != null) {
                 chapterTutorial.Pause();
             } else if (chapterSurvival != null) {
@@ -111,6 +175,7 @@ namespace TheEvolution {
                 chapterSurvival.Resume();
             }
             isPause = false;
+            panelTip.Visible = false;
         }
     }
 

@@ -24,6 +24,8 @@ namespace TheEvolution.Stage.Cells {
         private int hiddenInterval;
         private bool isSick, isShocked;
         private int sickInterval, shockInterval;
+        public event EventHandler<PlayerEventArgs> HpChanged;
+        public event EventHandler<PlayerEventArgs> Eat;
 
         public Player(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.player = this;
@@ -262,6 +264,7 @@ namespace TheEvolution.Stage.Cells {
                         size.Height -= (int)(0.02 * GameSystem.screen.Height);
                     }
                     hp = value;
+                    HpChanged(this, new PlayerEventArgs(hp));
                 }
             }
         }
@@ -300,6 +303,20 @@ namespace TheEvolution.Stage.Cells {
                     moveSpeed = originalSpeed;
                 }
             }
+        }
+    }
+
+    public class PlayerEventArgs : EventArgs {
+
+        public int playerHp;
+        public int foodCount;
+
+        public PlayerEventArgs(int hp) {
+           playerHp = hp;
+        }
+
+        public PlayerEventArgs(int foodCount, string msg) {
+            this.foodCount = foodCount;
         }
     }
 }

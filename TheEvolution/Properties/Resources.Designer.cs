@@ -113,9 +113,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BloodBar1 {
+        internal static System.Drawing.Bitmap Bloodbar1 {
             get {
-                object obj = ResourceManager.GetObject("BloodBar1", resourceCulture);
+                object obj = ResourceManager.GetObject("Bloodbar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BloodBar2 {
+        internal static System.Drawing.Bitmap Bloodbar2 {
             get {
-                object obj = ResourceManager.GetObject("BloodBar2", resourceCulture);
+                object obj = ResourceManager.GetObject("Bloodbar2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BloodBar3 {
+        internal static System.Drawing.Bitmap Bloodbar3 {
             get {
-                object obj = ResourceManager.GetObject("BloodBar3", resourceCulture);
+                object obj = ResourceManager.GetObject("Bloodbar3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
