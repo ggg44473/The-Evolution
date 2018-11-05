@@ -159,7 +159,7 @@ namespace TheEvolution.Core {
         }
 
         static public void SetImgPlantWall() {
-            size = GameSystem.SetSize(0.2, 0.25);
+            size = GameSystem.SetSize(0.22, 0.27);
             imgPlantWall = new List<Bitmap>() {
                 new Bitmap(Resources.PlantWall1, size),
                 new Bitmap(Resources.PlantWall2, size),

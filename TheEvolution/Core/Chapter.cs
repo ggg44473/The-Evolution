@@ -41,9 +41,10 @@ namespace TheEvolution.Core {
             GameSystem.isStart = false;
             threadAct.Abort();
             threadCollide.Abort();
-            foreach (Painter p in GameSystem.painters) {
-                p.Dispose();
-            }
+            //This takes too much time.
+            //foreach (Painter p in GameSystem.painters) {
+            //    p.Dispose();
+            //}
             GameSystem.player = null;
             GameSystem.competitors.Clear();
             GameSystem.otherCells.Clear();
@@ -55,16 +56,12 @@ namespace TheEvolution.Core {
         protected void SetBorderPosition() {
             int width = GameSystem.screen.Width;
             int height = GameSystem.screen.Height;
-            for (double x = -width; x < 15; x += 0.2) {
-                pPlantWall.Add(GameSystem.SetPosition(x, -height));
+            for (double x = 0; x < 15; x += 0.2) {
+                pPlantWall.Add(GameSystem.SetPosition(x, 0));
+                pPlantWall.Add(GameSystem.SetPosition(x, 2.75));
             }
-            for (double x = -width; x < 15; x += 0.2) {
-                pPlantWall.Add(GameSystem.SetPosition(x, 3 * height));
-            }
-            for (double y = -height; y < 12; y += 0.25) {
+            for (double y = 0; y < 10; y += 0.25) {
                 pPlantWall.Add(GameSystem.SetPosition(0, y));
-            }
-            for (double y = -height; y < 12; y += 0.25) {
                 pPlantWall.Add(GameSystem.SetPosition(2.8, y));
             }
         }

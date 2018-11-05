@@ -21,7 +21,7 @@ namespace TheEvolution.Stage.Chapters {
         Mitochondria mitochondria;
 
         public ChapterTutorial(PictureBox picBoxBg) : base(picBoxBg) {
-            for (int i = 0; i < 50; i++) {
+            for (int i = 0; i < 1000; i++) {
                 food.Add(new Algae(picBoxBg));
                 food.Add(new Charophyta(picBoxBg));
             }
