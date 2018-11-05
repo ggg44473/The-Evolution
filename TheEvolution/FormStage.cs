@@ -12,11 +12,14 @@ using TheEvolution.Core;
 using TheEvolution.Stage;
 using TheEvolution.Stage.Chapters;
 using System.Reflection;
+using TheEvolution.Properties;
+using System.Drawing.Drawing2D;
 
 namespace TheEvolution {
     public partial class FormStage : Form {
 
         public static EChapter chapter;
+        public static bool isPause;
         ChapterTutorial chapterTutorial;
         ChapterSurvival chapterSurvival;
 
@@ -31,19 +34,14 @@ namespace TheEvolution {
         }
 
         private void FormStage_Load(object sender, EventArgs e) {
-            GameSystem.SetControlSize(labelExit, ClientSize, 0.04, 0.95, 0.05, 0.05);
+            GameSystem.SetControlSize(panelTip, ClientSize, 0.5, 0.5, 0.6, 0.6);
+            GameSystem.SetControlSize(picBoxExit, ClientSize, 0.04, 0.93, 0.05, 0.1);
+            GameSystem.SetControlSize(picBoxPause, ClientSize, 0.11, 0.93, 0.05, 0.1);
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, picBoxExit.Width, picBoxExit.Width);
+            picBoxExit.Region = new Region(path);
+            picBoxPause.Region = picBoxExit.Region;
             NextChapter(chapter);
-        }
-
-        private void labelExit_Click(object sender, EventArgs e) {
-            if (chapterTutorial != null) {
-                chapterTutorial.End();
-            }
-            if (chapterSurvival != null) {
-                chapterSurvival.End();
-            }
-            GameSystem.isStart = false;
-            Application.Exit();
         }
 
         public void GameOver() {
@@ -74,6 +72,45 @@ namespace TheEvolution {
 
         public void ClearChapter() {
             chapterTutorial = null; chapterSurvival = null;
+        }
+
+        private void picBoxExit_Click(object sender, EventArgs e) {
+            if (!isPause) {
+                if (chapterTutorial != null) {
+                    chapterTutorial.End();
+                }
+                if (chapterSurvival != null) {
+                    chapterSurvival.End();
+                }
+                GameSystem.isStart = false;
+                Application.Exit();
+            }
+        }
+
+        private void picBoxExit_MouseHover(object sender, EventArgs e) {
+            picBoxExit.Image = Resources.IconExit2;
+        }
+
+        private void picBoxExit_MouseLeave(object sender, EventArgs e) {
+            picBoxExit.Image = Resources.IconExit1;
+        }
+
+        private void picBoxPause_Click(object sender, EventArgs e) {
+            if (chapterTutorial != null) {
+                chapterTutorial.Pause();
+            } else if (chapterSurvival != null) {
+                chapterSurvival.Pause();
+            }
+            isPause = true;
+        }
+
+        private void panelTip_Click(object sender, EventArgs e) {
+            if (chapterTutorial != null) {
+                chapterTutorial.Resume();
+            } else if (chapterSurvival != null) {
+                chapterSurvival.Resume();
+            }
+            isPause = false;
         }
     }
 

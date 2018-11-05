@@ -28,7 +28,7 @@ namespace TheEvolution.Core {
         public static void Act() {
             while (isStart) {
                 formStage.Invoke((Action)delegate () {
-                    formStage.label1.Text = player.Hp.ToString();
+                    //formStage.label1.Text = player.Hp.ToString();
                     if (player.Hp == 0) {
                         formStage.GameOver();
                     }

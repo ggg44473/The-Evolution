@@ -41,16 +41,24 @@ namespace TheEvolution.Core {
             GameSystem.isStart = false;
             threadAct.Abort();
             threadCollide.Abort();
-            //This takes too much time.
-            //foreach (Painter p in GameSystem.painters) {
-            //    p.Dispose();
-            //}
             GameSystem.player = null;
             GameSystem.competitors.Clear();
             GameSystem.otherCells.Clear();
             GameSystem.foods.Clear();
             GameSystem.organella.Clear();
             GameSystem.painters.Clear();
+        }
+
+        public virtual void Pause() {
+            if (!FormStage.isPause) {
+                threadAct.Suspend();
+                threadCollide.Suspend();
+            }
+        }
+
+        public virtual void Resume() {
+            threadAct.Resume();
+            threadCollide.Resume();
         }
 
         protected void SetBorderPosition() {
