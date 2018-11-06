@@ -25,22 +25,22 @@
         private void InitializeComponent() {
             this.panelTip = new System.Windows.Forms.Panel();
             this.panelStatus = new System.Windows.Forms.Panel();
+            this.panelSetting = new System.Windows.Forms.Panel();
+            this.picBoxPause = new System.Windows.Forms.PictureBox();
+            this.picBoxExit = new System.Windows.Forms.PictureBox();
             this.picBoxEatBar = new System.Windows.Forms.PictureBox();
             this.picBoxEat = new System.Windows.Forms.PictureBox();
             this.picBoxHp = new System.Windows.Forms.PictureBox();
             this.picBoxHpBar = new System.Windows.Forms.PictureBox();
-            this.panelSetting = new System.Windows.Forms.Panel();
-            this.picBoxPause = new System.Windows.Forms.PictureBox();
-            this.picBoxExit = new System.Windows.Forms.PictureBox();
             this.picBoxStage = new System.Windows.Forms.PictureBox();
             this.panelStatus.SuspendLayout();
+            this.panelSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEatBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHpBar)).BeginInit();
-            this.panelSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxStage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,40 @@
             this.panelStatus.Name = "panelStatus";
             this.panelStatus.Size = new System.Drawing.Size(571, 62);
             this.panelStatus.TabIndex = 6;
+            // 
+            // panelSetting
+            // 
+            this.panelSetting.BackColor = System.Drawing.Color.Black;
+            this.panelSetting.Controls.Add(this.picBoxPause);
+            this.panelSetting.Controls.Add(this.picBoxExit);
+            this.panelSetting.Location = new System.Drawing.Point(884, 16);
+            this.panelSetting.Name = "panelSetting";
+            this.panelSetting.Size = new System.Drawing.Size(140, 62);
+            this.panelSetting.TabIndex = 9;
+            // 
+            // picBoxPause
+            // 
+            this.picBoxPause.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxPause.Image = global::TheEvolution.Properties.Resources.IconPause;
+            this.picBoxPause.Location = new System.Drawing.Point(14, 3);
+            this.picBoxPause.Name = "picBoxPause";
+            this.picBoxPause.Size = new System.Drawing.Size(49, 52);
+            this.picBoxPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPause.TabIndex = 4;
+            this.picBoxPause.TabStop = false;
+            this.picBoxPause.Click += new System.EventHandler(this.Pause_Click);
+            // 
+            // picBoxExit
+            // 
+            this.picBoxExit.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxExit.Image = global::TheEvolution.Properties.Resources.IconExit;
+            this.picBoxExit.Location = new System.Drawing.Point(80, 3);
+            this.picBoxExit.Name = "picBoxExit";
+            this.picBoxExit.Size = new System.Drawing.Size(47, 56);
+            this.picBoxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxExit.TabIndex = 3;
+            this.picBoxExit.TabStop = false;
+            this.picBoxExit.Click += new System.EventHandler(this.picBoxExit_Click);
             // 
             // picBoxEatBar
             // 
@@ -111,40 +145,6 @@
             this.picBoxHpBar.TabIndex = 6;
             this.picBoxHpBar.TabStop = false;
             // 
-            // panelSetting
-            // 
-            this.panelSetting.BackColor = System.Drawing.Color.Black;
-            this.panelSetting.Controls.Add(this.picBoxPause);
-            this.panelSetting.Controls.Add(this.picBoxExit);
-            this.panelSetting.Location = new System.Drawing.Point(884, 16);
-            this.panelSetting.Name = "panelSetting";
-            this.panelSetting.Size = new System.Drawing.Size(140, 62);
-            this.panelSetting.TabIndex = 9;
-            // 
-            // picBoxPause
-            // 
-            this.picBoxPause.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxPause.Image = global::TheEvolution.Properties.Resources.IconPause;
-            this.picBoxPause.Location = new System.Drawing.Point(14, 3);
-            this.picBoxPause.Name = "picBoxPause";
-            this.picBoxPause.Size = new System.Drawing.Size(49, 52);
-            this.picBoxPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPause.TabIndex = 4;
-            this.picBoxPause.TabStop = false;
-            this.picBoxPause.Click += new System.EventHandler(this.Pause_Click);
-            // 
-            // picBoxExit
-            // 
-            this.picBoxExit.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxExit.Image = global::TheEvolution.Properties.Resources.IconExit;
-            this.picBoxExit.Location = new System.Drawing.Point(80, 3);
-            this.picBoxExit.Name = "picBoxExit";
-            this.picBoxExit.Size = new System.Drawing.Size(47, 56);
-            this.picBoxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxExit.TabIndex = 3;
-            this.picBoxExit.TabStop = false;
-            this.picBoxExit.Click += new System.EventHandler(this.picBoxExit_Click);
-            // 
             // picBoxStage
             // 
             this.picBoxStage.Location = new System.Drawing.Point(96, 115);
@@ -166,17 +166,17 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormStage";
-            this.Text = "TheEvolution - Cell";
+            this.Text = "The Evolution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormStage_Load);
             this.panelStatus.ResumeLayout(false);
+            this.panelSetting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEatBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHpBar)).EndInit();
-            this.panelSetting.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxStage)).EndInit();
             this.ResumeLayout(false);
 

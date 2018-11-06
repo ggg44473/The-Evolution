@@ -28,9 +28,9 @@ namespace TheEvolution {
         private void FormStart_Load(object sender, EventArgs e) {
             GameSystem.screen = ClientSize;
             GameSystem.SetControlSize(picTitle, ClientSize, 0.5, 0.24, 0.95, 0.35);
-            GameSystem.SetControlSize(picStart, ClientSize, 0.75, 0.55, 0.19, 0.08);
+            GameSystem.SetControlSize(picTutorial, ClientSize, 0.75, 0.55, 0.19, 0.08);
             GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.68, 0.24, 0.08);
-            GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);            
+            GameSystem.SetControlSize(picExit, ClientSize, 0.74, 0.82, 0.15, 0.07);            
             playerSize = GameSystem.SetSize(0.41, 0.4);
             competitorSize = GameSystem.SetSize(0.09, 0.1);
             playerPosition = GameSystem.SetPosition(0.05, 0.5);
@@ -46,7 +46,7 @@ namespace TheEvolution {
                 new Bitmap(Resources.Competitor2, competitorSize)};
             timerAnimation.Start();
             GameSystem.formStage = new FormStage();
-            GameSystem.formStage.Closed += (s, arg) => Close();
+            //GameSystem.formStage.Closed += (s, arg) => Close();
         }
 
         private void picStart_Click(object sender, EventArgs e) {
@@ -84,8 +84,8 @@ namespace TheEvolution {
             if (!isActed) {
                 isActed = true;
                 if (competitorPosition == GameSystem.SetPosition(0.55, 0.5)) {
-                    picStart.Size = GameSystem.SetSize(0.24, 0.13);
-                    picStart.Location = GameSystem.SetPosition(0.655, 0.49);
+                    picTutorial.Size = GameSystem.SetSize(0.24, 0.13);
+                    picTutorial.Location = GameSystem.SetPosition(0.655, 0.49);
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
                     picSurvive.Size = GameSystem.SetSize(0.29, 0.13);
                     picSurvive.Location = GameSystem.SetPosition(0.655, 0.62);
@@ -95,9 +95,9 @@ namespace TheEvolution {
                 }
             } else {
                 isActed = false;
-                GameSystem.SetControlSize(picStart, ClientSize, 0.75, 0.55, 0.19, 0.08);
+                GameSystem.SetControlSize(picTutorial, ClientSize, 0.75, 0.55, 0.19, 0.08);
                 GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.68, 0.24, 0.08);
-                GameSystem.SetControlSize(picExit, ClientSize, 0.73, 0.82, 0.15, 0.07);
+                GameSystem.SetControlSize(picExit, ClientSize, 0.74, 0.82, 0.15, 0.07);
             }          
         }
         

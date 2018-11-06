@@ -12,26 +12,26 @@ using TheEvolution.Stage.Organella;
 using System.Windows.Forms;
 
 namespace TheEvolution.Core {
-    abstract class Chapter {
+    public abstract class Chapter {
 
         protected Thread threadAct;
         protected Thread threadCollide;
-        protected Player player;
-        protected Background background;
+        internal Player player;
+        internal Background background;
         protected List<Point> pPlantWall;
         protected List<Point> pTracker;
         protected List<Point> pShocker;
         protected List<Point> pPredator;
         protected List<Point> pVirus;
         protected List<Point> pCompetitor;
-        protected List<Food> food;
-        protected List<Cell> otherCells;
+        internal List<Food> food;
+        internal List<Cell> otherCells;
 
-        public Chapter(PictureBox picBoxBg) {
+        public Chapter(PictureBox picBoxStage) {
             threadAct = new Thread(GameSystem.Act);
             threadCollide = new Thread(GameSystem.CollisionDetect);
-            background = new Background(picBoxBg);
-            player = new Player(picBoxBg, GameSystem.SetPosition(1.5, 1.5));
+            background = new Background(picBoxStage);
+            player = new Player(picBoxStage, GameSystem.SetPosition(1.5, 1.5));
             pPlantWall = new List<Point>();
             pTracker = new List<Point>();
             pShocker = new List<Point>();

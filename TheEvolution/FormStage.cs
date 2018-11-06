@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
@@ -21,8 +20,8 @@ namespace TheEvolution {
 
         public static EChapter chapter;
         public static bool isPause;
-        ChapterTutorial chapterTutorial;
-        ChapterSurvival chapterSurvival;
+        public ChapterTutorial chapterTutorial;
+        public ChapterSurvival chapterSurvival;
         public int hpBeatInterval;
 
         public FormStage() {
@@ -72,7 +71,12 @@ namespace TheEvolution {
                     chapterTutorial.Start();
                     break;
                 case EChapter.Survival:
+                    picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
+                    picBoxHpBar.Image = Resources.Bloodbar5;
+                    picBoxEatBar.Image = Resources.Progressbar0;
                     chapterSurvival = new ChapterSurvival(picBoxStage);
+                    GameSystem.player.HpChanged += OnPlayerHpChanged;
+                    GameSystem.player.Eat += OnPlayerEat;
                     chapterSurvival.Start();
                     break;
             }
@@ -176,6 +180,7 @@ namespace TheEvolution {
                     panelTip.BackgroundImage = Resources.ERIntro;
                 } else if (sender is Centromere) {
                     panelTip.BackgroundImage = Resources.CentroIntro;
+                    chapter = EChapter.Survival;
                 }
             } else {
                 panelTip.BackgroundImage = Resources.MitoIntro;
@@ -190,6 +195,13 @@ namespace TheEvolution {
                 chapterSurvival.Resume();
             }
             panelTip.Visible = false;
+            if (chapter==EChapter.Survival) {
+                chapterTutorial.End();
+                picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
+                picBoxHpBar.Image = Resources.Bloodbar5;
+                picBoxEatBar.Image = Resources.Progressbar0;
+                NextChapter(EChapter.Survival);
+            }
         }
     }
 

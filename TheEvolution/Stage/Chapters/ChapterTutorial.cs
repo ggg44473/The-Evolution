@@ -12,28 +12,37 @@ using TheEvolution.Stage.Cells;
 using System.Windows.Forms;
 
 namespace TheEvolution.Stage.Chapters {
-    class ChapterTutorial : Chapter {
+    public class ChapterTutorial : Chapter {
 
-        List<Organelle> organella = new List<Organelle>();
+        internal List<Organelle> organella = new List<Organelle>();
 
-        public ChapterTutorial(PictureBox picBoxBg) : base(picBoxBg) {
+        public ChapterTutorial(PictureBox picBoxStage) : base(picBoxStage) {
             for (int i = 0; i < 70; i++) {
-                food.Add(new Algae(picBoxBg));
-                food.Add(new Charophyta(picBoxBg));
+                food.Add(new Algae(picBoxStage));
+                food.Add(new Charophyta(picBoxStage));
             }
             for (int i = 0; i < pPlantWall.Count; i++) {
-                otherCells.Add(new PlantWall(picBoxBg, pPlantWall[i]));
+                otherCells.Add(new PlantWall(picBoxStage, pPlantWall[i]));
             }
             for (int i = 0; i < pTracker.Count; i++) {
-                otherCells.Add(new Tracker(picBoxBg, pTracker[i]));
+                otherCells.Add(new Tracker(picBoxStage, pTracker[i]));
             }
             for (int i = 0; i < pShocker.Count; i++) {
-                otherCells.Add(new Shocker(picBoxBg, pShocker[i]));
+                otherCells.Add(new Shocker(picBoxStage, pShocker[i]));
             }
-            organella.Add(new Mitochondria(picBoxBg, GameSystem.SetPosition(0.5, 0.5)));
-            organella.Add(new Lysosome(picBoxBg, GameSystem.SetPosition(1.5, 0.5)));
-            organella.Add(new ER(picBoxBg, GameSystem.SetPosition(2.5, 0.5)));
-            organella.Add(new Centromere(picBoxBg, GameSystem.SetPosition(2.5, 1.5)));
+            organella.Add(new Mitochondria(picBoxStage, GameSystem.SetPosition(0.5, 0.5)));
+        }
+
+        public void ShowLysosome() {
+            organella.Add(new Lysosome(GameSystem.picBoxStage, GameSystem.SetPosition(1.5, 0.5)));
+        }
+
+        public void ShowER() {
+            organella.Add(new ER(GameSystem.picBoxStage, GameSystem.SetPosition(2.5, 0.5)));
+        }
+
+        public void ShowCentromere() {
+            organella.Add(new Centromere(GameSystem.picBoxStage, GameSystem.SetPosition(2.5, 1.5)));
         }
 
         protected override void GetReady() {
@@ -67,23 +76,6 @@ namespace TheEvolution.Stage.Chapters {
             pPlantWall.Add(GameSystem.SetPosition(0.575, 0.35));
             pPlantWall.Add(GameSystem.SetPosition(0.575, 0.45));
             pPlantWall.Add(GameSystem.SetPosition(0.575, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.65));
         }
     }
 }

@@ -14,5 +14,10 @@ namespace TheEvolution.Stage.Organella {
             images = ImageContainer.imgMitochondria;
             size = images[0].Size;
         }
+
+        public override void Collide(int myId) {
+            base.Collide(myId);
+            GameSystem.formStage.chapterTutorial.ShowLysosome();
+        }
     }
 }

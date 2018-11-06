@@ -11,26 +11,27 @@ using TheEvolution.Stage.Foods;
 using System.Windows.Forms;
 
 namespace TheEvolution.Stage.Chapters {
-    class ChapterSurvival : Chapter {
+    public class ChapterSurvival : Chapter {
 
-        public ChapterSurvival(PictureBox picBoxBg) : base(picBoxBg) {
-            GetReady();
-            for (int i = 0; i < 8; i++) {
-                food.Add(new Algae(picBoxBg));
-                food.Add(new Charophyta(picBoxBg));
+        public ChapterSurvival(PictureBox picBoxStage) : base(picBoxStage) {
+            for (int i = 0; i < 70; i++) {
+                food.Add(new Algae(picBoxStage));
+                food.Add(new Charophyta(picBoxStage));
             }
-            for (int i = 0; i < 2; i++) {
-                otherCells.Add(new PlantWall(picBoxBg, pPlantWall[i]));
-                otherCells.Add(new Tracker(picBoxBg, pTracker[i]));
-                otherCells.Add(new Shocker(picBoxBg, pShocker[i]));
-                otherCells.Add(new Predator(picBoxBg, pPredator[i]));
-                otherCells.Add(new Virus(picBoxBg, pVirus[i]));
+            for (int i = 0; i < pPlantWall.Count; i++) {
+                otherCells.Add(new PlantWall(picBoxStage, pPlantWall[i]));
+            }
+            for (int i = 0; i < pTracker.Count; i++) {
+                otherCells.Add(new Tracker(picBoxStage, pTracker[i]));
+            }
+            for (int i = 0; i < pShocker.Count; i++) {
+                otherCells.Add(new Shocker(picBoxStage, pShocker[i]));
             }
         }
 
         protected override void GetReady() {
             SetBorderPosition();
-            SetPlantWallPosition();
+            //SetPlantWallPosition();
         }
 
         private void SetPlantWallPosition() {
