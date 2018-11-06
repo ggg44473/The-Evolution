@@ -77,6 +77,6 @@ namespace TheEvolution.Stage.Chapters {
             pPlantWall.Add(GameSystem.SetPosition(0.825, 0.45));
             pPlantWall.Add(GameSystem.SetPosition(0.825, 0.55));
             pPlantWall.Add(GameSystem.SetPosition(0.825, 0.65));
-        }
+        }       
     }
 }

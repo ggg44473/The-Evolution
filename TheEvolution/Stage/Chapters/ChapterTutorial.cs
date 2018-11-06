@@ -17,7 +17,7 @@ namespace TheEvolution.Stage.Chapters {
         internal List<Organelle> organella = new List<Organelle>();
 
         public ChapterTutorial(PictureBox picBoxStage) : base(picBoxStage) {
-            for (int i = 0; i < 70; i++) {
+            for (int i = 0; i < 50; i++) {
                 food.Add(new Algae(picBoxStage));
                 food.Add(new Charophyta(picBoxStage));
             }
@@ -29,6 +29,12 @@ namespace TheEvolution.Stage.Chapters {
             }
             for (int i = 0; i < pShocker.Count; i++) {
                 otherCells.Add(new Shocker(picBoxStage, pShocker[i]));
+            }
+            for (int i = 0; i < pPredator.Count; i++) {
+                otherCells.Add(new Predator(picBoxStage, pPredator[i]));
+            }
+            for (int i = 0; i < pVirus.Count; i++) {
+                otherCells.Add(new Virus(picBoxStage, pVirus[i]));
             }
             organella.Add(new Mitochondria(picBoxStage, GameSystem.SetPosition(0.5, 0.5)));
         }
@@ -47,35 +53,51 @@ namespace TheEvolution.Stage.Chapters {
 
         protected override void GetReady() {
             SetBorderPosition();
-            //SetPlantWallPosition();
+            SetPlantWallPosition();
+            pTracker = new List<Point> {
+                GameSystem.SetPosition(0.3, 1.8),
+                GameSystem.SetPosition(0.5, 1.2),
+                GameSystem.SetPosition(0.5, 1.8),
+                GameSystem.SetPosition(0.75, 1.5),
+                GameSystem.SetPosition(0.8, 1.1)};
+            pShocker = new List<Point> {
+                GameSystem.SetPosition(1.1, 0.5),
+                GameSystem.SetPosition(1.1, 0.8),
+                GameSystem.SetPosition(1.3, 0.3),
+                GameSystem.SetPosition(1.3, 0.5),
+                GameSystem.SetPosition(1.5, 0.8),
+                GameSystem.SetPosition(1.9, 0.3),
+                GameSystem.SetPosition(1.7, 0.5)};
+            pPredator = new List<Point> {
+                GameSystem.SetPosition(2.1, 1.8),
+                GameSystem.SetPosition(2.3, 1.1),
+                GameSystem.SetPosition(2.6, 1.8),
+                GameSystem.SetPosition(2.75, 1.1),
+                GameSystem.SetPosition(2.75, 1.5)};
+            pVirus = new List<Point> {
+                GameSystem.SetPosition(1.1, 2.1),
+                GameSystem.SetPosition(1.1, 2.4),
+                GameSystem.SetPosition(1.5, 2.7),
+                GameSystem.SetPosition(1.8, 2.1),
+                GameSystem.SetPosition(1.9, 2.8)};
         }
 
         private void SetPlantWallPosition() {
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.05));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.15));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.325, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.325, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.375, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.375, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.425, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.425, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.475, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.525, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.05));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.15));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.55));
+            pPlantWall.Add(GameSystem.SetPosition(0.2, 1.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.2, 1.5));
+            pPlantWall.Add(GameSystem.SetPosition(0.2, 2));
+            pPlantWall.Add(GameSystem.SetPosition(0.8, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.8, 0.5));
+            pPlantWall.Add(GameSystem.SetPosition(0.8, 1.75));
+            pPlantWall.Add(GameSystem.SetPosition(1.2, 1.75));
+            pPlantWall.Add(GameSystem.SetPosition(1.4, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(1.6, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(1.6, 2.5));
+            pPlantWall.Add(GameSystem.SetPosition(1.8, 0.75));
+            pPlantWall.Add(GameSystem.SetPosition(1.8, 1.0));
+            pPlantWall.Add(GameSystem.SetPosition(1.8, 2.4));
+            pPlantWall.Add(GameSystem.SetPosition(2, 1.0));
+            pPlantWall.Add(GameSystem.SetPosition(2.6, 1.75));
         }
     }
 }

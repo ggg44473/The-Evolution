@@ -133,8 +133,17 @@
   <data name="Bloodbar0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Bloodbar0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Bloodbar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Bloodbar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Bloodbar10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Bloodbar10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bloodbar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Bloodbar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bloodbar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Bloodbar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bloodbar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Bloodbar4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,6 +202,9 @@
   <data name="Competitor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Competitor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ControlIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ControlIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DyingScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\DyingScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -201,6 +213,9 @@
   </data>
   <data name="ERIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\ERIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EvolutionIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\EvolutionIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconEat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\IconEat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -213,6 +228,9 @@
   </data>
   <data name="IconPause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\IconPause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconRank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconRank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LysoIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\LysoIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,6 +295,9 @@
   <data name="P5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\P5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PauseScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PauseScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="picSurvive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\picSurvive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -324,6 +345,36 @@
   </data>
   <data name="PlayerEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\PlayerEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinal1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinal2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinal2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinal3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinal3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinal4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinal4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinal5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinal5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinalEat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinalEat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinalEat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinalEat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinalEat3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinalEat3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinalEat4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinalEat4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayerFinalEat5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlayerFinalEat5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PlayerMito1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\PlayerMito1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -466,16 +517,10 @@
   <data name="Tracker4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Tracker4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TutorialScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\TutorialScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bloodbar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\Bloodbar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bloodbar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\Bloodbar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bloodbar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\Bloodbar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

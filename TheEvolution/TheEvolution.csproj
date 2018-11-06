@@ -514,6 +514,51 @@
   <ItemGroup>
     <None Include="Pictures\Tips.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\ControlIntro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\EvolutionIntro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconRank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PauseScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TutorialScreen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
