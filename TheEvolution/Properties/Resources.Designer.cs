@@ -343,16 +343,6 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ControlIntro {
-            get {
-                object obj = ResourceManager.GetObject("ControlIntro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DyingScreen {
             get {
                 object obj = ResourceManager.GetObject("DyingScreen", resourceCulture);

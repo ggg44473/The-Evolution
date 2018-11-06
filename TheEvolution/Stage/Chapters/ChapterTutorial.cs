@@ -54,32 +54,28 @@ namespace TheEvolution.Stage.Chapters {
         protected override void GetReady() {
             SetBorderPosition();
             //SetPlantWallPosition();
-            pTracker = new List<Point> {
-                GameSystem.SetPosition(0.3, 1.8),
-                GameSystem.SetPosition(0.5, 1.2),
-                GameSystem.SetPosition(0.5, 1.8),
-                GameSystem.SetPosition(0.75, 1.5),
-                GameSystem.SetPosition(0.8, 1.1)};
-            pShocker = new List<Point> {
-                GameSystem.SetPosition(1.1, 0.5),
-                GameSystem.SetPosition(1.1, 0.8),
-                GameSystem.SetPosition(1.3, 0.3),
-                GameSystem.SetPosition(1.3, 0.5),
-                GameSystem.SetPosition(1.5, 0.8),
-                GameSystem.SetPosition(1.9, 0.3),
-                GameSystem.SetPosition(1.7, 0.5)};
-            pPredator = new List<Point> {
-                GameSystem.SetPosition(2.1, 1.8),
-                GameSystem.SetPosition(2.3, 1.1),
-                GameSystem.SetPosition(2.6, 1.8),
-                GameSystem.SetPosition(2.75, 1.1),
-                GameSystem.SetPosition(2.75, 1.5)};
-            pVirus = new List<Point> {
-                GameSystem.SetPosition(1.1, 2.1),
-                GameSystem.SetPosition(1.1, 2.4),
-                GameSystem.SetPosition(1.5, 2.7),
-                GameSystem.SetPosition(1.8, 2.1),
-                GameSystem.SetPosition(1.9, 2.8)};
+            pTracker.Add(GameSystem.SetPosition(0.3, 1.8));
+            pTracker.Add(GameSystem.SetPosition(0.5, 1.2));
+            pTracker.Add(GameSystem.SetPosition(0.5, 1.8));
+            pTracker.Add(GameSystem.SetPosition(0.75, 1.5));
+            pTracker.Add(GameSystem.SetPosition(0.8, 1.1));
+
+            pShocker.Add(GameSystem.SetPosition(1.1, 0.5));
+            pShocker.Add(GameSystem.SetPosition(1.3, 0.3));
+            pShocker.Add(GameSystem.SetPosition(1.5, 0.3));
+            pShocker.Add(GameSystem.SetPosition(1.9, 0.3));
+            pShocker.Add(GameSystem.SetPosition(1.7, 0.5));
+
+            pPredator.Add(GameSystem.SetPosition(2.4, 1.8));
+            pPredator.Add(GameSystem.SetPosition(2.6, 1.8));
+            pPredator.Add(GameSystem.SetPosition(2.75, 1.1));
+            pPredator.Add(GameSystem.SetPosition(2.75, 1.5));
+
+            pVirus.Add(GameSystem.SetPosition(1.1, 2.1));
+            pVirus.Add(GameSystem.SetPosition(1.1, 2.4));
+            pVirus.Add(GameSystem.SetPosition(1.5, 2.7));
+            pVirus.Add(GameSystem.SetPosition(1.8, 2.1));
+            pVirus.Add(GameSystem.SetPosition(1.9, 2.8));
         }
 
         private void SetPlantWallPosition() {
