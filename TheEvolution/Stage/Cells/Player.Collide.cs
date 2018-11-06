@@ -11,14 +11,18 @@ namespace TheEvolution.Stage.Cells {
     partial class Player {
 
         public void CollideFood() {
-            if (!isSick) {
-                images = imgPlayerEat;
-            } else {
-                images = imgPlayerSickEat;
+            if (!isShocked) {
+                if (!isSick) {
+                    images = imgPlayerEat;
+                } else {
+                    images = imgPlayerSickEat;
+                }
             }
             imgIndex = 0;
             if (foodCount < 3) {
-                foodCount++;
+                if (hp != 10) {
+                    foodCount++;
+                }
             } else {
                 foodCount = 0;
                 Hp += 1;

@@ -23,6 +23,7 @@ namespace TheEvolution {
         public ChapterTutorial chapterTutorial;
         public ChapterSurvival chapterSurvival;
         public int hpBeatInterval;
+        public bool canEat;
 
         public FormStage() {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace TheEvolution {
             picBoxStage.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(picBoxStage, true, null);
             picBoxStage.Size = new Size(3 * GameSystem.screen.Width, 3 * GameSystem.screen.Height);
             picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
+            canEat = true;
         }
 
         private void FormStage_Load(object sender, EventArgs e) {
@@ -130,6 +132,10 @@ namespace TheEvolution {
                     picBoxHpBar.Image = Resources.Bloodbar10;
                     break;
             }
+            if (!canEat) {
+                picBoxEatBar.Image = Resources.Progressbar0;
+                canEat = true;
+            }
         }
 
         public void OnPlayerEat(object sender, PlayerEventArgs args) {
@@ -150,6 +156,7 @@ namespace TheEvolution {
                 }
             } else {
                 picBoxEatBar.Image = Resources.Progressbar4;
+                canEat = false;
             }
         }
 

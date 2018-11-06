@@ -17,7 +17,7 @@ namespace TheEvolution.Stage.Chapters {
         internal List<Organelle> organella = new List<Organelle>();
 
         public ChapterTutorial(PictureBox picBoxStage) : base(picBoxStage) {
-            for (int i = 0; i < 35; i++) {
+            for (int i = 0; i < 40; i++) {
                 food.Add(new Algae(picBoxStage));
                 food.Add(new Charophyta(picBoxStage));
             }
