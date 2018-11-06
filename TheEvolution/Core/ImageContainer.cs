@@ -17,6 +17,7 @@ namespace TheEvolution.Core {
         static public List<Bitmap> imgPlayerEat2;
         static public List<Bitmap> imgPlayerMito;
         static public List<Bitmap> imgPlayerMitoLyso;
+        static public List<Bitmap> imgPlayerMitoLysoER;
         static public List<Bitmap> imgPlayerComplete;
         static public List<Bitmap> imgPlayerSick;
         static public List<Bitmap> imgPlayerSickEat;
@@ -100,6 +101,12 @@ namespace TheEvolution.Core {
                 new Bitmap(Resources.PlayerMitoLyso3, size),
                 new Bitmap(Resources.PlayerMitoLyso4, size),
                 new Bitmap(Resources.PlayerMitoLyso5, size)};
+            imgPlayerMitoLysoER = new List<Bitmap>() {
+                new Bitmap(Resources.PlayerMitoLysoER1, size),
+                new Bitmap(Resources.PlayerMitoLysoER2, size),
+                new Bitmap(Resources.PlayerMitoLysoER3, size),
+                new Bitmap(Resources.PlayerMitoLysoER4, size),
+                new Bitmap(Resources.PlayerMitoLysoER5, size)};
             imgPlayerComplete = new List<Bitmap>() {
                 new Bitmap(Resources.PlayerComplete1, size),
                 new Bitmap(Resources.PlayerComplete2, size),

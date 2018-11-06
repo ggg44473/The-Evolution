@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheEvolution.Core;
+using TheEvolution.Stage.Organella;
 
 namespace TheEvolution.Stage.Cells {
     partial class Player {
@@ -80,6 +81,19 @@ namespace TheEvolution.Stage.Cells {
             if (tempY > -GameSystem.screen.Height || tempY < 2 * GameSystem.screen.Height) {
                 position.Y = tempY;
             }
+        }
+
+        public void CollideOrganelle(Organelle o) {
+            if (o is Mitochondria) {
+                imgPlayer = imgPlayerMito;
+            } else if (o is Lysosome) {
+                imgPlayer = imgPlayerMitoLyso;
+            } else if (o is ER) {
+                imgPlayer = imgPlayerMitoLysoER;
+            } else if (o is Centromere) {
+                imgPlayer = imgPlayerComplete;
+            }
+            images = imgPlayer;
         }
     }
 }

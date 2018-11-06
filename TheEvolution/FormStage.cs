@@ -58,7 +58,6 @@ namespace TheEvolution {
             if (chapterSurvival != null) {
                 chapterSurvival.End();
             }
-            GameSystem.isStart = false;
             MessageBox.Show("Game Over!");
             Application.Exit();
         }
@@ -158,7 +157,6 @@ namespace TheEvolution {
                 if (chapterSurvival != null) {
                     chapterSurvival.End();
                 }
-                GameSystem.isStart = false;
                 Application.Exit();
             }
         }

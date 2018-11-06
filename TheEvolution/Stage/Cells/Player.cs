@@ -18,6 +18,10 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPlayerSick;
         private List<Bitmap> imgPlayerSickEat;
         private List<Bitmap> imgPlayerShocked;
+        private List<Bitmap> imgPlayerMito;
+        private List<Bitmap> imgPlayerMitoLyso;
+        private List<Bitmap> imgPlayerMitoLysoER;
+        private List<Bitmap> imgPlayerComplete;
         private int hp;
         private int foodCount;
         private bool isHidden;
@@ -34,6 +38,10 @@ namespace TheEvolution.Stage.Cells {
             imgPlayerSick = ImageContainer.imgPlayerSick;
             imgPlayerSickEat = ImageContainer.imgPlayerSickEat;
             imgPlayerShocked = ImageContainer.imgPlayerShocked;
+            imgPlayerMito = ImageContainer.imgPlayerMito;
+            imgPlayerMitoLyso = ImageContainer.imgPlayerMitoLyso;
+            imgPlayerMitoLysoER = ImageContainer.imgPlayerMitoLysoER;
+            imgPlayerComplete = ImageContainer.imgPlayerComplete;
             images = imgPlayer;
             size = imgPlayer[0].Size;
             moveSpeed = (int)(0.18 * size.Width);

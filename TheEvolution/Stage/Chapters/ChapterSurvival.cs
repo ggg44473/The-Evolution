@@ -13,14 +13,6 @@ using System.Windows.Forms;
 namespace TheEvolution.Stage.Chapters {
     class ChapterSurvival : Chapter {
 
-        List<Point> pTracker;
-        List<Point> pShocker;
-        List<Point> pPredator;
-        List<Point> pVirus;
-        List<Food> food = new List<Food>();
-        List<Cell> otherCells = new List<Cell>();
-        Lysosome lysosome;
-
         public ChapterSurvival(PictureBox picBoxBg) : base(picBoxBg) {
             GetReady();
             for (int i = 0; i < 8; i++) {
@@ -34,22 +26,11 @@ namespace TheEvolution.Stage.Chapters {
                 otherCells.Add(new Predator(picBoxBg, pPredator[i]));
                 otherCells.Add(new Virus(picBoxBg, pVirus[i]));
             }
-            lysosome = new Lysosome(picBoxBg, GameSystem.SetPosition(0.95, 0.95));
         }
 
         protected override void GetReady() {
-            pPlantWall = new List<Point>();
             SetBorderPosition();
             SetPlantWallPosition();
-            pTracker = new List<Point> {
-                GameSystem.SetPosition(0.125, 0.62),
-                GameSystem.SetPosition(0.5, 0.3)};
-            pShocker = new List<Point> {
-                GameSystem.SetPosition(0.265, 0.25),
-                GameSystem.SetPosition(0.265, 0.65),
-                GameSystem.SetPosition(0.415, 0.65),
-                GameSystem.SetPosition(0.568, 0.24),
-                GameSystem.SetPosition(0.825, 0.24)};
         }
 
         private void SetPlantWallPosition() {

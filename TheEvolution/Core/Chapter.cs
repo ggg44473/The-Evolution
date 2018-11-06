@@ -19,6 +19,13 @@ namespace TheEvolution.Core {
         protected Player player;
         protected Background background;
         protected List<Point> pPlantWall;
+        protected List<Point> pTracker;
+        protected List<Point> pShocker;
+        protected List<Point> pPredator;
+        protected List<Point> pVirus;
+        protected List<Point> pCompetitor;
+        protected List<Food> food;
+        protected List<Cell> otherCells;
 
         public Chapter(PictureBox picBoxBg) {
             threadAct = new Thread(GameSystem.Act);
@@ -26,6 +33,13 @@ namespace TheEvolution.Core {
             background = new Background(picBoxBg);
             player = new Player(picBoxBg, GameSystem.SetPosition(1.5, 1.5));
             pPlantWall = new List<Point>();
+            pTracker = new List<Point>();
+            pShocker = new List<Point>();
+            pPredator = new List<Point>();
+            pVirus = new List<Point>();
+            pCompetitor = new List<Point>();
+            food = new List<Food>();
+            otherCells = new List<Cell>();
             GetReady();
         }
 

@@ -50,7 +50,7 @@ namespace TheEvolution.Core {
                 } else {
                     formStage.hpBeatInterval--;
                 }
-                formStage.Invalidate();
+                //formStage.Invalidate();
                 picBoxStage.Invalidate();
                 Thread.Sleep(50);
             }
@@ -112,6 +112,7 @@ namespace TheEvolution.Core {
                 if (Math.Abs(organelleX - playerX) <= (organelleW + playerW) / 4) {
                     if (Math.Abs(organelleY - playerY) <= (organelleH + playerH) / 4) {
                         o.Collide(i);
+                        player.CollideOrganelle(o);
                         return;
                     }
                 }

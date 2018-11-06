@@ -14,11 +14,7 @@ using System.Windows.Forms;
 namespace TheEvolution.Stage.Chapters {
     class ChapterTutorial : Chapter {
 
-        List<Point> pTracker;
-        List<Point> pShocker;
-        List<Food> food = new List<Food>();
-        List<Cell> otherCells = new List<Cell>();
-        Mitochondria mitochondria;
+        List<Organelle> organella = new List<Organelle>();
 
         public ChapterTutorial(PictureBox picBoxBg) : base(picBoxBg) {
             for (int i = 0; i < 70; i++) {
@@ -34,21 +30,15 @@ namespace TheEvolution.Stage.Chapters {
             for (int i = 0; i < pShocker.Count; i++) {
                 otherCells.Add(new Shocker(picBoxBg, pShocker[i]));
             }
-            mitochondria = new Mitochondria(picBoxBg, GameSystem.SetPosition(0.785, 0.80));
+            organella.Add(new Mitochondria(picBoxBg, GameSystem.SetPosition(0.5, 0.5)));
+            organella.Add(new Lysosome(picBoxBg, GameSystem.SetPosition(1.5, 0.5)));
+            organella.Add(new ER(picBoxBg, GameSystem.SetPosition(2.5, 0.5)));
+            organella.Add(new Centromere(picBoxBg, GameSystem.SetPosition(2.5, 1.5)));
         }
 
         protected override void GetReady() {
             SetBorderPosition();
             //SetPlantWallPosition();
-            pTracker = new List<Point> {
-                GameSystem.SetPosition(0.125, 0.62),
-                GameSystem.SetPosition(0.5, 0.3)};
-            pShocker = new List<Point> {
-                GameSystem.SetPosition(0.265, 0.25),
-                GameSystem.SetPosition(0.265, 0.65),
-                GameSystem.SetPosition(0.415, 0.65),
-                GameSystem.SetPosition(0.568, 0.24),
-                GameSystem.SetPosition(0.825, 0.24)};
         }
 
         private void SetPlantWallPosition() {
