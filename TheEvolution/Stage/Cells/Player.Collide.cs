@@ -22,7 +22,7 @@ namespace TheEvolution.Stage.Cells {
                 foodCount = 0;
                 Hp += 1;
             }
-            Eat(this, new PlayerEventArgs(foodCount, "eating"));
+            Eat(this, new PlayerEventArgs(foodCount, hp));
         }
 
         public void CollideCompetitor(Competitor competitor) {

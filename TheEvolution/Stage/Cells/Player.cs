@@ -308,15 +308,16 @@ namespace TheEvolution.Stage.Cells {
 
     public class PlayerEventArgs : EventArgs {
 
-        public int playerHp;
+        public int hp;
         public int foodCount;
 
         public PlayerEventArgs(int hp) {
-           playerHp = hp;
+           this.hp = hp;
         }
 
-        public PlayerEventArgs(int foodCount, string msg) {
+        public PlayerEventArgs(int foodCount, int hp) {
             this.foodCount = foodCount;
+            this.hp = hp;
         }
     }
 }

@@ -91,7 +91,7 @@ namespace TheEvolution {
             } else {
                 GameSystem.SetSquareControlSize(picBoxHp, panelStatus.Size, 0.06, 0.5, 0.15);
             }
-            switch (args.playerHp) {
+            switch (args.hp) {
                 case 0:
                     picBoxHpBar.Image = Resources.Bloodbar0;
                     break;
@@ -129,19 +129,23 @@ namespace TheEvolution {
         }
 
         public void OnPlayerEat(object sender, PlayerEventArgs args) {
-            switch (args.foodCount) {
-                case 0:
-                    picBoxEatBar.Image = Resources.Progressbar0;
-                    break;
-                case 1:
-                    picBoxEatBar.Image = Resources.Progressbar1;
-                    break;
-                case 2:
-                    picBoxEatBar.Image = Resources.Progressbar2;
-                    break;
-                case 3:
-                    picBoxEatBar.Image = Resources.Progressbar3;
-                    break;
+            if (args.hp != 10) {
+                switch (args.foodCount) {
+                    case 0:
+                        picBoxEatBar.Image = Resources.Progressbar0;
+                        break;
+                    case 1:
+                        picBoxEatBar.Image = Resources.Progressbar1;
+                        break;
+                    case 2:
+                        picBoxEatBar.Image = Resources.Progressbar2;
+                        break;
+                    case 3:
+                        picBoxEatBar.Image = Resources.Progressbar3;
+                        break;
+                }
+            } else {
+                picBoxEatBar.Image = Resources.Progressbar4;
             }
         }
 
