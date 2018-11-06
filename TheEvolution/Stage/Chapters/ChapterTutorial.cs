@@ -17,7 +17,7 @@ namespace TheEvolution.Stage.Chapters {
         internal List<Organelle> organella = new List<Organelle>();
 
         public ChapterTutorial(PictureBox picBoxStage) : base(picBoxStage) {
-            for (int i = 0; i < 50; i++) {
+            for (int i = 0; i < 35; i++) {
                 food.Add(new Algae(picBoxStage));
                 food.Add(new Charophyta(picBoxStage));
             }
@@ -53,7 +53,7 @@ namespace TheEvolution.Stage.Chapters {
 
         protected override void GetReady() {
             SetBorderPosition();
-            SetPlantWallPosition();
+            //SetPlantWallPosition();
             pTracker = new List<Point> {
                 GameSystem.SetPosition(0.3, 1.8),
                 GameSystem.SetPosition(0.5, 1.2),

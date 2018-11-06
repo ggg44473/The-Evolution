@@ -11,10 +11,16 @@ namespace TheEvolution.Stage {
 
         public Background(PictureBox picBoxBg) : base(picBoxBg) {
             images = ImageContainer.imgBackground;
-            imgIndex = 0;
-            size = images[0].Size;
+            imgIndex = 2;
+            size = images[2].Size;
             position.X = 0;
             position.Y = 0;
+        }
+
+        public void ChangeBackground(int index) {
+            if (index < images.Count) {
+                imgIndex = index;
+            }
         }
     }
 }

@@ -60,6 +60,7 @@ namespace TheEvolution.Core {
             imgBackground = new List<Bitmap>() {
                 new Bitmap(Resources.bg1, size),
                 new Bitmap(Resources.bg2, size),
+                new Bitmap(Resources.TutorialScreen, size)
             };
         }
 
@@ -194,19 +195,19 @@ namespace TheEvolution.Core {
         }
 
         static public void SetImgCentromere() {
-            size = GameSystem.SetSize(0.026, 0.047);
+            size = GameSystem.SetSize(0.05, 0.09);
             imgCentromere = new List<Bitmap>() {
                 new Bitmap(Resources.Centromere, size)};
         }
 
         static public void SetImgER() {
-            size = GameSystem.SetSize(0.04, 0.06);
+            size = GameSystem.SetSize(0.08, 0.12);
             imgER = new List<Bitmap>() {
                 new Bitmap(Resources.ER, size)};
         }
 
         static public void SetImgLysosome() {
-            size = GameSystem.SetSize(0.035, 0.06);
+            size = GameSystem.SetSize(0.04, 0.09);
             imgLysosome = new List<Bitmap>() {
                 new Bitmap(Resources.Lysosome1, size),
                 new Bitmap(Resources.Lysosome2, size),
@@ -214,7 +215,7 @@ namespace TheEvolution.Core {
         }
 
         static public void SetImgMitochondria() {
-            size = GameSystem.SetSize(0.025, 0.065);
+            size = GameSystem.SetSize(0.026, 0.066);
             imgMitochondria = new List<Bitmap>() {
                 new Bitmap(Resources.Mitochondria, size)};
         }

@@ -189,70 +189,58 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void CheckTopBorderTouched() {
-            int width = GameSystem.screen.Width;
             int height = GameSystem.screen.Height;
-            if (position.Y < height - size.Height && GameSystem.picBoxStage.Top < 0) {
+            if (position.Y < height && GameSystem.picBoxStage.Top == -height) {
                 GameSystem.formStage.Invoke((Action)delegate () {
                     GameSystem.picBoxStage.Top = 0;
                 });
             }
-            if (position.Y > 2 * height) {
-                if (position.Y < 2 * height + size.Height) {
-                    GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Top = -height;
-                    });
-                }
+            if (position.Y < 2 * height && GameSystem.picBoxStage.Top == -2*height) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Top = -height;
+                });
             }
         }
 
         public void CheckBottomBorderTouched() {
-            int width = GameSystem.screen.Width;
             int height = GameSystem.screen.Height;
-            if (position.Y > 2 * height - size.Height && GameSystem.picBoxStage.Top > -2 * height) {
+            if (position.Y > 2 * height && GameSystem.picBoxStage.Top == -height) {
                 GameSystem.formStage.Invoke((Action)delegate () {
                     GameSystem.picBoxStage.Top = -2 * height;
                 });
             }
-            if (position.Y < height) {
-                if (position.Y > height - size.Height) {
-                    GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Top = -height;
-                    });
-                }
+            if (position.Y > height && GameSystem.picBoxStage.Top == 0) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Top = -height;
+                });
             }
         }
 
         public void CheckLeftBorderTouched() {
             int width = GameSystem.screen.Width;
-            int height = GameSystem.screen.Height;
-            if (position.X < width - size.Width && GameSystem.picBoxStage.Left < 0) {
+            if (position.X < width && GameSystem.picBoxStage.Left == -width) {
                 GameSystem.formStage.Invoke((Action)delegate () {
                     GameSystem.picBoxStage.Left = 0;
                 });
             }
-            if (position.X > 2 * width) {
-                if (position.X < 2 * width + size.Width) {
-                    GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Left = -width;
-                    });
-                }
+            if (position.X < 2 * width && GameSystem.picBoxStage.Left == - 2* width) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Left = -width;
+                });
             }
         }
 
         public void CheckRightBorderTouched() {
             int width = GameSystem.screen.Width;
-            int height = GameSystem.screen.Height;
-            if (position.X > 2 * width - size.Width && GameSystem.picBoxStage.Left > -2 * width) {
+            if (position.X > 2 * width && GameSystem.picBoxStage.Left == -width) {
                 GameSystem.formStage.Invoke((Action)delegate () {
                     GameSystem.picBoxStage.Left = -2 * width;
                 });
             }
-            if (position.X < width) {
-                if (position.X > width - size.Width) {
-                    GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Left = -width;
-                    });
-                }
+            if (position.X > width && GameSystem.picBoxStage.Left == 0) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Left = -width;
+                });
             }
         }
 
@@ -320,7 +308,7 @@ namespace TheEvolution.Stage.Cells {
         public int foodCount;
 
         public PlayerEventArgs(int hp) {
-           this.hp = hp;
+            this.hp = hp;
         }
 
         public PlayerEventArgs(int foodCount, int hp) {

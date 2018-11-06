@@ -171,7 +171,7 @@ namespace TheEvolution {
             } else if (chapterSurvival != null) {
                 chapterSurvival.Pause();
             }
-            if (sender != this) {
+            if (sender != picBoxPause) {
                 if (sender is Mitochondria) {
                     panelTip.BackgroundImage = Resources.MitoIntro;
                 } else if (sender is Lysosome) {
@@ -183,7 +183,7 @@ namespace TheEvolution {
                     chapter = EChapter.Survival;
                 }
             } else {
-                panelTip.BackgroundImage = Resources.MitoIntro;
+                panelTip.BackgroundImage = Resources.PauseScreen;
             }
             panelTip.Visible = true;
         }

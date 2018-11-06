@@ -14,6 +14,7 @@ namespace TheEvolution.Stage.Chapters {
     public class ChapterSurvival : Chapter {
 
         public ChapterSurvival(PictureBox picBoxStage) : base(picBoxStage) {
+            background.ChangeBackground(0);
             for (int i = 0; i < 70; i++) {
                 food.Add(new Algae(picBoxStage));
                 food.Add(new Charophyta(picBoxStage));
