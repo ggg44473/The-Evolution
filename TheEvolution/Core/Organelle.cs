@@ -19,6 +19,13 @@ namespace TheEvolution.Core {
         public virtual void Collide(int myId) {
             Dispose();
             GameSystem.organella.RemoveAt(myId);
+            if (GameSystem.formStage.InvokeRequired) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.formStage.Pause_Click(this, EventArgs.Empty);
+                });
+            } else {
+                GameSystem.formStage.Pause_Click(this, EventArgs.Empty);
+            }
         }
     }
 }

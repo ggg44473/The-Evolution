@@ -14,6 +14,7 @@ using TheEvolution.Stage;
 using TheEvolution.Stage.Chapters;
 using TheEvolution.Properties;
 using TheEvolution.Stage.Cells;
+using TheEvolution.Stage.Organella;
 
 namespace TheEvolution {
     public partial class FormStage : Form {
@@ -162,14 +163,26 @@ namespace TheEvolution {
             }
         }
 
-        private void picBoxPause_Click(object sender, EventArgs e) {
-            panelTip.Visible = true;
+        public void Pause_Click(object sender, EventArgs e) {
             if (chapterTutorial != null) {
                 chapterTutorial.Pause();
             } else if (chapterSurvival != null) {
                 chapterSurvival.Pause();
             }
-            isPause = true;
+            if (sender != this) {
+                if (sender is Mitochondria) {
+                    panelTip.BackgroundImage = Resources.MitoIntro;
+                } else if (sender is Lysosome) {
+                    panelTip.BackgroundImage = Resources.LysoIntro;
+                } else if (sender is ER) {
+                    panelTip.BackgroundImage = Resources.ERIntro;
+                } else if (sender is Centromere) {
+                    panelTip.BackgroundImage = Resources.CentroIntro;
+                }
+            } else {
+                panelTip.BackgroundImage = Resources.MitoIntro;
+            }
+            panelTip.Visible = true;
         }
 
         private void panelTip_Click(object sender, EventArgs e) {
@@ -178,7 +191,6 @@ namespace TheEvolution {
             } else if (chapterSurvival != null) {
                 chapterSurvival.Resume();
             }
-            isPause = false;
             panelTip.Visible = false;
         }
     }

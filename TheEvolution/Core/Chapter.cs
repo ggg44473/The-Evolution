@@ -51,14 +51,17 @@ namespace TheEvolution.Core {
 
         public virtual void Pause() {
             if (!FormStage.isPause) {
-                threadAct.Suspend();
-                threadCollide.Suspend();
+                threadAct.Abort();
+                FormStage.isPause = true;
             }
         }
 
         public virtual void Resume() {
-            threadAct.Resume();
-            threadCollide.Resume();
+            if (FormStage.isPause) {
+                threadAct = new Thread(GameSystem.Act);
+                threadAct.Start();
+                FormStage.isPause = false;
+            }
         }
 
         protected void SetBorderPosition() {

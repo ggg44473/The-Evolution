@@ -43,15 +43,15 @@ namespace TheEvolution.Core {
                 foreach (Food f in foods) {
                     f.NextStep();
                 }
-                picBoxStage.Invoke((Action)delegate () { picBoxStage.Invalidate(); });
                 if (formStage.hpBeatInterval == 0) {
                     formStage.Invoke((Action)delegate () {
-                        GameSystem.SetSquareControlSize(formStage.picBoxHp, formStage.panelStatus.Size, 0.06, 0.5, 0.08);
+                        SetSquareControlSize(formStage.picBoxHp, formStage.panelStatus.Size, 0.06, 0.5, 0.08);
                     });
                 } else {
                     formStage.hpBeatInterval--;
                 }
                 formStage.Invalidate();
+                picBoxStage.Invalidate();
                 Thread.Sleep(50);
             }
         }
@@ -111,7 +111,7 @@ namespace TheEvolution.Core {
 
                 if (Math.Abs(organelleX - playerX) <= (organelleW + playerW) / 4) {
                     if (Math.Abs(organelleY - playerY) <= (organelleH + playerH) / 4) {
-                        o.Collide();
+                        o.Collide(i);
                         return;
                     }
                 }

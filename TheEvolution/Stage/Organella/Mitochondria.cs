@@ -14,10 +14,5 @@ namespace TheEvolution.Stage.Organella {
             images = ImageContainer.imgMitochondria;
             size = images[0].Size;
         }
-
-        public override void Collide() {
-            base.Collide();
-            MessageBox.Show("Get Mito");
-        }
     }
 }
