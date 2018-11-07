@@ -61,8 +61,15 @@ namespace TheEvolution {
             if (chapterSurvival != null) {
                 chapterSurvival.End();
             }
-            MessageBox.Show("Game Over!");
-            Application.Exit();
+
+            //if (chapter == EChapter.Tutorial) {
+
+            //} else if (chapter == EChapter.Survival) {
+
+            //}
+            GameSystem.formEnd = new FormEnd();
+            GameSystem.formEnd.Show();
+            Close();
         }
 
         public void NextChapter(EChapter chapter) {
@@ -79,6 +86,7 @@ namespace TheEvolution {
                     picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
                     picBoxHpBar.Image = Resources.Bloodbar5;
                     picBoxEatBar.Image = Resources.Progressbar0;
+                    labelTime.Visible = true;
                     chapterSurvival = new ChapterSurvival(picBoxStage);
                     GameSystem.player.HpChanged += OnPlayerHpChanged;
                     GameSystem.player.Eat += OnPlayerEat;

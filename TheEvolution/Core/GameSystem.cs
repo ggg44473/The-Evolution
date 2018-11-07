@@ -16,6 +16,7 @@ namespace TheEvolution.Core {
         public static Size screen;
         public static FormStart formStart;
         public static FormStage formStage;
+        public static FormEnd formEnd;
         public static Chapter chapter;
         public static PictureBox picBoxStage;
         public static Player player;
@@ -51,9 +52,11 @@ namespace TheEvolution.Core {
                 } else {
                     formStage.hpBeatInterval--;
                 }
-                formStage.Invoke((Action)delegate () {
-                    formStage.labelTime.Text = chapter.GetTimeSurvived();
-                });
+                if (formStage.labelTime.Visible) {
+                    formStage.Invoke((Action)delegate () {
+                        formStage.labelTime.Text = chapter.GetTimeSurvived();
+                    });
+                }
                 picBoxStage.Invalidate();
                 Thread.Sleep(50);
             }

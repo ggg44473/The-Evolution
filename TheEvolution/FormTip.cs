@@ -10,12 +10,17 @@ using System.Windows.Forms;
 
 namespace TheEvolution {
     public partial class FormTip : Form {
-        public FormTip() {
-            InitializeComponent();
-        }
 
-        public void SetBackgroundImage(Bitmap bitmap) {
-            BackgroundImage = bitmap;
+        List<Bitmap> tipImages;
+        int i;
+
+        public FormTip(List<Bitmap> bitmaps) {
+            InitializeComponent();
+            i = 0;
+            tipImages = bitmaps;
+            if (tipImages != null && tipImages.Count > 0) {
+                BackgroundImage = tipImages[i];
+            }
         }
 
         private void FormTip_KeyDown(object sender, KeyEventArgs e) {
@@ -29,7 +34,12 @@ namespace TheEvolution {
         }
 
         private void ExitTip() {
-            DialogResult = DialogResult.OK;
+            if (i < tipImages.Count - 1) {
+                i++;
+                BackgroundImage = tipImages[i];
+            } else {
+                DialogResult = DialogResult.OK;
+            }
         }
     }
 }

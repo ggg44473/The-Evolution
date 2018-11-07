@@ -28,6 +28,7 @@ namespace TheEvolution.Core {
         internal List<Cell> otherCells;
         internal List<Organelle> organella;
         public DateTime startTime;
+        public int survivedTime;
 
         public Chapter(PictureBox picBoxStage) {
             GameSystem.chapter = this;
@@ -134,11 +135,11 @@ namespace TheEvolution.Core {
         }
 
         public string GetTimeSurvived() {
-            int totalSeconds = (DateTime.Now - startTime).Seconds;
+            survivedTime = (int)(DateTime.Now - startTime).TotalSeconds;
 
-            string string_m = (totalSeconds / 60).ToString();
+            string string_m = (survivedTime / 60).ToString();
 
-            int s = totalSeconds % 60;
+            int s = survivedTime % 60;
             string string_s = s < 10 ? "0" + s.ToString() : s.ToString();
 
             return string_m + ":" + string_s;

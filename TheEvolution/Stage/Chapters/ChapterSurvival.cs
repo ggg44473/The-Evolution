@@ -18,6 +18,8 @@ namespace TheEvolution.Stage.Chapters {
         protected override void GetReady() {
             SetBorderPosition();
             SetPlantWallPosition();
+
+            pPredator.Add(GameSystem.SetPosition(1.1, 1.1));
         }
 
         private void SetPlantWallPosition() {
@@ -26,8 +28,8 @@ namespace TheEvolution.Stage.Chapters {
             pPlantWall.Add(GameSystem.SetPosition(0.2, 1.88));
             pPlantWall.Add(GameSystem.SetPosition(0.9, 0.25));
             pPlantWall.Add(GameSystem.SetPosition(0.9, 0.5));
-            pPlantWall.Add(GameSystem.SetPosition(0.9, 1.75));
-            pPlantWall.Add(GameSystem.SetPosition(1.32, 1.75));
+            pPlantWall.Add(GameSystem.SetPosition(0.9, 1.87));
+            pPlantWall.Add(GameSystem.SetPosition(1.32, 1.87));
             pPlantWall.Add(GameSystem.SetPosition(1.4, 0.25));
             pPlantWall.Add(GameSystem.SetPosition(1.6, 0.25));
             pPlantWall.Add(GameSystem.SetPosition(1.6, 2.5));
@@ -39,10 +41,9 @@ namespace TheEvolution.Stage.Chapters {
         }
 
         public override void ShowTip() {
-            FormTip tip = new FormTip();
-            tip.SetBackgroundImage(Resources.SurvivalIntro);
-            tip.ShowDialog();
-            tip.SetBackgroundImage(Resources.SurvivalIntro);
+            List<Bitmap> tipImages = new List<Bitmap> {
+                Resources.SurvivalIntro, Resources.SurvivalIntro };
+            FormTip tip = new FormTip(tipImages);
             tip.ShowDialog();
         }
     }
