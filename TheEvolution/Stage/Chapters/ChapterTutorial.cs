@@ -36,19 +36,19 @@ namespace TheEvolution.Stage.Chapters {
             for (int i = 0; i < pVirus.Count; i++) {
                 otherCells.Add(new Virus(picBoxStage, pVirus[i]));
             }
-            organella.Add(new Mitochondria(picBoxStage, GameSystem.SetPosition(0.5, 0.5)));
+            organella.Add(new Mitochondria(picBoxStage, GameSystem.SetPosition(0.31, 0.31)));
         }
 
         public void ShowLysosome() {
-            organella.Add(new Lysosome(GameSystem.picBoxStage, GameSystem.SetPosition(1.5, 0.5)));
+            organella.Add(new Lysosome(GameSystem.picBoxStage, GameSystem.SetPosition(0.31, 2.6)));
         }
 
         public void ShowER() {
-            organella.Add(new ER(GameSystem.picBoxStage, GameSystem.SetPosition(2.5, 0.5)));
+            organella.Add(new ER(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 0.31)));
         }
 
         public void ShowCentromere() {
-            organella.Add(new Centromere(GameSystem.picBoxStage, GameSystem.SetPosition(2.5, 1.5)));
+            organella.Add(new Centromere(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 2.6)));
         }
 
         protected override void GetReady() {
