@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStart));
             this.picTitle = new System.Windows.Forms.PictureBox();
             this.picTutorial = new System.Windows.Forms.PictureBox();
             this.picSurvive = new System.Windows.Forms.PictureBox();
@@ -39,9 +40,10 @@
             // 
             this.picTitle.BackColor = System.Drawing.Color.Transparent;
             this.picTitle.Image = global::TheEvolution.Properties.Resources.Title;
-            this.picTitle.Location = new System.Drawing.Point(38, 12);
+            this.picTitle.Location = new System.Drawing.Point(25, 8);
+            this.picTitle.Margin = new System.Windows.Forms.Padding(2);
             this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(1164, 282);
+            this.picTitle.Size = new System.Drawing.Size(776, 188);
             this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTitle.TabIndex = 4;
             this.picTitle.TabStop = false;
@@ -49,10 +51,11 @@
             // picTutorial
             // 
             this.picTutorial.BackColor = System.Drawing.Color.Transparent;
-            this.picTutorial.Image = global::TheEvolution.Properties.Resources.picTutorial;
-            this.picTutorial.Location = new System.Drawing.Point(824, 326);
+            this.picTutorial.Image = ((System.Drawing.Image)(resources.GetObject("picTutorial.Image")));
+            this.picTutorial.Location = new System.Drawing.Point(549, 217);
+            this.picTutorial.Margin = new System.Windows.Forms.Padding(2);
             this.picTutorial.Name = "picTutorial";
-            this.picTutorial.Size = new System.Drawing.Size(236, 75);
+            this.picTutorial.Size = new System.Drawing.Size(245, 50);
             this.picTutorial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTutorial.TabIndex = 5;
             this.picTutorial.TabStop = false;
@@ -61,10 +64,11 @@
             // picSurvive
             // 
             this.picSurvive.BackColor = System.Drawing.Color.Transparent;
-            this.picSurvive.Image = global::TheEvolution.Properties.Resources.picSurvive;
-            this.picSurvive.Location = new System.Drawing.Point(824, 418);
+            this.picSurvive.Image = global::TheEvolution.Properties.Resources.picSurvival;
+            this.picSurvive.Location = new System.Drawing.Point(549, 279);
+            this.picSurvive.Margin = new System.Windows.Forms.Padding(2);
             this.picSurvive.Name = "picSurvive";
-            this.picSurvive.Size = new System.Drawing.Size(368, 75);
+            this.picSurvive.Size = new System.Drawing.Size(245, 50);
             this.picSurvive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSurvive.TabIndex = 6;
             this.picSurvive.TabStop = false;
@@ -73,10 +77,11 @@
             // picExit
             // 
             this.picExit.BackColor = System.Drawing.Color.Transparent;
-            this.picExit.Image = global::TheEvolution.Properties.Resources.BtnExit;
-            this.picExit.Location = new System.Drawing.Point(824, 510);
+            this.picExit.Image = global::TheEvolution.Properties.Resources.picExit;
+            this.picExit.Location = new System.Drawing.Point(549, 340);
+            this.picExit.Margin = new System.Windows.Forms.Padding(2);
             this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(236, 75);
+            this.picExit.Size = new System.Drawing.Size(157, 50);
             this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picExit.TabIndex = 7;
             this.picExit.TabStop = false;
@@ -89,18 +94,19 @@
             // 
             // FormStart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::TheEvolution.Properties.Resources.TitleDecoration;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1244, 636);
+            this.ClientSize = new System.Drawing.Size(829, 424);
             this.Controls.Add(this.picExit);
             this.Controls.Add(this.picSurvive);
             this.Controls.Add(this.picTutorial);
             this.Controls.Add(this.picTitle);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormStart";
             this.Text = "The Evolution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

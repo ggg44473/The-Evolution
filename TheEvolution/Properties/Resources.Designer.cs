@@ -213,26 +213,6 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BtnContinue {
-            get {
-                object obj = ResourceManager.GetObject("BtnContinue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BtnExit {
-            get {
-                object obj = ResourceManager.GetObject("BtnExit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BtnNextChapter1 {
             get {
                 object obj = ResourceManager.GetObject("BtnNextChapter1", resourceCulture);
@@ -256,16 +236,6 @@ namespace TheEvolution.Properties {
         internal static System.Drawing.Bitmap BtnNextChapter3 {
             get {
                 object obj = ResourceManager.GetObject("BtnNextChapter3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BtnStart {
-            get {
-                object obj = ResourceManager.GetObject("BtnStart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -653,9 +623,19 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap picSurvive {
+        internal static System.Drawing.Bitmap picExit {
             get {
-                object obj = ResourceManager.GetObject("picSurvive", resourceCulture);
+                object obj = ResourceManager.GetObject("picExit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picSurvival {
+            get {
+                object obj = ResourceManager.GetObject("picSurvival", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1136,6 +1116,16 @@ namespace TheEvolution.Properties {
         internal static System.Drawing.Bitmap Progressbar4 {
             get {
                 object obj = ResourceManager.GetObject("Progressbar4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rank {
+            get {
+                object obj = ResourceManager.GetObject("Rank", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

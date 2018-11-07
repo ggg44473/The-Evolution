@@ -163,12 +163,6 @@
   <data name="Bloodbar9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Bloodbar9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnContinue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\BtnContinue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnExit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\BtnExit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BtnNextChapter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\BtnNextChapter1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -177,9 +171,6 @@
   </data>
   <data name="BtnNextChapter3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\BtnNextChapter3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnStart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\BtnStart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CentroIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\CentroIntro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,8 +286,11 @@
   <data name="PauseScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\PauseScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="picSurvive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\picSurvive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="picExit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\picExit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picSurvival" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\picSurvival.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="picTutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\picTutorial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -441,6 +435,9 @@
   </data>
   <data name="Progressbar4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Progressbar4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Rank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shocker1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Shocker1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
