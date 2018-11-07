@@ -16,6 +16,7 @@ namespace TheEvolution.Core {
         public static Size screen;
         public static FormStart formStart;
         public static FormStage formStage;
+        public static Chapter chapter;
         public static PictureBox picBoxStage;
         public static Player player;
         public static List<Competitor> competitors = new List<Competitor>();
@@ -50,7 +51,9 @@ namespace TheEvolution.Core {
                 } else {
                     formStage.hpBeatInterval--;
                 }
-                //formStage.Invalidate();
+                formStage.Invoke((Action)delegate () {
+                    formStage.labelTime.Text = chapter.GetTimeSurvived();
+                });
                 picBoxStage.Invalidate();
                 Thread.Sleep(50);
             }
@@ -64,9 +67,7 @@ namespace TheEvolution.Core {
                 }
                 CompetitorCollide();
                 OtherCellCollide();
-                if (FormStage.chapter == EChapter.Tutorial) {
-                    GetOrganelle();
-                }
+                GetOrganelle();
                 Thread.Sleep(100);
             }
         }

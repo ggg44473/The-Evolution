@@ -269,7 +269,7 @@ namespace TheEvolution.Stage.Cells {
             PlayerMove();
             Rotate();
             if (aniInterval == 0) {
-                aniInterval = 2;
+                aniInterval = 3;
                 Animate();
             }
             aniInterval--;

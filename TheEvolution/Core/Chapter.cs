@@ -26,8 +26,11 @@ namespace TheEvolution.Core {
         protected List<Point> pCompetitor;
         internal List<Food> food;
         internal List<Cell> otherCells;
+        internal List<Organelle> organella;
+        public DateTime startTime;
 
         public Chapter(PictureBox picBoxStage) {
+            GameSystem.chapter = this;
             threadAct = new Thread(GameSystem.Act);
             threadCollide = new Thread(GameSystem.CollisionDetect);
             background = new Background(picBoxStage);
@@ -40,15 +43,42 @@ namespace TheEvolution.Core {
             pCompetitor = new List<Point>();
             food = new List<Food>();
             otherCells = new List<Cell>();
+            organella = new List<Organelle>();
+
             GetReady();
+
+            for (int i = 0; i < 40; i++) {
+                food.Add(new Algae(picBoxStage));
+                food.Add(new Charophyta(picBoxStage));
+            }
+            for (int i = 0; i < pPlantWall.Count; i++) {
+                otherCells.Add(new PlantWall(picBoxStage, pPlantWall[i]));
+            }
+            for (int i = 0; i < pTracker.Count; i++) {
+                otherCells.Add(new Tracker(picBoxStage, pTracker[i]));
+            }
+            for (int i = 0; i < pShocker.Count; i++) {
+                otherCells.Add(new Shocker(picBoxStage, pShocker[i]));
+            }
+            for (int i = 0; i < pPredator.Count; i++) {
+                otherCells.Add(new Predator(picBoxStage, pPredator[i]));
+            }
+            for (int i = 0; i < pVirus.Count; i++) {
+                otherCells.Add(new Virus(picBoxStage, pVirus[i]));
+            }
+
+            organella.Add(new Mitochondria(picBoxStage, GameSystem.SetPosition(0.31, 0.31)));
         }
 
         protected abstract void GetReady();
+
+        public abstract void ShowTip();
 
         public virtual void Start() {
             GameSystem.isStart = true;
             threadAct.Start();
             threadCollide.Start();
+            startTime = DateTime.Now;
         }
 
         public virtual void End() {
@@ -89,6 +119,29 @@ namespace TheEvolution.Core {
                 pPlantWall.Add(GameSystem.SetPosition(0, y));
                 pPlantWall.Add(GameSystem.SetPosition(2.8, y));
             }
+        }
+
+        public virtual void ShowLysosome() {
+            organella.Add(new Lysosome(GameSystem.picBoxStage, GameSystem.SetPosition(0.31, 2.6)));
+        }
+
+        public virtual void ShowER() {
+            organella.Add(new ER(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 0.31)));
+        }
+
+        public virtual void ShowCentromere() {
+            organella.Add(new Centromere(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 2.6)));
+        }
+
+        public string GetTimeSurvived() {
+            int totalSeconds = (DateTime.Now - startTime).Seconds;
+
+            string string_m = (totalSeconds / 60).ToString();
+
+            int s = totalSeconds % 60;
+            string string_s = s < 10 ? "0" + s.ToString() : s.ToString();
+
+            return string_m + ":" + string_s;
         }
     }
 }

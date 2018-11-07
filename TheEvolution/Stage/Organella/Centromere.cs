@@ -14,10 +14,5 @@ namespace TheEvolution.Stage.Organella {
             images = ImageContainer.imgCentromere;
             size = images[0].Size;
         }
-
-        public override void Collide() {
-            base.Collide();
-            MessageBox.Show("Get Centromere");
-        }
     }
 }

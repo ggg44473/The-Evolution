@@ -17,7 +17,14 @@ namespace TheEvolution.Stage.Organella {
 
         public override void Collide(int myId) {
             base.Collide(myId);
-            GameSystem.formStage.chapterTutorial.ShowCentromere();
+            switch (FormStage.chapter) {
+                case EChapter.Tutorial:
+                    GameSystem.formStage.chapterTutorial.ShowCentromere();
+                    break;
+                case EChapter.Survival:
+                    GameSystem.formStage.chapterSurvival.ShowCentromere();
+                    break;
+            }
         }
     }
 }
