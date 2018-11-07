@@ -373,9 +373,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EvolutionIntro {
+        internal static System.Drawing.Bitmap GameOver {
             get {
-                object obj = ResourceManager.GetObject("EvolutionIntro", resourceCulture);
+                object obj = ResourceManager.GetObject("GameOver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1313,9 +1313,29 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Tips {
+        internal static System.Drawing.Bitmap SurvivalIntro {
             get {
-                object obj = ResourceManager.GetObject("Tips", resourceCulture);
+                object obj = ResourceManager.GetObject("SurvivalIntro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tips1 {
+            get {
+                object obj = ResourceManager.GetObject("Tips1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tips2 {
+            get {
+                object obj = ResourceManager.GetObject("Tips2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

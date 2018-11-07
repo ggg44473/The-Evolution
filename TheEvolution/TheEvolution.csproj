@@ -515,12 +515,6 @@
     <None Include="Pictures\Tips.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\ControlIntro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\EvolutionIntro.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\IconRank.png" />
   </ItemGroup>
   <ItemGroup>
@@ -558,6 +552,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\TutorialScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\GameOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SurvivalIntro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Tips1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Tips2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
