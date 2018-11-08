@@ -55,6 +55,11 @@ namespace TheEvolution {
         }
 
         public void GameOver() {
+            GameSystem.formEnd = new FormEnd(
+                chapter,
+                GameSystem.chapter.survivedTime,
+                GameSystem.player.GetCurrentImages());
+
             if (chapterTutorial != null) {
                 chapterTutorial.End();
             }
@@ -62,12 +67,6 @@ namespace TheEvolution {
                 chapterSurvival.End();
             }
 
-            //if (chapter == EChapter.Tutorial) {
-
-            //} else if (chapter == EChapter.Survival) {
-
-            //}
-            GameSystem.formEnd = new FormEnd();
             GameSystem.formEnd.Show();
             Close();
         }

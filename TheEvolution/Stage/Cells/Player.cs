@@ -300,6 +300,10 @@ namespace TheEvolution.Stage.Cells {
                 }
             }
         }
+
+        public List<Bitmap> GetCurrentImages() {
+            return images;
+        }
     }
 
     public class PlayerEventArgs : EventArgs {
