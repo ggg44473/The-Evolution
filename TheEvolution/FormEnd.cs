@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using TheEvolution.Core;
+using System.IO;
 
 namespace TheEvolution {
     public partial class FormEnd : Form {
@@ -16,6 +17,11 @@ namespace TheEvolution {
         private EChapter chapter;
         private int survivedTime;
         private List<Bitmap> playerImages;
+        SQLiteConnection conn;
+        string SELECT;
+        string INSERT;
+        string DELETE;
+        string CreateTable;
 
         public FormEnd(EChapter chapter, int survivedTime, List<Bitmap> playerImages) {
             InitializeComponent();
@@ -35,9 +41,15 @@ namespace TheEvolution {
         private void FormEnd_Load(object sender, EventArgs e) {
             GameSystem.SetControlSize(picBoxExit, ClientSize, 0.975, 0.03, 0.04, 0.06);
             GameSystem.SetControlSize(textBoxName, ClientSize, 0.5, 0.7, 0.1, 0.2);
+            if (!File.Exists("Rank.sqlite")) {
+                SQLiteConnection.CreateFile("Rank.sqlite");
+            }
+            conn = new SQLiteConnection("Data Source=Rank.sqlite;Version=3;");
+            conn.Open();
         }
 
         private void picBoxExit_Click(object sender, EventArgs e) {
+            conn.Close();
             Application.Exit();
         }
     }
