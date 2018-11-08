@@ -39,7 +39,7 @@
             // picTitle
             // 
             this.picTitle.BackColor = System.Drawing.Color.Transparent;
-            this.picTitle.Image = global::TheEvolution.Properties.Resources.Title;
+            this.picTitle.Image = ((System.Drawing.Image)(resources.GetObject("picTitle.Image")));
             this.picTitle.Location = new System.Drawing.Point(25, 8);
             this.picTitle.Margin = new System.Windows.Forms.Padding(2);
             this.picTitle.Name = "picTitle";
@@ -64,7 +64,7 @@
             // picSurvive
             // 
             this.picSurvive.BackColor = System.Drawing.Color.Transparent;
-            this.picSurvive.Image = global::TheEvolution.Properties.Resources.picSurvival;
+            this.picSurvive.Image = ((System.Drawing.Image)(resources.GetObject("picSurvive.Image")));
             this.picSurvive.Location = new System.Drawing.Point(549, 279);
             this.picSurvive.Margin = new System.Windows.Forms.Padding(2);
             this.picSurvive.Name = "picSurvive";
@@ -77,7 +77,7 @@
             // picExit
             // 
             this.picExit.BackColor = System.Drawing.Color.Transparent;
-            this.picExit.Image = global::TheEvolution.Properties.Resources.picExit;
+            this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
             this.picExit.Location = new System.Drawing.Point(549, 340);
             this.picExit.Margin = new System.Windows.Forms.Padding(2);
             this.picExit.Name = "picExit";
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::TheEvolution.Properties.Resources.TitleDecoration;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(829, 424);
             this.Controls.Add(this.picExit);
@@ -108,6 +108,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormStart";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "The Evolution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormStart_Load);

@@ -67,6 +67,9 @@ namespace TheEvolution.Core {
             for (int i = 0; i < pVirus.Count; i++) {
                 otherCells.Add(new Virus(picBoxStage, pVirus[i]));
             }
+            for (int i = 0; i < pCompetitor.Count; i++) {
+                otherCells.Add(new Competitor(picBoxStage, pCompetitor[i]));
+            }
 
             organella.Add(new Mitochondria(picBoxStage, GameSystem.SetPosition(0.31, 0.31)));
         }
