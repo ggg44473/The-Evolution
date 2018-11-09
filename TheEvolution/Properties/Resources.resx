@@ -526,4 +526,31 @@
   <data name="Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Competitorgif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Competitorgif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EatFoodgif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\EatFoodgif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Evolution" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Evolution.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Movegif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Movegif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlantWallgif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\PlantWallgif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Predatorgif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Predatorgif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shockergif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Shockergif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trackergif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Trackergif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Virusgif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Virusgif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

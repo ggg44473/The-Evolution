@@ -37,7 +37,22 @@ namespace TheEvolution {
         }
 
         private void FormStage_Load(object sender, EventArgs e) {
+            MCImusic.mciMusic("Musics/5.mp3", "close");
+
             GameSystem.SetControlSize(panelTip, ClientSize, 0.5, 0.5, 0.6, 0.6);
+
+            GameSystem.SetControlSize(panelHelp, ClientSize, 0.5, 0.5, 0.65, 0.8);
+            GameSystem.SetSquareControlSize(helpGoal, panelHelp.Size, 0.06, 0.24, 0.07);
+            GameSystem.SetSquareControlSize(helpControl, panelHelp.Size, 0.06, 0.36, 0.07);
+            GameSystem.SetSquareControlSize(helpFood1, panelHelp.Size, 0.06, 0.48, 0.07);
+            GameSystem.SetSquareControlSize(helpFood2, panelHelp.Size, 0.14, 0.48, 0.07);
+            GameSystem.SetSquareControlSize(helpPlantWall, panelHelp.Size, 0.06, 0.6, 0.07);
+            GameSystem.SetSquareControlSize(helpPredator, panelHelp.Size, 0.06, 0.72, 0.07);
+            GameSystem.SetSquareControlSize(helpCompetitor, panelHelp.Size, 0.14, 0.72, 0.07);
+            GameSystem.SetSquareControlSize(helpTracker, panelHelp.Size, 0.22, 0.72, 0.07);
+            GameSystem.SetSquareControlSize(helpShocker, panelHelp.Size, 0.06, 0.84, 0.07);
+            GameSystem.SetSquareControlSize(helpVirus, panelHelp.Size, 0.14, 0.84, 0.07);
+            GameSystem.SetControlSize(picBoxGif, panelHelp.Size, 0.64, 0.56, 0.66, 0.78);
 
             GameSystem.SetControlSize(panelStatus, ClientSize, 0.15, 0.025, 0.3, 0.05);
             GameSystem.SetSquareControlSize(picBoxHp, panelStatus.Size, 0.06, 0.5, 0.08);
@@ -47,24 +62,26 @@ namespace TheEvolution {
 
             GameSystem.SetControlSize(labelTime, ClientSize, 0.5, 0.035, 0.1, 0.08);
 
-            GameSystem.SetControlSize(panelSetting, ClientSize, 0.96, 0.025, 0.08, 0.05);
-            GameSystem.SetSquareControlSize(picBoxPause, panelSetting.Size, 0.255, 0.5, 0.45);
-            GameSystem.SetSquareControlSize(picBoxExit, panelSetting.Size, 0.745, 0.5, 0.45);
+            GameSystem.SetControlSize(panelSetting, ClientSize, 0.94, 0.025, 0.12, 0.05);
+            GameSystem.SetSquareControlSize(picBoxHelp, panelSetting.Size, 0.17, 0.5, 0.27);
+            GameSystem.SetSquareControlSize(picBoxPause, panelSetting.Size, 0.51, 0.5, 0.29);
+            GameSystem.SetSquareControlSize(picBoxExit, panelSetting.Size, 0.83, 0.5, 0.28);
 
             NextChapter(chapter);
         }
 
         public void GameOver() {
             GameSystem.formEnd = new FormEnd(
-                chapter,
                 GameSystem.chapter.survivedTime,
                 GameSystem.player.GetCurrentImages());
 
             if (chapterTutorial != null) {
                 chapterTutorial.End();
+                MCImusic.mciMusic("Musics/easy1.mp3", "close");
             }
             if (chapterSurvival != null) {
                 chapterSurvival.End();
+                MCImusic.mciMusic("Musics/3.mp3", "close");
             }
 
             GameSystem.formEnd.Show();
@@ -80,6 +97,7 @@ namespace TheEvolution {
                     GameSystem.player.Eat += OnPlayerEat;
                     chapterTutorial.ShowTip();
                     chapterTutorial.Start();
+                    MCImusic.mciMusic("Musics/S2.mp3", "play", "repeat");
                     break;
                 case EChapter.Survival:
                     picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
@@ -91,6 +109,7 @@ namespace TheEvolution {
                     GameSystem.player.Eat += OnPlayerEat;
                     chapterSurvival.ShowTip();
                     chapterSurvival.Start();
+                    MCImusic.mciMusic("Musics/3.mp3", "play", "repeat");
                     break;
             }
         }
@@ -189,6 +208,7 @@ namespace TheEvolution {
             } else if (chapterSurvival != null) {
                 chapterSurvival.Pause();
             }
+
             if (sender != picBoxPause) {
                 if (sender is Mitochondria) {
                     panelTip.BackgroundImage = Resources.MitoIntro;
@@ -206,6 +226,24 @@ namespace TheEvolution {
             panelTip.Visible = true;
         }
 
+        private void picBoxHelp_Click(object sender, EventArgs e) {
+            if (panelHelp.Visible) {
+                panelHelp.Hide();
+                if (chapterTutorial != null) {
+                    chapterTutorial.Resume();
+                } else if (chapterSurvival != null) {
+                    chapterSurvival.Resume();
+                }
+            } else {
+                panelHelp.Show();
+                if (chapterTutorial != null) {
+                    chapterTutorial.Pause();
+                } else if (chapterSurvival != null) {
+                    chapterSurvival.Pause();
+                }
+            }
+        }
+
         private void panelTip_Click(object sender, EventArgs e) {
             ExitTip();
         }
@@ -214,6 +252,57 @@ namespace TheEvolution {
             if (panelTip.Visible) {
                 if (e.KeyCode == Keys.Enter) {
                     ExitTip();
+                }
+            }
+        }
+
+        private void helpGoal_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.Evolution;
+        }
+
+        private void helpControl_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.Movegif;
+        }
+
+        private void helpPlantWall_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.PlantWallgif;
+        }
+
+        private void helpFood1_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.EatFoodgif;
+        }
+
+        private void helpFood2_Click(object sender, EventArgs e) {
+            helpFood1_Click(sender, e);
+        }
+
+        private void helpPredator_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.Predatorgif;
+        }
+
+        private void helpCompetitor_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.Competitorgif;
+        }
+
+        private void helpTracker_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.Trackergif;
+        }
+
+        private void helpShocker_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.Shockergif;
+        }
+
+        private void helpVirus_Click(object sender, EventArgs e) {
+            picBoxGif.Image = Resources.Virusgif;
+        }
+
+        private void panelHelp_Click(object sender, EventArgs e) {
+            if (panelHelp.Visible) {
+                panelHelp.Hide();
+                if (chapterTutorial != null) {
+                    chapterTutorial.Resume();
+                } else if (chapterSurvival != null) {
+                    chapterSurvival.Resume();
                 }
             }
         }

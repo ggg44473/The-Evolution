@@ -14,43 +14,134 @@ using System.IO;
 namespace TheEvolution {
     public partial class FormEnd : Form {
 
-        private EChapter chapter;
-        private int survivedTime;
-        private List<Bitmap> playerImages;
+        int survivedTime;
+        int playerImageNumber;
+        List<Bitmap> playerImages;
+        int imgIndex;
         SQLiteConnection conn;
-        string SELECT;
-        string INSERT;
-        string DELETE;
-        string CreateTable;
+        SQLiteCommand command;
+        SQLiteDataReader reader;
+        string createTable;
+        string select;
+        string insert;
 
-        public FormEnd(EChapter chapter, int survivedTime, List<Bitmap> playerImages) {
+        public FormEnd(int survivedTime, List<Bitmap> playerImages) {
             InitializeComponent();
-            this.chapter = chapter;
             this.survivedTime = survivedTime;
             this.playerImages = playerImages;
-            string hasImage = "";
-            if (playerImages != null) {
-                hasImage = "Got Images";
+            labelPlayerTime.Text = GetTimeString(survivedTime);
+            imgIndex = 0;
+            GameSystem.SetControlSize(picBoxGameOver, GameSystem.screen, 0.5, 0.5, 1, 1);
+
+            createTable = "CREATE TABLE rank (name VARCHAR(20), time INT, image INT)";
+            select = "SELECT * FROM rank ORDER BY time DESC";
+
+            if (playerImages == ImageContainer.imgPlayer) {
+                playerImageNumber = 1;
+            } else if (playerImages == ImageContainer.imgPlayerEat) {
+                playerImageNumber = 2;
+            } else if (playerImages == ImageContainer.imgPlayerMito) {
+                playerImageNumber = 3;
+            } else if (playerImages == ImageContainer.imgPlayerMitoLyso) {
+                playerImageNumber = 4;
+            } else if (playerImages == ImageContainer.imgPlayerMitoLysoER) {
+                playerImageNumber = 5;
+            } else if (playerImages == ImageContainer.imgPlayerComplete) {
+                playerImageNumber = 6;
+            } else if (playerImages == ImageContainer.imgPlayerSick) {
+                playerImageNumber = 7;
+            } else if (playerImages == ImageContainer.imgPlayerSickEat) {
+                playerImageNumber = 8;
+            } else if (playerImages == ImageContainer.imgPlayerShocked) {
+                playerImageNumber = 9;
             }
-            labelTest.Text =
-                chapter.ToString() + " " +
-                survivedTime.ToString() + " " +
-                hasImage;
+
+            MCImusic.mciMusic("Musics/End1.mp3", "play", "repeat");
         }
 
         private void FormEnd_Load(object sender, EventArgs e) {
             GameSystem.SetControlSize(picBoxExit, ClientSize, 0.975, 0.03, 0.04, 0.06);
-            GameSystem.SetControlSize(textBoxName, ClientSize, 0.5, 0.7, 0.1, 0.2);
-            if (!File.Exists("Rank.sqlite")) {
-                SQLiteConnection.CreateFile("Rank.sqlite");
+            GameSystem.SetControlSize(labelPlayerTime, ClientSize, 0.5, 0.72, 0.1, 0.1);
+            GameSystem.SetControlSize(picBoxPlayerImage, ClientSize, 0.36, 0.8, 0.11, 0.14);
+            GameSystem.SetControlSize(textBoxName, ClientSize, 0.5, 0.8, 0.1, 0.2);
+            GameSystem.SetControlSize(labelConfirm, ClientSize, 0.66, 0.8, 0.1, 0.2);
+            GameSystem.SetControlSize(labelName, ClientSize, 0.33, 0.3, 0.35, 0.6);
+            GameSystem.SetControlSize(labelTime, ClientSize, 0.66, 0.3, 0.3, 0.6);
+
+            if (!File.Exists("Evo.sqlite")) {
+                SQLiteConnection.CreateFile("Evo.sqlite");
+                conn = new SQLiteConnection("Data Source=Evo.sqlite;Version=3;");
+                conn.Open();
+                command = new SQLiteCommand(createTable, conn);
+                command.ExecuteNonQuery();
+            } else {
+                conn = new SQLiteConnection("Data Source=Evo.sqlite;Version=3;");
+                conn.Open();
             }
-            conn = new SQLiteConnection("Data Source=Rank.sqlite;Version=3;");
-            conn.Open();
+
+            ReadData();
         }
 
         private void picBoxExit_Click(object sender, EventArgs e) {
             conn.Close();
+            timerAnimate.Stop();
             Application.Exit();
+        }
+
+        private void labelConfirm_Click(object sender, EventArgs e) {
+            insert = "INSERT INTO rank (name, time, image) values ('" +
+                    textBoxName.Text + "', " + survivedTime + ", " + playerImageNumber + ")";
+            command = new SQLiteCommand(insert, conn);
+            command.ExecuteNonQuery();
+            ReadData();
+            textBoxName.Hide();
+            labelConfirm.Hide();
+            labelPlayerTime.Hide();
+        }
+
+        private void ReadData() {
+            labelName.Text = "";
+            labelTime.Text = "";
+            command = new SQLiteCommand(select, conn);
+            reader = command.ExecuteReader();
+            for (int i = 0; i < 8; i++) {
+                reader.Read();
+                labelName.Text += reader["name"] + "\n";
+                labelTime.Text += GetTimeString((int)reader["time"]) + "\n";
+            }
+        }
+
+        private void FormEnd_KeyDown(object sender, KeyEventArgs e) {
+            CloseGameOverPicBox();
+        }
+
+        private void picBoxGameOver_Click(object sender, EventArgs e) {
+            CloseGameOverPicBox();
+        }
+
+        private void CloseGameOverPicBox() {
+            if (picBoxGameOver.Visible) {
+                picBoxGameOver.Visible = false;
+            }
+            timerAnimate.Start();
+        }
+
+        private void timerAnimate_Tick(object sender, EventArgs e) {
+            imgIndex++;
+            if (imgIndex == playerImages.Count) {
+                imgIndex = 0;
+            }
+            picBoxPlayerImage.Image = playerImages[imgIndex];
+            Invalidate();
+        }
+
+        private string GetTimeString(int TotalSeconds) {
+            string string_m = (TotalSeconds / 60).ToString();
+
+            int s = TotalSeconds % 60;
+            string string_s = s < 10 ? "0" + s.ToString() : s.ToString();
+
+            return string_m + ":" + string_s;
         }
     }
 }

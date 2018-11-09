@@ -12,7 +12,7 @@ namespace TheEvolution.Stage.Chapters {
     public class ChapterSurvival : Chapter {
 
         public ChapterSurvival(PictureBox picBoxStage) : base(picBoxStage) {
-            background.ChangeBackground(0);
+            background.ChangeBackground(1);
         }
 
         protected override void GetReady() {

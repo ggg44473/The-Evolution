@@ -49,6 +49,8 @@ namespace TheEvolution {
             timerAnimation.Start();
             GameSystem.formStage = new FormStage();
             //GameSystem.formStage.Closed += (s, arg) => Close();
+
+            MCImusic.mciMusic("Musics/5.mp3", "play", "repeat");
         }
 
         private void picStart_Click(object sender, EventArgs e) {
