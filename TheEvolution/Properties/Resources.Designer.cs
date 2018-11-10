@@ -1613,6 +1613,16 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TutorialPanel {
+            get {
+                object obj = ResourceManager.GetObject("TutorialPanel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TutorialScreen {
             get {
                 object obj = ResourceManager.GetObject("TutorialScreen", resourceCulture);

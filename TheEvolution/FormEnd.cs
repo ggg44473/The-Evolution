@@ -61,12 +61,12 @@ namespace TheEvolution {
 
         private void FormEnd_Load(object sender, EventArgs e) {
             GameSystem.SetControlSize(picBoxRestart, ClientSize, 0.974, 0.03, 0.05, 0.06);
-            GameSystem.SetControlSize(labelPlayerTime, ClientSize, 0.5, 0.72, 0.1, 0.1);
+            GameSystem.SetControlSize(labelPlayerTime, ClientSize, 0.5, 0.74, 0.1, 0.1);
             GameSystem.SetControlSize(picBoxPlayerImage, ClientSize, 0.36, 0.8, 0.11, 0.14);
-            GameSystem.SetControlSize(textBoxName, ClientSize, 0.5, 0.8, 0.1, 0.2);
-            GameSystem.SetControlSize(labelConfirm, ClientSize, 0.66, 0.8, 0.1, 0.2);
-            GameSystem.SetControlSize(labelName, ClientSize, 0.33, 0.3, 0.35, 0.6);
-            GameSystem.SetControlSize(labelTime, ClientSize, 0.66, 0.3, 0.3, 0.6);
+            GameSystem.SetControlSize(textBoxName, ClientSize, 0.5, 0.81, 0.1, 0.2);
+            GameSystem.SetControlSize(labelConfirm, ClientSize, 0.64, 0.8, 0.1, 0.2);
+            GameSystem.SetControlSize(labelName, ClientSize, 0.37, 0.3, 0.35, 0.6);
+            GameSystem.SetControlSize(labelTime, ClientSize, 0.62, 0.3, 0.3, 0.6);
 
             if (!File.Exists("Evo.sqlite")) {
                 SQLiteConnection.CreateFile("Evo.sqlite");

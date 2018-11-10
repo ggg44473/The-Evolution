@@ -595,4 +595,7 @@
   <data name="IconRestart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\IconRestart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TutorialPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\TutorialPanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

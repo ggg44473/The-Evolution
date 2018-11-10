@@ -126,6 +126,7 @@
             // panelHelp
             // 
             this.panelHelp.BackColor = System.Drawing.Color.Silver;
+            this.panelHelp.BackgroundImage = global::TheEvolution.Properties.Resources.TutorialPanel;
             this.panelHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelHelp.Controls.Add(this.labelEnemy);
             this.panelHelp.Controls.Add(this.labelWall);
@@ -339,7 +340,7 @@
             // picBoxGif
             // 
             this.picBoxGif.BackColor = System.Drawing.Color.Black;
-            this.picBoxGif.Image = global::TheEvolution.Properties.Resources.Movegif;
+            this.picBoxGif.Image = global::TheEvolution.Properties.Resources.Evolution;
             this.picBoxGif.Location = new System.Drawing.Point(157, 38);
             this.picBoxGif.Name = "picBoxGif";
             this.picBoxGif.Size = new System.Drawing.Size(272, 206);

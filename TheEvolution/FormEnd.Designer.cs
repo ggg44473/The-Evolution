@@ -78,7 +78,7 @@
             // picBoxGameOver
             // 
             this.picBoxGameOver.Image = global::TheEvolution.Properties.Resources.GameOver;
-            this.picBoxGameOver.Location = new System.Drawing.Point(23, 376);
+            this.picBoxGameOver.Location = new System.Drawing.Point(12, 376);
             this.picBoxGameOver.Name = "picBoxGameOver";
             this.picBoxGameOver.Size = new System.Drawing.Size(228, 192);
             this.picBoxGameOver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,10 +89,10 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.BackColor = System.Drawing.SystemColors.ControlText;
+            this.labelName.BackColor = System.Drawing.Color.Transparent;
             this.labelName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.Cyan;
-            this.labelName.Location = new System.Drawing.Point(267, 158);
+            this.labelName.Location = new System.Drawing.Point(376, 158);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(160, 55);
             this.labelName.TabIndex = 9;
@@ -101,10 +101,10 @@
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.BackColor = System.Drawing.SystemColors.ControlText;
+            this.labelTime.BackColor = System.Drawing.Color.Transparent;
             this.labelTime.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.Cyan;
-            this.labelTime.Location = new System.Drawing.Point(561, 158);
+            this.labelTime.Location = new System.Drawing.Point(680, 170);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(138, 55);
             this.labelTime.TabIndex = 10;
