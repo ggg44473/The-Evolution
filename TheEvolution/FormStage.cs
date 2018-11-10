@@ -40,18 +40,28 @@ namespace TheEvolution {
             MCImusic.mciMusic("Musics/5.mp3", "close");
 
             GameSystem.SetControlSize(panelTip, ClientSize, 0.5, 0.5, 0.6, 0.6);
-
             GameSystem.SetControlSize(panelHelp, ClientSize, 0.5, 0.5, 0.65, 0.8);
-            GameSystem.SetSquareControlSize(helpGoal, panelHelp.Size, 0.06, 0.24, 0.07);
-            GameSystem.SetSquareControlSize(helpControl, panelHelp.Size, 0.06, 0.36, 0.07);
+
+            GameSystem.SetSquareControlSize(labelGoal, panelHelp.Size, 0.06, 0.13, 0.07);
+            GameSystem.SetSquareControlSize(helpGoal, panelHelp.Size, 0.06, 0.2, 0.07);
+
+            GameSystem.SetSquareControlSize(labelControl, panelHelp.Size, 0.06, 0.27, 0.07);
+            GameSystem.SetSquareControlSize(helpControl, panelHelp.Size, 0.06, 0.34, 0.07);
+
+            GameSystem.SetSquareControlSize(labelFood, panelHelp.Size, 0.06, 0.41, 0.07);
             GameSystem.SetSquareControlSize(helpFood1, panelHelp.Size, 0.06, 0.48, 0.07);
             GameSystem.SetSquareControlSize(helpFood2, panelHelp.Size, 0.14, 0.48, 0.07);
-            GameSystem.SetSquareControlSize(helpPlantWall, panelHelp.Size, 0.06, 0.6, 0.07);
-            GameSystem.SetSquareControlSize(helpPredator, panelHelp.Size, 0.06, 0.72, 0.07);
-            GameSystem.SetSquareControlSize(helpCompetitor, panelHelp.Size, 0.14, 0.72, 0.07);
-            GameSystem.SetSquareControlSize(helpTracker, panelHelp.Size, 0.22, 0.72, 0.07);
-            GameSystem.SetSquareControlSize(helpShocker, panelHelp.Size, 0.06, 0.84, 0.07);
-            GameSystem.SetSquareControlSize(helpVirus, panelHelp.Size, 0.14, 0.84, 0.07);
+
+            GameSystem.SetSquareControlSize(labelWall, panelHelp.Size, 0.06, 0.55, 0.07);
+            GameSystem.SetSquareControlSize(helpPlantWall, panelHelp.Size, 0.06, 0.62, 0.07);
+
+            GameSystem.SetSquareControlSize(labelEnemy, panelHelp.Size, 0.06, 0.69, 0.07);
+            GameSystem.SetSquareControlSize(helpPredator, panelHelp.Size, 0.06, 0.76, 0.07);
+            GameSystem.SetSquareControlSize(helpCompetitor, panelHelp.Size, 0.14, 0.76, 0.07);
+            GameSystem.SetSquareControlSize(helpTracker, panelHelp.Size, 0.22, 0.76, 0.07);
+            GameSystem.SetSquareControlSize(helpShocker, panelHelp.Size, 0.06, 0.87, 0.07);
+            GameSystem.SetSquareControlSize(helpVirus, panelHelp.Size, 0.14, 0.87, 0.07);
+
             GameSystem.SetControlSize(picBoxGif, panelHelp.Size, 0.64, 0.56, 0.66, 0.78);
 
             GameSystem.SetControlSize(panelStatus, ClientSize, 0.15, 0.025, 0.3, 0.05);
@@ -62,30 +72,33 @@ namespace TheEvolution {
 
             GameSystem.SetControlSize(labelTime, ClientSize, 0.5, 0.035, 0.1, 0.08);
 
-            GameSystem.SetControlSize(panelSetting, ClientSize, 0.94, 0.025, 0.12, 0.05);
-            GameSystem.SetSquareControlSize(picBoxHelp, panelSetting.Size, 0.17, 0.5, 0.27);
-            GameSystem.SetSquareControlSize(picBoxPause, panelSetting.Size, 0.51, 0.5, 0.29);
-            GameSystem.SetSquareControlSize(picBoxExit, panelSetting.Size, 0.83, 0.5, 0.28);
+            GameSystem.SetControlSize(panelSetting, ClientSize, 0.93, 0.025, 0.14, 0.05);
+            GameSystem.SetSquareControlSize(picBoxHelp, panelSetting.Size, 0.23, 0.5, 0.27);
+            GameSystem.SetSquareControlSize(picBoxPause, panelSetting.Size, 0.5, 0.5, 0.26);
+            GameSystem.SetSquareControlSize(picBoxRestart, panelSetting.Size, 0.77, 0.5, 0.27);
 
             NextChapter(chapter);
         }
 
         public void GameOver() {
-            GameSystem.formEnd = new FormEnd(
-                GameSystem.chapter.survivedTime,
-                GameSystem.player.GetCurrentImages());
-
             if (chapterTutorial != null) {
+                picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
+                picBoxHpBar.Image = Resources.Bloodbar5;
+                picBoxEatBar.Image = Resources.Progressbar0;
                 chapterTutorial.End();
                 MCImusic.mciMusic("Musics/easy1.mp3", "close");
-            }
-            if (chapterSurvival != null) {
-                chapterSurvival.End();
-                MCImusic.mciMusic("Musics/3.mp3", "close");
+                NextChapter(EChapter.Tutorial);
             }
 
-            GameSystem.formEnd.Show();
-            Close();
+            if (chapterSurvival != null) {
+                GameSystem.formEnd = new FormEnd(
+                    GameSystem.chapter.survivedTime,
+                    GameSystem.player.GetCurrentImages());
+                chapterSurvival.End();
+                MCImusic.mciMusic("Musics/3.mp3", "close");
+                GameSystem.formEnd.Show();
+                Close();
+            }
         }
 
         public void NextChapter(EChapter chapter) {
@@ -97,6 +110,7 @@ namespace TheEvolution {
                     GameSystem.player.Eat += OnPlayerEat;
                     chapterTutorial.ShowTip();
                     chapterTutorial.Start();
+                    picBoxHelp_Click(picBoxHelp, EventArgs.Empty);
                     MCImusic.mciMusic("Musics/S2.mp3", "play", "repeat");
                     break;
                 case EChapter.Survival:
@@ -190,7 +204,7 @@ namespace TheEvolution {
             }
         }
 
-        private void picBoxExit_Click(object sender, EventArgs e) {
+        private void picBoxRestart_Click(object sender, EventArgs e) {
             if (!isPause) {
                 if (chapterTutorial != null) {
                     chapterTutorial.End();
@@ -198,32 +212,36 @@ namespace TheEvolution {
                 if (chapterSurvival != null) {
                     chapterSurvival.End();
                 }
-                Application.Exit();
+                Application.Restart();
             }
         }
 
         public void Pause_Click(object sender, EventArgs e) {
-            if (chapterTutorial != null) {
-                chapterTutorial.Pause();
-            } else if (chapterSurvival != null) {
-                chapterSurvival.Pause();
-            }
-
-            if (sender != picBoxPause) {
-                if (sender is Mitochondria) {
-                    panelTip.BackgroundImage = Resources.MitoIntro;
-                } else if (sender is Lysosome) {
-                    panelTip.BackgroundImage = Resources.LysoIntro;
-                } else if (sender is ER) {
-                    panelTip.BackgroundImage = Resources.ERIntro;
-                } else if (sender is Centromere) {
-                    panelTip.BackgroundImage = Resources.CentroIntro;
-                    isNextChapter = true;
-                }
+            if (panelTip.Visible) {
+                ExitTip();
             } else {
-                panelTip.BackgroundImage = Resources.PauseScreen;
+                if (chapterTutorial != null) {
+                    chapterTutorial.Pause();
+                } else if (chapterSurvival != null) {
+                    chapterSurvival.Pause();
+                }
+
+                if (sender != picBoxPause) {
+                    if (sender is Mitochondria) {
+                        panelTip.BackgroundImage = Resources.MitoIntro;
+                    } else if (sender is Lysosome) {
+                        panelTip.BackgroundImage = Resources.LysoIntro;
+                    } else if (sender is ER) {
+                        panelTip.BackgroundImage = Resources.ERIntro;
+                    } else if (sender is Centromere) {
+                        panelTip.BackgroundImage = Resources.CentroIntro;
+                        isNextChapter = true;
+                    }
+                } else {
+                    panelTip.BackgroundImage = Resources.PauseScreen;
+                }
+                panelTip.Visible = true;
             }
-            panelTip.Visible = true;
         }
 
         private void picBoxHelp_Click(object sender, EventArgs e) {

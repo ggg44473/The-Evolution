@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            this.picBoxExit = new System.Windows.Forms.PictureBox();
+            this.picBoxRestart = new System.Windows.Forms.PictureBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelConfirm = new System.Windows.Forms.Label();
             this.picBoxGameOver = new System.Windows.Forms.PictureBox();
@@ -33,22 +33,23 @@
             this.picBoxPlayerImage = new System.Windows.Forms.PictureBox();
             this.timerAnimate = new System.Windows.Forms.Timer(this.components);
             this.labelPlayerTime = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGameOver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayerImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // picBoxExit
+            // picBoxRestart
             // 
-            this.picBoxExit.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxExit.Image = global::TheEvolution.Properties.Resources.IconExit;
-            this.picBoxExit.Location = new System.Drawing.Point(1148, 21);
-            this.picBoxExit.Name = "picBoxExit";
-            this.picBoxExit.Size = new System.Drawing.Size(46, 56);
-            this.picBoxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxExit.TabIndex = 4;
-            this.picBoxExit.TabStop = false;
-            this.picBoxExit.Click += new System.EventHandler(this.picBoxExit_Click);
+            this.picBoxRestart.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxRestart.Image = global::TheEvolution.Properties.Resources.IconRestart;
+            this.picBoxRestart.Location = new System.Drawing.Point(1148, 21);
+            this.picBoxRestart.Name = "picBoxRestart";
+            this.picBoxRestart.Size = new System.Drawing.Size(46, 56);
+            this.picBoxRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxRestart.TabIndex = 4;
+            this.picBoxRestart.TabStop = false;
+            this.picBoxRestart.Click += new System.EventHandler(this.picBoxRestart_Click);
             // 
             // textBoxName
             // 
@@ -64,6 +65,7 @@
             // labelConfirm
             // 
             this.labelConfirm.AutoSize = true;
+            this.labelConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelConfirm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirm.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.labelConfirm.Location = new System.Drawing.Point(722, 433);
@@ -148,7 +150,7 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelConfirm);
             this.Controls.Add(this.textBoxName);
-            this.Controls.Add(this.picBoxExit);
+            this.Controls.Add(this.picBoxRestart);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
@@ -157,7 +159,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormEnd_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormEnd_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxRestart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGameOver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPlayerImage)).EndInit();
             this.ResumeLayout(false);
@@ -166,7 +168,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox picBoxExit;
+        private System.Windows.Forms.PictureBox picBoxRestart;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelConfirm;
         private System.Windows.Forms.PictureBox picBoxGameOver;

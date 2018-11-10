@@ -126,15 +126,15 @@ namespace TheEvolution.Core {
         }
 
         public virtual void ShowLysosome() {
-            organella.Add(new Lysosome(GameSystem.picBoxStage, GameSystem.SetPosition(0.31, 2.6)));
+            organella.Add(new Lysosome(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 0.31)));
         }
 
         public virtual void ShowER() {
-            organella.Add(new ER(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 0.31)));
+            organella.Add(new ER(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 2.6)));
         }
 
         public virtual void ShowCentromere() {
-            organella.Add(new Centromere(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 2.6)));
+            organella.Add(new Centromere(GameSystem.picBoxStage, GameSystem.SetPosition(0.31, 2.6)));
         }
 
         public string GetTimeSurvived() {

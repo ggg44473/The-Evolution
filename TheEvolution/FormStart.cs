@@ -29,9 +29,9 @@ namespace TheEvolution {
             GameSystem.screen = ClientSize;
             GameSystem.SetControlSize(picTitle, ClientSize, 0.5, 0.24, 0.95, 0.35);
 
-            GameSystem.SetControlSize(picTutorial, ClientSize, 0.77, 0.55, 0.22, 0.1);
-            GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.69, 0.24, 0.08);
-            GameSystem.SetControlSize(picExit, ClientSize, 0.74, 0.82, 0.15, 0.07);
+            GameSystem.SetControlSize(picTutorial, ClientSize, 0.78, 0.55, 0.22, 0.1);
+            GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.69, 0.22, 0.1);
+            GameSystem.SetControlSize(picExit, ClientSize, 0.76, 0.82, 0.15, 0.07);
             
             playerSize = GameSystem.SetSize(0.41, 0.4);
             competitorSize = GameSystem.SetSize(0.09, 0.1);
@@ -88,17 +88,17 @@ namespace TheEvolution {
             if (!isActed) {
                 isActed = true;
                 if (competitorPosition == GameSystem.SetPosition(0.55, 0.5)) {
-                    GameSystem.SetControlSize(picTutorial, ClientSize, 0.77, 0.55, 0.24, 0.1);
+                    GameSystem.SetControlSize(picTutorial, ClientSize, 0.78, 0.55, 0.27, 0.1);
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.63)) {
-                    GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.69, 0.27, 0.08);
+                    GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.69, 0.27, 0.1);
                 } else if (competitorPosition == GameSystem.SetPosition(0.55, 0.77)) {
-                    GameSystem.SetControlSize(picExit, ClientSize, 0.74, 0.82, 0.17, 0.07);
+                    GameSystem.SetControlSize(picExit, ClientSize, 0.76, 0.82, 0.17, 0.07);
                 }
             } else {
                 isActed = false;
-                GameSystem.SetControlSize(picTutorial, ClientSize, 0.77, 0.55, 0.22, 0.1);
-                GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.69, 0.24, 0.08);
-                GameSystem.SetControlSize(picExit, ClientSize, 0.74, 0.82, 0.15, 0.07);
+                GameSystem.SetControlSize(picTutorial, ClientSize, 0.78, 0.55, 0.22, 0.1);
+                GameSystem.SetControlSize(picSurvive, ClientSize, 0.78, 0.69, 0.22, 0.1);
+                GameSystem.SetControlSize(picExit, ClientSize, 0.76, 0.82, 0.15, 0.07);
             }
         }
         

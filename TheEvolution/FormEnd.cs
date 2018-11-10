@@ -60,7 +60,7 @@ namespace TheEvolution {
         }
 
         private void FormEnd_Load(object sender, EventArgs e) {
-            GameSystem.SetControlSize(picBoxExit, ClientSize, 0.975, 0.03, 0.04, 0.06);
+            GameSystem.SetControlSize(picBoxRestart, ClientSize, 0.974, 0.03, 0.05, 0.06);
             GameSystem.SetControlSize(labelPlayerTime, ClientSize, 0.5, 0.72, 0.1, 0.1);
             GameSystem.SetControlSize(picBoxPlayerImage, ClientSize, 0.36, 0.8, 0.11, 0.14);
             GameSystem.SetControlSize(textBoxName, ClientSize, 0.5, 0.8, 0.1, 0.2);
@@ -80,12 +80,6 @@ namespace TheEvolution {
             }
 
             ReadData();
-        }
-
-        private void picBoxExit_Click(object sender, EventArgs e) {
-            conn.Close();
-            timerAnimate.Stop();
-            Application.Exit();
         }
 
         private void labelConfirm_Click(object sender, EventArgs e) {
@@ -112,7 +106,9 @@ namespace TheEvolution {
         }
 
         private void FormEnd_KeyDown(object sender, KeyEventArgs e) {
-            CloseGameOverPicBox();
+            if (e.KeyCode == Keys.Enter) {
+                CloseGameOverPicBox();
+            }
         }
 
         private void picBoxGameOver_Click(object sender, EventArgs e) {
@@ -142,6 +138,12 @@ namespace TheEvolution {
             string string_s = s < 10 ? "0" + s.ToString() : s.ToString();
 
             return string_m + ":" + string_s;
+        }
+
+        private void picBoxRestart_Click(object sender, EventArgs e) {
+            conn.Close();
+            timerAnimate.Stop();
+            Application.Restart();
         }
     }
 }

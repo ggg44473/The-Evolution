@@ -28,6 +28,11 @@
             this.panelSetting = new System.Windows.Forms.Panel();
             this.labelTime = new System.Windows.Forms.Label();
             this.panelHelp = new System.Windows.Forms.Panel();
+            this.labelEnemy = new System.Windows.Forms.Label();
+            this.labelWall = new System.Windows.Forms.Label();
+            this.labelFood = new System.Windows.Forms.Label();
+            this.labelControl = new System.Windows.Forms.Label();
+            this.labelGoal = new System.Windows.Forms.Label();
             this.helpVirus = new System.Windows.Forms.PictureBox();
             this.helpShocker = new System.Windows.Forms.PictureBox();
             this.helpCompetitor = new System.Windows.Forms.PictureBox();
@@ -41,7 +46,7 @@
             this.picBoxGif = new System.Windows.Forms.PictureBox();
             this.picBoxHelp = new System.Windows.Forms.PictureBox();
             this.picBoxPause = new System.Windows.Forms.PictureBox();
-            this.picBoxExit = new System.Windows.Forms.PictureBox();
+            this.picBoxRestart = new System.Windows.Forms.PictureBox();
             this.picBoxEatBar = new System.Windows.Forms.PictureBox();
             this.picBoxEat = new System.Windows.Forms.PictureBox();
             this.picBoxHp = new System.Windows.Forms.PictureBox();
@@ -63,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEatBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHp)).BeginInit();
@@ -99,7 +104,7 @@
             this.panelSetting.BackColor = System.Drawing.Color.Black;
             this.panelSetting.Controls.Add(this.picBoxHelp);
             this.panelSetting.Controls.Add(this.picBoxPause);
-            this.panelSetting.Controls.Add(this.picBoxExit);
+            this.panelSetting.Controls.Add(this.picBoxRestart);
             this.panelSetting.Location = new System.Drawing.Point(792, 16);
             this.panelSetting.Name = "panelSetting";
             this.panelSetting.Size = new System.Drawing.Size(232, 62);
@@ -122,6 +127,11 @@
             // 
             this.panelHelp.BackColor = System.Drawing.Color.Silver;
             this.panelHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelHelp.Controls.Add(this.labelEnemy);
+            this.panelHelp.Controls.Add(this.labelWall);
+            this.panelHelp.Controls.Add(this.labelFood);
+            this.panelHelp.Controls.Add(this.labelControl);
+            this.panelHelp.Controls.Add(this.labelGoal);
             this.panelHelp.Controls.Add(this.helpVirus);
             this.panelHelp.Controls.Add(this.helpShocker);
             this.panelHelp.Controls.Add(this.helpCompetitor);
@@ -133,16 +143,74 @@
             this.panelHelp.Controls.Add(this.helpControl);
             this.panelHelp.Controls.Add(this.helpGoal);
             this.panelHelp.Controls.Add(this.picBoxGif);
-            this.panelHelp.Location = new System.Drawing.Point(491, 294);
+            this.panelHelp.Location = new System.Drawing.Point(792, 116);
             this.panelHelp.Name = "panelHelp";
-            this.panelHelp.Size = new System.Drawing.Size(733, 359);
+            this.panelHelp.Size = new System.Drawing.Size(432, 501);
             this.panelHelp.TabIndex = 10;
             this.panelHelp.Visible = false;
             this.panelHelp.Click += new System.EventHandler(this.panelHelp_Click);
             // 
+            // labelEnemy
+            // 
+            this.labelEnemy.AutoSize = true;
+            this.labelEnemy.BackColor = System.Drawing.Color.Transparent;
+            this.labelEnemy.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnemy.Location = new System.Drawing.Point(240, 459);
+            this.labelEnemy.Name = "labelEnemy";
+            this.labelEnemy.Size = new System.Drawing.Size(108, 32);
+            this.labelEnemy.TabIndex = 15;
+            this.labelEnemy.Text = "Enemy";
+            // 
+            // labelWall
+            // 
+            this.labelWall.AutoSize = true;
+            this.labelWall.BackColor = System.Drawing.Color.Transparent;
+            this.labelWall.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWall.Location = new System.Drawing.Point(240, 413);
+            this.labelWall.Name = "labelWall";
+            this.labelWall.Size = new System.Drawing.Size(74, 32);
+            this.labelWall.TabIndex = 14;
+            this.labelWall.Text = "Wall";
+            // 
+            // labelFood
+            // 
+            this.labelFood.AutoSize = true;
+            this.labelFood.BackColor = System.Drawing.Color.Transparent;
+            this.labelFood.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFood.Location = new System.Drawing.Point(240, 360);
+            this.labelFood.Name = "labelFood";
+            this.labelFood.Size = new System.Drawing.Size(84, 32);
+            this.labelFood.TabIndex = 13;
+            this.labelFood.Text = "Food";
+            // 
+            // labelControl
+            // 
+            this.labelControl.AutoSize = true;
+            this.labelControl.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl.Location = new System.Drawing.Point(240, 306);
+            this.labelControl.Name = "labelControl";
+            this.labelControl.Size = new System.Drawing.Size(117, 32);
+            this.labelControl.TabIndex = 12;
+            this.labelControl.Text = "Control";
+            // 
+            // labelGoal
+            // 
+            this.labelGoal.AutoSize = true;
+            this.labelGoal.BackColor = System.Drawing.Color.Transparent;
+            this.labelGoal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGoal.ForeColor = System.Drawing.Color.Red;
+            this.labelGoal.Location = new System.Drawing.Point(240, 262);
+            this.labelGoal.Name = "labelGoal";
+            this.labelGoal.Size = new System.Drawing.Size(79, 32);
+            this.labelGoal.TabIndex = 11;
+            this.labelGoal.Text = "Goal";
+            // 
             // helpVirus
             // 
             this.helpVirus.BackColor = System.Drawing.Color.Black;
+            this.helpVirus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpVirus.Image = global::TheEvolution.Properties.Resources.IconVirus;
             this.helpVirus.Location = new System.Drawing.Point(92, 306);
             this.helpVirus.Name = "helpVirus";
             this.helpVirus.Size = new System.Drawing.Size(58, 50);
@@ -154,6 +222,8 @@
             // helpShocker
             // 
             this.helpShocker.BackColor = System.Drawing.Color.Black;
+            this.helpShocker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpShocker.Image = global::TheEvolution.Properties.Resources.IconShocker;
             this.helpShocker.Location = new System.Drawing.Point(17, 306);
             this.helpShocker.Name = "helpShocker";
             this.helpShocker.Size = new System.Drawing.Size(58, 50);
@@ -165,6 +235,8 @@
             // helpCompetitor
             // 
             this.helpCompetitor.BackColor = System.Drawing.Color.Black;
+            this.helpCompetitor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpCompetitor.Image = global::TheEvolution.Properties.Resources.IconCompetitor;
             this.helpCompetitor.Location = new System.Drawing.Point(92, 250);
             this.helpCompetitor.Name = "helpCompetitor";
             this.helpCompetitor.Size = new System.Drawing.Size(58, 50);
@@ -176,6 +248,8 @@
             // helpPredator
             // 
             this.helpPredator.BackColor = System.Drawing.Color.Black;
+            this.helpPredator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpPredator.Image = global::TheEvolution.Properties.Resources.IconPredator;
             this.helpPredator.Location = new System.Drawing.Point(17, 250);
             this.helpPredator.Name = "helpPredator";
             this.helpPredator.Size = new System.Drawing.Size(58, 50);
@@ -187,6 +261,8 @@
             // helpTracker
             // 
             this.helpTracker.BackColor = System.Drawing.Color.Black;
+            this.helpTracker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpTracker.Image = global::TheEvolution.Properties.Resources.IconTracker;
             this.helpTracker.Location = new System.Drawing.Point(156, 250);
             this.helpTracker.Name = "helpTracker";
             this.helpTracker.Size = new System.Drawing.Size(58, 50);
@@ -198,6 +274,8 @@
             // helpFood1
             // 
             this.helpFood1.BackColor = System.Drawing.Color.Black;
+            this.helpFood1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpFood1.Image = global::TheEvolution.Properties.Resources.IconAlgae;
             this.helpFood1.Location = new System.Drawing.Point(17, 138);
             this.helpFood1.Name = "helpFood1";
             this.helpFood1.Size = new System.Drawing.Size(58, 50);
@@ -209,6 +287,8 @@
             // helpPlantWall
             // 
             this.helpPlantWall.BackColor = System.Drawing.Color.Black;
+            this.helpPlantWall.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpPlantWall.Image = global::TheEvolution.Properties.Resources.IconPlantWall;
             this.helpPlantWall.Location = new System.Drawing.Point(17, 194);
             this.helpPlantWall.Name = "helpPlantWall";
             this.helpPlantWall.Size = new System.Drawing.Size(58, 50);
@@ -220,6 +300,8 @@
             // helpFood2
             // 
             this.helpFood2.BackColor = System.Drawing.Color.Black;
+            this.helpFood2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpFood2.Image = global::TheEvolution.Properties.Resources.IconCharophyta;
             this.helpFood2.Location = new System.Drawing.Point(81, 138);
             this.helpFood2.Name = "helpFood2";
             this.helpFood2.Size = new System.Drawing.Size(58, 50);
@@ -231,6 +313,8 @@
             // helpControl
             // 
             this.helpControl.BackColor = System.Drawing.Color.Black;
+            this.helpControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpControl.Image = global::TheEvolution.Properties.Resources.IconControl;
             this.helpControl.Location = new System.Drawing.Point(17, 68);
             this.helpControl.Name = "helpControl";
             this.helpControl.Size = new System.Drawing.Size(58, 50);
@@ -242,6 +326,8 @@
             // helpGoal
             // 
             this.helpGoal.BackColor = System.Drawing.Color.Black;
+            this.helpGoal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.helpGoal.Image = global::TheEvolution.Properties.Resources.IconGoal;
             this.helpGoal.Location = new System.Drawing.Point(17, 12);
             this.helpGoal.Name = "helpGoal";
             this.helpGoal.Size = new System.Drawing.Size(58, 50);
@@ -253,9 +339,10 @@
             // picBoxGif
             // 
             this.picBoxGif.BackColor = System.Drawing.Color.Black;
-            this.picBoxGif.Location = new System.Drawing.Point(332, 68);
+            this.picBoxGif.Image = global::TheEvolution.Properties.Resources.Movegif;
+            this.picBoxGif.Location = new System.Drawing.Point(157, 38);
             this.picBoxGif.Name = "picBoxGif";
-            this.picBoxGif.Size = new System.Drawing.Size(350, 259);
+            this.picBoxGif.Size = new System.Drawing.Size(272, 206);
             this.picBoxGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxGif.TabIndex = 0;
             this.picBoxGif.TabStop = false;
@@ -263,7 +350,8 @@
             // picBoxHelp
             // 
             this.picBoxHelp.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxHelp.Image = global::TheEvolution.Properties.Resources.IconRank;
+            this.picBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxHelp.Image = global::TheEvolution.Properties.Resources.IconHlep;
             this.picBoxHelp.Location = new System.Drawing.Point(31, 4);
             this.picBoxHelp.Name = "picBoxHelp";
             this.picBoxHelp.Size = new System.Drawing.Size(50, 52);
@@ -275,6 +363,7 @@
             // picBoxPause
             // 
             this.picBoxPause.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxPause.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxPause.Image = global::TheEvolution.Properties.Resources.IconPause;
             this.picBoxPause.Location = new System.Drawing.Point(104, 3);
             this.picBoxPause.Name = "picBoxPause";
@@ -284,17 +373,18 @@
             this.picBoxPause.TabStop = false;
             this.picBoxPause.Click += new System.EventHandler(this.Pause_Click);
             // 
-            // picBoxExit
+            // picBoxRestart
             // 
-            this.picBoxExit.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxExit.Image = global::TheEvolution.Properties.Resources.IconExit;
-            this.picBoxExit.Location = new System.Drawing.Point(172, 0);
-            this.picBoxExit.Name = "picBoxExit";
-            this.picBoxExit.Size = new System.Drawing.Size(46, 56);
-            this.picBoxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxExit.TabIndex = 3;
-            this.picBoxExit.TabStop = false;
-            this.picBoxExit.Click += new System.EventHandler(this.picBoxExit_Click);
+            this.picBoxRestart.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxRestart.Image = global::TheEvolution.Properties.Resources.IconRestart;
+            this.picBoxRestart.Location = new System.Drawing.Point(172, 0);
+            this.picBoxRestart.Name = "picBoxRestart";
+            this.picBoxRestart.Size = new System.Drawing.Size(46, 56);
+            this.picBoxRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxRestart.TabIndex = 3;
+            this.picBoxRestart.TabStop = false;
+            this.picBoxRestart.Click += new System.EventHandler(this.picBoxRestart_Click);
             // 
             // picBoxEatBar
             // 
@@ -342,7 +432,7 @@
             // 
             // picBoxStage
             // 
-            this.picBoxStage.Location = new System.Drawing.Point(15, 116);
+            this.picBoxStage.Location = new System.Drawing.Point(12, 103);
             this.picBoxStage.Name = "picBoxStage";
             this.picBoxStage.Size = new System.Drawing.Size(440, 278);
             this.picBoxStage.TabIndex = 2;
@@ -353,7 +443,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(1318, 665);
+            this.ClientSize = new System.Drawing.Size(1288, 665);
             this.Controls.Add(this.panelHelp);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.panelSetting);
@@ -370,6 +460,7 @@
             this.panelStatus.ResumeLayout(false);
             this.panelSetting.ResumeLayout(false);
             this.panelHelp.ResumeLayout(false);
+            this.panelHelp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.helpVirus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpShocker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpCompetitor)).EndInit();
@@ -383,7 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxRestart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEatBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxEat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxHp)).EndInit();
@@ -396,7 +487,7 @@
 
         #endregion
         internal System.Windows.Forms.PictureBox picBoxStage;
-        private System.Windows.Forms.PictureBox picBoxExit;
+        private System.Windows.Forms.PictureBox picBoxRestart;
         private System.Windows.Forms.PictureBox picBoxPause;
         private System.Windows.Forms.Panel panelTip;
         private System.Windows.Forms.PictureBox picBoxEatBar;
@@ -419,5 +510,10 @@
         private System.Windows.Forms.PictureBox helpFood2;
         private System.Windows.Forms.PictureBox helpControl;
         private System.Windows.Forms.PictureBox helpGoal;
+        private System.Windows.Forms.Label labelGoal;
+        private System.Windows.Forms.Label labelEnemy;
+        private System.Windows.Forms.Label labelWall;
+        private System.Windows.Forms.Label labelFood;
+        private System.Windows.Forms.Label labelControl;
     }
 }

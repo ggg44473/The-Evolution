@@ -553,4 +553,46 @@
   <data name="Virusgif" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\Virusgif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IconAlgae" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconAlgae.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconCharophyta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconCharophyta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconCompetitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconCompetitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconControl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconControl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconGoal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconGoal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconPlantWall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconPlantWall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconPredator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconPredator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconShocker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconShocker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconTracker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconTracker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconVirus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconVirus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Chapter1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chapter2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Chapter2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconHlep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconHlep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconRestart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\IconRestart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
