@@ -598,4 +598,34 @@
   <data name="TutorialPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\TutorialPanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ItemLocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\ItemLocation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\Map9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

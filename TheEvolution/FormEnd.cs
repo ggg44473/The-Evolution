@@ -99,9 +99,10 @@ namespace TheEvolution {
             command = new SQLiteCommand(select, conn);
             reader = command.ExecuteReader();
             for (int i = 0; i < 8; i++) {
-                reader.Read();
-                labelName.Text += reader["name"] + "\n";
-                labelTime.Text += GetTimeString((int)reader["time"]) + "\n";
+                if (reader.Read()) {
+                    labelName.Text += reader["name"] + "\n";
+                    labelTime.Text += GetTimeString((int)reader["time"]) + "\n";
+                }
             }
         }
 

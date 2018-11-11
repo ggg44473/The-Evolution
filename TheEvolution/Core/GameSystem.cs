@@ -7,8 +7,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Drawing;
 using TheEvolution.Stage.Cells;
-using TheEvolution.Stage.Foods;
-using TheEvolution.Stage.Organella;
+using TheEvolution.Properties;
 
 namespace TheEvolution.Core {
     static class GameSystem {
@@ -36,6 +35,7 @@ namespace TheEvolution.Core {
                     Thread.Yield();
                 }
                 player.NextStep();
+                CheckPlayerInMap();
                 foreach (Competitor c in competitors) {
                     c.NextStep();
                 }
@@ -178,6 +178,30 @@ namespace TheEvolution.Core {
                     }
                 }
                 i++;
+            }
+        }
+
+        public static void CheckPlayerInMap() {
+            int height = screen.Height;
+            int width = screen.Width;
+            if (picBoxStage.Top == 0 && picBoxStage.Left == 0) {
+                formStage.picBoxMap.Image = Resources.Map1;
+            } else if (picBoxStage.Top == 0 && picBoxStage.Left == -width) {
+                formStage.picBoxMap.Image = Resources.Map2;
+            } else if (picBoxStage.Top == 0 && picBoxStage.Left == -2 * width) {
+                formStage.picBoxMap.Image = Resources.Map3;
+            } else if (picBoxStage.Top == -height && picBoxStage.Left == 0) {
+                formStage.picBoxMap.Image = Resources.Map4;
+            } else if (picBoxStage.Top == -height && picBoxStage.Left == -width) {
+                formStage.picBoxMap.Image = Resources.Map5;
+            } else if (picBoxStage.Top == -height && picBoxStage.Left == -2 * width) {
+                formStage.picBoxMap.Image = Resources.Map6;
+            } else if (picBoxStage.Top == - 2 * height && picBoxStage.Left == 0) {
+                formStage.picBoxMap.Image = Resources.Map7;
+            } else if (picBoxStage.Top == -2 * height && picBoxStage.Left == -width) {
+                formStage.picBoxMap.Image = Resources.Map8;
+            } else if (picBoxStage.Top == -2 * height && picBoxStage.Left == -2 * width) {
+                formStage.picBoxMap.Image = Resources.Map9;
             }
         }
 

@@ -127,14 +127,17 @@ namespace TheEvolution.Core {
 
         public virtual void ShowLysosome() {
             organella.Add(new Lysosome(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 0.31)));
+            GameSystem.formStage.Invoke((Action)delegate() { GameSystem.formStage.NextTargetInMap("Lysosome"); });            
         }
 
         public virtual void ShowER() {
             organella.Add(new ER(GameSystem.picBoxStage, GameSystem.SetPosition(2.6, 2.6)));
+            GameSystem.formStage.Invoke((Action)delegate () { GameSystem.formStage.NextTargetInMap("ER"); });
         }
 
         public virtual void ShowCentromere() {
             organella.Add(new Centromere(GameSystem.picBoxStage, GameSystem.SetPosition(0.31, 2.6)));
+            GameSystem.formStage.Invoke((Action)delegate () { GameSystem.formStage.NextTargetInMap("Centromere"); });
         }
 
         public string GetTimeSurvived() {

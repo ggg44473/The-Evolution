@@ -34,6 +34,7 @@ namespace TheEvolution {
             picBoxStage.Size = new Size(3 * GameSystem.screen.Width, 3 * GameSystem.screen.Height);
             picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
             canEat = true;
+            picBoxTargetInMap.Parent = picBoxMap;
         }
 
         private void FormStage_Load(object sender, EventArgs e) {
@@ -69,6 +70,9 @@ namespace TheEvolution {
             GameSystem.SetControlSize(picBoxHpBar, panelStatus.Size, 0.38, 0.5, 0.5, 0.95);
             GameSystem.SetSquareControlSize(picBoxEat, panelStatus.Size, 0.7, 0.5, 0.1);
             GameSystem.SetControlSize(picBoxEatBar, panelStatus.Size, 0.88, 0.5, 0.2, 0.95);
+
+            GameSystem.SetControlSize(picBoxMap, ClientSize, 0.045, 0.14, 0.08, 0.155);
+            NextTargetInMap("Mito");
 
             GameSystem.SetControlSize(labelTime, ClientSize, 0.5, 0.035, 0.1, 0.08);
 
@@ -117,6 +121,7 @@ namespace TheEvolution {
                     picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
                     picBoxHpBar.Image = Resources.Bloodbar5;
                     picBoxEatBar.Image = Resources.Progressbar0;
+                    NextTargetInMap("Mito");
                     labelTime.Visible = true;
                     chapterSurvival = new ChapterSurvival(picBoxStage);
                     GameSystem.player.HpChanged += OnPlayerHpChanged;
@@ -344,6 +349,18 @@ namespace TheEvolution {
                     chapter = EChapter.Survival;
                     NextChapter(EChapter.Survival);
                 }
+            }
+        }
+
+        public void NextTargetInMap(string target) {
+            if (target == "Lysosome") {
+                GameSystem.SetSquareControlSize(picBoxTargetInMap, picBoxMap.Size, 0.832, 0.16, 0.26);
+            } else if (target == "ER") {
+                GameSystem.SetSquareControlSize(picBoxTargetInMap, picBoxMap.Size, 0.832, 0.82, 0.26);
+            } else if (target == "Centromere") {
+                GameSystem.SetSquareControlSize(picBoxTargetInMap, picBoxMap.Size, 0.165, 0.82, 0.26);
+            } else if (target == "Mito") {
+                GameSystem.SetSquareControlSize(picBoxTargetInMap, picBoxMap.Size, 0.165, 0.16, 0.26);
             }
         }
     }
