@@ -159,8 +159,8 @@ namespace TheEvolution.Core {
                 cellX = c.GetCenter().X; cellY = c.GetCenter().Y;
                 cellW = c.Size.Width; cellH = c.Size.Height;
 
-                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 3) {
-                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 3) {
+                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 3.8) {
+                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 3.8) {
                         if (c is Virus) {
                             player.CollideVirus();
                             c.Collide(i);

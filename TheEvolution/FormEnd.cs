@@ -102,6 +102,8 @@ namespace TheEvolution {
                 if (reader.Read()) {
                     labelName.Text += reader["name"] + "\n";
                     labelTime.Text += GetTimeString((int)reader["time"]) + "\n";
+                } else {
+                    break;
                 }
             }
         }

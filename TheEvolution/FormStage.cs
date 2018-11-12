@@ -33,6 +33,8 @@ namespace TheEvolution {
             picBoxStage.GetType().GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(picBoxStage, true, null);
             picBoxStage.Size = new Size(3 * GameSystem.screen.Width, 3 * GameSystem.screen.Height);
             picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
+            picBoxEvolveEffect.Parent = picBoxStage;
+            GameSystem.SetSquareControlSize(picBoxEvolveEffect, GameSystem.screen, 0, 0, 0.2);
             canEat = true;
             picBoxTargetInMap.Parent = picBoxMap;
         }
@@ -41,6 +43,8 @@ namespace TheEvolution {
             MCImusic.mciMusic("Musics/5.mp3", "close");
 
             GameSystem.SetControlSize(panelTip, ClientSize, 0.5, 0.5, 0.6, 0.6);
+            GameSystem.SetControlSize(picBoxPauseGif, panelTip.Size, 0.5, 0.5, 1, 1);
+
             GameSystem.SetControlSize(panelHelp, ClientSize, 0.5, 0.5, 0.65, 0.8);
 
             GameSystem.SetSquareControlSize(labelGoal, panelHelp.Size, 0.06, 0.13, 0.07);
@@ -90,7 +94,7 @@ namespace TheEvolution {
                 picBoxHpBar.Image = Resources.Bloodbar5;
                 picBoxEatBar.Image = Resources.Progressbar0;
                 chapterTutorial.End();
-                MCImusic.mciMusic("Musics/easy1.mp3", "close");
+                MCImusic.mciMusic("Musics/S2.mp3", "close");
                 NextChapter(EChapter.Tutorial);
             }
 
@@ -127,6 +131,7 @@ namespace TheEvolution {
                     GameSystem.player.HpChanged += OnPlayerHpChanged;
                     GameSystem.player.Eat += OnPlayerEat;
                     chapterSurvival.ShowTip();
+                    MCImusic.mciMusic("Musics/S2.mp3", "close");
                     chapterSurvival.Start();
                     MCImusic.mciMusic("Musics/3.mp3", "play", "repeat");
                     break;
@@ -231,21 +236,34 @@ namespace TheEvolution {
                     chapterSurvival.Pause();
                 }
 
-                if (sender != picBoxPause) {
-                    if (sender is Mitochondria) {
-                        panelTip.BackgroundImage = Resources.MitoIntro;
-                    } else if (sender is Lysosome) {
-                        panelTip.BackgroundImage = Resources.LysoIntro;
-                    } else if (sender is ER) {
-                        panelTip.BackgroundImage = Resources.ERIntro;
-                    } else if (sender is Centromere) {
-                        panelTip.BackgroundImage = Resources.CentroIntro;
-                        isNextChapter = true;
+                if (chapter == EChapter.Tutorial) {
+                    if (sender != picBoxPause) {
+                        picBoxPauseGif.Visible = false;
+                        if (sender is Mitochondria) {
+                            panelTip.BackgroundImage = Resources.MitoIntro;
+                        } else if (sender is Lysosome) {
+                            panelTip.BackgroundImage = Resources.LysoIntro;
+                        } else if (sender is ER) {
+                            panelTip.BackgroundImage = Resources.ERIntro;
+                        } else if (sender is Centromere) {
+                            panelTip.BackgroundImage = Resources.CentroIntro;
+                            if (chapter == EChapter.Tutorial) {
+                                isNextChapter = true;
+                            }
+                        }
+                    } else {
+                        picBoxPauseGif.Visible = true;
                     }
-                } else {
-                    panelTip.BackgroundImage = Resources.PauseScreen;
+                    panelTip.Visible = true;
+                } else if (chapter == EChapter.Survival) {
+                    if (sender is Organelle) {
+                        Organelle o = sender as Organelle;
+                        picBoxEvolveEffect.Left = o.GetPosition().X-(picBoxEvolveEffect.Width/2);
+                        picBoxEvolveEffect.Top = o.GetPosition().Y - (picBoxEvolveEffect.Height / 2);
+                        picBoxEvolveEffect.Show();
+                        timerEvolve.Start();
+                    }
                 }
-                panelTip.Visible = true;
             }
         }
 
@@ -350,6 +368,16 @@ namespace TheEvolution {
                     NextChapter(EChapter.Survival);
                 }
             }
+        }
+
+        private void timerEvolve_Tick(object sender, EventArgs e) {
+            picBoxEvolveEffect.Hide();
+            if (chapterTutorial != null) {
+                chapterTutorial.Resume();
+            } else if (chapterSurvival != null) {
+                chapterSurvival.Resume();
+            }
+            timerEvolve.Stop();
         }
 
         public void NextTargetInMap(string target) {

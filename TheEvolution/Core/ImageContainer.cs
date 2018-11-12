@@ -60,7 +60,8 @@ namespace TheEvolution.Core {
             imgBackground = new List<Bitmap>() {
                 new Bitmap(Resources.bg1, size),
                 new Bitmap(Resources.bg2, size),
-                new Bitmap(Resources.TutorialScreen, size)
+                new Bitmap(Resources.TutorialScreen, size),
+                new Bitmap(Resources.DemoScreen, size)
             };
         }
 

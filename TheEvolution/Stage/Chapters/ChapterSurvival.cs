@@ -63,23 +63,19 @@ namespace TheEvolution.Stage.Chapters {
             pPredator.Add(GameSystem.SetPosition(0.26, 1.71));
             pPredator.Add(GameSystem.SetPosition(0.38, 1.36));
             pPredator.Add(GameSystem.SetPosition(0.7, 0.27));
-            pPredator.Add(GameSystem.SetPosition(0.81, 1.12));
-            pPredator.Add(GameSystem.SetPosition(0.87, 2.6));
+            pPredator.Add(GameSystem.SetPosition(0.6, 2.6));
             pPredator.Add(GameSystem.SetPosition(1.3, 0.38));
-            pPredator.Add(GameSystem.SetPosition(1.62, 0.64));
             pPredator.Add(GameSystem.SetPosition(1.1, 1.89));
-            pPredator.Add(GameSystem.SetPosition(1.1, 1.55));
-            pPredator.Add(GameSystem.SetPosition(1.8, 1.09));
+            pPredator.Add(GameSystem.SetPosition(1.2, 1.7));
+            pPredator.Add(GameSystem.SetPosition(1.85, 1.15));
             pPredator.Add(GameSystem.SetPosition(1.12, 2.2));
-            pPredator.Add(GameSystem.SetPosition(1.82, 2.6));
-            pPredator.Add(GameSystem.SetPosition(2.35, 0.3));
-            pPredator.Add(GameSystem.SetPosition(2.5, 0.3));
-            pPredator.Add(GameSystem.SetPosition(2.7, 0.8));
+            pPredator.Add(GameSystem.SetPosition(2.36, 0.22));
+            pPredator.Add(GameSystem.SetPosition(2.75, 0.8));
             pPredator.Add(GameSystem.SetPosition(2.5, 1.8));
             pPredator.Add(GameSystem.SetPosition(2.7, 2.2));
             pPredator.Add(GameSystem.SetPosition(2.4, 2.6));
-            pPredator.Add(GameSystem.SetPosition(2.7, 1.13));
-            pPredator.Add(GameSystem.SetPosition(2.12, 0.8));
+            pPredator.Add(GameSystem.SetPosition(2.75, 1.13));
+            pPredator.Add(GameSystem.SetPosition(2.1, 0.8));
 
             pVirus.Add(GameSystem.SetPosition(0.1, 0.1));
             pVirus.Add(GameSystem.SetPosition(0.1, 0.5));
@@ -93,13 +89,13 @@ namespace TheEvolution.Stage.Chapters {
             pVirus.Add(GameSystem.SetPosition(1.5, 2.8));
 
             pCompetitor.Add(GameSystem.SetPosition(1.5, 1.5));
-            pCompetitor.Add(GameSystem.SetPosition(0.5, 0.5));
-            pCompetitor.Add(GameSystem.SetPosition(0.5, 1.5));
+            //pCompetitor.Add(GameSystem.SetPosition(0.5, 0.5));
+            //pCompetitor.Add(GameSystem.SetPosition(0.5, 1.5));
             pCompetitor.Add(GameSystem.SetPosition(0.5, 2.5));
-            pCompetitor.Add(GameSystem.SetPosition(1.5, 0.5));
-            pCompetitor.Add(GameSystem.SetPosition(1.5, 2.5));
-            pCompetitor.Add(GameSystem.SetPosition(2.5, 0.5));
-            pCompetitor.Add(GameSystem.SetPosition(2.5, 1.5));
+            //pCompetitor.Add(GameSystem.SetPosition(1.5, 0.5));
+            //pCompetitor.Add(GameSystem.SetPosition(1.5, 2.5));
+            //pCompetitor.Add(GameSystem.SetPosition(2.5, 0.5));
+            //pCompetitor.Add(GameSystem.SetPosition(2.5, 1.5));
             pCompetitor.Add(GameSystem.SetPosition(2.5, 2.5));
         }
 
@@ -123,9 +119,7 @@ namespace TheEvolution.Stage.Chapters {
         }
 
         public override void ShowTip() {
-            List<Bitmap> tipImages = new List<Bitmap> {
-                Resources.SurvivalIntro, Resources.SurvivalIntro };
-            FormTip tip = new FormTip(tipImages);
+            FormTip tip = new FormTip(EChapter.Survival);
             tip.ShowDialog();
         }
     }

@@ -9,7 +9,7 @@ using System.Drawing.Drawing2D;
 
 namespace TheEvolution.Core {
 
-    class Organelle : Painter {
+    abstract class Organelle : Painter {
 
         public Organelle(PictureBox picBoxBg, Point point) : base(picBoxBg) {
             GameSystem.organella.Add(this);
@@ -26,6 +26,10 @@ namespace TheEvolution.Core {
             } else {
                 GameSystem.formStage.Pause_Click(this, EventArgs.Empty);
             }
+        }
+
+        public virtual Point GetPosition() {
+            return position;
         }
     }
 }

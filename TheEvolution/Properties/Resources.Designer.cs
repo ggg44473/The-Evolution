@@ -273,9 +273,79 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Chapter1final {
+            get {
+                object obj = ResourceManager.GetObject("Chapter1final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chapter1gif {
+            get {
+                object obj = ResourceManager.GetObject("Chapter1gif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chapter1op1 {
+            get {
+                object obj = ResourceManager.GetObject("Chapter1op1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chapter1op2 {
+            get {
+                object obj = ResourceManager.GetObject("Chapter1op2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Chapter2 {
             get {
                 object obj = ResourceManager.GetObject("Chapter2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chapter2final {
+            get {
+                object obj = ResourceManager.GetObject("Chapter2final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chapter2gif {
+            get {
+                object obj = ResourceManager.GetObject("Chapter2gif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chapter2gifEnd {
+            get {
+                object obj = ResourceManager.GetObject("Chapter2gifEnd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,6 +413,16 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DemoScreen {
+            get {
+                object obj = ResourceManager.GetObject("DemoScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DyingScreen {
             get {
                 object obj = ResourceManager.GetObject("DyingScreen", resourceCulture);
@@ -386,6 +466,16 @@ namespace TheEvolution.Properties {
         internal static System.Drawing.Bitmap Evolution {
             get {
                 object obj = ResourceManager.GetObject("Evolution", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EvolveEffect {
+            get {
+                object obj = ResourceManager.GetObject("EvolveEffect", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -893,9 +983,9 @@ namespace TheEvolution.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PauseScreen {
+        internal static System.Drawing.Bitmap Pausegif {
             get {
-                object obj = ResourceManager.GetObject("PauseScreen", resourceCulture);
+                object obj = ResourceManager.GetObject("Pausegif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1726,16 +1816,6 @@ namespace TheEvolution.Properties {
         internal static System.Drawing.Bitmap TutorialScreen {
             get {
                 object obj = ResourceManager.GetObject("TutorialScreen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TutorialScreen_06 {
-            get {
-                object obj = ResourceManager.GetObject("TutorialScreen_06", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

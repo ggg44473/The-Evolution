@@ -43,9 +43,7 @@ namespace TheEvolution.Stage.Chapters {
         }
 
         public override void ShowTip() {
-            List<Bitmap> tipImages = new List<Bitmap> {
-                Resources.Tips2, Resources.Tips1 };
-            FormTip tip = new FormTip(tipImages);
+            FormTip tip = new FormTip(EChapter.Tutorial);
             tip.ShowDialog();
         }
     }
