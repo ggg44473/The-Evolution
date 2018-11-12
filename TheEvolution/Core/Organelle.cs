@@ -27,9 +27,5 @@ namespace TheEvolution.Core {
                 GameSystem.formStage.Pause_Click(this, EventArgs.Empty);
             }
         }
-
-        public virtual Point GetPosition() {
-            return position;
-        }
     }
 }

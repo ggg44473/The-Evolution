@@ -34,7 +34,7 @@ namespace TheEvolution {
             picBoxStage.Size = new Size(3 * GameSystem.screen.Width, 3 * GameSystem.screen.Height);
             picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
             picBoxEvolveEffect.Parent = picBoxStage;
-            GameSystem.SetSquareControlSize(picBoxEvolveEffect, GameSystem.screen, 0, 0, 0.2);
+            GameSystem.SetSquareControlSize(picBoxEvolveEffect, GameSystem.screen, 0, 0, 0.3);
             canEat = true;
             picBoxTargetInMap.Parent = picBoxMap;
         }
@@ -187,30 +187,34 @@ namespace TheEvolution {
                     break;
             }
             if (!canEat) {
-                picBoxEatBar.Image = Resources.Progressbar0;
+                lock (this) {
+                    picBoxEatBar.Image = Resources.Progressbar0;
+                }
                 canEat = true;
             }
         }
 
         public void OnPlayerEat(object sender, PlayerEventArgs args) {
-            if (args.hp != 10) {
-                switch (args.foodCount) {
-                    case 0:
-                        picBoxEatBar.Image = Resources.Progressbar0;
-                        break;
-                    case 1:
-                        picBoxEatBar.Image = Resources.Progressbar1;
-                        break;
-                    case 2:
-                        picBoxEatBar.Image = Resources.Progressbar2;
-                        break;
-                    case 3:
-                        picBoxEatBar.Image = Resources.Progressbar3;
-                        break;
+            lock (this) {
+                if (args.hp != 10) {
+                    switch (args.foodCount) {
+                        case 0:
+                            picBoxEatBar.Image = Resources.Progressbar0;
+                            break;
+                        case 1:
+                            picBoxEatBar.Image = Resources.Progressbar1;
+                            break;
+                        case 2:
+                            picBoxEatBar.Image = Resources.Progressbar2;
+                            break;
+                        case 3:
+                            picBoxEatBar.Image = Resources.Progressbar3;
+                            break;
+                    }
+                } else {
+                    picBoxEatBar.Image = Resources.Progressbar4;
+                    canEat = false;
                 }
-            } else {
-                picBoxEatBar.Image = Resources.Progressbar4;
-                canEat = false;
             }
         }
 
@@ -258,8 +262,14 @@ namespace TheEvolution {
                 } else if (chapter == EChapter.Survival) {
                     if (sender is Organelle) {
                         Organelle o = sender as Organelle;
-                        picBoxEvolveEffect.Left = o.GetPosition().X-(picBoxEvolveEffect.Width/2);
-                        picBoxEvolveEffect.Top = o.GetPosition().Y - (picBoxEvolveEffect.Height / 2);
+                        picBoxEvolveEffect.Left = (o.Position.X + GameSystem.player.Position.X - picBoxEvolveEffect.Width) / 2;
+                        picBoxEvolveEffect.Top = (o.Position.Y + GameSystem.player.Position.Y - picBoxEvolveEffect.Height) / 2;
+                        picBoxEvolveEffect.Show();
+                        timerEvolve.Start();
+                    } else if (sender is Player) {
+                        Player p = sender as Player;
+                        picBoxEvolveEffect.Left = p.Position.X - (picBoxEvolveEffect.Width / 2);
+                        picBoxEvolveEffect.Top = p.Position.Y - (picBoxEvolveEffect.Height / 2);
                         picBoxEvolveEffect.Show();
                         timerEvolve.Start();
                     }

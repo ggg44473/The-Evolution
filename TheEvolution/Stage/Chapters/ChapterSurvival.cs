@@ -59,7 +59,7 @@ namespace TheEvolution.Stage.Chapters {
             pShocker.Add(GameSystem.SetPosition(2.5, 2.5));
 
             pPredator.Add(GameSystem.SetPosition(0.26, 0.75));
-            pPredator.Add(GameSystem.SetPosition(0.26, 2.28));
+            pPredator.Add(GameSystem.SetPosition(0.22, 2.28));
             pPredator.Add(GameSystem.SetPosition(0.26, 1.71));
             pPredator.Add(GameSystem.SetPosition(0.38, 1.36));
             pPredator.Add(GameSystem.SetPosition(0.7, 0.27));
@@ -88,15 +88,13 @@ namespace TheEvolution.Stage.Chapters {
             pVirus.Add(GameSystem.SetPosition(1.3, 2.8));
             pVirus.Add(GameSystem.SetPosition(1.5, 2.8));
 
-            pCompetitor.Add(GameSystem.SetPosition(1.5, 1.5));
-            //pCompetitor.Add(GameSystem.SetPosition(0.5, 0.5));
-            //pCompetitor.Add(GameSystem.SetPosition(0.5, 1.5));
+            pCompetitor.Add(GameSystem.SetPosition(1.5, 1.22));
             pCompetitor.Add(GameSystem.SetPosition(0.5, 2.5));
-            //pCompetitor.Add(GameSystem.SetPosition(1.5, 0.5));
-            //pCompetitor.Add(GameSystem.SetPosition(1.5, 2.5));
-            //pCompetitor.Add(GameSystem.SetPosition(2.5, 0.5));
-            //pCompetitor.Add(GameSystem.SetPosition(2.5, 1.5));
-            pCompetitor.Add(GameSystem.SetPosition(2.5, 2.5));
+
+            pCompetitorToBeAdded.Add(GameSystem.SetPosition(0.1, 0.1));
+            pCompetitorToBeAdded.Add(GameSystem.SetPosition(2.9, 0.1));
+            pCompetitorToBeAdded.Add(GameSystem.SetPosition(2.9, 1.5));
+            pCompetitorToBeAdded.Add(GameSystem.SetPosition(0.1, 1.5));
         }
 
 

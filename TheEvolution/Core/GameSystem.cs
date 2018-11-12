@@ -27,6 +27,8 @@ namespace TheEvolution.Core {
         public static bool isStart;
 
         public static void Act() {
+            int competitorTimer = 0;
+
             while (isStart) {
                 if (player.Hp == 0) {
                     formStage.Invoke((Action)delegate () {
@@ -56,6 +58,16 @@ namespace TheEvolution.Core {
                     formStage.Invoke((Action)delegate () {
                         formStage.labelTime.Text = chapter.GetTimeSurvived();
                     });
+                    if (competitorTimer < 4800) {
+                        if (competitorTimer % 480 == 0) {
+                            chapter.AddCompetitor();
+                        }
+                    } else {
+                        if (competitorTimer % 300 == 0) {
+                            chapter.AddCompetitor();
+                        }
+                    }
+                    competitorTimer++;
                 }
                 picBoxStage.Invalidate();
                 Thread.Sleep(50);
@@ -159,8 +171,8 @@ namespace TheEvolution.Core {
                 cellX = c.GetCenter().X; cellY = c.GetCenter().Y;
                 cellW = c.Size.Width; cellH = c.Size.Height;
 
-                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 3.8) {
-                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 3.8) {
+                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 3.5) {
+                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 3.5) {
                         if (c is Virus) {
                             player.CollideVirus();
                             c.Collide(i);
@@ -196,7 +208,7 @@ namespace TheEvolution.Core {
                 formStage.picBoxMap.Image = Resources.Map5;
             } else if (picBoxStage.Top == -height && picBoxStage.Left == -2 * width) {
                 formStage.picBoxMap.Image = Resources.Map6;
-            } else if (picBoxStage.Top == - 2 * height && picBoxStage.Left == 0) {
+            } else if (picBoxStage.Top == -2 * height && picBoxStage.Left == 0) {
                 formStage.picBoxMap.Image = Resources.Map7;
             } else if (picBoxStage.Top == -2 * height && picBoxStage.Left == -width) {
                 formStage.picBoxMap.Image = Resources.Map8;

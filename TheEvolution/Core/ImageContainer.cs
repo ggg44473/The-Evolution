@@ -19,6 +19,8 @@ namespace TheEvolution.Core {
         static public List<Bitmap> imgPlayerMitoLyso;
         static public List<Bitmap> imgPlayerMitoLysoER;
         static public List<Bitmap> imgPlayerComplete;
+        static public List<Bitmap> imgPlayerFinal;
+        static public List<Bitmap> imgPlayerFinalEat;
         static public List<Bitmap> imgPlayerSick;
         static public List<Bitmap> imgPlayerSickEat;
         static public List<Bitmap> imgPlayerShocked;
@@ -133,6 +135,18 @@ namespace TheEvolution.Core {
                 new Bitmap(Resources.ShokedState3, size),
                 new Bitmap(Resources.ShokedState4, size),
                 new Bitmap(Resources.ShokedState5, size)};
+            imgPlayerFinal = new List<Bitmap>() {
+                new Bitmap(Resources.PlayerFinal1, size),
+                new Bitmap(Resources.PlayerFinal2, size),
+                new Bitmap(Resources.PlayerFinal3, size),
+                new Bitmap(Resources.PlayerFinal4, size),
+                new Bitmap(Resources.PlayerFinal5, size)};
+            imgPlayerFinalEat = new List<Bitmap>() {
+                new Bitmap(Resources.PlayerFinalEat1, size),
+                new Bitmap(Resources.PlayerFinalEat2, size),
+                new Bitmap(Resources.PlayerFinalEat3, size),
+                new Bitmap(Resources.PlayerFinalEat4, size),
+                new Bitmap(Resources.PlayerFinalEat5, size)};
         }
 
         static public void SetImgPredator() {
@@ -168,7 +182,7 @@ namespace TheEvolution.Core {
         }
 
         static public void SetImgPlantWall() {
-            size = GameSystem.SetSize(0.22, 0.27);
+            size = GameSystem.SetSize(0.225, 0.28);
             imgPlantWall = new List<Bitmap>() {
                 new Bitmap(Resources.PlantWall1, size),
                 new Bitmap(Resources.PlantWall2, size),

@@ -24,7 +24,10 @@ namespace TheEvolution.Core {
         protected List<Point> pPredator;
         protected List<Point> pVirus;
         protected List<Point> pCompetitor;
+        protected List<Point> pCompetitorToBeAdded;
+        protected int indexCompetitorToBeAdded;
         internal List<Food> food;
+        internal List<Competitor> competitors;
         internal List<Cell> otherCells;
         internal List<Organelle> organella;
         public DateTime startTime;
@@ -42,13 +45,15 @@ namespace TheEvolution.Core {
             pPredator = new List<Point>();
             pVirus = new List<Point>();
             pCompetitor = new List<Point>();
+            pCompetitorToBeAdded = new List<Point>();
             food = new List<Food>();
+            competitors = new List<Competitor>();
             otherCells = new List<Cell>();
             organella = new List<Organelle>();
 
             GetReady();
 
-            for (int i = 0; i < 40; i++) {
+            for (int i = 0; i < 45; i++) {
                 food.Add(new Algae(picBoxStage));
                 food.Add(new Charophyta(picBoxStage));
             }
@@ -68,7 +73,7 @@ namespace TheEvolution.Core {
                 otherCells.Add(new Virus(picBoxStage, pVirus[i]));
             }
             for (int i = 0; i < pCompetitor.Count; i++) {
-                otherCells.Add(new Competitor(picBoxStage, pCompetitor[i]));
+                competitors.Add(new Competitor(picBoxStage, pCompetitor[i]));
             }
 
             organella.Add(new Mitochondria(picBoxStage, GameSystem.SetPosition(0.31, 0.31)));
@@ -141,7 +146,7 @@ namespace TheEvolution.Core {
         }
 
         public string GetTimeSurvived() {
-            survivedTime = (int)(DateTime.Now - startTime).TotalSeconds;
+            survivedTime = GetTotalSeconds();
 
             string string_m = (survivedTime / 60).ToString();
 
@@ -149,6 +154,18 @@ namespace TheEvolution.Core {
             string string_s = s < 10 ? "0" + s.ToString() : s.ToString();
 
             return string_m + ":" + string_s;
+        }
+
+        public int GetTotalSeconds() {
+            return (int)(DateTime.Now - startTime).TotalSeconds;
+        }
+
+        public void AddCompetitor() {
+            if (indexCompetitorToBeAdded == pCompetitorToBeAdded.Count) {
+                indexCompetitorToBeAdded = 0;
+            }
+            competitors.Add(new Competitor(GameSystem.picBoxStage, pCompetitorToBeAdded[indexCompetitorToBeAdded]));
+            indexCompetitorToBeAdded++;
         }
     }
 }

@@ -96,8 +96,22 @@ namespace TheEvolution.Stage.Cells {
                 imgPlayer = imgPlayerMitoLysoER;
             } else if (o is Centromere) {
                 imgPlayer = imgPlayerComplete;
+                if (GameSystem.formStage.chapterSurvival != null) {
+                    GameSystem.formStage.Invoke(
+                (Action)delegate () { GameSystem.formStage.gonnaEvolve.Start(); });
+                }
             }
             images = imgPlayer;
+        }
+
+        private void gonnaEnvolve_Tick(object sender, EventArgs e) {
+            imgPlayer = imgPlayerFinal;
+            imgPlayerEat = imgPlayerFinalEat;
+            images = imgPlayer;
+            GameSystem.formStage.Invoke((Action)delegate() {
+                GameSystem.formStage.Pause_Click(this, EventArgs.Empty);
+                GameSystem.formStage.gonnaEvolve.Stop();
+            });
         }
     }
 }

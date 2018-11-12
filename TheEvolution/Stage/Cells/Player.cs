@@ -22,6 +22,8 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPlayerMitoLyso;
         private List<Bitmap> imgPlayerMitoLysoER;
         private List<Bitmap> imgPlayerComplete;
+        private List<Bitmap> imgPlayerFinal;
+        private List<Bitmap> imgPlayerFinalEat;
         private int hp;
         private int foodCount;
         private bool isHidden;
@@ -42,6 +44,8 @@ namespace TheEvolution.Stage.Cells {
             imgPlayerMitoLyso = ImageContainer.imgPlayerMitoLyso;
             imgPlayerMitoLysoER = ImageContainer.imgPlayerMitoLysoER;
             imgPlayerComplete = ImageContainer.imgPlayerComplete;
+            imgPlayerFinal = ImageContainer.imgPlayerFinal;
+            imgPlayerFinalEat = ImageContainer.imgPlayerFinalEat;
             images = imgPlayer;
             size = imgPlayer[0].Size;
             moveSpeed = (int)(0.18 * size.Width);
@@ -49,12 +53,14 @@ namespace TheEvolution.Stage.Cells {
             GameSystem.formStage.KeyDown += PlayerKeyDown;
             GameSystem.formStage.KeyUp += PlayerKeyUp;
             hp = 5;
+            GameSystem.formStage.gonnaEvolve.Tick += gonnaEnvolve_Tick;
         }
 
         public override void Dispose() {
             GameSystem.formStage.picBoxStage.Paint -= Paint;
             GameSystem.formStage.KeyDown -= PlayerKeyDown;
             GameSystem.formStage.KeyUp -= PlayerKeyUp;
+            GameSystem.formStage.gonnaEvolve.Tick -= gonnaEnvolve_Tick;
             GameSystem.player = null;
         }
 

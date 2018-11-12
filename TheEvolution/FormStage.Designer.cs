@@ -58,6 +58,7 @@
             this.picBoxStage = new System.Windows.Forms.PictureBox();
             this.picBoxEvolveEffect = new System.Windows.Forms.PictureBox();
             this.timerEvolve = new System.Windows.Forms.Timer(this.components);
+            this.gonnaEvolve = new System.Windows.Forms.Timer(this.components);
             this.panelTip.SuspendLayout();
             this.panelStatus.SuspendLayout();
             this.panelSetting.SuspendLayout();
@@ -501,6 +502,10 @@
             this.timerEvolve.Interval = 2000;
             this.timerEvolve.Tick += new System.EventHandler(this.timerEvolve_Tick);
             // 
+            // gonnaEvolve
+            // 
+            this.gonnaEvolve.Interval = 6000;
+            // 
             // FormStage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -591,5 +596,6 @@
         private System.Windows.Forms.PictureBox picBoxPauseGif;
         private System.Windows.Forms.PictureBox picBoxEvolveEffect;
         private System.Windows.Forms.Timer timerEvolve;
+        internal System.Windows.Forms.Timer gonnaEvolve;
     }
 }

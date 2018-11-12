@@ -567,9 +567,6 @@
     <None Include="Pictures\picSurvival.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\TutorialScreen-06.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\Competitorgif.gif" />
   </ItemGroup>
   <ItemGroup>
