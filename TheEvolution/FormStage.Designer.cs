@@ -25,9 +25,20 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.panelTip = new System.Windows.Forms.Panel();
+            this.picBoxPauseGif = new System.Windows.Forms.PictureBox();
             this.panelStatus = new System.Windows.Forms.Panel();
+            this.picBoxEatBar = new System.Windows.Forms.PictureBox();
+            this.picBoxEat = new System.Windows.Forms.PictureBox();
+            this.picBoxHp = new System.Windows.Forms.PictureBox();
+            this.picBoxHpBar = new System.Windows.Forms.PictureBox();
             this.panelSetting = new System.Windows.Forms.Panel();
+            this.picBoxHelp = new System.Windows.Forms.PictureBox();
+            this.picBoxPause = new System.Windows.Forms.PictureBox();
+            this.picBoxRestart = new System.Windows.Forms.PictureBox();
             this.labelTime = new System.Windows.Forms.Label();
+            this.timerEvolve = new System.Windows.Forms.Timer(this.components);
+            this.gonnaEvolve = new System.Windows.Forms.Timer(this.components);
+            this.picBoxEvolveEffect = new System.Windows.Forms.PictureBox();
             this.picBoxTargetInMap = new System.Windows.Forms.PictureBox();
             this.picBoxMap = new System.Windows.Forms.PictureBox();
             this.panelHelp = new System.Windows.Forms.Panel();
@@ -47,21 +58,19 @@
             this.helpControl = new System.Windows.Forms.PictureBox();
             this.helpGoal = new System.Windows.Forms.PictureBox();
             this.picBoxGif = new System.Windows.Forms.PictureBox();
-            this.picBoxHelp = new System.Windows.Forms.PictureBox();
-            this.picBoxPause = new System.Windows.Forms.PictureBox();
-            this.picBoxRestart = new System.Windows.Forms.PictureBox();
-            this.picBoxEatBar = new System.Windows.Forms.PictureBox();
-            this.picBoxEat = new System.Windows.Forms.PictureBox();
-            this.picBoxHp = new System.Windows.Forms.PictureBox();
-            this.picBoxHpBar = new System.Windows.Forms.PictureBox();
-            this.picBoxPauseGif = new System.Windows.Forms.PictureBox();
             this.picBoxStage = new System.Windows.Forms.PictureBox();
-            this.picBoxEvolveEffect = new System.Windows.Forms.PictureBox();
-            this.timerEvolve = new System.Windows.Forms.Timer(this.components);
-            this.gonnaEvolve = new System.Windows.Forms.Timer(this.components);
             this.panelTip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPauseGif)).BeginInit();
             this.panelStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEatBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxHp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxHpBar)).BeginInit();
             this.panelSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxRestart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEvolveEffect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTargetInMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMap)).BeginInit();
             this.panelHelp.SuspendLayout();
@@ -76,16 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.helpControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpGoal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGif)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxHelp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxRestart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxEatBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxEat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxHp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxHpBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPauseGif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxStage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxEvolveEffect)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTip
@@ -100,6 +100,18 @@
             this.panelTip.Visible = false;
             this.panelTip.Click += new System.EventHandler(this.panelTip_Click);
             // 
+            // picBoxPauseGif
+            // 
+            this.picBoxPauseGif.BackColor = System.Drawing.SystemColors.ControlText;
+            this.picBoxPauseGif.Image = global::TheEvolution.Properties.Resources.Pausegif;
+            this.picBoxPauseGif.Location = new System.Drawing.Point(50, 68);
+            this.picBoxPauseGif.Name = "picBoxPauseGif";
+            this.picBoxPauseGif.Size = new System.Drawing.Size(100, 50);
+            this.picBoxPauseGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPauseGif.TabIndex = 13;
+            this.picBoxPauseGif.TabStop = false;
+            this.picBoxPauseGif.Visible = false;
+            // 
             // panelStatus
             // 
             this.panelStatus.BackColor = System.Drawing.Color.Black;
@@ -112,6 +124,50 @@
             this.panelStatus.Size = new System.Drawing.Size(572, 62);
             this.panelStatus.TabIndex = 6;
             // 
+            // picBoxEatBar
+            // 
+            this.picBoxEatBar.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxEatBar.Image = global::TheEvolution.Properties.Resources.Progressbar0;
+            this.picBoxEatBar.Location = new System.Drawing.Point(400, 20);
+            this.picBoxEatBar.Name = "picBoxEatBar";
+            this.picBoxEatBar.Size = new System.Drawing.Size(129, 34);
+            this.picBoxEatBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEatBar.TabIndex = 8;
+            this.picBoxEatBar.TabStop = false;
+            // 
+            // picBoxEat
+            // 
+            this.picBoxEat.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxEat.Image = global::TheEvolution.Properties.Resources.IconEat;
+            this.picBoxEat.Location = new System.Drawing.Point(284, 8);
+            this.picBoxEat.Name = "picBoxEat";
+            this.picBoxEat.Size = new System.Drawing.Size(96, 56);
+            this.picBoxEat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEat.TabIndex = 7;
+            this.picBoxEat.TabStop = false;
+            // 
+            // picBoxHp
+            // 
+            this.picBoxHp.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxHp.Image = global::TheEvolution.Properties.Resources.IconHP;
+            this.picBoxHp.Location = new System.Drawing.Point(16, 4);
+            this.picBoxHp.Name = "picBoxHp";
+            this.picBoxHp.Size = new System.Drawing.Size(76, 50);
+            this.picBoxHp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxHp.TabIndex = 5;
+            this.picBoxHp.TabStop = false;
+            // 
+            // picBoxHpBar
+            // 
+            this.picBoxHpBar.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxHpBar.Image = global::TheEvolution.Properties.Resources.Bloodbar5;
+            this.picBoxHpBar.Location = new System.Drawing.Point(100, 20);
+            this.picBoxHpBar.Name = "picBoxHpBar";
+            this.picBoxHpBar.Size = new System.Drawing.Size(158, 34);
+            this.picBoxHpBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxHpBar.TabIndex = 6;
+            this.picBoxHpBar.TabStop = false;
+            // 
             // panelSetting
             // 
             this.panelSetting.BackColor = System.Drawing.Color.Black;
@@ -122,6 +178,45 @@
             this.panelSetting.Name = "panelSetting";
             this.panelSetting.Size = new System.Drawing.Size(232, 62);
             this.panelSetting.TabIndex = 9;
+            // 
+            // picBoxHelp
+            // 
+            this.picBoxHelp.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxHelp.Image = global::TheEvolution.Properties.Resources.IconHlep;
+            this.picBoxHelp.Location = new System.Drawing.Point(31, 4);
+            this.picBoxHelp.Name = "picBoxHelp";
+            this.picBoxHelp.Size = new System.Drawing.Size(50, 52);
+            this.picBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxHelp.TabIndex = 10;
+            this.picBoxHelp.TabStop = false;
+            this.picBoxHelp.Click += new System.EventHandler(this.picBoxHelp_Click);
+            // 
+            // picBoxPause
+            // 
+            this.picBoxPause.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxPause.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxPause.Image = global::TheEvolution.Properties.Resources.IconPause;
+            this.picBoxPause.Location = new System.Drawing.Point(104, 3);
+            this.picBoxPause.Name = "picBoxPause";
+            this.picBoxPause.Size = new System.Drawing.Size(50, 52);
+            this.picBoxPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxPause.TabIndex = 4;
+            this.picBoxPause.TabStop = false;
+            this.picBoxPause.Click += new System.EventHandler(this.Pause_Click);
+            // 
+            // picBoxRestart
+            // 
+            this.picBoxRestart.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxRestart.Image = global::TheEvolution.Properties.Resources.IconRestart;
+            this.picBoxRestart.Location = new System.Drawing.Point(172, 0);
+            this.picBoxRestart.Name = "picBoxRestart";
+            this.picBoxRestart.Size = new System.Drawing.Size(46, 56);
+            this.picBoxRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxRestart.TabIndex = 3;
+            this.picBoxRestart.TabStop = false;
+            this.picBoxRestart.Click += new System.EventHandler(this.picBoxRestart_Click);
             // 
             // labelTime
             // 
@@ -135,6 +230,27 @@
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "label1";
             this.labelTime.Visible = false;
+            // 
+            // timerEvolve
+            // 
+            this.timerEvolve.Interval = 1800;
+            this.timerEvolve.Tick += new System.EventHandler(this.timerEvolve_Tick);
+            // 
+            // gonnaEvolve
+            // 
+            this.gonnaEvolve.Interval = 8000;
+            // 
+            // picBoxEvolveEffect
+            // 
+            this.picBoxEvolveEffect.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxEvolveEffect.Image = global::TheEvolution.Properties.Resources.Evolvegif;
+            this.picBoxEvolveEffect.Location = new System.Drawing.Point(50, 154);
+            this.picBoxEvolveEffect.Name = "picBoxEvolveEffect";
+            this.picBoxEvolveEffect.Size = new System.Drawing.Size(57, 50);
+            this.picBoxEvolveEffect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxEvolveEffect.TabIndex = 13;
+            this.picBoxEvolveEffect.TabStop = false;
+            this.picBoxEvolveEffect.Visible = false;
             // 
             // picBoxTargetInMap
             // 
@@ -382,101 +498,6 @@
             this.picBoxGif.TabIndex = 0;
             this.picBoxGif.TabStop = false;
             // 
-            // picBoxHelp
-            // 
-            this.picBoxHelp.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxHelp.Image = global::TheEvolution.Properties.Resources.IconHlep;
-            this.picBoxHelp.Location = new System.Drawing.Point(31, 4);
-            this.picBoxHelp.Name = "picBoxHelp";
-            this.picBoxHelp.Size = new System.Drawing.Size(50, 52);
-            this.picBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxHelp.TabIndex = 10;
-            this.picBoxHelp.TabStop = false;
-            this.picBoxHelp.Click += new System.EventHandler(this.picBoxHelp_Click);
-            // 
-            // picBoxPause
-            // 
-            this.picBoxPause.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxPause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxPause.Image = global::TheEvolution.Properties.Resources.IconPause;
-            this.picBoxPause.Location = new System.Drawing.Point(104, 3);
-            this.picBoxPause.Name = "picBoxPause";
-            this.picBoxPause.Size = new System.Drawing.Size(50, 52);
-            this.picBoxPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPause.TabIndex = 4;
-            this.picBoxPause.TabStop = false;
-            this.picBoxPause.Click += new System.EventHandler(this.Pause_Click);
-            // 
-            // picBoxRestart
-            // 
-            this.picBoxRestart.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxRestart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxRestart.Image = global::TheEvolution.Properties.Resources.IconRestart;
-            this.picBoxRestart.Location = new System.Drawing.Point(172, 0);
-            this.picBoxRestart.Name = "picBoxRestart";
-            this.picBoxRestart.Size = new System.Drawing.Size(46, 56);
-            this.picBoxRestart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxRestart.TabIndex = 3;
-            this.picBoxRestart.TabStop = false;
-            this.picBoxRestart.Click += new System.EventHandler(this.picBoxRestart_Click);
-            // 
-            // picBoxEatBar
-            // 
-            this.picBoxEatBar.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxEatBar.Image = global::TheEvolution.Properties.Resources.Progressbar0;
-            this.picBoxEatBar.Location = new System.Drawing.Point(400, 20);
-            this.picBoxEatBar.Name = "picBoxEatBar";
-            this.picBoxEatBar.Size = new System.Drawing.Size(129, 34);
-            this.picBoxEatBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxEatBar.TabIndex = 8;
-            this.picBoxEatBar.TabStop = false;
-            // 
-            // picBoxEat
-            // 
-            this.picBoxEat.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxEat.Image = global::TheEvolution.Properties.Resources.IconEat;
-            this.picBoxEat.Location = new System.Drawing.Point(284, 8);
-            this.picBoxEat.Name = "picBoxEat";
-            this.picBoxEat.Size = new System.Drawing.Size(96, 56);
-            this.picBoxEat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxEat.TabIndex = 7;
-            this.picBoxEat.TabStop = false;
-            // 
-            // picBoxHp
-            // 
-            this.picBoxHp.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxHp.Image = global::TheEvolution.Properties.Resources.IconHP;
-            this.picBoxHp.Location = new System.Drawing.Point(16, 4);
-            this.picBoxHp.Name = "picBoxHp";
-            this.picBoxHp.Size = new System.Drawing.Size(76, 50);
-            this.picBoxHp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxHp.TabIndex = 5;
-            this.picBoxHp.TabStop = false;
-            // 
-            // picBoxHpBar
-            // 
-            this.picBoxHpBar.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxHpBar.Image = global::TheEvolution.Properties.Resources.Bloodbar5;
-            this.picBoxHpBar.Location = new System.Drawing.Point(100, 20);
-            this.picBoxHpBar.Name = "picBoxHpBar";
-            this.picBoxHpBar.Size = new System.Drawing.Size(158, 34);
-            this.picBoxHpBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxHpBar.TabIndex = 6;
-            this.picBoxHpBar.TabStop = false;
-            // 
-            // picBoxPauseGif
-            // 
-            this.picBoxPauseGif.BackColor = System.Drawing.SystemColors.ControlText;
-            this.picBoxPauseGif.Image = global::TheEvolution.Properties.Resources.Pausegif;
-            this.picBoxPauseGif.Location = new System.Drawing.Point(50, 68);
-            this.picBoxPauseGif.Name = "picBoxPauseGif";
-            this.picBoxPauseGif.Size = new System.Drawing.Size(100, 50);
-            this.picBoxPauseGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxPauseGif.TabIndex = 13;
-            this.picBoxPauseGif.TabStop = false;
-            this.picBoxPauseGif.Visible = false;
-            // 
             // picBoxStage
             // 
             this.picBoxStage.Location = new System.Drawing.Point(12, 103);
@@ -484,27 +505,6 @@
             this.picBoxStage.Size = new System.Drawing.Size(440, 278);
             this.picBoxStage.TabIndex = 2;
             this.picBoxStage.TabStop = false;
-            // 
-            // picBoxEvolveEffect
-            // 
-            this.picBoxEvolveEffect.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxEvolveEffect.Image = global::TheEvolution.Properties.Resources.EvolveEffect;
-            this.picBoxEvolveEffect.Location = new System.Drawing.Point(50, 154);
-            this.picBoxEvolveEffect.Name = "picBoxEvolveEffect";
-            this.picBoxEvolveEffect.Size = new System.Drawing.Size(57, 50);
-            this.picBoxEvolveEffect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxEvolveEffect.TabIndex = 13;
-            this.picBoxEvolveEffect.TabStop = false;
-            this.picBoxEvolveEffect.Visible = false;
-            // 
-            // timerEvolve
-            // 
-            this.timerEvolve.Interval = 2000;
-            this.timerEvolve.Tick += new System.EventHandler(this.timerEvolve_Tick);
-            // 
-            // gonnaEvolve
-            // 
-            this.gonnaEvolve.Interval = 6000;
             // 
             // FormStage
             // 
@@ -529,8 +529,17 @@
             this.Load += new System.EventHandler(this.FormStage_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormStage_KeyDown);
             this.panelTip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPauseGif)).EndInit();
             this.panelStatus.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEatBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxHp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxHpBar)).EndInit();
             this.panelSetting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxRestart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxEvolveEffect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxTargetInMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMap)).EndInit();
             this.panelHelp.ResumeLayout(false);
@@ -546,16 +555,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.helpControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.helpGoal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxGif)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxHelp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxRestart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxEatBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxEat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxHp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxHpBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxPauseGif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxStage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxEvolveEffect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

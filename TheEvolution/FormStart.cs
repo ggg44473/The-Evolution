@@ -18,6 +18,7 @@ namespace TheEvolution {
         Size playerSize, competitorSize;
         Point playerPosition, competitorPosition;
         bool isUp, isDown, isEnter, isActed;
+        int btnAnimateInterval;
 
         public FormStart() {
             InitializeComponent();
@@ -50,7 +51,7 @@ namespace TheEvolution {
             GameSystem.formStage = new FormStage();
             //GameSystem.formStage.Closed += (s, arg) => Close();
 
-            MCImusic.mciMusic("Musics/5.mp3", "play", "repeat");
+            MCImusic.mciMusic("Musics/S4.mp3", "play", "repeat");
         }
 
         private void picStart_Click(object sender, EventArgs e) {
@@ -80,7 +81,11 @@ namespace TheEvolution {
             } else {
                 indexPlayer = 0;
             }
-            BtnAnimate();
+            if (btnAnimateInterval == 0) {
+                BtnAnimate();
+                btnAnimateInterval = 2;
+            }
+            btnAnimateInterval--;
             Invalidate();
         }
 

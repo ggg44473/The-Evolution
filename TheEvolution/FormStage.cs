@@ -34,13 +34,16 @@ namespace TheEvolution {
             picBoxStage.Size = new Size(3 * GameSystem.screen.Width, 3 * GameSystem.screen.Height);
             picBoxStage.Location = new Point(-GameSystem.screen.Width, -GameSystem.screen.Height);
             picBoxEvolveEffect.Parent = picBoxStage;
-            GameSystem.SetSquareControlSize(picBoxEvolveEffect, GameSystem.screen, 0, 0, 0.3);
+            GameSystem.SetSquareControlSize(picBoxEvolveEffect, GameSystem.screen, 0, 0, 0.32);
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddEllipse(0, 0, picBoxEvolveEffect.Width, picBoxEvolveEffect.Height);
+            picBoxEvolveEffect.Region = new Region(path);
             canEat = true;
             picBoxTargetInMap.Parent = picBoxMap;
         }
 
         private void FormStage_Load(object sender, EventArgs e) {
-            MCImusic.mciMusic("Musics/5.mp3", "close");
+            MCImusic.mciMusic("Musics/S4.mp3", "close");
 
             GameSystem.SetControlSize(panelTip, ClientSize, 0.5, 0.5, 0.6, 0.6);
             GameSystem.SetControlSize(picBoxPauseGif, panelTip.Size, 0.5, 0.5, 1, 1);
