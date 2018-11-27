@@ -52,7 +52,7 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void PredatorMove() {
-            if (DistanceToPlayer <= 1.8 * size.Width || isAttack) {
+            if (DistanceToPlayer <= 1.5 * size.Width || isAttack) {
                 if (!isAttack) {
                     isAttack = true;
                     dirX = GameSystem.player.GetCenter().X - GetCenter().X;

@@ -269,12 +269,14 @@ namespace TheEvolution {
                         picBoxEvolveEffect.Top = (o.Position.Y + GameSystem.player.Position.Y - picBoxEvolveEffect.Height) / 2;
                         picBoxEvolveEffect.Show();
                         timerEvolve.Start();
+                        MCImusic.mciMusic("Musics/get1.wav", "play");
                     } else if (sender is Player) {
                         Player p = sender as Player;
                         picBoxEvolveEffect.Left = p.Position.X - (picBoxEvolveEffect.Width / 2);
                         picBoxEvolveEffect.Top = p.Position.Y - (picBoxEvolveEffect.Height / 2);
                         picBoxEvolveEffect.Show();
                         timerEvolve.Start();
+                        MCImusic.mciMusic("Musics/get1.wav", "play");
                     }
                 }
             }

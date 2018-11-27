@@ -33,6 +33,7 @@ namespace TheEvolution.Stage.Cells {
         public void CollideCompetitor(Competitor competitor) {
             BumpMove(competitor);
             Hp -= 1;
+            MCImusic.mciMusic("Musics/B2.mp3", "play");
         }
 
         public virtual void KillCompetitor(object sender, EventArgs e) {
@@ -50,6 +51,7 @@ namespace TheEvolution.Stage.Cells {
         public void CollidePredator(Cell Predator) {
             Hp -= 1;
             BumpMove(Predator);
+            MCImusic.mciMusic("Musics/B4.wav", "play");
         }
 
         public void CollideShocker(Cell shocker) {
@@ -58,6 +60,7 @@ namespace TheEvolution.Stage.Cells {
             isShocked = true;
             images = imgPlayerShocked;
             moveSpeed = 0;
+            MCImusic.mciMusic("Musics/B5.mp3", "play");
         }
 
         public void CollideTracker(Cell tracker) {
@@ -70,6 +73,7 @@ namespace TheEvolution.Stage.Cells {
 
         public void CollidePlantWall(Cell plantWall) {
             BumpMove(plantWall);
+            MCImusic.mciMusic("Musics/B2.mp3", "play");
         }
 
         public void BumpMove(Cell c) {
