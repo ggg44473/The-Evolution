@@ -18,12 +18,20 @@ namespace TheEvolution.Stage.Cells {
         private List<Bitmap> imgPlayerSick;
         private List<Bitmap> imgPlayerSickEat;
         private List<Bitmap> imgPlayerShocked;
+        private List<Bitmap> imgPlayerMito;
+        private List<Bitmap> imgPlayerMitoLyso;
+        private List<Bitmap> imgPlayerMitoLysoER;
+        private List<Bitmap> imgPlayerComplete;
+        private List<Bitmap> imgPlayerFinal;
+        private List<Bitmap> imgPlayerFinalEat;
         private int hp;
         private int foodCount;
         private bool isHidden;
         private int hiddenInterval;
         private bool isSick, isShocked;
         private int sickInterval, shockInterval;
+        public event EventHandler<PlayerEventArgs> HpChanged;
+        public event EventHandler<PlayerEventArgs> Eat;
 
         public Player(PictureBox picBoxBg, Point point) : base(picBoxBg, point) {
             GameSystem.player = this;
@@ -32,6 +40,12 @@ namespace TheEvolution.Stage.Cells {
             imgPlayerSick = ImageContainer.imgPlayerSick;
             imgPlayerSickEat = ImageContainer.imgPlayerSickEat;
             imgPlayerShocked = ImageContainer.imgPlayerShocked;
+            imgPlayerMito = ImageContainer.imgPlayerMito;
+            imgPlayerMitoLyso = ImageContainer.imgPlayerMitoLyso;
+            imgPlayerMitoLysoER = ImageContainer.imgPlayerMitoLysoER;
+            imgPlayerComplete = ImageContainer.imgPlayerComplete;
+            imgPlayerFinal = ImageContainer.imgPlayerFinal;
+            imgPlayerFinalEat = ImageContainer.imgPlayerFinalEat;
             images = imgPlayer;
             size = imgPlayer[0].Size;
             moveSpeed = (int)(0.18 * size.Width);
@@ -39,12 +53,14 @@ namespace TheEvolution.Stage.Cells {
             GameSystem.formStage.KeyDown += PlayerKeyDown;
             GameSystem.formStage.KeyUp += PlayerKeyUp;
             hp = 5;
+            GameSystem.formStage.gonnaEvolve.Tick += gonnaEnvolve_Tick;
         }
 
         public override void Dispose() {
             GameSystem.formStage.picBoxStage.Paint -= Paint;
             GameSystem.formStage.KeyDown -= PlayerKeyDown;
             GameSystem.formStage.KeyUp -= PlayerKeyUp;
+            GameSystem.formStage.gonnaEvolve.Tick -= gonnaEnvolve_Tick;
             GameSystem.player = null;
         }
 
@@ -179,70 +195,58 @@ namespace TheEvolution.Stage.Cells {
         }
 
         public void CheckTopBorderTouched() {
-            int width = GameSystem.screen.Width;
             int height = GameSystem.screen.Height;
-            if (position.Y < height - size.Height && GameSystem.picBoxStage.Top < 0) {
+            if (position.Y < height && GameSystem.picBoxStage.Top == -height) {
                 GameSystem.formStage.Invoke((Action)delegate () {
                     GameSystem.picBoxStage.Top = 0;
                 });
             }
-            if (position.Y > 2 * height) {
-                if (position.Y < 2 * height + size.Height) {
-                    GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Top = -height;
-                    });
-                }
+            if (position.Y < 2 * height && GameSystem.picBoxStage.Top == -2*height) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Top = -height;
+                });
             }
         }
 
         public void CheckBottomBorderTouched() {
-            int width = GameSystem.screen.Width;
             int height = GameSystem.screen.Height;
-            if (position.Y > 2 * height - size.Height && GameSystem.picBoxStage.Top > -2 * height) {
+            if (position.Y > 2 * height && GameSystem.picBoxStage.Top == -height) {
                 GameSystem.formStage.Invoke((Action)delegate () {
                     GameSystem.picBoxStage.Top = -2 * height;
                 });
             }
-            if (position.Y < height) {
-                if (position.Y > height - size.Height) {
-                    GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Top = -height;
-                    });
-                }
+            if (position.Y > height && GameSystem.picBoxStage.Top == 0) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Top = -height;
+                });
             }
         }
 
         public void CheckLeftBorderTouched() {
             int width = GameSystem.screen.Width;
-            int height = GameSystem.screen.Height;
-            if (position.X < width - size.Width && GameSystem.picBoxStage.Left < 0) {
+            if (position.X < width && GameSystem.picBoxStage.Left == -width) {
                 GameSystem.formStage.Invoke((Action)delegate () {
                     GameSystem.picBoxStage.Left = 0;
                 });
             }
-            if (position.X > 2 * width) {
-                if (position.X < 2 * width + size.Width) {
-                    GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Left = -width;
-                    });
-                }
+            if (position.X < 2 * width && GameSystem.picBoxStage.Left == - 2* width) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Left = -width;
+                });
             }
         }
 
         public void CheckRightBorderTouched() {
             int width = GameSystem.screen.Width;
-            int height = GameSystem.screen.Height;
-            if (position.X > 2 * width - size.Width && GameSystem.picBoxStage.Left > -2 * width) {
+            if (position.X > 2 * width && GameSystem.picBoxStage.Left == -width) {
                 GameSystem.formStage.Invoke((Action)delegate () {
                     GameSystem.picBoxStage.Left = -2 * width;
                 });
             }
-            if (position.X < width) {
-                if (position.X > width - size.Width) {
-                    GameSystem.formStage.Invoke((Action)delegate () {
-                        GameSystem.picBoxStage.Left = -width;
-                    });
-                }
+            if (position.X > width && GameSystem.picBoxStage.Left == 0) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.picBoxStage.Left = -width;
+                });
             }
         }
 
@@ -262,6 +266,7 @@ namespace TheEvolution.Stage.Cells {
                         size.Height -= (int)(0.02 * GameSystem.screen.Height);
                     }
                     hp = value;
+                    HpChanged(this, new PlayerEventArgs(hp));
                 }
             }
         }
@@ -270,7 +275,7 @@ namespace TheEvolution.Stage.Cells {
             PlayerMove();
             Rotate();
             if (aniInterval == 0) {
-                aniInterval = 2;
+                aniInterval = 3;
                 Animate();
             }
             aniInterval--;
@@ -300,6 +305,25 @@ namespace TheEvolution.Stage.Cells {
                     moveSpeed = originalSpeed;
                 }
             }
+        }
+
+        public List<Bitmap> GetCurrentImages() {
+            return images;
+        }
+    }
+
+    public class PlayerEventArgs : EventArgs {
+
+        public int hp;
+        public int foodCount;
+
+        public PlayerEventArgs(int hp) {
+            this.hp = hp;
+        }
+
+        public PlayerEventArgs(int foodCount, int hp) {
+            this.foodCount = foodCount;
+            this.hp = hp;
         }
     }
 }

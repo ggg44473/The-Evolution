@@ -7,8 +7,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Drawing;
 using TheEvolution.Stage.Cells;
-using TheEvolution.Stage.Foods;
-using TheEvolution.Stage.Organella;
+using TheEvolution.Properties;
 
 namespace TheEvolution.Core {
     static class GameSystem {
@@ -16,6 +15,8 @@ namespace TheEvolution.Core {
         public static Size screen;
         public static FormStart formStart;
         public static FormStage formStage;
+        public static FormEnd formEnd;
+        public static Chapter chapter;
         public static PictureBox picBoxStage;
         public static Player player;
         public static List<Competitor> competitors = new List<Competitor>();
@@ -26,14 +27,17 @@ namespace TheEvolution.Core {
         public static bool isStart;
 
         public static void Act() {
+            int competitorTimer = 0;
+
             while (isStart) {
-                formStage.Invoke((Action)delegate () {
-                    formStage.label1.Text = player.Hp.ToString();
-                    if (player.Hp == 0) {
+                if (player.Hp == 0) {
+                    formStage.Invoke((Action)delegate () {
                         formStage.GameOver();
-                    }
-                });
+                    });
+                    Thread.Yield();
+                }
                 player.NextStep();
+                CheckPlayerInMap();
                 foreach (Competitor c in competitors) {
                     c.NextStep();
                 }
@@ -43,8 +47,29 @@ namespace TheEvolution.Core {
                 foreach (Food f in foods) {
                     f.NextStep();
                 }
-                picBoxStage.Invoke((Action)delegate(){ picBoxStage.Invalidate(); });
-                formStage.Invalidate();
+                if (formStage.hpBeatInterval == 0) {
+                    formStage.Invoke((Action)delegate () {
+                        SetSquareControlSize(formStage.picBoxHp, formStage.panelStatus.Size, 0.06, 0.5, 0.08);
+                    });
+                } else {
+                    formStage.hpBeatInterval--;
+                }
+                if (formStage.labelTime.Visible) {
+                    formStage.Invoke((Action)delegate () {
+                        formStage.labelTime.Text = chapter.GetTimeSurvived();
+                    });
+                    if (competitorTimer < 4800) {
+                        if (competitorTimer % 480 == 0) {
+                            chapter.AddCompetitor();
+                        }
+                    } else {
+                        if (competitorTimer % 300 == 0) {
+                            chapter.AddCompetitor();
+                        }
+                    }
+                    competitorTimer++;
+                }
+                picBoxStage.Invalidate();
                 Thread.Sleep(50);
             }
         }
@@ -57,9 +82,7 @@ namespace TheEvolution.Core {
                 }
                 CompetitorCollide();
                 OtherCellCollide();
-                if (FormStage.chapter == EChapter.Tutorial) {
-                    GetOrganelle();
-                }
+                GetOrganelle();
                 Thread.Sleep(100);
             }
         }
@@ -104,7 +127,8 @@ namespace TheEvolution.Core {
 
                 if (Math.Abs(organelleX - playerX) <= (organelleW + playerW) / 4) {
                     if (Math.Abs(organelleY - playerY) <= (organelleH + playerH) / 4) {
-                        o.Collide();
+                        o.Collide(i);
+                        player.CollideOrganelle(o);
                         return;
                     }
                 }
@@ -147,8 +171,8 @@ namespace TheEvolution.Core {
                 cellX = c.GetCenter().X; cellY = c.GetCenter().Y;
                 cellW = c.Size.Width; cellH = c.Size.Height;
 
-                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 3) {
-                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 3) {
+                if (Math.Abs(cellX - playerX) <= (cellW + playerW) / 3.5) {
+                    if (Math.Abs(cellY - playerY) <= (cellH + playerH) / 3.5) {
                         if (c is Virus) {
                             player.CollideVirus();
                             c.Collide(i);
@@ -169,16 +193,47 @@ namespace TheEvolution.Core {
             }
         }
 
+        public static void CheckPlayerInMap() {
+            int height = screen.Height;
+            int width = screen.Width;
+            if (picBoxStage.Top == 0 && picBoxStage.Left == 0) {
+                formStage.picBoxMap.Image = Resources.Map1;
+            } else if (picBoxStage.Top == 0 && picBoxStage.Left == -width) {
+                formStage.picBoxMap.Image = Resources.Map2;
+            } else if (picBoxStage.Top == 0 && picBoxStage.Left == -2 * width) {
+                formStage.picBoxMap.Image = Resources.Map3;
+            } else if (picBoxStage.Top == -height && picBoxStage.Left == 0) {
+                formStage.picBoxMap.Image = Resources.Map4;
+            } else if (picBoxStage.Top == -height && picBoxStage.Left == -width) {
+                formStage.picBoxMap.Image = Resources.Map5;
+            } else if (picBoxStage.Top == -height && picBoxStage.Left == -2 * width) {
+                formStage.picBoxMap.Image = Resources.Map6;
+            } else if (picBoxStage.Top == -2 * height && picBoxStage.Left == 0) {
+                formStage.picBoxMap.Image = Resources.Map7;
+            } else if (picBoxStage.Top == -2 * height && picBoxStage.Left == -width) {
+                formStage.picBoxMap.Image = Resources.Map8;
+            } else if (picBoxStage.Top == -2 * height && picBoxStage.Left == -2 * width) {
+                formStage.picBoxMap.Image = Resources.Map9;
+            }
+        }
+
         public static double getDistance(Point p1, Point p2) {
             return Math.Sqrt(
                 Math.Pow((p1.X - p2.X), 2) + Math.Pow((p1.Y - p2.Y), 2));
         }
 
-        public static void SetControlSize(Control control, Size ClientSize, double ratioL, double ratioT, double ratioW, double ratioH) {
+        public static void SetControlSize(Control control, Size ClientSize, double ratioX, double ratioY, double ratioW, double ratioH) {
             control.Width = Convert.ToInt32(ClientSize.Width * ratioW);
             control.Height = Convert.ToInt32(ClientSize.Height * ratioH);
-            control.Left = Convert.ToInt32(ClientSize.Width * ratioL) - (control.Width / 2);
-            control.Top = Convert.ToInt32(ClientSize.Height * ratioT) - (control.Height / 2);
+            control.Left = Convert.ToInt32(ClientSize.Width * ratioX) - (control.Width / 2);
+            control.Top = Convert.ToInt32(ClientSize.Height * ratioY) - (control.Height / 2);
+        }
+
+        public static void SetSquareControlSize(Control control, Size ClientSize, double ratioX, double ratioY, double ratioW) {
+            control.Width = Convert.ToInt32(ClientSize.Width * ratioW);
+            control.Height = control.Width;
+            control.Left = Convert.ToInt32(ClientSize.Width * ratioX) - (control.Width / 2);
+            control.Top = Convert.ToInt32(ClientSize.Height * ratioY) - (control.Height / 2);
         }
 
         public static Size SetSize(double ratioW, double ratioH) {

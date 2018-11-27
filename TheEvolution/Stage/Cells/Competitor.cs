@@ -20,7 +20,6 @@ namespace TheEvolution.Stage.Cells {
             Killed += GameSystem.player.KillCompetitor;
             images = ImageContainer.imgCompetitor;
             size = images[0].Size;
-            position = GameSystem.SetPosition(random.NextDouble(), random.NextDouble());
             moveSpeed = (int)(0.1 * size.Width);
             hp = 5;
         }

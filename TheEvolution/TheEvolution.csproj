@@ -69,12 +69,25 @@
     <Compile Include="Core\GameSystem.cs" />
     <Compile Include="Core\ICollideFood.cs" />
     <Compile Include="Core\Painter.cs" />
+    <Compile Include="FormEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEnd.Designer.cs">
+      <DependentUpon>FormEnd.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormStage.Designer.cs">
       <DependentUpon>FormStage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTip.Designer.cs">
+      <DependentUpon>FormTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCImusic.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,11 +122,17 @@
     <Compile Include="Stage\Cells\Shocker.cs" />
     <Compile Include="Stage\Cells\Tracker.cs" />
     <Compile Include="Stage\Cells\Virus.cs" />
+    <EmbeddedResource Include="FormEnd.resx">
+      <DependentUpon>FormEnd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStage.resx">
       <DependentUpon>FormStage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTip.resx">
+      <DependentUpon>FormTip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,15 +155,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Centromere.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\ER1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\ER2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\ER3.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Lysosome1.png" />
@@ -238,15 +248,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\PredatorEat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BtnContinue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BtnExit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\BtnStart.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Title.png" />
@@ -452,42 +453,6 @@
     <None Include="Pictures\Bloodbar10.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pictures\I-44.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-45.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-46.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-47.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-49.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-51.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-52.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-53.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-54.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\I-55.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Pictures\Progressbar0.png" />
   </ItemGroup>
   <ItemGroup>
@@ -501,6 +466,240 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Progressbar4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\BtnNextChapter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\BtnNextChapter2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\BtnNextChapter3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\ERIntro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\MitoIntro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\picTutorial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\CentroIntro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\DyingScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\ER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconEat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconHP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconPause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\LysoIntro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconRank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinal5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlayerFinalEat5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TutorialScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\GameOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\SurvivalIntro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Tips1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Tips2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Rank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\picExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\picSurvival.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Competitorgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\EatFoodgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Evolution.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Movegif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\PlantWallgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Predatorgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Shockergif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Trackergif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Virusgif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconAlgae.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconCharophyta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconCompetitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconControl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconGoal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconPlantWall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconPredator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconShocker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconTracker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconVirus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconHlep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\IconRestart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\TutorialPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\ItemLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Map9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Pausegif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter1op1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter1op2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter2gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter1gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\DemoScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter1final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter2final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Chapter2gifEnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\EvolveEffect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\Evolvegif.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />

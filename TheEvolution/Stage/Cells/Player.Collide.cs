@@ -5,28 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheEvolution.Core;
+using TheEvolution.Stage.Organella;
 
 namespace TheEvolution.Stage.Cells {
     partial class Player {
 
         public void CollideFood() {
-            if (!isSick) {
-                images = imgPlayerEat;
-            } else {
-                images = imgPlayerSickEat;
+            if (!isShocked) {
+                if (!isSick) {
+                    images = imgPlayerEat;
+                } else {
+                    images = imgPlayerSickEat;
+                }
             }
             imgIndex = 0;
             if (foodCount < 3) {
-                foodCount++;
+                if (hp != 10) {
+                    foodCount++;
+                }
             } else {
                 foodCount = 0;
                 Hp += 1;
             }
+            Eat(this, new PlayerEventArgs(foodCount, hp));
         }
 
         public void CollideCompetitor(Competitor competitor) {
             BumpMove(competitor);
             Hp -= 1;
+            MCImusic.mciMusic("Musics/B2.mp3", "play");
         }
 
         public virtual void KillCompetitor(object sender, EventArgs e) {
@@ -44,6 +51,7 @@ namespace TheEvolution.Stage.Cells {
         public void CollidePredator(Cell Predator) {
             Hp -= 1;
             BumpMove(Predator);
+            MCImusic.mciMusic("Musics/B4.wav", "play");
         }
 
         public void CollideShocker(Cell shocker) {
@@ -52,6 +60,7 @@ namespace TheEvolution.Stage.Cells {
             isShocked = true;
             images = imgPlayerShocked;
             moveSpeed = 0;
+            MCImusic.mciMusic("Musics/B5.mp3", "play");
         }
 
         public void CollideTracker(Cell tracker) {
@@ -64,6 +73,7 @@ namespace TheEvolution.Stage.Cells {
 
         public void CollidePlantWall(Cell plantWall) {
             BumpMove(plantWall);
+            MCImusic.mciMusic("Musics/B2.mp3", "play");
         }
 
         public void BumpMove(Cell c) {
@@ -79,6 +89,33 @@ namespace TheEvolution.Stage.Cells {
             if (tempY > -GameSystem.screen.Height || tempY < 2 * GameSystem.screen.Height) {
                 position.Y = tempY;
             }
+        }
+
+        public void CollideOrganelle(Organelle o) {
+            if (o is Mitochondria) {
+                imgPlayer = imgPlayerMito;
+            } else if (o is Lysosome) {
+                imgPlayer = imgPlayerMitoLyso;
+            } else if (o is ER) {
+                imgPlayer = imgPlayerMitoLysoER;
+            } else if (o is Centromere) {
+                imgPlayer = imgPlayerComplete;
+                if (GameSystem.formStage.chapterSurvival != null) {
+                    GameSystem.formStage.Invoke(
+                (Action)delegate () { GameSystem.formStage.gonnaEvolve.Start(); });
+                }
+            }
+            images = imgPlayer;
+        }
+
+        private void gonnaEnvolve_Tick(object sender, EventArgs e) {
+            imgPlayer = imgPlayerFinal;
+            imgPlayerEat = imgPlayerFinalEat;
+            images = imgPlayer;
+            GameSystem.formStage.Invoke((Action)delegate() {
+                GameSystem.formStage.Pause_Click(this, EventArgs.Empty);
+                GameSystem.formStage.gonnaEvolve.Stop();
+            });
         }
     }
 }

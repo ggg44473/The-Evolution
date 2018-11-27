@@ -6,94 +6,45 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Drawing;
 using TheEvolution.Core;
-using TheEvolution.Stage.Organella;
-using TheEvolution.Stage.Foods;
-using TheEvolution.Stage.Cells;
 using System.Windows.Forms;
+using TheEvolution.Properties;
 
 namespace TheEvolution.Stage.Chapters {
-    class ChapterTutorial : Chapter {
+    public class ChapterTutorial : Chapter {
 
-        List<Point> pTracker;
-        List<Point> pShocker;
-        List<Food> food = new List<Food>();
-        List<Cell> otherCells = new List<Cell>();
-        Mitochondria mitochondria;
-
-        public ChapterTutorial(PictureBox picBoxBg) : base(picBoxBg) {
-            for (int i = 0; i < 1000; i++) {
-                food.Add(new Algae(picBoxBg));
-                food.Add(new Charophyta(picBoxBg));
-            }
-            for (int i = 0; i < pPlantWall.Count; i++) {
-                otherCells.Add(new PlantWall(picBoxBg, pPlantWall[i]));
-            }
-            for (int i = 0; i < pTracker.Count; i++) {
-                otherCells.Add(new Tracker(picBoxBg, pTracker[i]));
-            }
-            for (int i = 0; i < pShocker.Count; i++) {
-                otherCells.Add(new Shocker(picBoxBg, pShocker[i]));
-            }
-            mitochondria = new Mitochondria(picBoxBg, GameSystem.SetPosition(0.785, 0.80));
+        public ChapterTutorial(PictureBox picBoxStage) : base(picBoxStage) {
         }
 
         protected override void GetReady() {
             SetBorderPosition();
-            //SetPlantWallPosition();
-            pTracker = new List<Point> {
-                GameSystem.SetPosition(0.125, 0.62),
-                GameSystem.SetPosition(0.5, 0.3)};
-            pShocker = new List<Point> {
-                GameSystem.SetPosition(0.265, 0.25),
-                GameSystem.SetPosition(0.265, 0.65),
-                GameSystem.SetPosition(0.415, 0.65),
-                GameSystem.SetPosition(0.568, 0.24),
-                GameSystem.SetPosition(0.825, 0.24)};
+
+            pTracker.Add(GameSystem.SetPosition(0.3, 1.8));
+            pTracker.Add(GameSystem.SetPosition(0.5, 1.2));
+            pTracker.Add(GameSystem.SetPosition(0.5, 1.8));
+            pTracker.Add(GameSystem.SetPosition(0.75, 1.5));
+            pTracker.Add(GameSystem.SetPosition(0.8, 1.1));
+
+            pShocker.Add(GameSystem.SetPosition(1.1, 0.5));
+            pShocker.Add(GameSystem.SetPosition(1.3, 0.3));
+            pShocker.Add(GameSystem.SetPosition(1.5, 0.3));
+            pShocker.Add(GameSystem.SetPosition(1.9, 0.3));
+            pShocker.Add(GameSystem.SetPosition(1.7, 0.5));
+
+            pPredator.Add(GameSystem.SetPosition(2.4, 1.8));
+            pPredator.Add(GameSystem.SetPosition(2.6, 1.8));
+            pPredator.Add(GameSystem.SetPosition(2.75, 1.1));
+            pPredator.Add(GameSystem.SetPosition(2.75, 1.5));
+
+            pVirus.Add(GameSystem.SetPosition(1.1, 2.1));
+            pVirus.Add(GameSystem.SetPosition(1.1, 2.4));
+            pVirus.Add(GameSystem.SetPosition(1.5, 2.7));
+            pVirus.Add(GameSystem.SetPosition(1.8, 2.1));
+            pVirus.Add(GameSystem.SetPosition(1.9, 2.8));
         }
 
-        private void SetPlantWallPosition() {
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.05));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.15));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.325, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.325, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.375, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.375, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.425, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.425, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.475, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.525, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.05));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.15));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.65));
+        public override void ShowTip() {
+            FormTip tip = new FormTip(EChapter.Tutorial);
+            tip.ShowDialog();
         }
     }
 }

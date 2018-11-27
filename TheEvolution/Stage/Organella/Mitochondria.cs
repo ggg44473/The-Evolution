@@ -15,9 +15,16 @@ namespace TheEvolution.Stage.Organella {
             size = images[0].Size;
         }
 
-        public override void Collide() {
-            base.Collide();
-            MessageBox.Show("Get Mito");
+        public override void Collide(int myId) {
+            base.Collide(myId);
+            switch (FormStage.chapter) {
+                case EChapter.Tutorial:
+                    GameSystem.formStage.chapterTutorial.ShowLysosome();
+                    break;
+                case EChapter.Survival:
+                    GameSystem.formStage.chapterSurvival.ShowLysosome();
+                    break;
+            }
         }
     }
 }

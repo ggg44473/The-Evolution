@@ -5,96 +5,120 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using TheEvolution.Core;
-using TheEvolution.Stage.Cells;
-using TheEvolution.Stage.Organella;
-using TheEvolution.Stage.Foods;
 using System.Windows.Forms;
+using TheEvolution.Properties;
 
 namespace TheEvolution.Stage.Chapters {
-    class ChapterSurvival : Chapter {
+    public class ChapterSurvival : Chapter {
 
-        List<Point> pTracker;
-        List<Point> pShocker;
-        List<Point> pPredator;
-        List<Point> pVirus;
-        List<Food> food = new List<Food>();
-        List<Cell> otherCells = new List<Cell>();
-        Lysosome lysosome;
-
-        public ChapterSurvival(PictureBox picBoxBg) : base(picBoxBg) {
-            GetReady();
-            for (int i = 0; i < 8; i++) {
-                food.Add(new Algae(picBoxBg));
-                food.Add(new Charophyta(picBoxBg));
-            }
-            for (int i = 0; i < 2; i++) {
-                otherCells.Add(new PlantWall(picBoxBg, pPlantWall[i]));
-                otherCells.Add(new Tracker(picBoxBg, pTracker[i]));
-                otherCells.Add(new Shocker(picBoxBg, pShocker[i]));
-                otherCells.Add(new Predator(picBoxBg, pPredator[i]));
-                otherCells.Add(new Virus(picBoxBg, pVirus[i]));
-            }
-            lysosome = new Lysosome(picBoxBg, GameSystem.SetPosition(0.95, 0.95));
+        public ChapterSurvival(PictureBox picBoxStage) : base(picBoxStage) {
+            background.ChangeBackground(1);
         }
 
         protected override void GetReady() {
-            pPlantWall = new List<Point>();
             SetBorderPosition();
             SetPlantWallPosition();
-            pTracker = new List<Point> {
-                GameSystem.SetPosition(0.125, 0.62),
-                GameSystem.SetPosition(0.5, 0.3)};
-            pShocker = new List<Point> {
-                GameSystem.SetPosition(0.265, 0.25),
-                GameSystem.SetPosition(0.265, 0.65),
-                GameSystem.SetPosition(0.415, 0.65),
-                GameSystem.SetPosition(0.568, 0.24),
-                GameSystem.SetPosition(0.825, 0.24)};
+
+            pTracker.Add(GameSystem.SetPosition(0.5, 0.5));
+            pTracker.Add(GameSystem.SetPosition(0.2, 0.6));
+            pTracker.Add(GameSystem.SetPosition(0.5, 1.2));
+            pTracker.Add(GameSystem.SetPosition(0.5, 1.7));
+            pTracker.Add(GameSystem.SetPosition(0.4, 2.2));
+            pTracker.Add(GameSystem.SetPosition(0.5, 2.3));
+            pTracker.Add(GameSystem.SetPosition(0.8, 2.4));
+            pTracker.Add(GameSystem.SetPosition(1.1, 0.3));
+            pTracker.Add(GameSystem.SetPosition(1.4, 0.45));
+            pTracker.Add(GameSystem.SetPosition(1.6, 0.6));
+            pTracker.Add(GameSystem.SetPosition(1.3, 2.3));
+            pTracker.Add(GameSystem.SetPosition(1.5, 2.5));
+            pTracker.Add(GameSystem.SetPosition(1.4, 2.7));
+            pTracker.Add(GameSystem.SetPosition(2.55, 0.6));
+            pTracker.Add(GameSystem.SetPosition(2.3, 0.5));
+            pTracker.Add(GameSystem.SetPosition(2.1, 1.4));
+            pTracker.Add(GameSystem.SetPosition(2.2, 1.7));
+            pTracker.Add(GameSystem.SetPosition(2.5, 1.8));
+            pTracker.Add(GameSystem.SetPosition(2.1, 2.3));
+            pTracker.Add(GameSystem.SetPosition(2.3, 2.5));
+            pTracker.Add(GameSystem.SetPosition(2.6, 2.4));
+
+            pShocker.Add(GameSystem.SetPosition(0.3, 0.5));
+            pShocker.Add(GameSystem.SetPosition(0.42, 0.53));
+            pShocker.Add(GameSystem.SetPosition(0.6, 0.45));
+            pShocker.Add(GameSystem.SetPosition(0.5, 1.5));
+            pShocker.Add(GameSystem.SetPosition(0.7, 1.8));
+            pShocker.Add(GameSystem.SetPosition(0.5, 2.6));
+            pShocker.Add(GameSystem.SetPosition(1.9, 0.4));
+            pShocker.Add(GameSystem.SetPosition(1.4, 1.15));
+            pShocker.Add(GameSystem.SetPosition(1.2, 1.4));
+            pShocker.Add(GameSystem.SetPosition(1.7, 1.8));
+            pShocker.Add(GameSystem.SetPosition(1.75, 2.3));
+            pShocker.Add(GameSystem.SetPosition(1.5, 2.7));
+            pShocker.Add(GameSystem.SetPosition(2.35, 1.2));
+            pShocker.Add(GameSystem.SetPosition(2.2, 1.5));
+            pShocker.Add(GameSystem.SetPosition(2.2, 2.2));
+            pShocker.Add(GameSystem.SetPosition(2.5, 2.5));
+
+            pPredator.Add(GameSystem.SetPosition(0.26, 0.75));
+            pPredator.Add(GameSystem.SetPosition(0.22, 2.28));
+            pPredator.Add(GameSystem.SetPosition(0.26, 1.71));
+            pPredator.Add(GameSystem.SetPosition(0.38, 1.36));
+            pPredator.Add(GameSystem.SetPosition(0.7, 0.27));
+            pPredator.Add(GameSystem.SetPosition(0.6, 2.6));
+            pPredator.Add(GameSystem.SetPosition(1.3, 0.38));
+            pPredator.Add(GameSystem.SetPosition(1.1, 1.89));
+            pPredator.Add(GameSystem.SetPosition(1.2, 1.7));
+            pPredator.Add(GameSystem.SetPosition(1.85, 1.15));
+            pPredator.Add(GameSystem.SetPosition(1.12, 2.2));
+            pPredator.Add(GameSystem.SetPosition(2.36, 0.22));
+            pPredator.Add(GameSystem.SetPosition(2.75, 0.8));
+            pPredator.Add(GameSystem.SetPosition(2.5, 1.8));
+            pPredator.Add(GameSystem.SetPosition(2.7, 2.2));
+            pPredator.Add(GameSystem.SetPosition(2.4, 2.6));
+            pPredator.Add(GameSystem.SetPosition(2.75, 1.13));
+            pPredator.Add(GameSystem.SetPosition(2.1, 0.8));
+
+            pVirus.Add(GameSystem.SetPosition(0.1, 0.1));
+            pVirus.Add(GameSystem.SetPosition(0.1, 0.5));
+            pVirus.Add(GameSystem.SetPosition(0.1, 2.3));
+            pVirus.Add(GameSystem.SetPosition(0.1, 2.7));
+            pVirus.Add(GameSystem.SetPosition(2.5, 0.1));
+            pVirus.Add(GameSystem.SetPosition(2.8, 0.6));
+            pVirus.Add(GameSystem.SetPosition(2.8, 2.8));
+            pVirus.Add(GameSystem.SetPosition(2.6, 2.8));
+            pVirus.Add(GameSystem.SetPosition(1.3, 2.8));
+            pVirus.Add(GameSystem.SetPosition(1.5, 2.8));
+
+            pCompetitor.Add(GameSystem.SetPosition(1.5, 1.22));
+            pCompetitor.Add(GameSystem.SetPosition(0.5, 2.5));
+
+            pCompetitorToBeAdded.Add(GameSystem.SetPosition(0.1, 0.1));
+            pCompetitorToBeAdded.Add(GameSystem.SetPosition(2.9, 0.1));
+            pCompetitorToBeAdded.Add(GameSystem.SetPosition(2.9, 1.5));
+            pCompetitorToBeAdded.Add(GameSystem.SetPosition(0.1, 1.5));
         }
 
+
         private void SetPlantWallPosition() {
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.05));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.15));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.125, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.275, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.325, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.325, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.375, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.375, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.425, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.425, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.475, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.525, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.05));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.15));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.575, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.75));
-            pPlantWall.Add(GameSystem.SetPosition(0.725, 0.85));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.25));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.775, 0.65));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.35));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.45));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.55));
-            pPlantWall.Add(GameSystem.SetPosition(0.825, 0.65));
+            pPlantWall.Add(GameSystem.SetPosition(0.2, 1.13));
+            pPlantWall.Add(GameSystem.SetPosition(0.2, 1.4));
+            pPlantWall.Add(GameSystem.SetPosition(0.2, 1.88));
+            pPlantWall.Add(GameSystem.SetPosition(0.9, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(0.9, 0.5));
+            pPlantWall.Add(GameSystem.SetPosition(0.9, 1.87));
+            pPlantWall.Add(GameSystem.SetPosition(1.32, 1.87));
+            pPlantWall.Add(GameSystem.SetPosition(1.4, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(1.6, 0.25));
+            pPlantWall.Add(GameSystem.SetPosition(1.6, 2.5));
+            pPlantWall.Add(GameSystem.SetPosition(1.9, 0.75));
+            pPlantWall.Add(GameSystem.SetPosition(1.9, 1.0));
+            pPlantWall.Add(GameSystem.SetPosition(1.9, 2.28));
+            pPlantWall.Add(GameSystem.SetPosition(2.1, 0.88));
+            pPlantWall.Add(GameSystem.SetPosition(2.6, 1.87));
+        }
+
+        public override void ShowTip() {
+            FormTip tip = new FormTip(EChapter.Survival);
+            tip.ShowDialog();
         }
     }
 }

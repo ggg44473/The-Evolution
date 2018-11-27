@@ -37,7 +37,7 @@ namespace TheEvolution.Core {
 
         public virtual void NextStep() {
             if (aniInterval == 0) {
-                aniInterval = 4;
+                aniInterval = 8;
                 Animate();
             }
             aniInterval--;

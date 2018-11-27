@@ -9,7 +9,7 @@ using System.Drawing.Drawing2D;
 
 namespace TheEvolution.Core {
 
-    class Organelle : Painter {
+    abstract class Organelle : Painter {
 
         public Organelle(PictureBox picBoxBg, Point point) : base(picBoxBg) {
             GameSystem.organella.Add(this);
@@ -19,6 +19,13 @@ namespace TheEvolution.Core {
         public virtual void Collide(int myId) {
             Dispose();
             GameSystem.organella.RemoveAt(myId);
+            if (GameSystem.formStage.InvokeRequired) {
+                GameSystem.formStage.Invoke((Action)delegate () {
+                    GameSystem.formStage.Pause_Click(this, EventArgs.Empty);
+                });
+            } else {
+                GameSystem.formStage.Pause_Click(this, EventArgs.Empty);
+            }
         }
     }
 }
